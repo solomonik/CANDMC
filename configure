@@ -1,0 +1,520 @@
+#!/bin/bash
+#configure script adapted from Aquarius software (https://github.com/devinamatthews/aquarius)
+
+
+usage()
+{
+	echo -e 'Usage: configure [options]'
+	echo
+	echo -e '\t--blas=libs       Specify the linker options and/or libraries needed to link'
+	echo -e '\t                  the BLAS. If not specified, common BLAS libraries will be searched for.'
+	echo
+	echo -e '\t--lapack=libs     Specify the linker options and/or libraries needed to link'
+	echo -e '\t                  the LAPACK libraries. If not specified, common LAPACK libraries will be searched for.'
+	echo
+	echo -e '\t--scalapack=libs  Specify the linker options and/or libraries needed to link'
+	echo -e '\t                  the ScaLAPACK libraries. If not specified, ScaLAPACK tests will not be built.'
+	echo
+	echo -e '\t--elpa=libs       Specify the linker options and/or libraries needed to link'
+	echo -e '\t                  the ELPA libraries. If not specified, ELPA benchmarks will not be built.'
+	echo
+	echo -e 'Additionally, the variables CXX, CXXFLAGS, LDFLAGS,'
+	echo -e 'AR, WARN, and INCLUDES can be set on the command line, e.g. configure CXX=mpicxx.'
+	echo
+}
+
+#Usage: 'testcompiler $1' where 
+# $1 - 0 if no printouts, 1 if verbose
+testcompiler()
+{
+  status=1
+  cat > .test.c <<EOF
+  int main(){ return 0; }
+EOF
+  if [ $1 -eq 1 ]; then
+    ( set -x; $CXX $DEFS $WARNFLAGS $CXXFLAGS $INCLUDES .test.c $LDFLAGS  2>&1 )
+  else
+    $CXX $DEFS $WARNFLAGS $CXXFLAGS $INCLUDES .test.c $LDFLAGS  > /dev/null 2>&1
+  fi
+  if [ -x a.out ]; then
+    status=0
+  fi
+  rm -f .test.c a.out
+  return $status
+}
+
+
+#tests openmp functionality
+testopenmp()
+{
+  status=1
+  cat > .test.c <<EOF
+  #include "omp.h"
+  int main(){ 
+    int i;
+    int j = 0;
+    omp_set_num_threads(1);
+    #pragma omp for
+    for (i=0; i<10; i++){
+      j+=i;
+    } 
+    return j; 
+  }
+EOF
+  $CXX $DEFS $WARNFLAGS $CXXFLAGS $INCLUDES .test.c  $LDFLAGS > /dev/null 2>&1
+  if [ -x a.out ]; then
+    status=0
+  fi
+  rm -f .test.c a.out
+  return $status
+
+}
+
+
+
+#Usage: 'testlink $1 $2 $3' where 
+# $1 - library link line
+# $2 - symbol (function)
+# $3 - 0 if no printouts, 1 if verbose
+testlink()
+{
+  status=1
+  cat > .test.c <<EOF
+#ifdef __cplusplus
+  extern "C" 
+#endif
+  void $2();
+  int main(){ $2(); return 0; }
+EOF
+  if [ $3 -eq 1 ]; then
+    ( set -x; $CXX $DEFS $INCLUDES $WARN $CXXFLAGS .test.c $1 $LDFLAGS  2>&1 )
+  else
+    $CXX $DEFS $INCLUDES $WARN $CXXFLAGS .test.c $1 $LDFLAGS  > /dev/null 2>&1
+  fi
+  if [ -x a.out ]; then
+    status=0
+  fi
+  rm -f .test.c a.out
+  return $status
+
+}
+#Usage: 'testcpp11 $1 $2' where 
+# $1 - compiler flag to test can be ''
+# $2 - 0 if no printouts, 1 if verbose
+#tests whether C++ 11 is available
+testcpp11()
+{
+  status=1
+  cat > .test.c <<EOF
+  int main(){ char * ptr = nullptr; return 0; }
+EOF
+  if [ $2 -eq 1 ]; then
+    ( set -x; $CXX $DEFS $INCLUDES $WARN $CXXFLAGS .test.c $1 $LDFLAGS  2>&1 )
+  else
+    $CXX $DEFS $INCLUDES $WARN $CXXFLAGS .test.c $1 $LDFLAGS  > /dev/null 2>&1
+  fi
+  if [ -x a.out ]; then
+    status=0
+  fi
+  rm -f .test.c a.out
+  return $status
+}
+
+
+realcompiler()
+{
+    if $CXX --version > /dev/null 2>&1; then
+        version=`$CXX --version 2>&1 | tr '\n' ' '`
+    elif $CXX -V > /dev/null 2>&1; then
+        version=`$CXX -V 2>&1 | tr '\n' ' '`
+    else
+        $CXX --version
+        $CXX -V 
+        echo 'Could not determine underlying C/C++ compilers.'
+        echo
+        exit 1
+    fi
+
+    case $version in
+        *Intel*)
+            echo 'Using Intel compilers.'
+            compiler=intel
+            ;;
+        *Portland*)
+            echo 'Portland Group compilers are not supported.'
+            exit 1
+            compiler=pgi
+            ;;
+        *Free\ Software*)
+            echo 'Using GNU compilers.'
+            compiler=gnu
+            ;;
+        *Cray*)
+            echo 'Cray compilers are not supported.'
+            exit 1
+            compiler=cray
+            ;;
+        *)
+            echo 'Could not determine underlying C/C++ compilers.'
+            exit 1
+            ;;
+    esac
+}
+
+defaultflags()
+{
+    #
+    # Set default compiler flags
+    #
+    case $compiler in
+        intel)
+            if [ "x$AR"       = "x" ]; then AR='xiar'; fi
+            if [ "x$CXXFLAGS" = "x" ]; then CXXFLAGS='-fast -no-ipo -openmp -restrict'; fi
+            if [ "x$DEFS"     = "x" ]; then DEFS='-D_POSIX_C_SOURCE=200112L -D__STDC_LIMIT_MACROS'; fi
+            if [ "x$WARN"     = "x" ]; then WARN='-Wall'; fi
+            PASS_TO_LINKER='-Wl,'
+            ;;
+        gnu)
+            if [ "x$AR"       = "x" ]; then AR='ar'; fi
+            if [ "x$CXXFLAGS" = "x" ]; then CXXFLAGS='-O3 -fopenmp'; fi
+            if [ "x$DEFS"     = "x" ]; then DEFS='-D_POSIX_C_SOURCE=200112L -D__STDC_LIMIT_MACROS -Drestrict=__restrict__'; fi
+            if [ "x$WARN"     = "x" ]; then WARN='-Wall -Wno-comment -Wno-sign-compare'; fi
+            PASS_TO_LINKER='-Wl,'
+            ;;
+        *)
+            echo 'No default flags known for given compilers. Make sure that you have set the'
+            echo 'appropriate compiler flags manually.'
+            echo
+            if [ "x$AR"       = "x" ]; then AR='ar'; fi
+            if [ "x$CXXFLAGS" = "x" ]; then CXXFLAGS='-g -O2 -fopenmp'; fi
+            if [ "x$DEFS"     = "x" ]; then DEFS='-D_POSIX_C_SOURCE=200112L -D__STDC_LIMIT_MACROS -Drestrict='; fi
+            if [ "x$WARN"     = "x" ]; then WARN='-Wall'; fi
+            PASS_TO_LINKER='-Wl,'
+            ;;
+    esac
+}
+
+
+echo -n 'Checking hostname... '
+
+#
+# Check for known supercomputer host names
+#
+if (hostname | grep 'carver'); then
+    echo 'Hostname recognized as a NERSC machine'
+    host=nersc
+    
+    if [ "x$BLASLIBS" = "x" ]; then
+        if [ "x$MKL" = "x" -o "x$MKL_ILP64" = "x" ]; then
+            echo 'MKL module not loaded and no alternative specified.'
+            echo 'Do "module load mkl" or use the --blas option.'
+            exit 1
+        fi
+    fi
+    
+    CXX=mpiCC
+    realcompiler
+    defaultflags
+    DEFS="$DEFS -DCARVER"
+    
+    
+#elif [ "$NERSC_HOST" = "hopper" -o "$NERSC_HOST" = "edison" ]; then
+elif (hostname | grep 'hopper\|edison'); then
+    echo 'Hostname recognized as a NERSC machine'
+    host=nersc
+    
+    CXX=CC
+    realcompiler
+    defaultflags
+    DEFS="$DEFS -DEDISON"
+
+    echo -n 'Checking if MKL available...'
+    if testlink '-mkl=parallel' dgemm_ 0; then
+      LDFLAGS='-mkl=parallel'
+      echo 'using -mkl=parallel'
+    else
+      echo '-mkl=parallel did not work, please run module load mkl to use MKL.'
+      testlink '-mkl=parallel' dgemm_ 1
+    fi
+    
+      
+elif (hostname | grep 'surveyor\|intrepid\|challenger\|udawn'); then
+	echo 'Hostname recognized as a BG/P machine'
+	
+	host=bgp
+	BLASLIBS='-lesslsmpbg -lmass -lxlfmath -lxlf90_r -lxlsmp -lxlomp_ser -lpthread'
+	BGP_ESSL='/soft/apps/ESSL-4.4.1-0'
+	LDFLAGS="-L$BGP_ESSL/lib \
+             -L/bgsys/ibm_compilers/sles10/prod/opt/ibmcmp/xlf/bg/11.1/bglib/ \
+             -L/soft/apps/ibmcmp/xlsmp/bg/1.7/bglib \
+             -L/soft/apps/ibmcmp/xlf/bg/11.1/bglib"
+	INCLUDES="-I$BGP_ESSL/include -I/bgsys/drivers/ppcfloor/arch/include"
+	AR='ar'
+	CXX=mpixlcxx_r
+	CFLAGS='-qsmp=omp -qlanglvl=stdc99 -qnoipa -g -O3'
+	CXXFLAGS='-qsmp=omp -D__STDC_LIMIT_MACROS -Drestrict='
+	DEFS='-DBGP -D_POSIX_C_SOURCE=200112L'
+	WARN='-Wall'
+	
+elif (hostname | grep 'vesta\|mira\|cetus\|seq'); then
+	echo 'Hostname recognized as a BG/Q machine'
+ 
+	host=bgq
+  SCALAPACKLIBS="-L/soft/libraries/alcf/current/xl/SCALAPACK/lib/ -lscalapack"
+	BLASLIBS="-L/soft/libraries/alcf/current/xl/LAPACK/lib/ -llapack -lgfortran -lesslsmpbg -lxlsmp -lxlfmath -lxlf90_r -lm -Wl,--allow-multiple-definition"
+	BGQ_ESSL='/soft/libraries/essl/current'
+	LDFLAGS="-L$BGQ_ESSL/lib64 -L$IBM_MAIN_DIR/xlf/bg/14.1/bglib64/ -L$IBM_MAIN_DIR/xlsmp/bg/3.1/bglib64/ -L$IBM_MAIN_DIR/xlmass/bg/7.3/bglib64/"
+	INCLUDES="-I$BGQ_ESSL/include"
+	AR='ar'
+	CXX=mpixlcxx_r
+	CXXFLAGS='-qsmp=omp -g -O2 -qarch=qp -qtune=qp -qsimd=auto -qhot=level=1 -qprefetch -qunroll=yes -qreport'
+	DEFS='-DBGQ -D_POSIX_C_SOURCE=200112L -D__STDC_LIMIT_MACROS -Drestrict='
+	WARN=''
+	OPT=''
+
+else
+	#
+	# Check for other common architectures (just Linux for now)
+	#
+	host=linux
+	echo 'Hostname not recognized, assuming generic Linux host'
+	if [ "x$CXX" = "x" ]; then
+		CXX=mpicxx
+	fi
+	
+	realcompiler
+	defaultflags
+
+  #
+  # Check that compiler works without error
+  #
+  echo -n 'Checking compiler and flags... '
+  if testcompiler 0; then
+    echo 'successful.'
+  else
+    echo 'FAILED! error below:'
+    echo
+    testcompiler 1;
+    echo
+    exit 1
+  fi
+
+  #
+  # Find BLAS/LAPACK if not already specified
+  #
+  if [ "x$BLASLIBS" = "x" ]; then
+    if ! testlink '' dgemm_ 0; then
+      if ! testlink '' dgemm 0; then
+        echo -n 'Checking for BLAS libraries...' 
+        
+        if testlink '-lblas' dgemm_ 0; then
+          BLASLIBS='-lblas'
+          echo 'BLAS found.'
+        elif testlink '-lblas' dgemm 0; then
+          BLASLIBS='-lblas'
+          echo 'BLAS found.'
+        else
+          echo 'BLAS not found.'
+          testlink '-lblas' dgemm_ 1
+          exit 1
+        fi
+      fi
+    fi
+  fi
+fi
+
+
+PARAMS=$0
+for PARAM in "$@"
+do
+  PARAMS="${PARAMS} '${PARAM}'"
+done
+echo $PARAMS > how-did-i-configure
+#echo $0 $* > how-did-i-configure
+
+#
+# Parse command-line arguments
+#
+depstype=normal
+echo "Parsing command-line arguments..."
+while [ "x$1" != "x" ]; do
+	case $1 in
+		--blas=*)
+			BLASLIBS="${1#--blas=}"
+      echo "  BLAS specified as " $BLASLIBS
+			;;
+		--lapack=*)
+			LAPACKLIBS="${1#--lapack=}"
+      echo "  LAPACK specified as " $LAPACKLIBS
+			;;
+		--scalapack=*)
+			SCALAPACKLIBS="${1#--scalapack=}"
+      echo "  ScaLAPACK specified as " $SCALAPACKLIBS
+			;;
+		--elpa=*)
+			ELPALIBS="${1#--elpa=}"
+      echo "  ELPA specified as " $ELPALIBS
+			;;
+		--help)
+			usage
+			exit 0;
+			;;
+		CXX=*|\
+		AR=*|\
+		CXXFLAGS=*|\
+		LDFLAGS=*|\
+		WARN=*|\
+		INCLUDES=*)
+			eval "${1%%=*}=\"${1#*=}\""
+			;;
+		*)
+			echo "WARNING: Unknown option \"$1\""
+			usage
+			exit 1
+			;;
+	esac
+  shift
+done
+echo "  Using compile flags \"" $CXXFLAGS "\" and link flags \"" $LDFLAGS "\", override options by running configure with CXXFLAGS= and LDFLAGS=."
+
+echo "done parsing compile flags."
+
+echo -n 'Checking for C++11...'
+if testcpp11 '' 0; then
+  echo 'found C++11.'
+  DEFS="$DEFS -DCPP11"
+elif testcpp11 '-std=c++11' 0; then
+  echo 'found C++11, building with -std=c++11 flag.'
+  DEFS="$DEFS -DCPP11"
+  CXXFLAGS="$CXXFLAGS -std=c++11"
+else
+  #testcpp11 '-std=c++11' 1
+  echo 'did not find C++11, everything will build regardless.'
+fi
+
+#
+# Determine BLAS/LAPACK naming convention
+#
+echo -n "Checking BLAS underscore convention..."
+if testlink "$BLASLIBS" dgemm_ 0; then
+  UNDERSCORE=1
+  echo "with underscores."
+else
+  if testlink "$BLASLIBS" dgemm 0; then
+    echo "without underscores."
+    UNDERSCORE=0
+  else
+    testlink "$BLASLIBS" dgemm_ 1
+	  echo 'ERROR: Could not link with BLAS.'
+    exit 1
+  fi
+fi
+
+if [ $UNDERSCORE = 1 ] ; then
+  DGEMM=dgemm_
+  DGELS=dgels_
+  PDGEMM=pdgemm_
+  DTPQRT=dtpqrt_
+  ELPAEVP=elpa2_mp_solve_evp_real_2stage_
+else
+  DGEMM=dgemm
+  DGELS=dgels
+  PDGEMM=pdgemm
+  DTPQRT=dtpqrt
+  ELPAEVP=__elpa2_NMOD_solve_evp_real_2stage
+fi
+
+echo -n "Checking for LAPACK libraries..."
+if [ "x$LAPACKLIBS" = "x" ]; then
+  if ! testlink "$BLASLIBS" $DGELS 0; then
+    
+    echo -n 'looking for generic LAPACK (-llapack)...'
+    if testlink "-llapack $BLASLIBS" $DGELS 0; then
+      LAPACKLIBS='-llapack'
+      echo 'LAPACK found.'
+    else
+      echo 'LAPACK not found.'
+      testlink "-llapack $BLASLIBS" $DGELS 1
+      exit 1
+    fi
+  else
+    echo 'LAPACK present.'
+  fi
+else
+  if ! testlink "$LAPACKLIBS $BLASLIBS" $DGELS 0; then
+    echo "provided LAPACK libraries are disfunctional."
+    testlink "$LAPACKLIBS $BLASLIBS" $DGELS 1;
+    exit 1
+  else
+    echo "provided LAPACK libraries work."
+  fi
+fi
+
+echo -n 'Checking whether ScaLAPACK is provided...'
+if [ "x$SCALAPACKLIBS" = "x" ]; then
+  if ! testlink "$LAPACKLIBS $BLASLIBS" $PDGEMM 0; then
+	  echo -n 'looking for generic ScaLAPACK (-lscalapack)...'
+		if testlink "-lscalapack $LAPACKLIBS $BLASLIBS" $PDGEMM 0; then
+		  echo 'ScaLAPACK found, linking with -lscalapack.'
+		  SCALAPACKLIBS='-lscalapack'
+		  DEFS="$DEFS -DUSE_SCALAPACK"
+    else
+		  echo 'ScaLAPACK not found, ScaLAPACK-dependent components will not build.'
+    fi
+	else
+	  echo 'ScaLAPACK found.'
+	  DEFS="$DEFS -DUSE_SCALAPACK"
+	fi
+else
+  if ! testlink "$SCALAPACKLIBS $BLASLIBS" $PDGEMM 0; then
+    echo "provided ScaLAPACK libraries are dysfunctional."
+    testlink "$SCALAPACKLIBS $BLASLIBS" $PDGEMM 1;
+    exit 1
+  else
+    echo "provided ScaLAPACK libraries work."
+    DEFS="$DEFS -DUSE_SCALAPACK"
+  fi
+fi
+
+echo -n "Checking whether ELPA was provided (optional)..."
+if ! testlink "$ELPALIBS $LAPACKLIBS $BLASLIBS" $ELPAEVP 0; then
+  #testlink "$ELPALIBS $LAPACKLIBS $BLASLIBS" $ELPAEVP 1
+	echo "did not find ELPA, ELPA benchmarks will not be built."
+else
+	echo "ELPA routines provided."
+  DEFS="$DEFS -DUSE_ELPA"
+fi
+
+
+echo -n "Checking whether LAPACK has dtpqrt routine..."
+if ! (testlink "$LAPACKLIBS $BLASLIBS" $DTPQRT 0); then
+	echo 'LAPACK does not have TSQR routines, need LAPACK version 3.40+ to build CANDMC QR.'
+  #testlink "$LAPACKLIBS $BLASLIBS" $DTPQRT 1
+  DEFS="$DEFS -DLAPACKHASTSQR=0"
+else 
+	echo 'new LAPACK TSQR routine present.'
+  DEFS="$DEFS -DLAPACKHASTSQR=1"
+fi
+
+
+cat > config.mk <<EOF
+BLAS_LIBS   = $ELPALIBS $SCALAPACKLIBS $LAPACKLIBS $BLASLIBS
+
+LDFLAGS     = $LDFLAGS
+INCLUDES    = $INCLUDES
+
+DEFS        = $DEFS -DFTN_UNDERSCORE=$UNDERSCORE
+
+#uncomment below to enable performance profiling
+DEFS       += -DPROFILE -DPMPI
+#uncomment below to enable debugging
+#DEFS       += -DDEBUG=1
+
+AR          = $AR
+
+CXX         = $CXX
+CXXFLAGS    = $CXXFLAGS $WARN
+
+EOF
+
+echo 'Configure was successful.'

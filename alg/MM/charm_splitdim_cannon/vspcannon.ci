@@ -1,0 +1,42 @@
+mainmodule vspcannon {
+  readonly CProxy_Main mainProxy;
+  readonly CProxy_VPblock vpgrid;
+  readonly int kary;
+  readonly int ndim;
+  readonly int bidir;
+
+  mainchare Main {
+    entry Main(CkArgMsg *m);
+    entry void done();
+    entry void reduceC(CkReductionMsg *msg);
+  };
+
+  message ShftMsg {
+    double data[];
+  };
+  
+  message StgrMsg {
+    double data[];
+  };
+
+  array [1D] VPblock {
+    entry VPblock(void);
+    entry void init_sindex(int nb, int mb, int kb);
+    entry void init_rand(int n, int m, int k);
+    entry void contract(double alpha, double beta);
+    entry void staggerA(StgrMsg* msg);
+    entry void staggerB(StgrMsg* msg);
+    entry void shiftA(ShftMsg* msg);
+    entry void shiftB(ShftMsg* msg);
+    entry void loc_staggerA(int n);
+    entry void loc_staggerB(int n);
+    entry void loc_shiftA(int n);
+    entry void loc_shiftB(int n);
+    entry void gatherC();
+  };
+
+  group Mapper : CkArrayMap {
+    entry Mapper(int ndim, int kary, int dim_len[ndim]);
+  };
+
+};
