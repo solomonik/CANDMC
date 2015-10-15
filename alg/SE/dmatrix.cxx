@@ -1,3 +1,4 @@
+/* Copyright (c) Edgar Solomonik 2015, all rights reserved. This code is part of the CANDMC repository, protected under a two-clause BSD license. */
 /* Author: Edgar Solomonik, June 16, 2014 */
 
 /* File contains routines for reduction for distributed matrix wrapper */

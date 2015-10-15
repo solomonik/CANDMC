@@ -1,4 +1,4 @@
-/*Copyright (c) 2011, Edgar Solomonik, all rights reserved.*/
+/** Copyright Edgar Solomonik 2015, all rights reserved. This code is part of the CANDMC repository, protected under a two-clause BSD license. **/
 
 #ifndef __COMM_H__
 #define __COMM_H__

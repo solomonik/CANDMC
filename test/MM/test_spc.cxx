@@ -1,3 +1,4 @@
+/* Copyright (c) Edgar Solomonik 2015, all rights reserved. This code is part of the CANDMC repository, protected under a two-clause BSD license. */
 /* Copyright (c) 2011, Edgar Solomonik>
  * All rights reserved.
  * 

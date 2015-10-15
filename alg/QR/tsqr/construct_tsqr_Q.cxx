@@ -1,3 +1,5 @@
+/* Copyright (c) Edgar Solomonik 2015, all rights reserved. This code is part of the CANDMC repository, protected under a two-clause BSD license. */
+
 /* A part of this routines was written by Grey Ballard */
 
 #include <string.h>
