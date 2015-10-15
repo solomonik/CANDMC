@@ -1,5 +1,5 @@
-#ifndef __NuSE_H__
-#define __NuSE_H__
+#ifndef __CANSE_H__
+#define __CANSE_H__
 
 
 /**

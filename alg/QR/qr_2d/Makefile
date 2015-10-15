@@ -2,9 +2,9 @@ include ../../../config.mk
 
 LIB_DIR = ../../../lib
 
-NuQR: $(LIB_DIR)/libNuQR.a
+CANQR: $(LIB_DIR)/libCANQR.a
 
-$(LIB_DIR)/libNuQR.a:  qr_2d.o qr_tree_2d.o qr_butterfly_2d.o qr_y2d.o 
+$(LIB_DIR)/libCANQR.a:  qr_2d.o qr_tree_2d.o qr_butterfly_2d.o qr_y2d.o 
 
 qr_y2d.o: qr_y2d.cxx 
 	$(CXX) -c qr_y2d.cxx -o qr_y2d.o $(CXXFLAGS) $(DEFS)

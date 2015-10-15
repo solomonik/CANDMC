@@ -2,10 +2,10 @@ include ../../config.mk
 
 LIB_DIR = ../../lib
 
-NuLU: $(LIB_DIR)/libNuLU.a
+CANLU: $(LIB_DIR)/libCANLU.a
 
-$(LIB_DIR)/libNuLU.a: lu_25d_pvt.o tnmt_pvt.o partial_pvt.o
-	$(AR) -crs $(LIB_DIR)/libNuLU.a *.o
+$(LIB_DIR)/libCANLU.a: lu_25d_pvt.o tnmt_pvt.o partial_pvt.o
+	$(AR) -crs $(LIB_DIR)/libCANLU.a *.o
 
 lu_25d_pvt.o: lu_25d_pvt.cxx
 	$(CXX) -c lu_25d_pvt.cxx -o lu_25d_pvt.o $(CXXFLAGS) $(DEFS) 

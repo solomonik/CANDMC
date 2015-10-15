@@ -2,10 +2,10 @@ include ../../config.mk
 
 LIB_DIR=../../lib
 
-NuShared: $(LIB_DIR)/libNuShared.a
+CANShared: $(LIB_DIR)/libCANShared.a
 
-$(LIB_DIR)/libNuShared.a: util.o timer.o lapack.o
-	$(AR) -crs $(LIB_DIR)/libNuShared.a util.o timer.o lapack.o
+$(LIB_DIR)/libCANShared.a: util.o timer.o lapack.o
+	$(AR) -crs $(LIB_DIR)/libCANShared.a util.o timer.o lapack.o
 
 util.o: util.h util.cxx
 	$(CXX) -c  util.cxx -o util.o $(CXXFLAGS) $(DEFS) 

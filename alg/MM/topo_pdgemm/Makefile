@@ -2,9 +2,9 @@ include ../../../config.mk
 
 LIB_DIR = ../../../lib
 
-NuMM: $(LIB_DIR)/libNuMM.a
+CANMM: $(LIB_DIR)/libCANMM.a
 
-$(LIB_DIR)/libNuMM.a: d25_summa.o summa.o dual_cannon.o
+$(LIB_DIR)/libCANMM.a: d25_summa.o summa.o dual_cannon.o
 
 #topo_pdgemm_bench: topo_pdgemm_bench.cxx topo_pdgemm_algs.h summa.o util.o comm.o d25_summa.o dual_cannon.o omp_dgemm_ring.o
 #	$(CXX) util.o comm.o summa.o d25_summa.o dual_cannon.o omp_dgemm_ring.o \

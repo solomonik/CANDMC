@@ -2,9 +2,9 @@ include ../../../config.mk
 
 LIB_DIR = ../../../lib
 
-NuQR: $(LIB_DIR)/libNuQR.a
+CANQR: $(LIB_DIR)/libCANQR.a
 
-$(LIB_DIR)/libNuQR.a: butterfly_tsqr.o bitree_tsqr.o construct_tsqr_Q.o apply_tsqr_QT.o apply_butterfly_tsqr_QT.o butterfly_construct_Q.o
+$(LIB_DIR)/libCANQR.a: butterfly_tsqr.o bitree_tsqr.o construct_tsqr_Q.o apply_tsqr_QT.o apply_butterfly_tsqr_QT.o butterfly_construct_Q.o
 
 butterfly_tsqr.o: bitree_tsqr.o butterfly_tsqr.cxx 
 	$(CXX) -c butterfly_tsqr.cxx -o butterfly_tsqr.o $(CXXFLAGS) $(DEFS)
