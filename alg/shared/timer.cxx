@@ -23,7 +23,8 @@ int output_file_counter = 0;
 CTF_Function_timer::CTF_Function_timer(char const * name_, 
                                double const start_time_,
                                double const start_excl_time_){
-  snprintf(name, MAX_NAME_LENGTH, "%s", name_);
+  LIBT_ASSERT(strlen(name_)+1 < MAX_NAME_LENGTH);
+  strcpy(name, name_);
   start_time = start_time_;
   start_excl_time = start_excl_time_;
   acc_time = 0.0;
@@ -75,12 +76,12 @@ bool comp_name(CTF_Function_timer const & w1, CTF_Function_timer const & w2) {
   return strcmp(w1.name, w2.name)>0;
 }
 
-std::vector<CTF_Function_timer> function_timers;
+static std::vector<CTF_Function_timer> * function_timers = NULL;
 
 CTF_Timer::CTF_Timer(const char * name){
 #ifdef PROFILE
   int i;
-  if (function_timers.size() == 0) {
+  if (function_timers == NULL) {
     if (name[0] == 'M' && name[1] == 'P' && 
         name[2] == 'I' && name[3] == '_'){
       exited = 1;
@@ -90,10 +91,11 @@ CTF_Timer::CTF_Timer(const char * name){
     original = 1;
     index = 0;
     excl_time = 0.0;
-    function_timers.push_back(CTF_Function_timer(name, MPI_Wtime(), 0.0)); 
+    function_timers = new std::vector<CTF_Function_timer>();
+    function_timers->push_back(CTF_Function_timer(name, MPI_Wtime(), 0.0)); 
   } else {
-    for (i=0; i<(int)function_timers.size(); i++){
-      if (strcmp(function_timers[i].name, name) == 0){
+    for (i=0; i<(int)function_timers->size(); i++){
+      if (strcmp((*function_timers)[i].name, name) == 0){
         /*function_timers[i].start_time = MPI_Wtime();
         function_timers[i].start_excl_time = excl_time;*/
         break;
@@ -102,8 +104,8 @@ CTF_Timer::CTF_Timer(const char * name){
     index = i;
     original = (index==0);
   }
-  if (index == (int)function_timers.size()) {
-    function_timers.push_back(CTF_Function_timer(name, MPI_Wtime(), excl_time)); 
+  if (index == (int)function_timers->size()) {
+    function_timers->push_back(CTF_Function_timer(name, MPI_Wtime(), excl_time)); 
   }
   timer_name = name;
   exited = 0;
@@ -113,8 +115,8 @@ CTF_Timer::CTF_Timer(const char * name){
 void CTF_Timer::start(){
 #ifdef PROFILE
   if (!exited){
-    function_timers[index].start_time = MPI_Wtime();
-    function_timers[index].start_excl_time = excl_time;
+    (*function_timers)[index].start_time = MPI_Wtime();
+    (*function_timers)[index].start_excl_time = excl_time;
   }
 #endif
 }
@@ -122,12 +124,12 @@ void CTF_Timer::start(){
 void CTF_Timer::stop(){
 #ifdef PROFILE
   if (!exited){
-    double delta_time = MPI_Wtime() - function_timers[index].start_time;
-    function_timers[index].acc_time += delta_time;
-    function_timers[index].acc_excl_time += delta_time - 
-          (excl_time- function_timers[index].start_excl_time); 
-    excl_time = function_timers[index].start_excl_time + delta_time;
-    function_timers[index].calls++;
+    double delta_time = MPI_Wtime() - (*function_timers)[index].start_time;
+    (*function_timers)[index].acc_time += delta_time;
+    (*function_timers)[index].acc_excl_time += delta_time - 
+          (excl_time- (*function_timers)[index].start_excl_time); 
+    excl_time = (*function_timers)[index].start_excl_time + delta_time;
+    (*function_timers)[index].calls++;
     exit();
     exited = 1;
   }
@@ -143,8 +145,8 @@ void CTF_print_timers(char const * name){
   MPI_Comm_size(comm, &np);
 
 
-  char all_symbols[MAX_TOT_SYMBOLS_LEN];
-  char recv_symbols[MAX_TOT_SYMBOLS_LEN];
+  char * all_symbols = (char*)malloc(MAX_TOT_SYMBOLS_LEN);
+  char * recv_symbols = (char*)malloc(MAX_TOT_SYMBOLS_LEN);
   FILE * output = NULL;
 
   if (rank == 0){
@@ -193,9 +195,9 @@ void CTF_print_timers(char const * name){
 
   }
   len_symbols = 0;
-  for (i=0; i<(int)function_timers.size(); i++){
-    sprintf(all_symbols+len_symbols, "%s", function_timers[i].name);
-    len_symbols += strlen(function_timers[i].name)+1;
+  for (i=0; i<(int)function_timers->size(); i++){
+    sprintf(all_symbols+len_symbols, "%s", (*function_timers)[i].name);
+    len_symbols += strlen((*function_timers)[i].name)+1;
   }
   if (np > 1){
     for (int lp=1; lp<log2(np)+1; lp++){
@@ -231,18 +233,20 @@ void CTF_print_timers(char const * name){
   }
   LIBT_ASSERT(len_symbols <= MAX_TOT_SYMBOLS_LEN);
 
-  std::sort(function_timers.begin(), function_timers.end(),comp_name);
-  for (i=0; i<(int)function_timers.size(); i++){
-    function_timers[i].compute_totals(comm);
+  std::sort(function_timers->begin(), function_timers->end(),comp_name);
+  for (i=0; i<(int)function_timers->size(); i++){
+    (*function_timers)[i].compute_totals(comm);
   }
-  std::sort(function_timers.begin(), function_timers.end());
-  complete_time = function_timers[0].total_time;
+  std::sort(function_timers->begin(), function_timers->end());
+  complete_time = (*function_timers)[0].total_time;
   if (rank == 0){
-    for (i=0; i<(int)function_timers.size(); i++){
-      function_timers[i].print(output,comm,rank,np);
+    for (i=0; i<(int)function_timers->size(); i++){
+      (*function_timers)[i].print(output,comm,rank,np);
     }
   }
   
+  free(recv_symbols);
+  free(all_symbols);
   /*  if (rank == 0){
     fclose(output);
   } */
@@ -256,9 +260,11 @@ void CTF_Timer::exit(){
       //function_timers.clear();
       return;
     }
-    char const * str = "all";
-    CTF_print_timers(str);  
-    function_timers.clear();
+    CTF_print_timers("all");  
+    function_timers->clear();
+    delete function_timers;
+    function_timers = NULL;
+
   }
 #endif
 }
@@ -284,10 +290,10 @@ void CTF_Timer_epoch::begin(){
 #ifdef PROFILE
   tmr_outer = new CTF_Timer(name);
   tmr_outer->start();
-  saved_function_timers = function_timers;
+  saved_function_timers = *function_timers;
   save_excl_time = excl_time;
   excl_time = 0.0;
-  function_timers.clear();
+  function_timers->clear();
   tmr_inner = new CTF_Timer(name);
   tmr_inner->start();
 #endif
@@ -296,11 +302,15 @@ void CTF_Timer_epoch::begin(){
 void CTF_Timer_epoch::end(){
 #ifdef PROFILE
   tmr_inner->stop();
-  function_timers.clear();
-  function_timers = saved_function_timers;
+  if (function_timers != NULL){
+    function_timers->clear();
+    delete function_timers;
+  }
+  function_timers = new std::vector<CTF_Function_timer>();
+  *function_timers = saved_function_timers;
   excl_time = save_excl_time;
+
   tmr_outer->stop();
-  delete tmr_inner;
   delete tmr_outer;
 #endif
 }

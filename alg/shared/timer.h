@@ -76,6 +76,11 @@ class CTF_Timer_epoch{
     //create epoch called name
     CTF_Timer_epoch(char const * name_);
     
+    CTF_Timer_epoch(){
+      saved_function_timers.clear();
+    }
+
+
     //clears timers and begins epoch
     void begin();
 
@@ -84,36 +89,6 @@ class CTF_Timer_epoch{
 };
 
 void CTF_set_context(MPI_Comm ctxt);
-
-#ifdef PROFILE
-#define TAU
-#endif
-
-#ifdef TAU
-#define TAU_FSTART(ARG)                                           \
-  do { CTF_Timer t(#ARG); t.start(); } while (0);
-
-#define TAU_FSTOP(ARG)                                            \
-  do { CTF_Timer t(#ARG); t.stop(); } while (0);
-
-#define TAU_PROFILE_TIMER(ARG1, ARG2, ARG3, ARG4)                 
-
-#define TAU_PROFILE_INIT(argc, argv)                              \
-  CTF_set_main_args(argc, argv);
-
-#define TAU_PROFILE_SET_NODE(ARG)
-
-#define TAU_PROFILE_START(ARG)                                    \
-  CTF_Timer __CTF_Timer##ARG(#ARG);
-
-#define TAU_PROFILE_STOP(ARG)                                     \
- __CTF_Timer##ARG.stop();
-
-#define TAU_PROFILE_SET_CONTEXT(ARG)                              \
-  if (ARG==0) CTF_set_context(MPI_COMM_WORLD);                    \
-  else CTF_set_context((MPI_Comm)ARG);
-#endif
-
 
 #endif
 
