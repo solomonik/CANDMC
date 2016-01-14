@@ -54,8 +54,8 @@ void elpa2_mp_bandred_real(int             na,
                            MPI_Comm        crow, 
                            MPI_Comm        ccol, 
                            int             useQR){
-  int nblks = (na-1)/nbw+1;
-  double * tmat = (double*)malloc(nbw*nbw*nblks*sizeof(double));
+  int64_t nblks = (na-1)/nbw+1;
+  double * tmat = (double*)malloc(nbw*(int64_t)nbw*nblks*sizeof(double));
   int wantDebug=0;
   int success;
 #if FTN_UNDERSCORE
@@ -102,7 +102,8 @@ static char* getopt(char ** begin, char ** end, const std::string & option){
 }
 
 int main(int argc, char **argv) {
-  int myRank, numPes, n, b, bw, niter, pr, pc, ipr, ipc, i, j, loc_off, lda_A, iter, rb, useQR;
+  int myRank, numPes, niter, pr, pc, ipr, ipc, lda_A, iter, rb, useQR;
+  int64_t n, b, bw, i, j, lda_A;
   double * A, * D, * E, * T;
   volatile double time;
 
@@ -163,7 +164,7 @@ int main(int argc, char **argv) {
     n = 4*bw*pr;
 
   if (myRank == 0)
-    printf("Executed as '%s -n %d -bw = %d -b %d -pr %d -niter %d -rb %d -useQR %d'\n", 
+    printf("Executed as '%s -n %ld -bw = %ld -b %ld -pr %d -niter %d -rb %d -useQR %d'\n", 
             argv[0], n, bw, b, pr, niter, rb, useQR);
 
   if (numPes % pr != 0) {
@@ -175,7 +176,7 @@ int main(int argc, char **argv) {
   }
   if (n % pr != 0) {
     if (myRank == 0){
-      printf("%d mod %d != 0 Number of processor grid ", n, pr);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pr);
       printf("rows must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -183,7 +184,7 @@ int main(int argc, char **argv) {
   pc = numPes / pr;
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("%d mod %d != 0 Number of processor grid ", n, pc);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pc);
       printf("columns must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -194,7 +195,7 @@ int main(int argc, char **argv) {
   
   if (myRank == 0){ 
     printf("Benchmarking ELPA symmetric eigensolve of ");
-    printf("%d-by-%d matrix with block size %d ",n,n,b);
+    printf("%ld-by-%ld matrix with block size %ld ",n,n,b);
     printf("using %d processors in %d-by-%d grid.\n", numPes, pr, pc);
   }
 
@@ -225,9 +226,9 @@ int main(int argc, char **argv) {
     
     if(myRank == 0){
       printf("Completed %u iterations of ELPA1 tridiagonal reduction\n", iter);
-      printf("ELPA1 full to tridiagonal n=%d b=%d: sec/iterations: %f ", 
+      printf("ELPA1 full to tridiagonal n=%ld b=%ld: sec/iterations: %lf ", 
               n,b, time/niter);
-      printf("Gigaflops: %f\n", ((4./3.)*n*b*b)/(time/niter)*1E-9);
+      printf("Gigaflops: %lf\n", ((4./3.)*n*b*b)/(time/niter)*1E-9);
     }
   } else {
 
@@ -244,9 +245,9 @@ int main(int argc, char **argv) {
     time_br = MPI_Wtime()-time_br;
     if(myRank == 0){
       printf("Completed %u iterations of ELPA2 full to band reduction\n", iter);
-      printf("ELPA2 full to banded n=%d bw=%d b=%d: sec/iterations: %f ", 
+      printf("ELPA2 full to banded n=%ld bw=%ld b=%ld: sec/iterations: %lf ", 
               n,bw,b, time_br/niter);
-      printf("Upscaled band reduction gigaflops: %f\n", ((4./3.)*n*b*b)/(time_br/niter)*1E-9);
+      printf("Upscaled band reduction gigaflops: %lf\n", ((4./3.)*n*b*b)/(time_br/niter)*1E-9);
     }
 
     if (rb){
@@ -261,12 +262,12 @@ int main(int argc, char **argv) {
       
       if(myRank == 0){
         printf("Completed %u iterations of ELPA2 banded to tridiagonal reduction\n", iter);
-        printf("ELPA2 banded to tridiagonal n=%d bw=%d b=%d: sec/iterations: %f \n", 
+        printf("ELPA2 banded to tridiagonal n=%ld bw=%ld b=%ld: sec/iterations: %lf \n", 
                 n,bw,b, time_bt/niter);
       } 
       if(myRank == 0){
         printf("Completed %u iterations of ELPA2 banded to tridiagonal reduction\n", iter);
-        printf("ELPA2 total full to tridiagonal n=%d bw=%d b=%d: sec/iterations: %f \n", 
+        printf("ELPA2 total full to tridiagonal n=%ld bw=%ld b=%ld: sec/iterations: %f \n", 
                 n,bw,b, (time_bt+time_br)/niter);
       } 
     }

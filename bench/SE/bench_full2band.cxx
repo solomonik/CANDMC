@@ -22,7 +22,8 @@ char* getopt(char ** begin, char ** end, const std::string & option){
 
 
 int main(int argc, char **argv) {
-  int myRank, numPes, n, b, niter, pr, pc, ipr, ipc, i, j, loc_off, m, b_agg, iter;
+  int myRank, numPes, niter, pr, pc, ipr, ipc, iter;
+  int64_t n, b, i, b_agg;
   double * loc_A;
   double time;
 
@@ -64,19 +65,19 @@ int main(int argc, char **argv) {
     n = 8*b*pr;
 
   if (myRank == 0)
-    printf("Executed as '%s -n %d b_agg %d -b %d -niter %d'\n", 
+    printf("Executed as '%s -n %ld b_agg %ld -b %ld -niter %d'\n", 
             argv[0], n, b_agg, b, niter);
 
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", numPes, pr);
+      printf("%d mod %d != 0 Number of processor grid ", numPes, pr);
       printf("rows must divide into number of processors\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
   if (n % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", n, pr);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pr);
       printf("rows must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -84,7 +85,7 @@ int main(int argc, char **argv) {
   pc = numPes / pr;
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", n, pc);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pc);
       printf("columns must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -94,8 +95,8 @@ int main(int argc, char **argv) {
   
   
   if (myRank == 0){ 
-    printf("Benchmarking symmetric eigensolve full to bandwidth %d of ",b_agg);
-    printf("%d-by-%d matrix with block size %d\n",n,n,b);
+    printf("Benchmarking symmetric eigensolve full to bandwidth %ld of ",b_agg);
+    printf("%ld-by-%ld matrix with block size %ld\n",n,n,b);
     printf("Using %d processors in %d-by-%d grid.\n", numPes, pr, pc);
   }
   SETUP_SUB_COMM(cdt_glb, cdt_row, 
@@ -147,7 +148,7 @@ int main(int argc, char **argv) {
   time = MPI_Wtime()-time;
   if(myRank == 0){
     printf("Completed %u iterations of full to band with TSQR\n", iter);
-    printf("2D CANDMC with TSQR full to band n = %d b_agg = %d b = %d: sec/iteration: %f ", n, b_agg, b, time/niter);
+    printf("2D CANDMC with TSQR full to band n = %ld b_agg = %ld b = %ld: sec/iteration: %f ", n, b_agg, b, time/niter);
     printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
   }
   ep1.end();
@@ -159,7 +160,7 @@ int main(int argc, char **argv) {
 
 #ifdef USE_SCALAPACK
 
-  int icontxt, info, iam, inprocs, lwork;
+  int icontxt, info, iam, inprocs;
   char cC = 'C';
   int desc_A[9];
   Cblacs_pinfo(&iam,&inprocs);
@@ -190,7 +191,7 @@ int main(int argc, char **argv) {
   time = MPI_Wtime()-time;
   if(myRank == 0){
     printf("Completed %u iterations of full to band with 1D ScaLAPACK QR\n", iter);
-    printf("2D CANDMC with 1D ScaLAPACK QR full to band n = %d b_agg = %d b = %d: sec/iteration: %f ", n, b_agg, b, time/niter);
+    printf("2D CANDMC with 1D ScaLAPACK QR full to band n = %ld b_agg = %ld b = %ld: sec/iteration: %lf ", n, b_agg, b, time/niter);
     printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
   }
   ep2.end();

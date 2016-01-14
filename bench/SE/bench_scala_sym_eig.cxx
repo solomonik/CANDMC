@@ -22,10 +22,11 @@ char* getopt(char ** begin, char ** end, const std::string & option){
 
 
 int main(int argc, char **argv) {
-  int myRank, numPes, n, b, niter, pr, pc, ipr, ipc, i, j, loc_off, m,  nz;
-  double * loc_A, * full_A, * scala_EL, * full_EL, * loc_EC, * full_EC;
-  double * scala_D, * scala_E, * full_D, * full_E, * work, * gap;
-  double * scala_T, * full_T;
+  int myRank, numPes, niter, pr, pc, m, ipr, ipc;
+  int64_t n, b, i;
+  double * loc_A, * scala_EL, * loc_EC;
+  double * scala_D, * scala_E, * work, * gap;
+  double * scala_T;
   int * iwork, * iclustr, * ifail;
   int icontxt, info, iam, inprocs, iter, lwork;
   char cC = 'C';
@@ -64,19 +65,19 @@ int main(int argc, char **argv) {
     n = 4*b*pr;
 
   if (myRank == 0)
-    printf("Executed as '%s -n %d -b %d -pr %d -niter %d'\n", 
+    printf("Executed as '%s -n %ld -b %ld -pr %d -niter %d'\n", 
             argv[0], n, b, pr, niter);
 
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", numPes, pr);
+      printf("%d mod %d != 0 Number of processor grid ", numPes, pr);
       printf("rows must divide into number of processors\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
   if (n % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", n, pr);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pr);
       printf("rows must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -84,7 +85,7 @@ int main(int argc, char **argv) {
   pc = numPes / pr;
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("%d % %d != 0 Number of processor grid ", n, pc);
+      printf("%ld mod %d != 0 Number of processor grid ", n, pc);
       printf("columns must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -95,7 +96,7 @@ int main(int argc, char **argv) {
   
   if (myRank == 0){ 
     printf("Benchmarking ScaLAPACK symmetric eigensolve of ");
-    printf("%d-by-%d matrix with block size %d\n",n,n,b);
+    printf("%ld-by-%ld matrix with block size %ld\n",n,n,b);
     printf("Using %d processors in %d-by-%d grid.\n", numPes, pr, pc);
   }
 
@@ -143,9 +144,9 @@ int main(int argc, char **argv) {
   
   if(myRank == 0){
     printf("Completed %u iterations (panel to tridiagonal)\n", iter);
-    printf("(panel to tridiagonal) n = %d b=%d: sec/iterations: %f ", 
+    printf("(panel to tridiagonal) n = %ld b=%ld: sec/iterations: %lf ", 
             n,b, time/niter);
-    printf("Gigaflops: %f\n", ((4./3.)*n*b*b)/(time/niter)*1E-9);
+    printf("Gigaflops: %lf\n", ((4./3.)*n*b*b)/(time/niter)*1E-9);
   }
   
   time = MPI_Wtime();
@@ -160,8 +161,8 @@ int main(int argc, char **argv) {
   
   if(myRank == 0){
     printf("Completed %u iterations (symmetric to tridiagonal)\n", iter);
-    printf("(symmetric to tridiagonal) n = %d: sec/iteration: %f ", n, time/niter);
-    printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
+    printf("(symmetric to tridiagonal) n = %ld: sec/iteration: %lf ", n, time/niter);
+    printf("Gigaflops: %lf\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
   }
 
   time = MPI_Wtime();
@@ -179,8 +180,8 @@ int main(int argc, char **argv) {
   
   if(myRank == 0){
     printf("Completed %u iterations (eigenvalues only)\n", iter);
-    printf("(eigenvalues only) n = %d: sec/iteration: %f ", n, time/niter);
-    printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
+    printf("(eigenvalues only) n = %ld: sec/iteration: %lf ", n, time/niter);
+    printf("Gigaflops: %lf\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
   }
 
 //  time = MPI_Wtime();
