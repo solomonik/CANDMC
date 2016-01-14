@@ -183,24 +183,24 @@ int main(int argc, char **argv) {
     printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
   }
 
-  time = MPI_Wtime();
-
-  for (iter=0; iter<niter; iter++){
-    for (i=0; i<n*n/numPes; i++){
-      loc_A[i] = drand48();
-    }
-    cpdsyevx('V', 'A', 'L', n, loc_A, 1, 1, desc_A, 0.0, 0.0, 0, 0, 0.0,
-             &m, &nz, scala_EL, 0.0, loc_EC, 1, 1, desc_EC, work, lwork, iwork,
-             30*n, ifail, iclustr, gap, &info);
-    
-  }
-  time = MPI_Wtime()-time;
-  
-  if(myRank == 0){
-    printf("Completed %u iterations (with eigenvectors)\n", iter);
-    printf("(with eigenvectors) n = %d: sec/iteration: %f ", n, time/niter);
-    printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
-  }
+//  time = MPI_Wtime();
+//
+//  for (iter=0; iter<niter; iter++){
+//    for (i=0; i<n*n/numPes; i++){
+//      loc_A[i] = drand48();
+//    }
+//    cpdsyevx('V', 'A', 'L', n, loc_A, 1, 1, desc_A, 0.0, 0.0, 0, 0, 0.0,
+//             &m, &nz, scala_EL, 0.0, loc_EC, 1, 1, desc_EC, work, lwork, iwork,
+//             30*n, ifail, iclustr, gap, &info);
+//    
+//  }
+//  time = MPI_Wtime()-time;
+//  
+//  if(myRank == 0){
+//    printf("Completed %u iterations (with eigenvectors)\n", iter);
+//    printf("(with eigenvectors) n = %d: sec/iteration: %f ", n, time/niter);
+//    printf("Gigaflops: %f\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
+//  }
 
 
   MPI_Finalize();

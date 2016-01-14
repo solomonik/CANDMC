@@ -41,7 +41,7 @@ void elpa1_mp_tridiag_real(int             na,
 //subroutine bandred_real(na, a, lda, nblk, nbw, mpi_comm_rows, mpi_comm_cols, tmat)
 extern "C"
 #if FTN_UNDERSCORE
-void elpa2_mp_bandred_real_(int const*, double const*, int const*, int const*, int const*, MPI_Comm const*, MPI_Comm const*, double*);
+void elpa2_mp_bandred_real_(int const*, double const*, int const *, int const *, int const*, int const*, int const*, MPI_Comm const*, MPI_Comm const*, double*, int*, int*, int*);
 #else
 void __elpa2_NMOD_bandred_real(int const*, double const*, int const*, int const*, int const*, MPI_Comm const*, MPI_Comm const*, double*);
 #endif
@@ -53,21 +53,26 @@ void elpa2_mp_bandred_real(int             na,
                            int             nbw,
                            MPI_Comm        crow, 
                            MPI_Comm        ccol, 
-                           double *        tau){
+                           int             useQR){
+  int nblks = (na-1)/nbw+1;
+  double * tmat = (double*)malloc(nbw*nbw*nblks*sizeof(double));
+  int wantDebug=0;
+  int success;
 #if FTN_UNDERSCORE
-  elpa2_mp_bandred_real_(&na, A, &lda, &nblk, &nbw, &crow, &ccol, tau);
+  elpa2_mp_bandred_real_(&na, A, &lda, &nblk, &nbw, &lda, &nblks, &crow, &ccol, tmat, &wantDebug, &success, &useQR);
 #else
-  __elpa2_NMOD_bandred_real(&na, A, &lda, &nblk, &nbw, &crow, &ccol, tau);
+  __elpa2_mp_bandred_real_(&na, A, &lda, &nblk, &nbw, &lda, &nblks, &crow, &ccol, tmat, &wantDebug, &success, &useQR);
 #endif
+  free(tmat);
 }
 
 
 //subroutine tridiag_band_real(na, nb, nblk, a, lda, d, e, mpi_comm_rows, mpi_comm_cols, mpi_comm)
 extern "C"
 #if FTN_UNDERSCORE
-void elpa2_mp_tridiag_band_real_(int const*, int const*, int const*, double const*, int const*, double*, double*, MPI_Comm const*, MPI_Comm const*, MPI_Comm const*);
+void elpa2_mp_tridiag_band_real_(int const*, int const*, int const*, double const*, int const *, double*, double*, int const*, MPI_Comm const*, MPI_Comm const*, MPI_Comm const*);
 #else
-void __elpa2_NMOD_tridiag_band_real(int const*, int const*, int const*, double const*, int const*, double*, double*, MPI_Comm const*, MPI_Comm const*, MPI_Comm const*);
+void __elpa2_NMOD_tridiag_band_real(int const*, int const*, int const*, double const*, int const*, double*, double*, int const*, MPI_Comm const*, MPI_Comm const*, MPI_Comm const*);
 #endif
 
 void elpa2_mp_tridiag_band_real(int            na, 
@@ -81,9 +86,9 @@ void elpa2_mp_tridiag_band_real(int            na,
                                 MPI_Comm       ccol, 
                                 MPI_Comm       cworld){
 #if FTN_UNDERSCORE
-  elpa2_mp_tridiag_band_real_(&na, &nbw, &nblk, A, &lda, D, E, &crow, &ccol, &cworld);
+  elpa2_mp_tridiag_band_real_(&na, &nbw, &nblk, A, &lda, D, E, &lda, &crow, &ccol, &cworld);
 #else
-  __elpa2_NMOD_tridiag_band_real(&na, &nbw, &nblk, A, &lda, D, E, &crow, &ccol, &cworld);
+  __elpa2_NMOD_tridiag_band_real(&na, &nbw, &nblk, A, &lda, D, E, &lda, &crow, &ccol, &cworld);
 #endif
 }
 
@@ -97,16 +102,21 @@ static char* getopt(char ** begin, char ** end, const std::string & option){
 }
 
 int main(int argc, char **argv) {
-  int myRank, numPes, n, b, bw, niter, pr, pc, ipr, ipc, i, j, loc_off, lda_A, iter, rb;
+  int myRank, numPes, n, b, bw, niter, pr, pc, ipr, ipc, i, j, loc_off, lda_A, iter, rb, useQR;
   double * A, * D, * E, * T;
   volatile double time;
 
+  //int prov;
+  //MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &prov);
+  //if (myRank == 0)
+  //  printf("Thread support is %d needed is %d\n", prov, MPI_THREAD_MULTIPLE);
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
 
-  if (myRank == 0)
+  if (myRank == 0){
     printf("Usage: %s -n 'matrix dimension' -bw 'bandwidth' -b 'distribution blocking factor' -pr 'number of processor rows in processor grid' -niter 'number of iterations' -rb '1 if reduce band to tri 0 otherwise'\n", argv[0]);
+  }
 
   if (     getopt(argv, argv+argc, "-pr") &&
       atoi(getopt(argv, argv+argc, "-pr")) > 0 ){
@@ -120,12 +130,12 @@ int main(int argc, char **argv) {
     niter = atoi(getopt(argv, argv+argc, "-niter"));
   else 
     niter = NUM_ITER;
-  if (niter != 1){
+  /*if (niter != 1){
     if (myRank == 0){
       printf("Number of iterations must be or ELPA band to tridiag seems to crash on the second, overriding setting\n");
     }
     niter = 1;
-  }
+  }*/
   if (     getopt(argv, argv+argc, "-bw") &&
       atoi(getopt(argv, argv+argc, "-bw")) > 0 )
     bw = atoi(getopt(argv, argv+argc, "-bw"));
@@ -136,6 +146,11 @@ int main(int argc, char **argv) {
     rb = atoi(getopt(argv, argv+argc, "-rb"));
   else 
     rb = 1;
+  if (     getopt(argv, argv+argc, "-useQR") &&
+      atoi(getopt(argv, argv+argc, "-useQR")) > 0 )
+    useQR = atoi(getopt(argv, argv+argc, "-useQR"));
+  else 
+    useQR = 1;
   if (     getopt(argv, argv+argc, "-b") &&
       atoi(getopt(argv, argv+argc, "-b")) > 0 )
     b = atoi(getopt(argv, argv+argc, "-b"));
@@ -148,8 +163,8 @@ int main(int argc, char **argv) {
     n = 4*bw*pr;
 
   if (myRank == 0)
-    printf("Executed as '%s -n %d -bw = %d -b %d -pr %d -niter %d rb %d'\n", 
-            argv[0], n, bw, b, pr, niter, rb);
+    printf("Executed as '%s -n %d -bw = %d -b %d -pr %d -niter %d -rb %d -useQR %d'\n", 
+            argv[0], n, bw, b, pr, niter, rb, useQR);
 
   if (numPes % pr != 0) {
     if (myRank == 0){
@@ -216,12 +231,14 @@ int main(int argc, char **argv) {
     }
   } else {
 
+//  MPI_Comm_split(MPI_COMM_WORLD, ipc, ipr, &comm_rows); 
+  ///MPI_Comm_split(MPI_COMM_WORLD, ipr, ipc, &comm_cols); 
     double time_br = MPI_Wtime();
     for (iter=0; iter<niter; iter++){
       for (i=0; i<n*n/numPes; i++){
         A[i] = drand48();
       }
-      elpa2_mp_bandred_real(n, A, lda_A, b, bw, comm_rows, comm_cols, T);
+      elpa2_mp_bandred_real(n, A, lda_A, b, bw, comm_rows, comm_cols, useQR);
     }
     
     time_br = MPI_Wtime()-time_br;
@@ -245,9 +262,15 @@ int main(int argc, char **argv) {
       if(myRank == 0){
         printf("Completed %u iterations of ELPA2 banded to tridiagonal reduction\n", iter);
         printf("ELPA2 banded to tridiagonal n=%d bw=%d b=%d: sec/iterations: %f \n", 
+                n,bw,b, time_bt/niter);
+      } 
+      if(myRank == 0){
+        printf("Completed %u iterations of ELPA2 banded to tridiagonal reduction\n", iter);
+        printf("ELPA2 total full to tridiagonal n=%d bw=%d b=%d: sec/iterations: %f \n", 
                 n,bw,b, (time_bt+time_br)/niter);
       } 
     }
+
   }
   MPI_Finalize();
   return 0;

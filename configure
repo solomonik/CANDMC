@@ -229,12 +229,12 @@ elif (hostname | grep 'hopper\|edison'); then
     DEFS="$DEFS -DEDISON"
 
     echo -n 'Checking if MKL available...'
-    if testlink '-mkl=parallel' dgemm_ 0; then
-      LDFLAGS='-mkl=parallel'
-      echo 'using -mkl=parallel'
+    if testlink '-mkl' dgemm_ 0; then
+      LDFLAGS='-mkl'
+      echo 'using -mkl'
     else
-      echo '-mkl=parallel did not work, please run module load mkl to use MKL.'
-      testlink '-mkl=parallel' dgemm_ 1
+      echo '-mkl did not work, please run module load mkl to use MKL.'
+      testlink '-mkl' dgemm_ 1
     fi
     
       
