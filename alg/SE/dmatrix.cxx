@@ -687,7 +687,8 @@ DQRMatrix::DQRMatrix(DMatrix A){
   Y = A.get_contig();
   pview pv_cpy = Y.pv;
   //QR_2D(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0);
-  QR_scala_2D(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0, Y.desc, Y, 1, 1);
+  //QR_scala_2D(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0, Y.desc, Y, 1, 1);
+  QR_2D_pipe(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0, NULL, NULL);
   //printf("slicing %d by %d R\n", Y.ncol, Y.ncol);
   R = Y.slice(0,Y.ncol,0,Y.ncol).get_contig();
   R.zero_lower_tri();
