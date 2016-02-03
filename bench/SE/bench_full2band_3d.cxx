@@ -29,8 +29,15 @@ int main(int argc, char **argv) {
   CommData_t cdt_row, cdt_col;
   INIT_COMM(numPes, myRank, 1, cdt_glb);
 
-  if (myRank == 0)
-    printf("Usage: %s -n 'matrix dimension' -b 'distribution blocking factor' -bw 'matrix bandwidth to reduce to' -b_agg 'aggregation blocking factor' -c_rep 'replication factor' -niter 'number of iterations' \n", argv[0]);
+  if (     getopt(argv, argv+argc, "-qt") &&
+      atoi(getopt(argv, argv+argc, "-qt")) > 0 )
+    qt = atoi(getopt(argv, argv+argc, "-qt"));
+  else 
+    qt = 0;
+
+
+  if (!qt && myRank == 0)
+    printf("Usage: %s -n 'matrix dimension' -b 'distribution blocking factor' -bw 'matrix bandwidth to reduce to' -b_agg 'aggregation blocking factor' -c_rep 'replication factor' -niter 'number of iterations' -qt 'wether to output iteration times only' \n", argv[0]);
 
   if (     getopt(argv, argv+argc, "-niter") &&
       atoi(getopt(argv, argv+argc, "-niter")) > 0 )
@@ -43,7 +50,7 @@ int main(int argc, char **argv) {
     c_rep = atoi(getopt(argv, argv+argc, "-c_rep"));
   } else c_rep = 1; 
   if (numPes % c_rep > 0){
-    if (myRank == 0)
+    if (!qt && myRank == 0)
       printf("replication factor must divide into number of processors, terminating...\n");
     return 0;
   }
@@ -51,7 +58,7 @@ int main(int argc, char **argv) {
   pr = sqrt(num_lyrPes);
   while (num_lyrPes%pr!=0) pr++;
   if (pr*pr != num_lyrPes){
-    if (myRank == 0)
+    if (!qt && myRank == 0)
       printf("Full to banded test needs base square processor grid, terminating...\n");
     return 0;
   }
@@ -78,20 +85,20 @@ int main(int argc, char **argv) {
   else 
     bw = 8;
 
-  if (myRank == 0)
+  if (!qt && myRank == 0)
     printf("Executed as '%s -n %ld -b %ld -bw %ld -pr %d -b_agg %ld -c_rep %d'\n", 
             argv[0], n, b, bw, pr, b_agg, c_rep);
 
   int spr = pr*c_rep;
 
-  if (num_lyrPes % pr != 0) {
+  if (!qt && num_lyrPes % pr != 0) {
     if (myRank == 0){
       printf("%d mod %d != 0 Number of processor grid ", num_lyrPes, pr);
       printf("rows must divide into number of processors in layer\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
-  if (n % spr != 0) {
+  if (!qt && n % spr != 0) {
     if (myRank == 0){
       printf("%ld mod %d != 0 Number of processor grid ", n, spr);
       printf("rows*c_rep must divide into the matrix dimension\n");
@@ -99,7 +106,7 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
   pc = num_lyrPes / pr;
-  if (num_lyrPes % pr != 0) {
+  if (!qt && num_lyrPes % pr != 0) {
     if (myRank == 0){
       printf("%ld mod %d != 0 Number of processor grid ", n, pc);
       printf("columns must divide into the matrix dimension\n");
@@ -107,7 +114,7 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
   
-  if (myRank == 0){ 
+  if (!qt && myRank == 0){ 
     printf("Benchmarking 2.5D full to band symmetric reduction ");
     printf("%ld-by-%ld matrix with block size %ld\n",n,n,b);
     printf("Using %d processors in %d-by-%d-by-%d grid.\n", numPes, pr, pc, c_rep);
@@ -176,6 +183,7 @@ int main(int argc, char **argv) {
   CTF_Timer_epoch ep1("full2band_2.5D"); 
   ep1.begin();
   double time = MPI_Wtime();
+  double iter_times[niter];
   for (iter=0; iter<niter; iter++){
     //FIXME: nonsymmetric
     CTF_Timer ti("initialization of data");
@@ -188,6 +196,7 @@ int main(int argc, char **argv) {
     ti.stop();
     CTF_Timer trep("replication of initial A");
     trep.start();
+    iter_times[iter] = - MPI_Wtime();
     MPI_Bcast(loc_A, n*n*c_rep/numPes, MPI_DOUBLE, 0, cdt_rep.cm);
     trep.stop();
     pview pv_2d;
@@ -213,10 +222,14 @@ int main(int argc, char **argv) {
     pv.cworld = cdt_glb;
 
     sym_full2band_3d(loc_A, n/pr, n, b_agg, bw, b, &pv);
+    iter_times[iter] += MPI_Wtime();
+    if (qr && myRank == 0){
+      printf("%ld %d %ld %ld %ld %d full2band_3d %lf\n", n, p, b, bw, b_agg, c_rep, iter_times[iter]);
+    }
   }
   time = MPI_Wtime()-time;
   ep1.end();
-  if(myRank == 0){
+  if(!qt && myRank == 0){
     printf("Completed %u iterations of 2.5D full to band\n", iter);
     printf("2.5D CANDMC full to band n = %ld bw = %ld b_agg = %ld b = %ld p = %d c = %d: sec/iteration: %lf ", n, bw, b_agg, b, numPes, c_rep, time/niter);
     printf("Gigaflops (4/3)n^3: %lf\n", ((4./3.)*n*n*n)/(time/niter)*1E-9);
