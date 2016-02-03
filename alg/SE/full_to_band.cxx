@@ -95,7 +95,8 @@ void sym_full2band(double  * A,
   // 2D QR on n-b by b rectangle, aggregate Y on each column 
   // FIXME: (could use smaller block size here and not aggregated Y)
   pview qr_pv = *pv;
-  QR_2D(A+loc_row_offset, lda_A, n-b, b, b_sub, &qr_pv, Y, mb);
+  //QR_2D(A+loc_row_offset, lda_A, n-b, b, b_sub, &qr_pv, Y, mb);
+  QR_2D_pipe(A+loc_row_offset, lda_A, n-b, b, b_sub, &qr_pv, Y, mb);
 
   // FIXME: this T was already computed within routine above
   // invT is replicated everywhere

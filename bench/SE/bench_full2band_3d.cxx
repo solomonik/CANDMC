@@ -18,7 +18,7 @@ char* getopt(char ** begin, char ** end, const std::string & option){
 }
 
 int main(int argc, char **argv) {
-  int myRank, numPes, pr, pc, ipr, ipc, j, iter, niter;
+  int myRank, numPes, pr, pc, ipr, ipc, j, iter, niter, qt;
   int64_t n, b, i, b_agg, bw;
   double * loc_A;
   int ictxt_lyr, ictxt_rect, info, iam, inprocs;
@@ -223,8 +223,8 @@ int main(int argc, char **argv) {
 
     sym_full2band_3d(loc_A, n/pr, n, b_agg, bw, b, &pv);
     iter_times[iter] += MPI_Wtime();
-    if (qr && myRank == 0){
-      printf("%ld %d %ld %ld %ld %d full2band_3d %lf\n", n, p, b, bw, b_agg, c_rep, iter_times[iter]);
+    if (qt && myRank == 0){
+      printf("%ld %d %ld %ld %ld %d full2band_3d %lf\n", n, numPes, b, bw, b_agg, c_rep, iter_times[iter]);
     }
   }
   time = MPI_Wtime()-time;

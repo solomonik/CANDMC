@@ -535,7 +535,7 @@ DMatrix DMatrix::foldcols(int64_t factor){
 
   int64_t mnrow = get_mynrow();
   int64_t mncol = get_myncol();
-  LIBT_ASSERT(mnrow % (b*factor) == 0);
+  //LIBT_ASSERT(mnrow % (b*factor) == 0);
   int64_t brow = mnrow / factor;
   //FIXME copies some extra stuff
   DMatrix ctg = get_contig();
@@ -672,6 +672,7 @@ char DMatrix::get_tp(){
   else return 'N';
 }
 
+//#define AG_TSQR
 /**
  * \brief constructor immediately computes QR
  * \param[in] A matrix to compute the QR of
@@ -688,7 +689,37 @@ DQRMatrix::DQRMatrix(DMatrix A){
   pview pv_cpy = Y.pv;
   //QR_2D(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0);
   //QR_scala_2D(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0, Y.desc, Y, 1, 1);
+#ifdef AG_TSQR
+  double * gY;
+  if (pv_cpy.crow.rank == 0)
+    gY = (double*)malloc(Y.lda*Y.ncol*sizeof(double));
+  printf("lda = %ld myncol = %ld ncol = %ld nrow = %d\n",Y.lda,A.get_myncol(),Y.ncol,pv_cpy.crow.np);
+  MPI_Gather(Y.data, Y.lda*A.get_myncol(), MPI_DOUBLE, gY, Y.lda*A.get_myncol(), MPI_DOUBLE, 0, pv_cpy.crow.cm);
+  int desc[9];
+  int info;
+  cdescinit(desc, Y.nrow, Y.ncol,
+            Y.b, Y.ncol,
+            pv_cpy.rrow, pv_cpy.rcol,
+            pv_cpy.ictxt, Y.lda, 
+            &info);
+//  QR_scala_2D(gY, Y.lda, Y.nrow, Y.ncol, Y.ncol, &pv_cpy, NULL, 0, desc, gY, 1, 1);
+//  if (pv_cpy.crow.rank == 0){
+    double * T = (double*)malloc((desc[2]+desc[3]+Y.ncol*Y.ncol)*sizeof(double));
+    int64_t lwork = Y.lda*Y.ncol+2*Y.ncol*Y.ncol;
+    double * work = (double*)malloc(lwork*sizeof(double));
+    cpdgeqrf(Y.nrow,Y.ncol,gY,1,1,desc,T,work,lwork,&info);
+    free(T);
+    free(work);
+  //}//  if (pv_Cpy.ccol.rank == 0)
+ // if (pv_cpy.crow.rank == 0){
+//    double * W = (double*)malloc(Y.ncol*Y.ncol*sizeof(double));
+//    hh_recon_qr(gY, Y.lda, Y.nrow, Y.ncol, W, &pv_cpy, NULL, 0);
+  MPI_Scatter(gY, Y.lda*A.get_myncol(), MPI_DOUBLE, Y.data, Y.lda*A.get_myncol(), MPI_DOUBLE, 0, pv_cpy.crow.cm);
+  if (pv_cpy.crow.rank == 0)
+    free(gY);
+#else
   QR_2D_pipe(Y.data, Y.lda, Y.nrow, Y.ncol, Y.b, &pv_cpy, NULL, 0, NULL, NULL);
+#endif
   //printf("slicing %d by %d R\n", Y.ncol, Y.ncol);
   R = Y.slice(0,Y.ncol,0,Y.ncol).get_contig();
   R.zero_lower_tri();
