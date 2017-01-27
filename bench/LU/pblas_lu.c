@@ -21,17 +21,17 @@ void Cblacs_get(int,int,int*);
 
 int Cblacs_gridinit(int*,char*,int,int);
 
-void descinit(int *, const int *,
-                const int *, const int *,
-                const int *, const int *,
-                const int *, const int *,
-                const int *, int *);
+void descinit(int *,  int *,
+                 int *,  int *,
+                 int *,  int *,
+                 int *,  int *,
+                 int *, int *);
 
 static void cdesc_init(int * desc, 
-                      const int m,      const int n,
-                      const int mb,     const int nb,
-                      const int irsrc,  const int icsrc,
-                      const int ictxt,  const int LLD,
+                       int m,       int n,
+                       int mb,      int nb,
+                       int irsrc,   int icsrc,
+                       int ictxt,   int LLD,
                                         int * info){
   descinit(desc,&m,&n,&mb,&nb,&irsrc,&icsrc,
              &ictxt, &LLD, info);
@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
   MPI_Request req[4];
   MPI_Status status[4];
 
-  const  int log_numPes = uint_log2(numPes);
+    int log_numPes = uint_log2(numPes);
 
 
   if (argc < 4 || argc > 5) {
@@ -72,12 +72,12 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
-  const  int log_matrixDim = atoi(argv[1]);
-  const  int log_blockDim = atoi(argv[2]);
-  const  int log_sbDim = atoi(argv[3]);
-  const  int matrixDim = 1<<log_matrixDim;
-  const  int blockDim = 1<<log_blockDim;
-  const  int sbDim = 1<<log_sbDim;
+    int log_matrixDim = atoi(argv[1]);
+    int log_blockDim = atoi(argv[2]);
+    int log_sbDim = atoi(argv[3]);
+    int matrixDim = 1<<log_matrixDim;
+    int blockDim = 1<<log_blockDim;
+    int sbDim = 1<<log_sbDim;
 
   int num_iter;
   if (argc > 4) num_iter = atoi(argv[4]);
@@ -104,8 +104,8 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
-  const  int log_num_blocks_dim = log_matrixDim - log_blockDim;
-  const  int num_blocks_dim = 1<<log_num_blocks_dim;
+    int log_num_blocks_dim = log_matrixDim - log_blockDim;
+    int num_blocks_dim = 1<<log_num_blocks_dim;
 
   if (myRank == 0){
     printf("NUM X BLOCKS IS %d\n", num_blocks_dim);
@@ -117,9 +117,9 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
-   int const myRow = myRank / num_blocks_dim;
-   int const myCol = myRank % num_blocks_dim;
-   int iter, i, j, k, l, blk_row, blk_col, blk_row_offset, write_offset, offset;
+  int  myRow = myRank / num_blocks_dim;
+  int  myCol = myRank % num_blocks_dim;
+  int iter, i, j, k, l, blk_row, blk_col, blk_row_offset, write_offset, offset;
 
   double * mat_A = (double*)malloc(blockDim*blockDim*sizeof(double));
   int * mat_P = (int*)malloc(2*matrixDim*sizeof(int));
@@ -146,7 +146,7 @@ int main(int argc, char **argv) {
   double startTime, endTime, totalTime;
   totalTime = 0.0;
   for (iter=0; iter < num_iter; iter++){
-    srand48(1234);
+    srand48(1234*myRank);
     for (i=0; i < blockDim; i++){
       for (j=0; j < blockDim; j++){
         mat_A[i*blockDim+j] = drand48();
