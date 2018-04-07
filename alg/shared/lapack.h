@@ -347,6 +347,16 @@ void cpdtrsm(char   SIDE,
              int    JB,
              int *   DESCB);
 
+void cpdgetrf(int m,     int n,
+                     double *A, int ia,
+                     int ja,    int * desca,
+                     int *IPIV, int * info);
+
+void cpdpotrf(char uplo, int n,
+                     double *A, int ia,
+                     int ja,    int * desca,
+                     int * info);
+
 void cpdgeqrf(int  M,
               int  N,
               double *  A,

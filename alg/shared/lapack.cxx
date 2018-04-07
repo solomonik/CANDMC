@@ -832,8 +832,10 @@ void cdtrtri(char     UPLO,
 #define PDSYEVX   pdsyevx
 #define PDLATRD   pdlatrd
 #define PDSYTRD   pdsytrd
+#define PDPOTRF   pdpotrf
 #define PDGEQRF   pdgeqrf
 #define PZGEQRF   pzgeqrf
+#define PDGETRF   pdgetrf
 #define PDORGQR   pdorgqr
 #define PZORGQR   pzungqr
 #else
@@ -844,6 +846,8 @@ void cdtrtri(char     UPLO,
 #define PDSYEVX   pdsyevx_
 #define PDLATRD   pdlatrd_
 #define PDSYTRD   pdsytrd_
+#define PDGETRF   pdgetrf_
+#define PDPOTRF   pdpotrf_
 #define PDGEQRF   pdgeqrf_
 #define PZGEQRF   pzgeqrf_
 #define PDORGQR   pdorgqr_
@@ -900,6 +904,24 @@ extern "C"{
               int *   JB,
               int *   DESCB); 
   
+  void PDPOTRF(
+               char* uplo,
+               int  *  N,
+               double *     A,
+               int  *  IA,
+               int  *  JA,
+               int *  DESCA,
+               int *        INFO);
+
+  void PDGETRF(int  *  M,
+               int  *  N,
+               double *     A,
+               int  *  IA,
+               int  *  JA,
+               int *  DESCA,
+               int  *  LWORK,
+               int *        INFO);
+
   void PDGEQRF(int  *  M,
                int  *  N,
                double *     A,
@@ -1070,6 +1092,20 @@ void cpdtrsm(char   SIDE,
              int    JB,
              int *   DESCB){
   PDTRSM(&SIDE, &UPLO, &TRANS, &DIAG, &M, &N, &ALPHA, A, &IA, &JA, DESCA, B, &IB, &JB, DESCB);
+}
+
+void cpdpotrf(char uplo, int n,
+                     double *A, int ia,
+                     int ja,    int * desca,
+                     int * info){
+  PDPOTRF(&uplo,&n,A,&ia,&ja,desca,info);
+}
+
+void cpdgetrf(int m,     int n,
+                     double *A, int ia,
+                     int ja,    int * desca,
+                     int *IPIV, int * info){
+  PDGETRF(&m,&n,A,&ia,&ja,desca,IPIV,info);
 }
 
 void cpdgeqrf(int  M,
