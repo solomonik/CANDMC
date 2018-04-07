@@ -1,0 +1,1249 @@
+1586-534 (I) Loop (loop index 1) at spcannon_internal.h <line 66> was not SIMD vectorized because the loop is not the innermost loop.
+1586-535 (I) Loop (loop index 2) at spcannon_internal.h <line 67> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 2) at spcannon_internal.h <line 67> was not SIMD vectorized because it contains memory references buf_B->(double).rns5.[(long long) n * $$CIV3 + $$CIV2] = B->(double).rns6.[$$CIV3 + (long long) k * $$CIV2]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 2) at spcannon_internal.h <line 68> was not SIMD vectorized because it contains memory references ((char *)B + (8ll)*($$CIV3 + (long long) k * $$CIV2)) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 2) at spcannon_internal.h <line 68> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-534 (I) Loop (loop index 3) at spcannon_internal.h <line 66> was not SIMD vectorized because the loop is not the innermost loop.
+1586-535 (I) Loop (loop index 4) at spcannon_internal.h <line 67> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 4) at spcannon_internal.h <line 67> was not SIMD vectorized because it contains memory references buf_A->(double).rns1.[(long long) m * $$CIV1 + $$CIV0] = A->(double).rns2.[$$CIV1 + (long long) k * $$CIV0]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 4) at spcannon_internal.h <line 68> was not SIMD vectorized because it contains memory references ((char *)A + (8ll)*($$CIV1 + (long long) k * $$CIV0)) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 4) at spcannon_internal.h <line 68> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-534 (I) Loop (loop index 1) at spcannon_internal.h <line 66> was not SIMD vectorized because the loop is not the innermost loop.
+1586-535 (I) Loop (loop index 2) at spcannon_internal.h <line 67> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 2) at spcannon_internal.h <line 67> was not SIMD vectorized because it contains memory references buf_B->(double).rns21.[(long long) n * $$CIV7 + $$CIV6] = B->(double).rns22.[$$CIV7 + (long long) k * $$CIV6]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 2) at spcannon_internal.h <line 68> was not SIMD vectorized because it contains memory references ((char *)B + (8ll)*($$CIV7 + (long long) k * $$CIV6)) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 2) at spcannon_internal.h <line 68> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-534 (I) Loop (loop index 3) at spcannon_internal.h <line 66> was not SIMD vectorized because the loop is not the innermost loop.
+1586-535 (I) Loop (loop index 4) at spcannon_internal.h <line 67> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 4) at spcannon_internal.h <line 67> was not SIMD vectorized because it contains memory references buf_A->(double).rns17.[(long long) m * $$CIV5 + $$CIV4] = A->(double).rns18.[$$CIV5 + (long long) k * $$CIV4]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 4) at spcannon_internal.h <line 68> was not SIMD vectorized because it contains memory references ((char *)A + (8ll)*($$CIV5 + (long long) k * $$CIV4)) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 4) at spcannon_internal.h <line 68> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at spcannon.cxx <line 57> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at spcannon.cxx <line 110> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at spcannon.cxx <line 126> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at spcannon.cxx <line 110> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at spcannon.cxx <line 126> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at spcannon.cxx <line 110> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at spcannon.cxx <line 110> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"4">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at spcannon.cxx <line 188> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at spcannon.cxx <line 204> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at spcannon.cxx <line 188> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at spcannon.cxx <line 204> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at spcannon.cxx <line 188> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at spcannon.cxx <line 188> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"4">. Total number of the innermost loops SIMD vectorized <"0">.
+   237 |  void kput_cannon(int, int, int, int, int, int, int, char, double, double*, char, double, double*, double*)(int rank, int kary, int ndim, int comm, int n, int m, int k, char transp_A, double alpha, long long *A, char transp_B, double beta, long long *B, char * C)
+   250 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__23 = 1;
+   254 |    if (0 == k % ndim) goto lab_4;
+            __assert_fail("k%ndim == 0","spcannon.cxx",254u,&__func__)
+            return;
+          lab_4:
+   257 |    posix_memalign(&buf_A,16ull,(unsigned long long) (m * k) * 8ull);
+   258 |    posix_memalign(&buf_B,16ull,(unsigned long long) (n * k) * 8ull);
+   262 |    if (84 == (int) transp_A) goto lab_6;
+            if (!(116 == (int) transp_A)) goto lab_5;
+          lab_6:
+    66 |    if (!(0 < k)) goto lab_10;
+            if (!(0 < m)) goto lab_55;
+            if (!1) goto lab_54;
+            $$CIV1 = 0ll;
+            do {   /* id=3 guarded */ /* ~8 */ 
+              /* region = 38 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_13;
+              $$CIV0 = 0ll;
+              do {   /* id=4 guarded */ /* ~11 */ 
+                /* region = 37 */
+                /* bump-normalized */
+    68 |        buf_A[(long long) m * $$CIV1 + $$CIV0] = A[$$CIV1 + (long long) k * $$CIV0];
+    67 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) m));    /* ~11 */
+            lab_13:
+    66 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) k));    /* ~8 */
+          lab_54:
+          lab_55:
+          lab_10:
+    71 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   264 |  lab_5:
+   265 |    if (78 == (int) transp_B) goto lab_15;
+            if (!(110 == (int) transp_B)) goto lab_14;
+          lab_15:
+    66 |    if (!(0 < k)) goto lab_19;
+            if (!(0 < n)) goto lab_52;
+            if (!1) goto lab_51;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~17 */ 
+              /* region = 40 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_22;
+              $$CIV2 = 0ll;
+              do {   /* id=2 guarded */ /* ~20 */ 
+                /* region = 39 */
+                /* bump-normalized */
+    68 |        buf_B[(long long) n * $$CIV3 + $$CIV2] = B[$$CIV3 + (long long) k * $$CIV2];
+    67 |        $$CIV2 = $$CIV2 + 1ll;
+              } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) n));    /* ~20 */
+            lab_22:
+    66 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) k));    /* ~17 */
+          lab_51:
+          lab_52:
+          lab_19:
+    71 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   267 |  lab_14:
+   270 |    MPI_Win_create(buf_A,(long long) ((unsigned long long) (m * k) * 8ull),8,469762048,1140850688,&win_A);
+   272 |    MPI_Win_create(buf_B,(long long) ((unsigned long long) (n * k) * 8ull),8,469762048,1140850688,&win_B);
+   274 |    MPI_Win_fence(0,win_A);
+   275 |    MPI_Win_fence(0,win_B);
+   278 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   279 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,0,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+   282 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   285 |    CTF_Timer::CTF_Timer(char const*)(&t,"bdr_shift");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   286 |    bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,0,comm,n,m,k,alpha,A,buf_A,win_A,beta,B,buf_B,win_B,C)
+   289 |    CTF_Timer::CTF_Timer(char const*)(&t,"bdr_shift");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   291 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        32            66             3    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+        32            67             4    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+        32            68                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)A + (8ll)*($$CIV1 + (long 
+                                          long) k * $$CIV0)) with  non-vectorizable strides.
+        32            68                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+        32            66             1    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+        32            67             2    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+        32            68                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)B + (8ll)*($$CIV3 + (long 
+                                          long) k * $$CIV2)) with  non-vectorizable strides.
+        32            68                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+
+   293 |  void kuni_cannon(int, int, int, int, int, int, int, char, double, double*, char, double, double*, double*)(int rank, int kary, int ndim, int comm, int n, int m, int k, char transp_A, double alpha, long long *A, char transp_B, double beta, long long *B, char * C)
+   306 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__23 = 1;
+   310 |    if (0 == k % ndim) goto lab_4;
+            __assert_fail("k%ndim == 0","spcannon.cxx",310u,&__func__)
+            return;
+          lab_4:
+   313 |    posix_memalign(&buf_A,16ull,(unsigned long long) (m * k) * 8ull);
+   314 |    posix_memalign(&buf_B,16ull,(unsigned long long) (n * k) * 8ull);
+   318 |    if (84 == (int) transp_A) goto lab_6;
+            if (!(116 == (int) transp_A)) goto lab_5;
+          lab_6:
+    66 |    if (!(0 < k)) goto lab_10;
+            if (!(0 < m)) goto lab_55;
+            if (!1) goto lab_54;
+            $$CIV5 = 0ll;
+            do {   /* id=3 guarded */ /* ~8 */ 
+              /* region = 38 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_13;
+              $$CIV4 = 0ll;
+              do {   /* id=4 guarded */ /* ~11 */ 
+                /* region = 37 */
+                /* bump-normalized */
+    68 |        buf_A[(long long) m * $$CIV5 + $$CIV4] = A[$$CIV5 + (long long) k * $$CIV4];
+    67 |        $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) m));    /* ~11 */
+            lab_13:
+    66 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) k));    /* ~8 */
+          lab_54:
+          lab_55:
+          lab_10:
+    71 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   320 |  lab_5:
+   321 |    if (78 == (int) transp_B) goto lab_15;
+            if (!(110 == (int) transp_B)) goto lab_14;
+          lab_15:
+    66 |    if (!(0 < k)) goto lab_19;
+            if (!(0 < n)) goto lab_52;
+            if (!1) goto lab_51;
+            $$CIV7 = 0ll;
+            do {   /* id=1 guarded */ /* ~17 */ 
+              /* region = 40 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_22;
+              $$CIV6 = 0ll;
+              do {   /* id=2 guarded */ /* ~20 */ 
+                /* region = 39 */
+                /* bump-normalized */
+    68 |        buf_B[(long long) n * $$CIV7 + $$CIV6] = B[$$CIV7 + (long long) k * $$CIV6];
+    67 |        $$CIV6 = $$CIV6 + 1ll;
+              } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) n));    /* ~20 */
+            lab_22:
+    66 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) ((long long) k));    /* ~17 */
+          lab_51:
+          lab_52:
+          lab_19:
+    71 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   323 |  lab_14:
+   326 |    MPI_Win_create(buf_A,(long long) ((unsigned long long) (m * k) * 8ull),8,469762048,1140850688,&win_A);
+   328 |    MPI_Win_create(buf_B,(long long) ((unsigned long long) (n * k) * 8ull),8,469762048,1140850688,&win_B);
+   330 |    MPI_Win_fence(0,win_A);
+   331 |    MPI_Win_fence(0,win_B);
+   334 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   335 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,0,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+   338 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   341 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_shift");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   342 |    uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,0,comm,n,m,k,alpha,A,buf_A,win_A,beta,B,buf_B,win_B,C)
+   345 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_shift");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   347 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        32            66             3    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+        32            67             4    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+        32            68                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)A + (8ll)*($$CIV5 + (long 
+                                          long) k * $$CIV4)) with  non-vectorizable strides.
+        32            68                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+        32            66             1    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+        32            67             2    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+        32            68                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)B + (8ll)*($$CIV7 + (long 
+                                          long) k * $$CIV6)) with  non-vectorizable strides.
+        32            68                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+
+    33 |  void uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, char * A, char * buf_A, int win_A, char * B, char * buf_B, int win_B)
+    46 |  {
+    55 |    MPI_Win_fence(0,win_A);
+    56 |    MPI_Win_fence(0,win_B);
+    57 |    if (!(0 < ndim / 2)) goto lab_3;
+    52 |    tr = rank;
+    53 |    s = 1;
+    57 |    $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 11 */
+              /* bump-normalized */
+    59 |      tA = tr % kary;
+    61 |      tB = (tr / kary) % kary;
+    62 |      tr = (tr / kary) / kary;
+    64 |      MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + (((tA - tB) + kary) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+    69 |      MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + ((((tB - tA) + kary) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+    72 |      s = s * (kary * kary);
+    57 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) (ndim / 2)));    /* ~1 */
+          lab_3:
+    74 |    MPI_Win_fence(0,win_A);
+    75 |    MPI_Win_fence(0,win_B);
+    76 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+    77 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+    79 |    if (!(level < ndim / 2 - 1)) goto lab_4;
+    80 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,level + 1,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+    83 |  lab_4:
+    84 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            57             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    87 |  void bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, double alpha, char * A, char * buf_A, int win_A, double beta, char * B, char * buf_B, int win_B, char * C)
+   103 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   110 |    if (!(0 < kary)) goto lab_3;
+   105 |    dbeta = beta;
+   110 |    if (!(0 < ndim / 2)) goto lab_41;
+            if (!(level < ndim / 2 - 1)) goto lab_33;
+            if (!1) goto lab_32;
+            $$CIVA = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 38 */
+              /* bump-normalized */
+   112 |      bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   126 |      if (!1) goto lab_15;
+   124 |      tr = rank;
+   125 |      s = 1;
+   126 |      $$CIV9 = 0ll;
+              do {   /* id=2 guarded */ /* ~13 */ 
+                /* region = 37 */
+                /* bump-normalized */
+   128 |        tA = tr % kary;
+   130 |        tB = (tr / kary) % kary;
+   131 |        tr = (tr / kary) / kary;
+   139 |        MPI_Put(((char *)A  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))) * 8ll),(m * k) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))),(m * k) / ndim,1275070475,win_A);
+   142 |        MPI_Put(((char *)A  + (long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(m * k) / ndim,1275070475,rank + (((tA + kary) - 1) % kary - tA) * s,(long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(m * k) / ndim,1275070475,win_A);
+   147 |        MPI_Put(((char *)B  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))) * 8ll),(n * k) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))),(n * k) / ndim,1275070475,win_B);
+   150 |        MPI_Put(((char *)B  + (long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(n * k) / ndim,1275070475,rank + ((((tB + kary) - 1) % kary - tB) * s) * kary,(long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(n * k) / ndim,1275070475,win_B);
+   153 |        s = s * (kary * kary);
+   126 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((long long) (ndim / 2)));    /* ~13 */
+            lab_15:
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~1 */
+          lab_32:
+            goto lab_42;
+          lab_33:
+            if (!1) goto lab_40;
+            $$CIVA = 0ll;
+            do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 40 */
+              /* bump-normalized */
+   116 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   117 |      __68 = 78u;
+              __69 = 84u;
+              __70 = m;
+              __71 = n;
+              __72 = k;
+              __73 = alpha;
+              __75 = m;
+              __77 = n;
+              __78 = dbeta;
+              __80 = m;
+    58 |      dgemm_(&__68,&__69,&__70,&__71,&__72,&__73,A,&__75,B,&__77,&__78,C,&__80)
+   118 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   126 |      if (!1) goto lab_39;
+   124 |      tr = rank;
+   125 |      s = 1;
+   126 |      $$CIV9 = 0ll;
+              do {   /* id=4 guarded */ /* ~38 */ 
+                /* region = 39 */
+                /* bump-normalized */
+   128 |        tA = tr % kary;
+   130 |        tB = (tr / kary) % kary;
+   131 |        tr = (tr / kary) / kary;
+   139 |        MPI_Put(((char *)A  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))) * 8ll),(m * k) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))),(m * k) / ndim,1275070475,win_A);
+   142 |        MPI_Put(((char *)A  + (long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(m * k) / ndim,1275070475,rank + (((tA + kary) - 1) % kary - tA) * s,(long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(m * k) / ndim,1275070475,win_A);
+   147 |        MPI_Put(((char *)B  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))) * 8ll),(n * k) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))),(n * k) / ndim,1275070475,win_B);
+   150 |        MPI_Put(((char *)B  + (long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(n * k) / ndim,1275070475,rank + ((((tB + kary) - 1) % kary - tB) * s) * kary,(long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(n * k) / ndim,1275070475,win_B);
+   153 |        s = s * (kary * kary);
+   126 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((long long) (ndim / 2)));    /* ~38 */
+            lab_39:
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~35 */
+          lab_40:
+            goto lab_42;
+          lab_41:
+            if (!(level < ndim / 2 - 1)) goto lab_49;
+            if (!1) goto lab_48;
+            $$CIVA = 0ll;
+            do {   /* id=5 guarded */ /* ~43 */ 
+              /* region = 41 */
+              /* bump-normalized */
+   112 |      bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~43 */
+          lab_48:
+            goto lab_56;
+          lab_49:
+            if (!1) goto lab_55;
+            $$CIVA = 0ll;
+            do {   /* id=7 guarded */ /* ~50 */ 
+              /* region = 42 */
+              /* bump-normalized */
+   116 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   117 |      __68 = 78u;
+              __69 = 84u;
+              __70 = m;
+              __71 = n;
+              __72 = k;
+              __73 = alpha;
+              __75 = m;
+              __77 = n;
+              __78 = dbeta;
+              __80 = m;
+    58 |      dgemm_(&__68,&__69,&__70,&__71,&__72,&__73,A,&__75,B,&__77,&__78,C,&__80)
+   118 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~50 */
+          lab_55:
+          lab_56:
+          lab_42:
+          lab_3:
+   162 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           110             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           126             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           110             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           126             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           110             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           110             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   165 |  void uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, double alpha, char * A, char * buf_A, int win_A, double beta, char * B, char * buf_B, int win_B, char * C)
+   181 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   188 |    if (!(0 < kary)) goto lab_3;
+   183 |    dbeta = beta;
+   188 |    if (!(0 < ndim / 2)) goto lab_41;
+            if (!(level < ndim / 2 - 1)) goto lab_33;
+            if (!1) goto lab_32;
+            $$CIVC = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 38 */
+              /* bump-normalized */
+   190 |      uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   204 |      if (!1) goto lab_15;
+   202 |      tr = rank;
+   203 |      s = 1;
+   204 |      $$CIVB = 0ll;
+              do {   /* id=2 guarded */ /* ~13 */ 
+                /* region = 37 */
+                /* bump-normalized */
+   206 |        tA = tr % kary;
+   208 |        tB = (tr / kary) % kary;
+   209 |        tr = (tr / kary) / kary;
+   217 |        MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+   222 |        MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+   225 |        s = s * (kary * kary);
+   204 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) (ndim / 2)));    /* ~13 */
+            lab_15:
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~1 */
+          lab_32:
+            goto lab_42;
+          lab_33:
+            if (!1) goto lab_40;
+            $$CIVC = 0ll;
+            do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 40 */
+              /* bump-normalized */
+   194 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   195 |      __84 = 78u;
+              __85 = 84u;
+              __86 = m;
+              __87 = n;
+              __88 = k;
+              __89 = alpha;
+              __91 = m;
+              __93 = n;
+              __94 = dbeta;
+              __96 = m;
+    58 |      dgemm_(&__84,&__85,&__86,&__87,&__88,&__89,A,&__91,B,&__93,&__94,C,&__96)
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   204 |      if (!1) goto lab_39;
+   202 |      tr = rank;
+   203 |      s = 1;
+   204 |      $$CIVB = 0ll;
+              do {   /* id=4 guarded */ /* ~38 */ 
+                /* region = 39 */
+                /* bump-normalized */
+   206 |        tA = tr % kary;
+   208 |        tB = (tr / kary) % kary;
+   209 |        tr = (tr / kary) / kary;
+   217 |        MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+   222 |        MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+   225 |        s = s * (kary * kary);
+   204 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) (ndim / 2)));    /* ~38 */
+            lab_39:
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~35 */
+          lab_40:
+            goto lab_42;
+          lab_41:
+            if (!(level < ndim / 2 - 1)) goto lab_49;
+            if (!1) goto lab_48;
+            $$CIVC = 0ll;
+            do {   /* id=5 guarded */ /* ~43 */ 
+              /* region = 41 */
+              /* bump-normalized */
+   190 |      uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~43 */
+          lab_48:
+            goto lab_56;
+          lab_49:
+            if (!1) goto lab_55;
+            $$CIVC = 0ll;
+            do {   /* id=7 guarded */ /* ~50 */ 
+              /* region = 42 */
+              /* bump-normalized */
+   194 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   195 |      __84 = 78u;
+              __85 = 84u;
+              __86 = m;
+              __87 = n;
+              __88 = k;
+              __89 = alpha;
+              __91 = m;
+              __93 = n;
+              __94 = dbeta;
+              __96 = m;
+    58 |      dgemm_(&__84,&__85,&__86,&__87,&__88,&__89,A,&__91,B,&__93,&__94,C,&__96)
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~50 */
+          lab_55:
+          lab_56:
+          lab_42:
+          lab_3:
+   234 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           188             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           204             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           188             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           204             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           188             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           188             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+   237 |  void kput_cannon(int, int, int, int, int, int, int, char, double, double*, char, double, double*, double*)(int rank, int kary, int ndim, int comm, int n, int m, int k, char transp_A, double alpha, long long *A, char transp_B, double beta, long long *B, char * C)
+   250 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__23 = 1;
+   254 |    if (0 == k % ndim) goto lab_4;
+            __assert_fail("k%ndim == 0","spcannon.cxx",254u,&__func__)
+            return;
+          lab_4:
+   257 |    posix_memalign(&buf_A,16ull,(unsigned long long) (m * k) * 8ull);
+   258 |    posix_memalign(&buf_B,16ull,(unsigned long long) (n * k) * 8ull);
+   262 |    if (84 == (int) transp_A) goto lab_6;
+            if (!(116 == (int) transp_A)) goto lab_5;
+          lab_6:
+    66 |    if (!(0 < k)) goto lab_10;
+            if (!(0 < m)) goto lab_55;
+            if (!1) goto lab_54;
+            $$CIV1 = 0ll;
+            do {   /* id=3 guarded */ /* ~8 */ 
+              /* region = 38 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_13;
+              $$CIV0 = 0ll;
+              do {   /* id=4 guarded */ /* ~11 */ 
+                /* region = 37 */
+                /* bump-normalized */
+    68 |        buf_A[(long long) m * $$CIV1 + $$CIV0] = A[$$CIV1 + (long long) k * $$CIV0];
+    67 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) m));    /* ~11 */
+            lab_13:
+    66 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) k));    /* ~8 */
+          lab_54:
+          lab_55:
+          lab_10:
+    71 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   264 |  lab_5:
+   265 |    if (78 == (int) transp_B) goto lab_15;
+            if (!(110 == (int) transp_B)) goto lab_14;
+          lab_15:
+    66 |    if (!(0 < k)) goto lab_19;
+            if (!(0 < n)) goto lab_52;
+            if (!1) goto lab_51;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~17 */ 
+              /* region = 40 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_22;
+              $$CIV2 = 0ll;
+              do {   /* id=2 guarded */ /* ~20 */ 
+                /* region = 39 */
+                /* bump-normalized */
+    68 |        buf_B[(long long) n * $$CIV3 + $$CIV2] = B[$$CIV3 + (long long) k * $$CIV2];
+    67 |        $$CIV2 = $$CIV2 + 1ll;
+              } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) n));    /* ~20 */
+            lab_22:
+    66 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) k));    /* ~17 */
+          lab_51:
+          lab_52:
+          lab_19:
+    71 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   267 |  lab_14:
+   270 |    MPI_Win_create(buf_A,(long long) ((unsigned long long) (m * k) * 8ull),8,469762048,1140850688,&win_A);
+   272 |    MPI_Win_create(buf_B,(long long) ((unsigned long long) (n * k) * 8ull),8,469762048,1140850688,&win_B);
+   274 |    MPI_Win_fence(0,win_A);
+   275 |    MPI_Win_fence(0,win_B);
+   278 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   279 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,0,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+   282 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   285 |    CTF_Timer::CTF_Timer(char const*)(&t,"bdr_shift");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   286 |    bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,0,comm,n,m,k,alpha,A,buf_A,win_A,beta,B,buf_B,win_B,C)
+   289 |    CTF_Timer::CTF_Timer(char const*)(&t,"bdr_shift");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   291 |    return;
+          } /* function */ 
+
+
+   293 |  void kuni_cannon(int, int, int, int, int, int, int, char, double, double*, char, double, double*, double*)(int rank, int kary, int ndim, int comm, int n, int m, int k, char transp_A, double alpha, long long *A, char transp_B, double beta, long long *B, char * C)
+   306 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__23 = 1;
+   310 |    if (0 == k % ndim) goto lab_4;
+            __assert_fail("k%ndim == 0","spcannon.cxx",310u,&__func__)
+            return;
+          lab_4:
+   313 |    posix_memalign(&buf_A,16ull,(unsigned long long) (m * k) * 8ull);
+   314 |    posix_memalign(&buf_B,16ull,(unsigned long long) (n * k) * 8ull);
+   318 |    if (84 == (int) transp_A) goto lab_6;
+            if (!(116 == (int) transp_A)) goto lab_5;
+          lab_6:
+    66 |    if (!(0 < k)) goto lab_10;
+            if (!(0 < m)) goto lab_55;
+            if (!1) goto lab_54;
+            $$CIV5 = 0ll;
+            do {   /* id=3 guarded */ /* ~8 */ 
+              /* region = 38 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_13;
+              $$CIV4 = 0ll;
+              do {   /* id=4 guarded */ /* ~11 */ 
+                /* region = 37 */
+                /* bump-normalized */
+    68 |        buf_A[(long long) m * $$CIV5 + $$CIV4] = A[$$CIV5 + (long long) k * $$CIV4];
+    67 |        $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) m));    /* ~11 */
+            lab_13:
+    66 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) k));    /* ~8 */
+          lab_54:
+          lab_55:
+          lab_10:
+    71 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   320 |  lab_5:
+   321 |    if (78 == (int) transp_B) goto lab_15;
+            if (!(110 == (int) transp_B)) goto lab_14;
+          lab_15:
+    66 |    if (!(0 < k)) goto lab_19;
+            if (!(0 < n)) goto lab_52;
+            if (!1) goto lab_51;
+            $$CIV7 = 0ll;
+            do {   /* id=1 guarded */ /* ~17 */ 
+              /* region = 40 */
+              /* bump-normalized */
+    67 |      if (!1) goto lab_22;
+              $$CIV6 = 0ll;
+              do {   /* id=2 guarded */ /* ~20 */ 
+                /* region = 39 */
+                /* bump-normalized */
+    68 |        buf_B[(long long) n * $$CIV7 + $$CIV6] = B[$$CIV7 + (long long) k * $$CIV6];
+    67 |        $$CIV6 = $$CIV6 + 1ll;
+              } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) n));    /* ~20 */
+            lab_22:
+    66 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) ((long long) k));    /* ~17 */
+          lab_51:
+          lab_52:
+          lab_19:
+    71 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   323 |  lab_14:
+   326 |    MPI_Win_create(buf_A,(long long) ((unsigned long long) (m * k) * 8ull),8,469762048,1140850688,&win_A);
+   328 |    MPI_Win_create(buf_B,(long long) ((unsigned long long) (n * k) * 8ull),8,469762048,1140850688,&win_B);
+   330 |    MPI_Win_fence(0,win_A);
+   331 |    MPI_Win_fence(0,win_B);
+   334 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   335 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,0,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+   338 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_stagger");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   341 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_shift");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   342 |    uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,0,comm,n,m,k,alpha,A,buf_A,win_A,beta,B,buf_B,win_B,C)
+   345 |    CTF_Timer::CTF_Timer(char const*)(&t,"uni_shift");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   347 |    return;
+          } /* function */ 
+
+
+    33 |  void uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, char * A, char * buf_A, int win_A, char * B, char * buf_B, int win_B)
+    46 |  {
+    55 |    MPI_Win_fence(0,win_A);
+    56 |    MPI_Win_fence(0,win_B);
+    57 |    if (!(0 < ndim / 2)) goto lab_3;
+    52 |    tr = rank;
+    53 |    s = 1;
+    57 |    $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 11 */
+              /* bump-normalized */
+    59 |      tA = tr % kary;
+    61 |      tB = (tr / kary) % kary;
+    62 |      tr = (tr / kary) / kary;
+    64 |      MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + (((tA - tB) + kary) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+    69 |      MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + ((((tB - tA) + kary) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIV8) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+    72 |      s = s * (kary * kary);
+    57 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) (ndim / 2)));    /* ~1 */
+          lab_3:
+    74 |    MPI_Win_fence(0,win_A);
+    75 |    MPI_Win_fence(0,win_B);
+    76 |    __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+    77 |    __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+    79 |    if (!(level < ndim / 2 - 1)) goto lab_4;
+    80 |    uni_stagger(int, int, int, int, int, int, int, int, double*, double*, int, double*, double*, int)(rank,kary,ndim,level + 1,comm,n,m,k,A,buf_A,win_A,B,buf_B,win_B)
+    83 |  lab_4:
+    84 |    return;
+          } /* function */ 
+
+
+    87 |  void bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, double alpha, char * A, char * buf_A, int win_A, double beta, char * B, char * buf_B, int win_B, char * C)
+   103 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   110 |    if (!(0 < kary)) goto lab_3;
+   105 |    dbeta = beta;
+   110 |    if (!(0 < ndim / 2)) goto lab_41;
+            if (!(level < ndim / 2 - 1)) goto lab_33;
+            if (!1) goto lab_32;
+            $$CIVA = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 38 */
+              /* bump-normalized */
+   112 |      bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   126 |      if (!1) goto lab_15;
+   124 |      tr = rank;
+   125 |      s = 1;
+   126 |      $$CIV9 = 0ll;
+              do {   /* id=2 guarded */ /* ~13 */ 
+                /* region = 37 */
+                /* bump-normalized */
+   128 |        tA = tr % kary;
+   130 |        tB = (tr / kary) % kary;
+   131 |        tr = (tr / kary) / kary;
+   139 |        MPI_Put(((char *)A  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))) * 8ll),(m * k) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))),(m * k) / ndim,1275070475,win_A);
+   142 |        MPI_Put(((char *)A  + (long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(m * k) / ndim,1275070475,rank + (((tA + kary) - 1) % kary - tA) * s,(long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(m * k) / ndim,1275070475,win_A);
+   147 |        MPI_Put(((char *)B  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))) * 8ll),(n * k) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))),(n * k) / ndim,1275070475,win_B);
+   150 |        MPI_Put(((char *)B  + (long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(n * k) / ndim,1275070475,rank + ((((tB + kary) - 1) % kary - tB) * s) * kary,(long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(n * k) / ndim,1275070475,win_B);
+   153 |        s = s * (kary * kary);
+   126 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((long long) (ndim / 2)));    /* ~13 */
+            lab_15:
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~1 */
+          lab_32:
+            goto lab_42;
+          lab_33:
+            if (!1) goto lab_40;
+            $$CIVA = 0ll;
+            do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 40 */
+              /* bump-normalized */
+   116 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   117 |      __68 = 78u;
+              __69 = 84u;
+              __70 = m;
+              __71 = n;
+              __72 = k;
+              __73 = alpha;
+              __75 = m;
+              __77 = n;
+              __78 = dbeta;
+              __80 = m;
+    58 |      dgemm_(&__68,&__69,&__70,&__71,&__72,&__73,A,&__75,B,&__77,&__78,C,&__80)
+   118 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   126 |      if (!1) goto lab_39;
+   124 |      tr = rank;
+   125 |      s = 1;
+   126 |      $$CIV9 = 0ll;
+              do {   /* id=4 guarded */ /* ~38 */ 
+                /* region = 39 */
+                /* bump-normalized */
+   128 |        tA = tr % kary;
+   130 |        tB = (tr / kary) % kary;
+   131 |        tr = (tr / kary) / kary;
+   139 |        MPI_Put(((char *)A  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))) * 8ll),(m * k) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((m * k) / ndim))),(m * k) / ndim,1275070475,win_A);
+   142 |        MPI_Put(((char *)A  + (long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(m * k) / ndim,1275070475,rank + (((tA + kary) - 1) % kary - tA) * s,(long long) (((m * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(m * k) / ndim,1275070475,win_A);
+   147 |        MPI_Put(((char *)B  + (long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))) * 8ll),(n * k) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (2 * (((level + (int) $$CIV9) % (ndim / 2)) * ((n * k) / ndim))),(n * k) / ndim,1275070475,win_B);
+   150 |        MPI_Put(((char *)B  + (long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)) * 8ll),(n * k) / ndim,1275070475,rank + ((((tB + kary) - 1) % kary - tB) * s) * kary,(long long) (((n * k) / ndim) * (((level + (int) $$CIV9) % (ndim / 2)) * 2 + 1)),(n * k) / ndim,1275070475,win_B);
+   153 |        s = s * (kary * kary);
+   126 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((long long) (ndim / 2)));    /* ~38 */
+            lab_39:
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~35 */
+          lab_40:
+            goto lab_42;
+          lab_41:
+            if (!(level < ndim / 2 - 1)) goto lab_49;
+            if (!1) goto lab_48;
+            $$CIVA = 0ll;
+            do {   /* id=5 guarded */ /* ~43 */ 
+              /* region = 41 */
+              /* bump-normalized */
+   112 |      bdr_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~43 */
+          lab_48:
+            goto lab_56;
+          lab_49:
+            if (!1) goto lab_55;
+            $$CIVA = 0ll;
+            do {   /* id=7 guarded */ /* ~50 */ 
+              /* region = 42 */
+              /* bump-normalized */
+   116 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   117 |      __68 = 78u;
+              __69 = 84u;
+              __70 = m;
+              __71 = n;
+              __72 = k;
+              __73 = alpha;
+              __75 = m;
+              __77 = n;
+              __78 = dbeta;
+              __80 = m;
+    58 |      dgemm_(&__68,&__69,&__70,&__71,&__72,&__73,A,&__75,B,&__77,&__78,C,&__80)
+   118 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   120 |      dbeta =  1.0000000000000000E+000;
+   122 |      MPI_Win_fence(0,win_A);
+   123 |      MPI_Win_fence(0,win_B);
+   156 |      MPI_Win_fence(0,win_A);
+   157 |      MPI_Win_fence(0,win_B);
+   159 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   160 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   110 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) kary));    /* ~50 */
+          lab_55:
+          lab_56:
+          lab_42:
+          lab_3:
+   162 |    return;
+          } /* function */ 
+
+
+   165 |  void uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(int rank, int kary, int ndim, int level, int comm, int n, int m, int k, double alpha, char * A, char * buf_A, int win_A, double beta, char * B, char * buf_B, int win_B, char * C)
+   181 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   188 |    if (!(0 < kary)) goto lab_3;
+   183 |    dbeta = beta;
+   188 |    if (!(0 < ndim / 2)) goto lab_41;
+            if (!(level < ndim / 2 - 1)) goto lab_33;
+            if (!1) goto lab_32;
+            $$CIVC = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 38 */
+              /* bump-normalized */
+   190 |      uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   204 |      if (!1) goto lab_15;
+   202 |      tr = rank;
+   203 |      s = 1;
+   204 |      $$CIVB = 0ll;
+              do {   /* id=2 guarded */ /* ~13 */ 
+                /* region = 37 */
+                /* bump-normalized */
+   206 |        tA = tr % kary;
+   208 |        tB = (tr / kary) % kary;
+   209 |        tr = (tr / kary) / kary;
+   217 |        MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+   222 |        MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+   225 |        s = s * (kary * kary);
+   204 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) (ndim / 2)));    /* ~13 */
+            lab_15:
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~1 */
+          lab_32:
+            goto lab_42;
+          lab_33:
+            if (!1) goto lab_40;
+            $$CIVC = 0ll;
+            do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 40 */
+              /* bump-normalized */
+   194 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   195 |      __84 = 78u;
+              __85 = 84u;
+              __86 = m;
+              __87 = n;
+              __88 = k;
+              __89 = alpha;
+              __91 = m;
+              __93 = n;
+              __94 = dbeta;
+              __96 = m;
+    58 |      dgemm_(&__84,&__85,&__86,&__87,&__88,&__89,A,&__91,B,&__93,&__94,C,&__96)
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   204 |      if (!1) goto lab_39;
+   202 |      tr = rank;
+   203 |      s = 1;
+   204 |      $$CIVB = 0ll;
+              do {   /* id=4 guarded */ /* ~38 */ 
+                /* region = 39 */
+                /* bump-normalized */
+   206 |        tA = tr % kary;
+   208 |        tB = (tr / kary) % kary;
+   209 |        tr = (tr / kary) / kary;
+   217 |        MPI_Put(((char *)A  + (long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (m * k)) / ndim,1275070475,rank + ((1 + (tA + kary)) % kary - tA) * s,(long long) (((2 * (m * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (m * k)) / ndim,1275070475,win_A);
+   222 |        MPI_Put(((char *)B  + (long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))) * 8ll),(2 * (n * k)) / ndim,1275070475,rank + (((1 + (tB + kary)) % kary - tB) * s) * kary,(long long) (((2 * (n * k)) / ndim) * ((level + (int) $$CIVB) % (ndim / 2))),(2 * (n * k)) / ndim,1275070475,win_B);
+   225 |        s = s * (kary * kary);
+   204 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) (ndim / 2)));    /* ~38 */
+            lab_39:
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~35 */
+          lab_40:
+            goto lab_42;
+          lab_41:
+            if (!(level < ndim / 2 - 1)) goto lab_49;
+            if (!1) goto lab_48;
+            $$CIVC = 0ll;
+            do {   /* id=5 guarded */ /* ~43 */ 
+              /* region = 41 */
+              /* bump-normalized */
+   190 |      uni_shift(int, int, int, int, int, int, int, int, double, double*, double*, int, double, double*, double*, int, double*)(rank,kary,ndim,level + 1,comm,n,m,k,alpha,A,buf_A,win_A,dbeta,B,buf_B,win_B,C)
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~43 */
+          lab_48:
+            goto lab_56;
+          lab_49:
+            if (!1) goto lab_55;
+            $$CIVC = 0ll;
+            do {   /* id=7 guarded */ /* ~50 */ 
+              /* region = 42 */
+              /* bump-normalized */
+   194 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   195 |      __84 = 78u;
+              __85 = 84u;
+              __86 = m;
+              __87 = n;
+              __88 = k;
+              __89 = alpha;
+              __91 = m;
+              __93 = n;
+              __94 = dbeta;
+              __96 = m;
+    58 |      dgemm_(&__84,&__85,&__86,&__87,&__88,&__89,A,&__91,B,&__93,&__94,C,&__96)
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"DGEMM");
+              __es.__c4@3 = 2u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   198 |      dbeta =  1.0000000000000000E+000;
+   200 |      MPI_Win_fence(0,win_A);
+   201 |      MPI_Win_fence(0,win_B);
+   228 |      MPI_Win_fence(0,win_A);
+   229 |      MPI_Win_fence(0,win_B);
+   231 |      __builtin_memcpy(A,buf_A,(unsigned long long) (m * k) * 8ull);
+   232 |      __builtin_memcpy(B,buf_B,(unsigned long long) (n * k) * 8ull);
+   188 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) kary));    /* ~50 */
+          lab_55:
+          lab_56:
+          lab_42:
+          lab_3:
+   234 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

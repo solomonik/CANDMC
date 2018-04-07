@@ -1,0 +1,585 @@
+1586-539 (I) Loop (loop index 1) at full_to_band.cxx <line 243> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 4) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 4) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 5) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 5) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"5">. Total number of the innermost loops SIMD vectorized <"0">.
+    28 |  void sym_full2band(double*, long, long, long, long, pview*)(char * A, long long lda_A, long long n, long long b, long long b_sub, char * pv)
+    33 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__45 = 1;
+    35 |    if (!(n <= b)) goto lab_2;
+            goto lab_120;
+          lab_2:
+    37 |    CTF_Timer::CTF_Timer(char const*)(&t,"sym_full2band");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    48 |    if (((int *)(pv + 4))[8 / 4] == ((int *)(pv + 4))[28 / 4]) goto lab_9;
+            __assert_fail("pv->crow.np == pv->ccol.np","full_to_band.cxx",48u,&__func__)
+            return;
+          lab_9:
+    51 |    if (!(0ll == b % b_sub)) goto lab_11;
+            if (b >= b_sub) goto lab_12;
+          lab_11:
+            __assert_fail("b%b_sub == 0 && b>=b_sub","full_to_band.cxx",51u,&__func__)
+            return;
+          lab_12:
+    54 |    preflect = ((int *)(pv + 8))[28 / 4] * ((int *)(pv + 4))[28 / 4] + ((int *)(pv + 8))[8 / 4];
+    62 |    loc_row_offset = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4] ? (b / ((long long) ((int *)(pv + 4))[28 / 4] * b_sub)) * b_sub + b_sub : (b / ((long long) ((int *)(pv + 4))[28 / 4] * b_sub)) * b_sub);
+    65 |    loc_col_offset = (b / ((long long) ((int *)(pv + 4))[8 / 4] * b_sub)) * (lda_A * b_sub);
+    66 |    if (!((long long) ((((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) % ((int *)(pv + 4))[8 / 4]) < (b / b_sub) % (long long) ((int *)(pv + 4))[8 / 4])) goto lab_16;
+    67 |    loc_col_offset = (b / ((long long) ((int *)(pv + 4))[8 / 4] * b_sub)) * (lda_A * b_sub) + lda_A * b_sub;
+          lab_16:
+    73 |    mb.rnn1 = (((long long) (((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) - (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]) % (long long) ((int *)(pv + 4))[28 / 4] < ((n - b) / b_sub) % (long long) ((int *)(pv + 4))[28 / 4] ? ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[28 / 4]) * b_sub;
+    79 |    kb.rnn0 = (((long long) (((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) - (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]) % (long long) ((int *)(pv + 4))[8 / 4] < ((n - b) / b_sub) % (long long) ((int *)(pv + 4))[8 / 4] ? ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[8 / 4] + 1ll : ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[8 / 4]) * b_sub;
+    90 |    *((int *)pv) = (int) (((long long) *((int *)pv) + b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]);
+    92 |    Y = malloc((unsigned long long) (8ll * (mb.rnn1 * b)));
+   700 |    if (!(0ll != 8ll * (mb.rnn1 * b))) goto lab_24;
+   737 |    $$CIV0 = 0ll;
+   700 |    do {   /* id=5 guarded */ /* ~22 */ 
+              /* region = 55 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((8ll * (mb.rnn1 * b)) / 8ll));    /* ~22 */
+   702 |    __memset(((char *)Y + (8ll)*((long long) 0)),(long long) 0,((8ll * (mb.rnn1 * b)) / 8ll) * 8ll);
+   701 |  lab_24:
+    97 |    qr_pv = *((aggr92 *)pv);
+    99 |    QR_2D_pipe(double*, long, long, long, long, pview*, double*, long, double*, double*)(((char *)A  + loc_row_offset * 8ll),lda_A,n - b,b,b_sub,&qr_pv,Y,mb.rnn1,NULL,NULL)
+   103 |    invT = malloc((unsigned long long) (8ll * (b * b)));
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_27;
+   737 |    $$CIV1 = 0ll;
+   700 |    do {   /* id=4 guarded */ /* ~25 */ 
+              /* region = 56 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~25 */
+   702 |    __memset(((char *)invT + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_27:
+   105 |    compute_invT_from_Y(double const*, long, double*, long, long, long, pview*)(Y,mb.rnn1,invT,b,mb.rnn1,b,pv)
+   117 |    W = malloc((unsigned long long) (8ll * (kb.rnn0 * b)));
+   120 |    CTF_Timer::CTF_Timer(char const*)(&t,"WeqAxY");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   121 |    if (!(mb.rnn1 != 0ll)) goto lab_31;
+            if (!(kb.rnn0 != 0ll)) goto lab_31;
+   122 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) kb.rnn0,(int) mb.rnn1, 1.0000000000000000E+000,Y,(int) mb.rnn1,((char *)A  + (loc_col_offset + loc_row_offset) * 8ll),(int) lda_A, 0.0000000000000000E+000,W,(int) b)
+            goto lab_34;
+          lab_31:
+   700 |    if (!(0ll != 8ll * (kb.rnn0 * b))) goto lab_37;
+   737 |    $$CIV2 = 0ll;
+   700 |    do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 57 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((8ll * (kb.rnn0 * b)) / 8ll));    /* ~35 */
+   702 |    __memset(((char *)W + (8ll)*((long long) 0)),(long long) 0,((8ll * (kb.rnn0 * b)) / 8ll) * 8ll);
+   701 |  lab_37:
+   739 |  lab_34:
+   126 |    if (!(((int *)(pv + 8))[28 / 4] == ((int *)(pv + 8))[8 / 4])) goto lab_38;
+   127 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce((char *) -1,W,(int) (kb.rnn0 * b),1275070475,1476395011,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   128 |    goto lab_43;
+          lab_38:
+   129 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce(W,NULL,(int) (kb.rnn0 * b),1275070475,1476395011,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   130 |  lab_43:
+   131 |    CTF_Timer::CTF_Timer(char const*)(&t,"WeqAxY");
+            __es.__c4@3 = 5u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   134 |    U = Y;
+   136 |    V = W;
+   140 |    CTF_Timer::CTF_Timer(char const*)(&t,"computeUandV");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   141 |    if (!(((int *)(pv + 8))[28 / 4] == ((int *)(pv + 8))[8 / 4])) goto lab_53;
+   142 |    if (kb.rnn0 == mb.rnn1) goto lab_57;
+            __assert_fail("kb==mb","full_to_band.cxx",142u,&__func__)
+            return;
+          lab_57:
+   158 |    Z = malloc((unsigned long long) (8ll * (b * b)));
+   159 |    if (!(mb.rnn1 != 0ll)) goto lab_58;
+   160 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,84u,(int) b,(int) b,(int) mb.rnn1, 1.0000000000000000E+000,Y,(int) mb.rnn1,W,(int) b, 0.0000000000000000E+000,Z,(int) b)
+            goto lab_60;
+          lab_58:
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_63;
+   737 |    $$CIV3 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~61 */ 
+              /* region = 58 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~61 */
+   702 |    __memset(((char *)Z + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_63:
+   739 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,Z,(int) (b * b),1275070475,1476395011,((int *)pv)[48 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            goto lab_67;
+          lab_60:
+   163 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,Z,(int) (b * b),1275070475,1476395011,((int *)pv)[48 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   174 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,76u,78u,78u,(int) mb.rnn1,(int) b, 1.0000000000000000E+000,invT,(int) b,Y,(int) mb.rnn1)
+   177 |    U = Y;
+   186 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,(int) b,(int) mb.rnn1,(int) b,-5.0000000000000000E-001,Z,(int) b,Y,(int) mb.rnn1, 1.0000000000000000E+000,W,(int) b)
+   189 |    V = W;
+   190 |  lab_67:
+   191 |    free(Z)
+   199 |  lab_53:
+   201 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   202 |    CTF_Timer::CTF_Timer(char const*)(&t,"computeUandV");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   203 |    CTF_Timer::CTF_Timer(char const*)(&t,"bcastUandV");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   205 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(V,(int) (kb.rnn0 * b),1275070475,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   207 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 12u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(U,(int) (mb.rnn1 * b),1275070475,((int *)(pv + 8))[28 / 4],((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   208 |    CTF_Timer::CTF_Timer(char const*)(&t,"bcastUandV");
+            __es.__c4@3 = 13u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   211 |    if (!(mb.rnn1 != 0ll)) goto lab_87;
+            if (!(kb.rnn0 != 0ll)) goto lab_87;
+   212 |    UVT = malloc((unsigned long long) (8ll * (kb.rnn0 * mb.rnn1)));
+   213 |    CTF_Timer::CTF_Timer(char const*)(&t,"gemmUxV");
+            __es.__c4@3 = 14u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   214 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) mb.rnn1,(int) kb.rnn0,(int) b, 1.0000000000000000E+000,U,(int) mb.rnn1,V,(int) b, 0.0000000000000000E+000,UVT,(int) mb.rnn1)
+   215 |    CTF_Timer::CTF_Timer(char const*)(&t,"gemmUxV");
+            __es.__c4@3 = 15u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   217 |    free(U)
+   218 |    free(V)
+   221 |    VUT = malloc((unsigned long long) (8ll * (kb.rnn0 * mb.rnn1)));
+   222 |    CTF_Timer::CTF_Timer(char const*)(&t,"sendrecvUxV");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 17u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(UVT,(int) (kb.rnn0 * mb.rnn1),1275070475,preflect,0,VUT,(int) (kb.rnn0 * mb.rnn1),1275070475,preflect,0,((int *)pv)[68 / 4],&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   225 |    CTF_Timer::CTF_Timer(char const*)(&t,"sendrecvUxV");
+            __es.__c4@3 = 18u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   241 |    CTF_Timer::CTF_Timer(char const*)(&t,"AminusUxV");
+            __es.__c4@3 = 19u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   243 |    if (!(0ll < kb.rnn0)) goto lab_110;
+            $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~108 */ 
+              /* region = 59 */
+              /* bump-normalized */
+   244 |      cdaxpy(int, double, double const*, int, double*, int)((int) mb.rnn1,-1.0000000000000000E+000,((char *)UVT  + 8ll * ($$CIV4 * mb.rnn1)),1,((char *)A  + (lda_A * $$CIV4 + (loc_col_offset + loc_row_offset)) * 8ll),1)
+   245 |      cdaxpy(int, double, double const*, int, double*, int)((int) mb.rnn1,-1.0000000000000000E+000,((char *)VUT  + $$CIV4 * 8ll),(int) kb.rnn0,((char *)A  + (lda_A * $$CIV4 + (loc_col_offset + loc_row_offset)) * 8ll),1)
+   243 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) kb.rnn0);    /* ~108 */
+          lab_110:
+   250 |    CTF_Timer::CTF_Timer(char const*)(&t,"AminusUxV");
+            __es.__c4@3 = 20u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   260 |    free(VUT)
+   261 |    free(UVT)
+   262 |    goto lab_114;
+          lab_87:
+   263 |    free(U)
+   264 |    free(V)
+   265 |  lab_114:
+   272 |    *((int *)(pv + 4)) = (int) (((long long) *((int *)(pv + 4)) + b / b_sub) % (long long) ((int *)(pv + 4))[8 / 4]);
+   273 |    if (!(n - b > 0ll)) goto lab_115;
+   274 |    sym_full2band(double*, long, long, long, long, pview*)(((char *)A  + (loc_col_offset + loc_row_offset) * 8ll),lda_A,n - b,b,b_sub,pv)
+   275 |  lab_115:
+   283 |    CTF_Timer::CTF_Timer(char const*)(&t,"sym_full2band");
+            __es.__c4@3 = 21u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   284 |  lab_120:
+            return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             5    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             4    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             3    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0           243             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    28 |  void sym_full2band(double*, long, long, long, long, pview*)(char * A, long long lda_A, long long n, long long b, long long b_sub, char * pv)
+    33 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__45 = 1;
+    35 |    if (!(n <= b)) goto lab_2;
+            goto lab_120;
+          lab_2:
+    37 |    CTF_Timer::CTF_Timer(char const*)(&t,"sym_full2band");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    48 |    if (((int *)(pv + 4))[8 / 4] == ((int *)(pv + 4))[28 / 4]) goto lab_9;
+            __assert_fail("pv->crow.np == pv->ccol.np","full_to_band.cxx",48u,&__func__)
+            return;
+          lab_9:
+    51 |    if (!(0ll == b % b_sub)) goto lab_11;
+            if (b >= b_sub) goto lab_12;
+          lab_11:
+            __assert_fail("b%b_sub == 0 && b>=b_sub","full_to_band.cxx",51u,&__func__)
+            return;
+          lab_12:
+    54 |    preflect = ((int *)(pv + 8))[28 / 4] * ((int *)(pv + 4))[28 / 4] + ((int *)(pv + 8))[8 / 4];
+    62 |    loc_row_offset = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4] ? (b / ((long long) ((int *)(pv + 4))[28 / 4] * b_sub)) * b_sub + b_sub : (b / ((long long) ((int *)(pv + 4))[28 / 4] * b_sub)) * b_sub);
+    65 |    loc_col_offset = (b / ((long long) ((int *)(pv + 4))[8 / 4] * b_sub)) * (lda_A * b_sub);
+    66 |    if (!((long long) ((((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) % ((int *)(pv + 4))[8 / 4]) < (b / b_sub) % (long long) ((int *)(pv + 4))[8 / 4])) goto lab_16;
+    67 |    loc_col_offset = (b / ((long long) ((int *)(pv + 4))[8 / 4] * b_sub)) * (lda_A * b_sub) + lda_A * b_sub;
+          lab_16:
+    73 |    mb.rnn1 = (((long long) (((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) - (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]) % (long long) ((int *)(pv + 4))[28 / 4] < ((n - b) / b_sub) % (long long) ((int *)(pv + 4))[28 / 4] ? ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[28 / 4]) * b_sub;
+    79 |    kb.rnn0 = (((long long) (((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) - (b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]) % (long long) ((int *)(pv + 4))[8 / 4] < ((n - b) / b_sub) % (long long) ((int *)(pv + 4))[8 / 4] ? ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[8 / 4] + 1ll : ((n - b) / b_sub) / (long long) ((int *)(pv + 4))[8 / 4]) * b_sub;
+    90 |    *((int *)pv) = (int) (((long long) *((int *)pv) + b / b_sub) % (long long) ((int *)(pv + 4))[28 / 4]);
+    92 |    Y = malloc((unsigned long long) (8ll * (mb.rnn1 * b)));
+   700 |    if (!(0ll != 8ll * (mb.rnn1 * b))) goto lab_24;
+   737 |    $$CIV0 = 0ll;
+   700 |    do {   /* id=5 guarded */ /* ~22 */ 
+              /* region = 55 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((8ll * (mb.rnn1 * b)) / 8ll));    /* ~22 */
+   702 |    __memset(((char *)Y + (8ll)*((long long) 0)),(long long) 0,((8ll * (mb.rnn1 * b)) / 8ll) * 8ll);
+   701 |  lab_24:
+    97 |    qr_pv = *((aggr92 *)pv);
+    99 |    QR_2D_pipe(double*, long, long, long, long, pview*, double*, long, double*, double*)(((char *)A  + loc_row_offset * 8ll),lda_A,n - b,b,b_sub,&qr_pv,Y,mb.rnn1,NULL,NULL)
+   103 |    invT = malloc((unsigned long long) (8ll * (b * b)));
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_27;
+   737 |    $$CIV1 = 0ll;
+   700 |    do {   /* id=4 guarded */ /* ~25 */ 
+              /* region = 56 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~25 */
+   702 |    __memset(((char *)invT + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_27:
+   105 |    compute_invT_from_Y(double const*, long, double*, long, long, long, pview*)(Y,mb.rnn1,invT,b,mb.rnn1,b,pv)
+   117 |    W = malloc((unsigned long long) (8ll * (kb.rnn0 * b)));
+   120 |    CTF_Timer::CTF_Timer(char const*)(&t,"WeqAxY");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   121 |    if (!(mb.rnn1 != 0ll)) goto lab_31;
+            if (!(kb.rnn0 != 0ll)) goto lab_31;
+   122 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) kb.rnn0,(int) mb.rnn1, 1.0000000000000000E+000,Y,(int) mb.rnn1,((char *)A  + (loc_col_offset + loc_row_offset) * 8ll),(int) lda_A, 0.0000000000000000E+000,W,(int) b)
+            goto lab_34;
+          lab_31:
+   700 |    if (!(0ll != 8ll * (kb.rnn0 * b))) goto lab_37;
+   737 |    $$CIV2 = 0ll;
+   700 |    do {   /* id=3 guarded */ /* ~35 */ 
+              /* region = 57 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((8ll * (kb.rnn0 * b)) / 8ll));    /* ~35 */
+   702 |    __memset(((char *)W + (8ll)*((long long) 0)),(long long) 0,((8ll * (kb.rnn0 * b)) / 8ll) * 8ll);
+   701 |  lab_37:
+   739 |  lab_34:
+   126 |    if (!(((int *)(pv + 8))[28 / 4] == ((int *)(pv + 8))[8 / 4])) goto lab_38;
+   127 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce((char *) -1,W,(int) (kb.rnn0 * b),1275070475,1476395011,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   128 |    goto lab_43;
+          lab_38:
+   129 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce(W,NULL,(int) (kb.rnn0 * b),1275070475,1476395011,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   130 |  lab_43:
+   131 |    CTF_Timer::CTF_Timer(char const*)(&t,"WeqAxY");
+            __es.__c4@3 = 5u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   134 |    U = Y;
+   136 |    V = W;
+   140 |    CTF_Timer::CTF_Timer(char const*)(&t,"computeUandV");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   141 |    if (!(((int *)(pv + 8))[28 / 4] == ((int *)(pv + 8))[8 / 4])) goto lab_53;
+   142 |    if (kb.rnn0 == mb.rnn1) goto lab_57;
+            __assert_fail("kb==mb","full_to_band.cxx",142u,&__func__)
+            goto lab_120;
+          lab_57:
+   158 |    Z = malloc((unsigned long long) (8ll * (b * b)));
+   159 |    if (!(mb.rnn1 != 0ll)) goto lab_58;
+   160 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,84u,(int) b,(int) b,(int) mb.rnn1, 1.0000000000000000E+000,Y,(int) mb.rnn1,W,(int) b, 0.0000000000000000E+000,Z,(int) b)
+            goto lab_60;
+          lab_58:
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_63;
+   737 |    $$CIV3 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~61 */ 
+              /* region = 58 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~61 */
+   702 |    __memset(((char *)Z + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_63:
+   739 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,Z,(int) (b * b),1275070475,1476395011,((int *)pv)[48 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            goto lab_67;
+          lab_60:
+   163 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,Z,(int) (b * b),1275070475,1476395011,((int *)pv)[48 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   174 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,76u,78u,78u,(int) mb.rnn1,(int) b, 1.0000000000000000E+000,invT,(int) b,Y,(int) mb.rnn1)
+   177 |    U = Y;
+   186 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,(int) b,(int) mb.rnn1,(int) b,-5.0000000000000000E-001,Z,(int) b,Y,(int) mb.rnn1, 1.0000000000000000E+000,W,(int) b)
+   189 |    V = W;
+   190 |  lab_67:
+   191 |    free(Z)
+   199 |  lab_53:
+   201 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   202 |    CTF_Timer::CTF_Timer(char const*)(&t,"computeUandV");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   203 |    CTF_Timer::CTF_Timer(char const*)(&t,"bcastUandV");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   205 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(V,(int) (kb.rnn0 * b),1275070475,((int *)(pv + 8))[8 / 4],((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   207 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 12u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(U,(int) (mb.rnn1 * b),1275070475,((int *)(pv + 8))[28 / 4],((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   208 |    CTF_Timer::CTF_Timer(char const*)(&t,"bcastUandV");
+            __es.__c4@3 = 13u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   211 |    if (!(mb.rnn1 != 0ll)) goto lab_87;
+            if (!(kb.rnn0 != 0ll)) goto lab_87;
+   212 |    UVT = malloc((unsigned long long) (8ll * (kb.rnn0 * mb.rnn1)));
+   213 |    CTF_Timer::CTF_Timer(char const*)(&t,"gemmUxV");
+            __es.__c4@3 = 14u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   214 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) mb.rnn1,(int) kb.rnn0,(int) b, 1.0000000000000000E+000,U,(int) mb.rnn1,V,(int) b, 0.0000000000000000E+000,UVT,(int) mb.rnn1)
+   215 |    CTF_Timer::CTF_Timer(char const*)(&t,"gemmUxV");
+            __es.__c4@3 = 15u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   217 |    free(U)
+   218 |    free(V)
+   221 |    VUT = malloc((unsigned long long) (8ll * (kb.rnn0 * mb.rnn1)));
+   222 |    CTF_Timer::CTF_Timer(char const*)(&t,"sendrecvUxV");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 17u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(UVT,(int) (kb.rnn0 * mb.rnn1),1275070475,preflect,0,VUT,(int) (kb.rnn0 * mb.rnn1),1275070475,preflect,0,((int *)pv)[68 / 4],&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   225 |    CTF_Timer::CTF_Timer(char const*)(&t,"sendrecvUxV");
+            __es.__c4@3 = 18u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   241 |    CTF_Timer::CTF_Timer(char const*)(&t,"AminusUxV");
+            __es.__c4@3 = 19u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   243 |    if (!(0ll < kb.rnn0)) goto lab_110;
+            $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~108 */ 
+              /* region = 59 */
+              /* bump-normalized */
+   244 |      cdaxpy(int, double, double const*, int, double*, int)((int) mb.rnn1,-1.0000000000000000E+000,((char *)UVT  + 8ll * ($$CIV4 * mb.rnn1)),1,((char *)A  + (lda_A * $$CIV4 + (loc_col_offset + loc_row_offset)) * 8ll),1)
+   245 |      cdaxpy(int, double, double const*, int, double*, int)((int) mb.rnn1,-1.0000000000000000E+000,((char *)VUT  + $$CIV4 * 8ll),(int) kb.rnn0,((char *)A  + (lda_A * $$CIV4 + (loc_col_offset + loc_row_offset)) * 8ll),1)
+   243 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) kb.rnn0);    /* ~108 */
+          lab_110:
+   250 |    CTF_Timer::CTF_Timer(char const*)(&t,"AminusUxV");
+            __es.__c4@3 = 20u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   260 |    free(VUT)
+   261 |    free(UVT)
+   262 |    goto lab_114;
+          lab_87:
+   263 |    free(U)
+   264 |    free(V)
+   265 |  lab_114:
+   272 |    *((int *)(pv + 4)) = (int) (((long long) *((int *)(pv + 4)) + b / b_sub) % (long long) ((int *)(pv + 4))[8 / 4]);
+   273 |    if (!(n - b > 0ll)) goto lab_115;
+   274 |    sym_full2band(double*, long, long, long, long, pview*)(((char *)A  + (loc_col_offset + loc_row_offset) * 8ll),lda_A,n - b,b,b_sub,pv)
+   275 |  lab_115:
+   283 |    CTF_Timer::CTF_Timer(char const*)(&t,"sym_full2band");
+            __es.__c4@3 = 21u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   284 |  lab_120:
+            return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

@@ -1,0 +1,312 @@
+1586-539 (I) Loop (loop index 1) at bench_scala_lu.cxx <line 114> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at bench_scala_lu.cxx <line 116> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at bench_scala_lu.cxx <line 117> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at bench_scala_lu.cxx <line 114> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+    20 |  int main(int argc, char * *argv)
+          {
+            guard___func__41 = 1;
+    27 |    MPI_Init(&argc,&argv);
+    28 |    MPI_Comm_size(1140850688,&numPes);
+    29 |    MPI_Comm_rank(1140850688,&myRank);
+    33 |    (int) log2((double) numPes);
+    35 |    if (argc < 4) goto lab_3;
+            if (!(argc > 5)) goto lab_2;
+          lab_3:
+    36 |    if (!(myRank == 0)) goto lab_5;
+    37 |    printf("%s [log2_mat_dim] [log2_pe_mat_lda] [log2_blk_dim] [number of iterations]/n",argv[0ll]);
+          lab_5:
+    38 |    MPI_Abort(1140850688,-1);
+    39 |  lab_2:
+   286 |    __47 = (int) strtol(argv[1ll],NULL,10);
+            __51 = (int) strtol(argv[2ll],NULL,10);
+            __55 = (int) strtol(argv[3ll],NULL,10);
+    49 |    if (!(argc > 4)) goto lab_7;
+   286 |    __59 = (int) strtol(argv[4ll],NULL,10);
+   285 |    num_iter = __59;
+            goto lab_9;
+          lab_7:
+    50 |    num_iter = 5;
+          lab_9:
+    52 |    if (!(myRank == 0)) goto lab_10;
+    53 |    printf("PDGETRFOF SQUARE MATRIX/n");
+    54 |    printf("MATRIX DIMENSION IS %d/n",1 << __47);
+    55 |    printf("BLOCK DIMENSION IS %d/n",1 << __55);
+    56 |    printf("PERFORMING %d ITERATIONS/n",num_iter);
+    60 |    printf("WITH DATA=INDEX/n");
+    62 |  lab_10:
+    64 |    if (1 << __47 < 1 << __51) goto lab_13;
+            if (!(0 != (1 << __47) % (1 << __51))) goto lab_12;
+          lab_13:
+    65 |    if (!(myRank == 0)) goto lab_15;
+            printf("array_size_X BAD block_size_X != 0!/n");
+          lab_15:
+    66 |    MPI_Abort(1140850688,-1);
+    67 |  lab_12:
+    68 |    if (1 << __47 < 1 << __51) goto lab_18;
+            if (!(0 != (1 << __47) % (1 << __51))) goto lab_17;
+          lab_18:
+    69 |    if (!(myRank == 0)) goto lab_20;
+            printf("array_size_Y BAD  block_size_Y != 0!/n");
+          lab_20:
+    70 |    MPI_Abort(1140850688,-1);
+    71 |  lab_17:
+    76 |    if (!(myRank == 0)) goto lab_22;
+    77 |    printf("NUM X BLOCKS IS %d/n",1 << __47 - __51);
+    78 |    printf("NUM Y BLOCKS IS %d/n",1 << __47 - __51);
+    79 |  lab_22:
+    81 |    if (!(numPes != (1 << __47 - __51) * (1 << __47 - __51))) goto lab_24;
+    82 |    if (!(myRank == 0)) goto lab_26;
+            printf("NUMBER OF BLOCKS MUST BE EQUAL TO NUMBER OF PROCESSORS/n");
+          lab_26:
+    83 |    MPI_Abort(1140850688,-1);
+    84 |  lab_24:
+    90 |    mat_A = malloc((unsigned long long) ((1 << __51) * (1 << __51)) * 8ull);
+    91 |    mat_P = malloc((unsigned long long) ((1 << __47) * 2) * 4ull);
+    99 |    Cblacs_pinfo(&iam,&inprocs)
+   100 |    Cblacs_get(-1,0,&icontxt)
+   101 |    Cblacs_gridinit(&icontxt,"Row",1 << __47 - __51,1 << __47 - __51)
+   104 |    cdescinit(int*, int, int, int, int, int, int, int, int, int*)(&desc_a,1 << __47,1 << __47,1 << __55,1 << __55,0,0,icontxt,1 << __51,&info)
+   109 |    if (info == 0) goto lab_30;
+            __assert_fail("info==0","bench_scala_lu.cxx",109u,&__func__)
+            return;
+          lab_30:
+   113 |    totalTime =  0.0000000000000000E+000;
+   114 |    iter = 0;
+            if (!(0 < num_iter)) goto lab_33;
+            if (!(0 < 1 << __51)) goto lab_43;
+            if (!1) goto lab_42;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~31 */ 
+              /* region = 56 */
+              /* bump-normalized */
+   115 |      srand48((long long) (myRank * 1234))
+   116 |      if (!1) goto lab_36;
+              $$CIV1 = 0ll;
+              do {   /* id=2 guarded */ /* ~34 */ 
+                /* region = 55 */
+                /* bump-normalized */
+   117 |        if (!1) goto lab_39;
+                $$CIV0 = 0ll;
+                do {   /* id=3 guarded */ /* ~37 */ 
+                  /* region = 54 */
+                  /* bump-normalized */
+                  $$TVX.$$.$$RET000 = drand48();
+   118 |          mat_A[(long long) ((1 << __51) * (int) $$CIV1 + (int) $$CIV0)] = $$TVX.$$.$$RET000;
+   117 |          $$CIV0 = $$CIV0 + 1ll;
+                } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) (1 << __51)));    /* ~37 */
+              lab_39:
+   116 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) (1 << __51)));    /* ~34 */
+            lab_36:
+   121 |      startTime = MPI_Wtime();
+   122 |      cpdgetrf(int, int, double*, int, int, int*, int*, int*)(1 << __47,1 << __47,mat_A,1,1,&desc_a,mat_P,&info)
+   123 |      endTime = MPI_Wtime();
+   124 |      totalTime = totalTime + (endTime - startTime);
+   114 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) num_iter));    /* ~31 */
+          lab_42:
+            goto lab_44;
+          lab_43:
+            if (!1) goto lab_50;
+            $$CIV2 = 0ll;
+            do {   /* id=4 guarded */ /* ~45 */ 
+              /* region = 57 */
+              /* bump-normalized */
+   115 |      srand48((long long) (myRank * 1234))
+   121 |      $$TVX.$$.startTime11 = MPI_Wtime();
+   122 |      cpdgetrf(int, int, double*, int, int, int*, int*, int*)(1 << __47,1 << __47,mat_A,1,1,&desc_a,mat_P,&info)
+   123 |      $$TVX.$$.endTime22 = MPI_Wtime();
+   124 |      totalTime = totalTime + ($$TVX.$$.endTime22 - $$TVX.$$.startTime11);
+   114 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) num_iter));    /* ~45 */
+          lab_50:
+          lab_44:
+            iter = (int) ((long long) num_iter);
+          lab_33:
+   127 |    if (!(myRank == 0)) goto lab_40;
+   128 |    printf("Completed %u iterations/n",iter);
+   129 |    printf("Time elapsed per iteration: %f/n",totalTime / (double) num_iter);
+   130 |    printf("Gigaflops: %f/n",(((( 6.6666666666666662E-001 * (double) (1 << __47)) * (double) (1 << __47)) * (double) (1 << __47)) / (totalTime / (double) num_iter)) *  1.0000000000000000E-009);
+   132 |  lab_40:
+   134 |    MPI_Finalize();
+   135 |    rstr = 0;
+            return rstr;
+   136 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           114             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           116             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           117             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           114             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    20 |  int main(int argc, char * *argv)
+          {
+            guard___func__41 = 1;
+    27 |    MPI_Init(&argc,&argv);
+    28 |    MPI_Comm_size(1140850688,&numPes);
+    29 |    MPI_Comm_rank(1140850688,&myRank);
+    33 |    (int) log2((double) numPes);
+    35 |    if (argc < 4) goto lab_3;
+            if (!(argc > 5)) goto lab_2;
+          lab_3:
+    36 |    if (!(myRank == 0)) goto lab_5;
+    37 |    printf("%s [log2_mat_dim] [log2_pe_mat_lda] [log2_blk_dim] [number of iterations]/n",argv[0ll]);
+          lab_5:
+    38 |    MPI_Abort(1140850688,-1);
+    39 |  lab_2:
+   286 |    __47 = (int) strtol(argv[1ll],NULL,10);
+            __51 = (int) strtol(argv[2ll],NULL,10);
+            __55 = (int) strtol(argv[3ll],NULL,10);
+    49 |    if (!(argc > 4)) goto lab_7;
+   286 |    __59 = (int) strtol(argv[4ll],NULL,10);
+   285 |    num_iter = __59;
+            goto lab_9;
+          lab_7:
+    50 |    num_iter = 5;
+          lab_9:
+    52 |    if (!(myRank == 0)) goto lab_10;
+    53 |    printf("PDGETRFOF SQUARE MATRIX/n");
+    54 |    printf("MATRIX DIMENSION IS %d/n",1 << __47);
+    55 |    printf("BLOCK DIMENSION IS %d/n",1 << __55);
+    56 |    printf("PERFORMING %d ITERATIONS/n",num_iter);
+    60 |    printf("WITH DATA=INDEX/n");
+    62 |  lab_10:
+    64 |    if (1 << __47 < 1 << __51) goto lab_13;
+            if (!(0 != (1 << __47) % (1 << __51))) goto lab_12;
+          lab_13:
+    65 |    if (!(myRank == 0)) goto lab_15;
+            printf("array_size_X BAD block_size_X != 0!/n");
+          lab_15:
+    66 |    MPI_Abort(1140850688,-1);
+    67 |  lab_12:
+    68 |    if (1 << __47 < 1 << __51) goto lab_18;
+            if (!(0 != (1 << __47) % (1 << __51))) goto lab_17;
+          lab_18:
+    69 |    if (!(myRank == 0)) goto lab_20;
+            printf("array_size_Y BAD  block_size_Y != 0!/n");
+          lab_20:
+    70 |    MPI_Abort(1140850688,-1);
+    71 |  lab_17:
+    76 |    if (!(myRank == 0)) goto lab_22;
+    77 |    printf("NUM X BLOCKS IS %d/n",1 << __47 - __51);
+    78 |    printf("NUM Y BLOCKS IS %d/n",1 << __47 - __51);
+    79 |  lab_22:
+    81 |    if (!(numPes != (1 << __47 - __51) * (1 << __47 - __51))) goto lab_24;
+    82 |    if (!(myRank == 0)) goto lab_26;
+            printf("NUMBER OF BLOCKS MUST BE EQUAL TO NUMBER OF PROCESSORS/n");
+          lab_26:
+    83 |    MPI_Abort(1140850688,-1);
+    84 |  lab_24:
+    90 |    mat_A = malloc((unsigned long long) ((1 << __51) * (1 << __51)) * 8ull);
+    91 |    mat_P = malloc((unsigned long long) ((1 << __47) * 2) * 4ull);
+    99 |    Cblacs_pinfo(&iam,&inprocs)
+   100 |    Cblacs_get(-1,0,&icontxt)
+   101 |    Cblacs_gridinit(&icontxt,"Row",1 << __47 - __51,1 << __47 - __51)
+   104 |    cdescinit(int*, int, int, int, int, int, int, int, int, int*)(&desc_a,1 << __47,1 << __47,1 << __55,1 << __55,0,0,icontxt,1 << __51,&info)
+   109 |    if (info == 0) goto lab_30;
+            __assert_fail("info==0","bench_scala_lu.cxx",109u,&__func__)
+            return;
+          lab_30:
+   113 |    totalTime =  0.0000000000000000E+000;
+   114 |    iter = 0;
+            if (!(0 < num_iter)) goto lab_33;
+            if (!(0 < 1 << __51)) goto lab_43;
+            if (!1) goto lab_42;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~31 */ 
+              /* region = 56 */
+              /* bump-normalized */
+   115 |      srand48((long long) (myRank * 1234))
+   116 |      if (!1) goto lab_36;
+              $$CIV1 = 0ll;
+              do {   /* id=2 guarded */ /* ~34 */ 
+                /* region = 55 */
+                /* bump-normalized */
+   117 |        if (!1) goto lab_39;
+                $$CIV0 = 0ll;
+                do {   /* id=3 guarded */ /* ~37 */ 
+                  /* region = 54 */
+                  /* bump-normalized */
+                  $$TVX.$$.$$RET000 = drand48();
+   118 |          mat_A[(long long) ((1 << __51) * (int) $$CIV1 + (int) $$CIV0)] = $$TVX.$$.$$RET000;
+   117 |          $$CIV0 = $$CIV0 + 1ll;
+                } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) (1 << __51)));    /* ~37 */
+              lab_39:
+   116 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) (1 << __51)));    /* ~34 */
+            lab_36:
+   121 |      startTime = MPI_Wtime();
+   122 |      cpdgetrf(int, int, double*, int, int, int*, int*, int*)(1 << __47,1 << __47,mat_A,1,1,&desc_a,mat_P,&info)
+   123 |      endTime = MPI_Wtime();
+   124 |      totalTime = totalTime + (endTime - startTime);
+   114 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) num_iter));    /* ~31 */
+          lab_42:
+            goto lab_44;
+          lab_43:
+            if (!1) goto lab_50;
+            $$CIV2 = 0ll;
+            do {   /* id=4 guarded */ /* ~45 */ 
+              /* region = 57 */
+              /* bump-normalized */
+   115 |      srand48((long long) (myRank * 1234))
+   121 |      $$TVX.$$.startTime11 = MPI_Wtime();
+   122 |      cpdgetrf(int, int, double*, int, int, int*, int*, int*)(1 << __47,1 << __47,mat_A,1,1,&desc_a,mat_P,&info)
+   123 |      $$TVX.$$.endTime22 = MPI_Wtime();
+   124 |      totalTime = totalTime + ($$TVX.$$.endTime22 - $$TVX.$$.startTime11);
+   114 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) num_iter));    /* ~45 */
+          lab_50:
+          lab_44:
+            iter = (int) ((long long) num_iter);
+          lab_33:
+   127 |    if (!(myRank == 0)) goto lab_40;
+   128 |    printf("Completed %u iterations/n",iter);
+   129 |    printf("Time elapsed per iteration: %f/n",totalTime / (double) num_iter);
+   130 |    printf("Gigaflops: %f/n",(((( 6.6666666666666662E-001 * (double) (1 << __47)) * (double) (1 << __47)) * (double) (1 << __47)) / (totalTime / (double) num_iter)) *  1.0000000000000000E-009);
+   132 |  lab_40:
+   134 |    MPI_Finalize();
+   135 |    rstr = 0;
+            return rstr;
+   136 |  } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

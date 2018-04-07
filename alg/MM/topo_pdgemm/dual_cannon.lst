@@ -1,0 +1,1115 @@
+1586-539 (I) Loop (loop index 1) at dual_cannon.cxx <line 149> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at dual_cannon.cxx <line 150> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at dual_cannon.cxx <line 150> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at dual_cannon.cxx <line 149> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"5">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    40 |  void bcast_cannon_4d(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_x1, aggr20 cdt_y1, aggr20 cdt_x2, aggr20 cdt_y2)
+    48 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__65 = 1;
+    63 |    $$FSM0 = *((long long *)((char *)args + 8));
+    33 |    if (!(0ll != (long long) *((int *)((char *)args + 48)))) goto lab_192;
+    34 |    $$IRET0 = 40ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)));
+            goto lab_193;
+          lab_192:
+    36 |    $$IRET0 = 24ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)));
+    37 |  lab_193:
+    70 |    if (*((long long *)((char *)args + 40)) >= $$IRET0) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,ovp)","dual_cannon.cxx",70u,&__func__)
+            return;
+          lab_7:
+    60 |    $$FSM1.rnn9 = *((int *)((char *)args + 48)) == 0;
+    71 |    if (cdt_x1.np@4 == cdt_y1.np@4) goto lab_13;
+            __assert_fail("x1_np == y1_np","dual_cannon.cxx",71u,&__func__)
+            return;
+          lab_13:
+    72 |    if (cdt_x2.np@4 == cdt_y2.np@4) goto lab_19;
+            __assert_fail("x2_np == y2_np","dual_cannon.cxx",72u,&__func__)
+            return;
+          lab_19:
+    73 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) (cdt_x1.np@4 * cdt_x2.np@4)) goto lab_25;
+            __assert_fail("n % (x1_np*x2_np) == 0","dual_cannon.cxx",73u,&__func__)
+            return;
+          lab_25:
+    63 |    b = *((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4);
+    82 |    loc_A = buffer;
+    83 |    loc_B = ((char *)buffer  + 8ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4))));
+    84 |    if (*((int *)((char *)args + 48)) == 0) goto lab_26;
+    85 |    swp_A = ((char *)buffer  + 16ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4))));
+    86 |    swp_B = ((char *)buffer  + 24ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4))));
+    87 |  lab_26:
+    91 |    if (!(*((long long *)((char *)args + 16)) != *((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) goto lab_28;
+    92 |    $$PARM.nrow0 = (int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4));
+            $$PARM.ncol1 = (int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4));
+            $$PARM.lda_A2 = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_B3 = (int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4));
+   463 |    if (!((int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) == (int) *((long long *)((char *)args + 16)))) goto lab_182;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) * 8ull);
+   465 |    goto lab_183;
+          lab_182:
+   467 |    if (!(0 < (int) (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)))) goto lab_184;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~185 */ 
+              /* region = 113 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_B3)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A2)),(unsigned long long) $$PARM.nrow0 * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncol1));    /* ~185 */
+          lab_184:
+   470 |  lab_183:
+    93 |    buf_A = mat_A;
+    94 |    goto lab_30;
+          lab_28:
+    95 |    buf_A = buffer;
+    96 |    loc_A = mat_A;
+    97 |  lab_30:
+    98 |    if (!(*((long long *)((char *)args + 24)) != $$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) goto lab_31;
+    99 |    $$PARM.lda_A8 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) == (int) *((long long *)((char *)args + 24)))) goto lab_187;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)))),mat_B,(unsigned long long) ((int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) * 8ull);
+   465 |    goto lab_188;
+          lab_187:
+   467 |    if (!(0 < (int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)))) goto lab_189;
+            $$CIV2 = 0ll;
+            do {   /* id=4 guarded */ /* ~190 */ 
+              /* region = 114 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) + (long long) ((int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A8)),(unsigned long long) ((int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)))));    /* ~190 */
+          lab_189:
+   470 |  lab_188:
+   100 |    buf_B = mat_B;
+   101 |    goto lab_33;
+          lab_31:
+   102 |    buf_B = ((char *)buffer  + 8ll * (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))));
+   103 |    loc_B = mat_B;
+   104 |  lab_33:
+   113 |    if (!(cdt_y2.np@4 > 1)) goto lab_34;
+   114 |    if (!(cdt_x2.rank@8 != (cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4)) goto lab_36;
+   116 |    MPI_Irecv(buf_A,(int) (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))),1275070475,(cdt_x2.rank@8 + (cdt_y2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,101,cdt_x2.cm@0,&req_x0);
+   117 |  lab_36:
+   118 |    if (!(cdt_y2.rank@8 != (cdt_y2.rank@8 + (cdt_y2.np@4 - cdt_x2.rank@8)) % cdt_y2.np@4)) goto lab_40;
+   120 |    MPI_Irecv(buf_B,(int) (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))),1275070475,(cdt_x2.rank@8 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,101,cdt_y2.cm@0,&req_y0);
+   125 |    MPI_Isend(loc_B,(int) (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))),1275070475,(cdt_y2.rank@8 + (cdt_y2.np@4 - cdt_x2.rank@8)) % cdt_y2.np@4,102,cdt_y2.cm@0,&req_y1);
+   126 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   127 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y1,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   128 |    tmp_X = buf_B;
+            buf_B = loc_B;
+            loc_B = tmp_X;
+   129 |  lab_40:
+   130 |    if (!(cdt_x2.rank@8 != (cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4)) goto lab_48;
+   132 |    MPI_Isend(loc_A,(int) (($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * ($$FSM0 / (long long) (cdt_x1.np@4 * cdt_x2.np@4))),1275070475,(cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4,102,cdt_x2.cm@0,&req_x1);
+   133 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   134 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y1,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   135 |    tmp_X.rnn4 = buf_A;
+            buf_A = loc_A;
+            loc_A = tmp_X.rnn4;
+   136 |  lab_48:
+   137 |  lab_34:
+   139 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_x2.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   140 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_y2.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    if (!(0 < cdt_y2.np@4)) goto lab_64;
+            if (!(0 < cdt_y1.np@4)) goto lab_217;
+            if (!1) goto lab_216;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~62 */ 
+              /* region = 117 */
+              /* bump-normalized */
+   150 |      if ((int) $$CIV1 > 0) goto lab_199;
+              if (!1) goto lab_198;
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~65 */ 
+                /* region = 115 */
+                /* bump-normalized */
+   151 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 7u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   152 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 8u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   153 |        if (!(cdt_x1.rank@8 == (int) $$CIV0)) goto lab_74;
+   154 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 9u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   155 |        goto lab_82;
+              lab_74:
+   156 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 10u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   157 |      lab_82:
+   158 |        if (!(cdt_y1.rank@8 == (int) $$CIV0)) goto lab_89;
+   159 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 11u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   160 |        goto lab_97;
+              lab_89:
+   161 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 12u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   162 |      lab_97:
+   163 |        if (!($$FSM1.rnn9 == 0)) goto lab_104;
+                if (!((int) $$CIV0 > 0)) goto lab_104;
+   164 |        if ((int) $$CIV0 > 1) goto lab_108;
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |        goto lab_172;
+   164 |      lab_108:
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |      lab_172:
+              lab_104:
+   168 |        mul_A = (cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A);
+   172 |        mul_B = (cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B);
+   175 |        if (!($$FSM1.rnn9 == 0)) goto lab_161;
+   176 |        tmp_X.rnn1 = buf_A;
+                buf_A = swp_A;
+                swp_A = tmp_X.rnn1;
+   177 |        tmp_X.rnn3 = buf_B;
+                buf_B = swp_B;
+                swp_B = tmp_X.rnn3;
+   178 |        goto lab_117;
+              lab_161:
+                goto lab_162;
+              lab_117:
+   186 |        goto lab_122;
+              lab_162:
+   187 |        if ((int) $$CIV0 > 0) goto lab_125;
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+                goto lab_167;
+              lab_125:
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   189 |      lab_167:
+              lab_122:
+   150 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) cdt_y1.np@4));    /* ~65 */
+            lab_198:
+              goto lab_200;
+            lab_199:
+              if (!1) goto lab_215;
+              $$CIV0 = 0ll;
+              do {   /* id=5 guarded */ /* ~201 */ 
+                /* region = 116 */
+                /* bump-normalized */
+   151 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 7u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   152 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 8u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   153 |        if (!(cdt_x1.rank@8 == (int) $$CIV0)) goto lab_202;
+   154 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 9u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   155 |        goto lab_203;
+              lab_202:
+   156 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 10u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   157 |      lab_203:
+   158 |        if (!(cdt_y1.rank@8 == (int) $$CIV0)) goto lab_204;
+   159 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 11u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   160 |        goto lab_205;
+              lab_204:
+   161 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 12u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   162 |      lab_205:
+   163 |        if (!($$FSM1.rnn9 == 0)) goto lab_208;
+                if (!((int) $$CIV0 > 0)) goto lab_208;
+   164 |        cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |      lab_208:
+   168 |        mul_A = (cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A);
+   172 |        mul_B = (cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B);
+   175 |        if (!($$FSM1.rnn9 == 0)) goto lab_209;
+   176 |        tmp_X.rnn1 = buf_A;
+                buf_A = swp_A;
+                swp_A = tmp_X.rnn1;
+   177 |        tmp_X.rnn3 = buf_B;
+                buf_B = swp_B;
+                swp_B = tmp_X.rnn3;
+   178 |        goto lab_210;
+              lab_209:
+                goto lab_211;
+              lab_210:
+   186 |        goto lab_214;
+              lab_211:
+   187 |        cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   189 |      lab_214:
+   150 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) cdt_y1.np@4));    /* ~201 */
+            lab_215:
+            lab_200:
+   191 |      if (!($$FSM1.rnn9 == 0)) goto lab_128;
+   192 |      if ((int) ((long long) cdt_y1.np@4) > 1) goto lab_131;
+              if ((int) $$CIV1 > 0) goto lab_131;
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |      goto lab_175;
+   192 |    lab_131:
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |    lab_175:
+            lab_128:
+   195 |      if (!((int) $$CIV1 < cdt_y2.np@4 - 1)) goto lab_134;
+   198 |      MPI_Irecv(buf_A,(int) (b * b),1275070475,(1 + (cdt_x2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x0);
+   199 |      MPI_Irecv(buf_B,(int) (b * b),1275070475,(1 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y0);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_x2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   202 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_y2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   204 |      MPI_Isend(loc_A,(int) (b * b),1275070475,((cdt_x2.rank@8 + cdt_x2.np@4) - 1) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x1);
+   205 |      MPI_Isend(loc_B,(int) (b * b),1275070475,((cdt_y2.rank@8 + cdt_y2.np@4) - 1) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y1);
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 15u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 16u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   208 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 17u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   209 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 18u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   211 |      tmp_X.rnn0 = buf_A;
+              buf_A = loc_A;
+              loc_A = tmp_X.rnn0;
+   212 |      tmp_X.rnn2 = buf_B;
+              buf_B = loc_B;
+              loc_B = tmp_X.rnn2;
+   213 |    lab_134:
+   149 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) cdt_y2.np@4));    /* ~62 */
+          lab_216:
+            goto lab_218;
+          lab_217:
+            if (!1) goto lab_257;
+            $$CIV1 = 0ll;
+            do {   /* id=6 guarded */ /* ~219 */ 
+              /* region = 118 */
+              /* bump-normalized */
+   191 |      if (!($$FSM1.rnn9 == 0)) goto lab_255;
+   192 |      if ((int) $$CIV1 > 0) goto lab_253;
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |      goto lab_254;
+   192 |    lab_253:
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |    lab_254:
+            lab_255:
+   195 |      if (!((int) $$CIV1 < cdt_y2.np@4 - 1)) goto lab_256;
+   198 |      MPI_Irecv(buf_A,(int) (b * b),1275070475,(1 + (cdt_x2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x0);
+   199 |      MPI_Irecv(buf_B,(int) (b * b),1275070475,(1 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y0);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_x2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   202 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_y2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   204 |      MPI_Isend(loc_A,(int) (b * b),1275070475,((cdt_x2.rank@8 + cdt_x2.np@4) - 1) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x1);
+   205 |      MPI_Isend(loc_B,(int) (b * b),1275070475,((cdt_y2.rank@8 + cdt_y2.np@4) - 1) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y1);
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 15u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 16u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   208 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 17u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   209 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 18u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   211 |      tmp_X.rnn0 = buf_A;
+              buf_A = loc_A;
+              loc_A = tmp_X.rnn0;
+   212 |      tmp_X.rnn2 = buf_B;
+              buf_B = loc_B;
+              loc_B = tmp_X.rnn2;
+   213 |    lab_256:
+   149 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) cdt_y2.np@4));    /* ~219 */
+          lab_257:
+          lab_218:
+          lab_64:
+   215 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       122           467             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       122           467             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           149             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           150             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           150             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           149             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    32 |  long long buffer_space_req(long, long)(long long b, long long overlap)
+          {
+    33 |    if (!(overlap != 0ll)) goto lab_1;
+    34 |    rstr = 40ll * (b * b);
+            return rstr;
+          lab_1:
+    36 |    rstr = 24ll * (b * b);
+            return rstr;
+    37 |  } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV2) * 8ll),((char *)A  + ((long long) lda_A * $$CIV2) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       122           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    40 |  void bcast_cannon_4d(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_x1, aggr20 cdt_y1, aggr20 cdt_x2, aggr20 cdt_y2)
+    48 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__65 = 1;
+    63 |    $$FSM0 = *((long long *)((char *)args + 8));
+    33 |    if (!(0ll != (long long) *((int *)((char *)args + 48)))) goto lab_192;
+    34 |    $$IRET0 = 40ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)));
+            goto lab_193;
+          lab_192:
+    36 |    $$IRET0 = 24ll * ((*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)) * (*((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4)));
+    37 |  lab_193:
+    70 |    if (*((long long *)((char *)args + 40)) >= $$IRET0) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,ovp)","dual_cannon.cxx",70u,&__func__)
+            return;
+          lab_7:
+    60 |    $$FSM1.rnn9 = *((int *)((char *)args + 48)) == 0;
+    71 |    if (cdt_x1.np@4 == cdt_y1.np@4) goto lab_13;
+            __assert_fail("x1_np == y1_np","dual_cannon.cxx",71u,&__func__)
+            return;
+          lab_13:
+    72 |    if (cdt_x2.np@4 == cdt_y2.np@4) goto lab_19;
+            __assert_fail("x2_np == y2_np","dual_cannon.cxx",72u,&__func__)
+            return;
+          lab_19:
+    73 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) (cdt_x1.np@4 * cdt_x2.np@4)) goto lab_25;
+            __assert_fail("n % (x1_np*x2_np) == 0","dual_cannon.cxx",73u,&__func__)
+            return;
+          lab_25:
+    63 |    b = *((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4);
+    82 |    loc_A = buffer;
+    83 |    $$csx1 = *((long long *)((char *)args + 8)) / (long long) (cdt_x1.np@4 * cdt_x2.np@4);
+            $$csx0 = $$csx1 * $$csx1;
+            loc_B = ((char *)buffer  + 8ll * $$csx0);
+    84 |    if (*((int *)((char *)args + 48)) == 0) goto lab_26;
+    85 |    swp_A = ((char *)buffer  + 16ll * $$csx0);
+    86 |    swp_B = ((char *)buffer  + 24ll * $$csx0);
+    87 |  lab_26:
+    91 |    if (!(*((long long *)((char *)args + 16)) != $$csx1)) goto lab_28;
+    92 |    $$PARM.nrow0 = (int) $$csx1;
+            $$PARM.ncol1 = (int) $$csx1;
+            $$PARM.lda_A2 = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_B3 = (int) $$csx1;
+   463 |    if (!((int) $$csx1 == (int) *((long long *)((char *)args + 16)))) goto lab_182;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) $$csx1 * (int) $$csx1) * 8ull);
+   465 |    goto lab_183;
+          lab_182:
+   467 |    if (!(0 < (int) $$csx1)) goto lab_184;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~185 */ 
+              /* region = 119 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_B3)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A2)),(unsigned long long) $$PARM.nrow0 * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncol1));    /* ~185 */
+          lab_184:
+   470 |  lab_183:
+    93 |    buf_A = mat_A;
+    94 |    goto lab_30;
+          lab_28:
+    95 |    buf_A = buffer;
+    96 |    loc_A = mat_A;
+    97 |  lab_30:
+    98 |    if (!(*((long long *)((char *)args + 24)) != $$csx1)) goto lab_31;
+    99 |    $$PARM.lda_A8 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) $$csx1 == (int) *((long long *)((char *)args + 24)))) goto lab_187;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * $$csx0),mat_B,(unsigned long long) ((int) $$csx1 * (int) $$csx1) * 8ull);
+   465 |    goto lab_188;
+          lab_187:
+   467 |    if (!(0 < (int) $$csx1)) goto lab_189;
+            $$CIV2 = 0ll;
+            do {   /* id=4 guarded */ /* ~190 */ 
+              /* region = 120 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + ($$csx0 + (long long) ((int) $$csx1) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A8)),(unsigned long long) ((int) $$csx1) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) $$csx1)));    /* ~190 */
+          lab_189:
+   470 |  lab_188:
+   100 |    buf_B = mat_B;
+   101 |    goto lab_33;
+          lab_31:
+   102 |    buf_B = ((char *)buffer  + 8ll * $$csx0);
+   103 |    loc_B = mat_B;
+   104 |  lab_33:
+   113 |    if (!(cdt_y2.np@4 > 1)) goto lab_34;
+   114 |    if (!(cdt_x2.rank@8 != (cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4)) goto lab_36;
+   116 |    MPI_Irecv(buf_A,(int) $$csx0,1275070475,(cdt_x2.rank@8 + (cdt_y2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,101,cdt_x2.cm@0,&req_x0);
+   117 |  lab_36:
+   118 |    if (!(cdt_y2.rank@8 != (cdt_y2.rank@8 + (cdt_y2.np@4 - cdt_x2.rank@8)) % cdt_y2.np@4)) goto lab_40;
+   120 |    MPI_Irecv(buf_B,(int) $$csx0,1275070475,(cdt_x2.rank@8 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,101,cdt_y2.cm@0,&req_y0);
+   125 |    MPI_Isend(loc_B,(int) $$csx0,1275070475,(cdt_y2.rank@8 + (cdt_y2.np@4 - cdt_x2.rank@8)) % cdt_y2.np@4,102,cdt_y2.cm@0,&req_y1);
+   126 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   127 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y1,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   128 |    tmp_X = buf_B;
+            buf_B = loc_B;
+            loc_B = tmp_X;
+   129 |  lab_40:
+   130 |    if (!(cdt_x2.rank@8 != (cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4)) goto lab_48;
+   132 |    MPI_Isend(loc_A,(int) $$csx0,1275070475,(cdt_x2.rank@8 + (cdt_x2.np@4 - cdt_y2.rank@8)) % cdt_x2.np@4,102,cdt_x2.cm@0,&req_x1);
+   133 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   134 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Wait(&req_y1,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   135 |    tmp_X.rnn4 = buf_A;
+            buf_A = loc_A;
+            loc_A = tmp_X.rnn4;
+   136 |  lab_48:
+   137 |  lab_34:
+   139 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_x2.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   140 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_y2.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    if (!(0 < cdt_y2.np@4)) goto lab_64;
+            if (!(0 < cdt_y1.np@4)) goto lab_217;
+            if (!1) goto lab_216;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~62 */ 
+              /* region = 123 */
+              /* bump-normalized */
+   150 |      if ((int) $$CIV1 > 0) goto lab_199;
+              if (!1) goto lab_198;
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~65 */ 
+                /* region = 121 */
+                /* bump-normalized */
+   151 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 7u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   152 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 8u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   153 |        if (!(cdt_x1.rank@8 == (int) $$CIV0)) goto lab_74;
+   154 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 9u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_A,(int) $$csx0,1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   155 |        goto lab_82;
+              lab_74:
+   156 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 10u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   157 |      lab_82:
+   158 |        if (!(cdt_y1.rank@8 == (int) $$CIV0)) goto lab_89;
+   159 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 11u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_B,(int) $$csx0,1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   160 |        goto lab_97;
+              lab_89:
+   161 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 12u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   162 |      lab_97:
+   163 |        if (!($$FSM1.rnn9 == 0)) goto lab_104;
+                if (!((int) $$CIV0 > 0)) goto lab_104;
+   164 |        if ((int) $$CIV0 > 1) goto lab_108;
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |        goto lab_172;
+   164 |      lab_108:
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |      lab_172:
+              lab_104:
+   168 |        mul_A = (cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A);
+   172 |        mul_B = (cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B);
+   175 |        if (!($$FSM1.rnn9 == 0)) goto lab_161;
+   176 |        tmp_X.rnn1 = buf_A;
+                buf_A = swp_A;
+                swp_A = tmp_X.rnn1;
+   177 |        tmp_X.rnn3 = buf_B;
+                buf_B = swp_B;
+                swp_B = tmp_X.rnn3;
+   178 |        goto lab_117;
+              lab_161:
+                goto lab_162;
+              lab_117:
+   186 |        goto lab_122;
+              lab_162:
+   187 |        if ((int) $$CIV0 > 0) goto lab_125;
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+                goto lab_167;
+              lab_125:
+                cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   189 |      lab_167:
+              lab_122:
+   150 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) cdt_y1.np@4));    /* ~65 */
+            lab_198:
+              goto lab_200;
+            lab_199:
+              if (!1) goto lab_215;
+              $$CIV0 = 0ll;
+              do {   /* id=5 guarded */ /* ~201 */ 
+                /* region = 122 */
+                /* bump-normalized */
+   151 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 7u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   152 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+                __es.__c4@3 = 8u;
+                CTF_Timer::start()(&__t)
+                PMPI_Barrier(cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   153 |        if (!(cdt_x1.rank@8 == (int) $$CIV0)) goto lab_202;
+   154 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 9u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_A,(int) $$csx0,1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   155 |        goto lab_203;
+              lab_202:
+   156 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 10u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) $$CIV0,cdt_x1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   157 |      lab_203:
+   158 |        if (!(cdt_y1.rank@8 == (int) $$CIV0)) goto lab_204;
+   159 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 11u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(loc_B,(int) $$csx0,1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   160 |        goto lab_205;
+              lab_204:
+   161 |        CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+                __es.__c4@3 = 12u;
+                CTF_Timer::start()(&__t)
+                PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) $$CIV0,cdt_y1.cm@0);
+                CTF_Timer::stop()(&__t)
+                __es.__c4@3 = 0u;
+                CTF_Timer::~CTF_Timer()(&__t);
+   162 |      lab_205:
+   163 |        if (!($$FSM1.rnn9 == 0)) goto lab_208;
+                if (!((int) $$CIV0 > 0)) goto lab_208;
+   164 |        cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   166 |      lab_208:
+   168 |        mul_A = (cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A);
+   172 |        mul_B = (cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B);
+   175 |        if (!($$FSM1.rnn9 == 0)) goto lab_209;
+   176 |        tmp_X.rnn1 = buf_A;
+                buf_A = swp_A;
+                swp_A = tmp_X.rnn1;
+   177 |        tmp_X.rnn3 = buf_B;
+                buf_B = swp_B;
+                swp_B = tmp_X.rnn3;
+   178 |        goto lab_210;
+              lab_209:
+                goto lab_211;
+              lab_210:
+   186 |        goto lab_214;
+              lab_211:
+   187 |        cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,(cdt_x1.rank@8 == (int) $$CIV0 ? loc_A : buf_A),(int) b,(cdt_y1.rank@8 == (int) $$CIV0 ? loc_B : buf_B),(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   189 |      lab_214:
+   150 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) cdt_y1.np@4));    /* ~201 */
+            lab_215:
+            lab_200:
+   191 |      if (!($$FSM1.rnn9 == 0)) goto lab_128;
+   192 |      if ((int) ((long long) cdt_y1.np@4) > 1) goto lab_131;
+              if ((int) $$CIV1 > 0) goto lab_131;
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |      goto lab_175;
+   192 |    lab_131:
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |    lab_175:
+            lab_128:
+   195 |      if (!((int) $$CIV1 < cdt_y2.np@4 - 1)) goto lab_134;
+   198 |      MPI_Irecv(buf_A,(int) $$csx0,1275070475,(1 + (cdt_x2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x0);
+   199 |      MPI_Irecv(buf_B,(int) $$csx0,1275070475,(1 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y0);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_x2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   202 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_y2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   204 |      MPI_Isend(loc_A,(int) $$csx0,1275070475,((cdt_x2.rank@8 + cdt_x2.np@4) - 1) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x1);
+   205 |      MPI_Isend(loc_B,(int) $$csx0,1275070475,((cdt_y2.rank@8 + cdt_y2.np@4) - 1) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y1);
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 15u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 16u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   208 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 17u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   209 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 18u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   211 |      tmp_X.rnn0 = buf_A;
+              buf_A = loc_A;
+              loc_A = tmp_X.rnn0;
+   212 |      tmp_X.rnn2 = buf_B;
+              buf_B = loc_B;
+              loc_B = tmp_X.rnn2;
+   213 |    lab_134:
+   149 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) cdt_y2.np@4));    /* ~62 */
+          lab_216:
+            goto lab_218;
+          lab_217:
+            if (!1) goto lab_257;
+            $$CIV1 = 0ll;
+            if (!($$FSM1.rnn9 == 0)) goto lab_271;
+            do {   /* id=6 guarded */ /* ~219 */ 
+              /* region = 124 */
+              /* bump-normalized */
+   192 |      if ((int) $$CIV1 > 0) goto lab_253;
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 0.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |      goto lab_254;
+   192 |    lab_253:
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,mul_A,(int) b,mul_B,(int) b, 1.0000000000000000E+000,mat_C,(int) *((long long *)((char *)args + 32)))
+   194 |    lab_254:
+   195 |      if (!((int) $$CIV1 < cdt_y2.np@4 - 1)) goto lab_256;
+   198 |      MPI_Irecv(buf_A,(int) $$csx0,1275070475,(1 + (cdt_x2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x0);
+   199 |      MPI_Irecv(buf_B,(int) $$csx0,1275070475,(1 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y0);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_x2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   202 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_y2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   204 |      MPI_Isend(loc_A,(int) $$csx0,1275070475,((cdt_x2.rank@8 + cdt_x2.np@4) - 1) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x1);
+   205 |      MPI_Isend(loc_B,(int) $$csx0,1275070475,((cdt_y2.rank@8 + cdt_y2.np@4) - 1) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y1);
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 15u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 16u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   208 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 17u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   209 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 18u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   211 |      tmp_X.rnn0 = buf_A;
+              buf_A = loc_A;
+              loc_A = tmp_X.rnn0;
+   212 |      tmp_X.rnn2 = buf_B;
+              buf_B = loc_B;
+              loc_B = tmp_X.rnn2;
+   213 |    lab_256:
+   149 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) cdt_y2.np@4));    /* ~219 */
+            goto lab_272;
+          lab_271:
+            do {   /* id=8 guarded */ /* ~273 */ 
+              /* region = 125 */
+              /* bump-normalized */
+   195 |      if (!((int) $$CIV1 < cdt_y2.np@4 - 1)) goto lab_277;
+   198 |      MPI_Irecv(buf_A,(int) $$csx0,1275070475,(1 + (cdt_x2.rank@8 + cdt_x2.np@4)) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x0);
+   199 |      MPI_Irecv(buf_B,(int) $$csx0,1275070475,(1 + (cdt_y2.rank@8 + cdt_y2.np@4)) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y0);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_x2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   202 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_y2.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   204 |      MPI_Isend(loc_A,(int) $$csx0,1275070475,((cdt_x2.rank@8 + cdt_x2.np@4) - 1) % cdt_x2.np@4,201,cdt_x2.cm@0,&req_x1);
+   205 |      MPI_Isend(loc_B,(int) $$csx0,1275070475,((cdt_y2.rank@8 + cdt_y2.np@4) - 1) % cdt_y2.np@4,202,cdt_y2.cm@0,&req_y1);
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 15u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 16u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_x1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   208 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 17u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   209 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Wait");
+              __es.__c4@3 = 18u;
+              CTF_Timer::start()(&__t)
+              PMPI_Wait(&req_y1,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   211 |      tmp_X.rnn0 = buf_A;
+              buf_A = loc_A;
+              loc_A = tmp_X.rnn0;
+   212 |      tmp_X.rnn2 = buf_B;
+              buf_B = loc_B;
+              loc_B = tmp_X.rnn2;
+   213 |    lab_277:
+   149 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) cdt_y2.np@4));    /* ~273 */
+          lab_272:
+          lab_257:
+          lab_218:
+          lab_64:
+   215 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV2) * 8ll),((char *)A  + ((long long) lda_A * $$CIV2) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

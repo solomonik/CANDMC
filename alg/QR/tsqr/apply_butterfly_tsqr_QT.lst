@@ -1,0 +1,1386 @@
+1586-539 (I) Loop (loop index 1) at apply_butterfly_tsqr_QT.cxx <line 214> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at apply_butterfly_tsqr_QT.cxx <line 166> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-538 (I) Loop (loop index 4) at apply_butterfly_tsqr_QT.cxx <line 71> was not SIMD vectorized because it contains unsupported loop structure.
+1586-539 (I) Loop (loop index 9) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 10) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 11) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 12) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 13) at apply_butterfly_tsqr_QT.cxx <line 166> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 14) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 15) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 16) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 17) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 18) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 19) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 20) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 21) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 22) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"17">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    31 |  void apply_butterfly_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(char * Y, long long lda_Y, char * tau, char * B, long long lda_B, long long m, long long b, long long k, long long myRank, long long numPes, long long root, aggr20 cdt, char * tree_data)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__79 = 1;
+    63 |    if (!(b * numPes > m)) goto lab_7;
+    64 |    np_work = m / b;
+    65 |    goto lab_9;
+          lab_7:
+    66 |    np_work = numPes;
+          lab_9:
+    70 |    pow2_np_work = 1;
+    71 |    if (!((int) np_work > 1)) goto lab_12;
+    69 |    inp = (int) np_work;
+    71 |    do {   /* id=4 guarded */ /* ~10 */ 
+              /* region = 180 */
+    72 |      pow2_np_work = pow2_np_work * 2;
+    73 |      inp = inp / 2;
+    71 |    } while (inp > 1);    /* ~10 */
+          lab_12:
+    75 |    if ((long long) pow2_np_work <= np_work) goto lab_15;
+            __assert_fail("pow2_np_work <= np_work","apply_butterfly_tsqr_QT.cxx",75u,&__func__)
+            return;
+          lab_15:
+    79 |    buffer = malloc((unsigned long long) (8ll * (max(b,k) * (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes))));
+    81 |    if (!(np_work == 1ll)) goto lab_19;
+    82 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) == 0)) goto lab_21;
+    83 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    84 |    cdormqr(char, char, int, int, int, double const*, int, double const*, double*, int, double*, int, int*)(76u,84u,(int) m,(int) k,(int) b,Y,(int) lda_Y,tau,B,(int) lda_B,buffer,(int) (max(b,k) * (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes)),&info)
+    85 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    86 |  lab_21:
+    87 |    free(buffer)
+    88 |    goto lab_156;
+    89 |  lab_19:
+    91 |    Y2 = malloc((unsigned long long) (16ll * (b * b)));
+    92 |    B_buf = malloc((unsigned long long) (16ll * (k * b)));
+    93 |    T = malloc((unsigned long long) (8ll * (b * b)));
+   700 |    if (!(0ll != 16ll * (b * b))) goto lab_31;
+   737 |    $$CIV0 = 0ll;
+   700 |    do {   /* id=3 guarded */ /* ~29 */ 
+              /* region = 181 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((16ll * (b * b)) / 8ll));    /* ~29 */
+   702 |    __memset(((char *)Y2 + (8ll)*((long long) 0)),(long long) 0,((16ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_31:
+    96 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_32;
+    97 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    99 |    cdlarft(char, char, int, int, double const*, int, double const*, double*, int)(70u,67u,(int) (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes),(int) b,Y,(int) lda_Y,tau,T,(int) b)
+   100 |    cdlarfb(char, char, char, char, int, int, int, double const*, int, double const*, int, double*, int, double*, int)(76u,84u,70u,67u,(int) (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes),(int) k,(int) b,Y,(int) lda_Y,T,(int) b,B,(int) lda_B,buffer,(int) k)
+   101 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   463 |    if (!((int) b == (int) lda_B)) goto lab_208;
+            if (!((int) b == (int) (b * 2ll))) goto lab_208;
+   464 |    __builtin_memcpy(B_buf,B,(unsigned long long) ((int) k * (int) b) * 8ull);
+   465 |    goto lab_209;
+          lab_208:
+   467 |    if (!(0 < (int) k)) goto lab_210;
+            $$CIV1 = 0ll;
+            do {   /* id=15 guarded */ /* ~211 */ 
+              /* region = 182 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) (b * 2ll)))),((char *)B  + 8ll * ($$CIV1 * (long long) ((int) lda_B))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) k)));    /* ~211 */
+          lab_210:
+   470 |  lab_209:
+   104 |  lab_32:
+   107 |    if (!(np_work > (long long) pow2_np_work)) goto lab_40;
+   108 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_TSQR_QT_clipped_wing");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   109 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_47;
+            if ((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work) goto lab_46;
+          lab_47:
+            if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work - (long long) pow2_np_work)) goto lab_45;
+          lab_46:
+   116 |    $$PARM.ncol2B = (int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))));
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_193;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * 2) * (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b)),(unsigned long long) ($$PARM.ncol2B * (int) b) * 8ull);
+   465 |    goto lab_194;
+          lab_193:
+   467 |    if (!(0 < $$PARM.ncol2B)) goto lab_195;
+            $$CIV1 = 0ll;
+            do {   /* id=12 guarded */ /* ~196 */ 
+              /* region = 183 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * 2) * (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))))));    /* ~196 */
+          lab_195:
+   470 |  lab_194:
+   117 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_49;
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_183;
+            if (!((int) b == (int) (b * 2ll))) goto lab_183;
+   464 |    __builtin_memcpy(((char *)B_buf  + b * 8ll),((char *)B_buf  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * 2) * b)),(unsigned long long) ((int) (k / 2ll + k % 2ll) * (int) b) * 8ull);
+   465 |    goto lab_184;
+          lab_183:
+   467 |    if (!(0 < (int) (k / 2ll + k % 2ll))) goto lab_185;
+            $$CIV1 = 0ll;
+            do {   /* id=10 guarded */ /* ~186 */ 
+              /* region = 184 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)B_buf  + ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + k % 2ll))));    /* ~186 */
+          lab_185:
+   470 |  lab_184:
+   119 |  lab_49:
+   121 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(buffer,(int) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b),1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work,((char *)buffer  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b)),(int) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b),1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_223;
+   464 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),((char *)buffer  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b)),(unsigned long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * (int) b) * 8ull);
+   465 |    goto lab_224;
+          lab_223:
+   467 |    if (!(0 < (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))) goto lab_225;
+            $$CIV1 = 0ll;
+            do {   /* id=18 guarded */ /* ~226 */ 
+              /* region = 185 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b + (long long) ((int) b) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))));    /* ~226 */
+          lab_225:
+   470 |  lab_224:
+   126 |    if (!(b < 16ll)) goto lab_55;
+            goto lab_56;
+          lab_55:
+            __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+            goto lab_58;
+          lab_56:
+            __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   127 |    goto lab_59;
+          lab_58:
+            unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+            tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+            CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_64;
+          lab_59:
+   128 |    unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+   129 |    tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   130 |    CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   131 |    __69 = b;
+            goto lab_65;
+          lab_64:
+            __69 = 16ll;
+            goto lab_67;
+          lab_65:
+            __70 = b;
+            goto lab_68;
+          lab_67:
+            __70 = 16ll;
+          lab_68:
+            cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,(int) b,(int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)),(int) b,(int) b,(int) __69,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __70,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   133 |    CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_213;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),(unsigned long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * (int) b) * 8ull);
+   465 |    goto lab_214;
+          lab_213:
+   467 |    if (!(0 < (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))) goto lab_215;
+            $$CIV1 = 0ll;
+            do {   /* id=16 guarded */ /* ~216 */ 
+              /* region = 186 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))));    /* ~216 */
+          lab_215:
+   470 |  lab_214:
+   136 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(buffer,(int) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b),1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work,((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b)),(int) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b),1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   139 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_75;
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_203;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + b * 8ll),(unsigned long long) ((int) (k / 2ll + k % 2ll) * (int) b) * 8ull);
+   465 |    goto lab_204;
+          lab_203:
+   467 |    if (!(0 < (int) (k / 2ll + k % 2ll))) goto lab_205;
+            $$CIV1 = 0ll;
+            do {   /* id=14 guarded */ /* ~206 */ 
+              /* region = 187 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + k % 2ll))));    /* ~206 */
+          lab_205:
+   470 |  lab_204:
+   141 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll)))) * b)),buffer,8ull * ((unsigned long long) ((int) (k / 2ll + k % 2ll)) * (unsigned long long) b));
+   464 |    __builtin_memcpy(B_buf,((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + k % 2ll)) * b)),(unsigned long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * (int) b) * 8ull);
+   143 |    goto lab_77;
+          lab_75:
+   144 |    $$PARM.ncol19 = (int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))));
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_178;
+   464 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * 2) * b)),((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b)),(unsigned long long) ($$PARM.ncol19 * (int) b) * 8ull);
+   465 |    goto lab_179;
+          lab_178:
+   467 |    if (!(0 < $$PARM.ncol19)) goto lab_180;
+            $$CIV1 = 0ll;
+            do {   /* id=9 guarded */ /* ~181 */ 
+              /* region = 188 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b + (long long) ((int) b) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))))));    /* ~181 */
+          lab_180:
+   470 |  lab_179:
+   144 |  lab_77:
+   145 |  lab_45:
+   147 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_TSQR_QT_clipped_wing");
+            __es.__c4@3 = 11u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |  lab_40:
+   152 |    if (!(pow2_np_work > 1)) goto lab_84;
+   155 |    if (!(m / b >= (long long) pow2_np_work)) goto lab_87;
+            $$RET0 = (int) log2((double) pow2_np_work);
+            if (pow2_np_work == 1 << $$RET0) goto lab_88;
+          lab_87:
+            __assert_fail("m/b >= pow2_np_work && 1<<(int)log2(pow2_np_work) == pow2_np_work","apply_butterfly_tsqr_QT.cxx",155u,&__func__)
+            return;
+          lab_88:
+            $$RET1 = (long long) ((int) log2((double) pow2_np_work));
+   156 |    Bk_sv = malloc((unsigned long long) (8ll * (($$RET1 + k) * b)));
+   157 |    $$RET2 = (int) log2((double) pow2_np_work);
+   159 |    kws = (SNEW  (unsigned long long) ($$RET2 + 1) * 4ull);
+            $$RET3 = (int) log2((double) pow2_np_work);
+   160 |    kps = (SNEW  (unsigned long long) ($$RET3 + 1) * 4ull);
+   163 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 12u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   164 |    if (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) goto lab_157;
+   157 |    pk_sv = 0;
+   162 |    ikw = 0;
+   166 |    if (!(pow2_np_work > 1)) goto lab_97;
+   161 |    kw = (int) k;
+   166 |    level = pow2_np_work;
+            if (!((int) b == (int) (b * 2ll))) goto lab_229;
+            if (!1) goto lab_228;
+            do {   /* id=2 guarded */ /* ~95 */ 
+              /* region = 189 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   464 |      __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b)),(unsigned long long) ((int) b * kp) * 8ull);
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_101;
+   464 |      __builtin_memcpy(((char *)B_buf  + b * 8ll),((char *)B_buf  + 8ll * ((long long) (kp * 2) * b)),(unsigned long long) ((int) b * kw) * 8ull);
+   186 |    lab_101:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   464 |      __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b)),((char *)buffer  + 8ll * ((long long) kp * b)),(unsigned long long) ((int) b * kw) * 8ull);
+   192 |      if (!(b < 16ll)) goto lab_107;
+              goto lab_108;
+            lab_107:
+              __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+              goto lab_110;
+            lab_108:
+              __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   193 |      goto lab_111;
+            lab_110:
+              unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+              tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+              CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+              goto lab_116;
+            lab_111:
+   194 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+   195 |      tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = b;
+              goto lab_117;
+            lab_116:
+              __73 = 16ll;
+              goto lab_119;
+            lab_117:
+              __74 = b;
+              goto lab_120;
+            lab_119:
+              __74 = 16ll;
+            lab_120:
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,(int) b,kw,(int) b,(int) b,(int) __73,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __74,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   464 |      __builtin_memcpy(((char *)Bk_sv  + (long long) pk_sv * 8ll),((char *)B_buf  + b * 8ll),(unsigned long long) ((int) b * kw) * 8ull);
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~95 */
+          lab_228:
+            goto lab_230;
+          lab_229:
+            if (!1) goto lab_257;
+            do {   /* id=13 guarded */ /* ~231 */ 
+              /* region = 194 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   467 |      if (!(0 < kp)) goto lab_234;
+              $$CIV1 = 0ll;
+              do {   /* id=19 guarded */ /* ~233 */ 
+                /* region = 190 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kp));    /* ~233 */
+            lab_234:
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_240;
+   467 |      if (!(0 < kw)) goto lab_238;
+              $$CIV1 = 0ll;
+              do {   /* id=20 guarded */ /* ~237 */ 
+                /* region = 191 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)B_buf  + ((long long) (kp * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~237 */
+            lab_238:
+   186 |    lab_240:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   467 |      if (!(0 < kw)) goto lab_243;
+              $$CIV1 = 0ll;
+              do {   /* id=21 guarded */ /* ~242 */ 
+                /* region = 192 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) kp * b + (long long) ((int) b) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~242 */
+            lab_243:
+   192 |      if (!(b < 16ll)) goto lab_245;
+              goto lab_246;
+            lab_245:
+              __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+              goto lab_247;
+            lab_246:
+              __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   193 |      goto lab_248;
+            lab_247:
+              unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+              tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+              CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+              goto lab_249;
+            lab_248:
+   194 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+   195 |      tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = b;
+              goto lab_250;
+            lab_249:
+              __73 = 16ll;
+              goto lab_251;
+            lab_250:
+              __74 = b;
+              goto lab_252;
+            lab_251:
+              __74 = 16ll;
+            lab_252:
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,(int) b,kw,(int) b,(int) b,(int) __73,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __74,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   467 |      if (!(0 < kw)) goto lab_255;
+              $$CIV1 = 0ll;
+              do {   /* id=22 guarded */ /* ~254 */ 
+                /* region = 193 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)Bk_sv  + ((long long) pk_sv + (long long) ((int) b) * $$CIV1) * 8ll),((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~254 */
+            lab_255:
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~231 */
+          lab_257:
+          lab_230:
+          lab_97:
+   203 |    goto lab_93;
+          lab_157:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 17u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 18u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_133;
+          lab_93:
+   205 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   207 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 17u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   208 |    CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 18u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   210 |    $$PARM.ncol25 = kws[(long long) (ikw - 1)];
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_188;
+   464 |    __builtin_memcpy(buffer,B_buf,(unsigned long long) (kws[(long long) (ikw - 1)] * (int) b) * 8ull);
+   465 |    goto lab_189;
+          lab_188:
+   467 |    if (!(0 < kws[(long long) (ikw - 1)])) goto lab_190;
+            $$CIV1 = 0ll;
+            do {   /* id=11 guarded */ /* ~191 */ 
+              /* region = 195 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) (b * 2ll)))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) $$PARM.ncol25));    /* ~191 */
+          lab_190:
+   470 |  lab_189:
+   211 |    __builtin_memcpy(B_buf,buffer,(unsigned long long) (8ll * ((long long) kws[(long long) (ikw - 1)] * b)));
+   214 |    if (!(2 <= pow2_np_work)) goto lab_137;
+            level = 2;
+            do {   /* id=1 guarded */ /* ~135 */ 
+              /* region = 196 */
+   221 |      ikw = ikw + -1;
+   222 |      kw.rnn3 = kws[(long long) ikw];
+   223 |      kp = kps[(long long) ikw];
+   224 |      pk_sv = (int) ((long long) pk_sv + - ((long long) kws[(long long) ikw] * b));
+   227 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_138;
+   228 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 19u;
+              CTF_Timer::start()(&__t)
+              PMPI_Sendrecv(B_buf,(int) (b * (long long) kw.rnn3),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),1,buffer,(int) (b * (long long) kp),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),0,cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   231 |      __builtin_memcpy(B_buf,buffer,(unsigned long long) (8ll * ((long long) kp * b)));
+   232 |      __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) kp * b)),((char *)Bk_sv  + (long long) pk_sv * 8ll),(unsigned long long) (8ll * ((long long) kw.rnn3 * b)));
+   233 |      goto lab_143;
+            lab_138:
+   234 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 20u;
+              CTF_Timer::start()(&__t)
+              PMPI_Sendrecv(((char *)Bk_sv  + (long long) pk_sv * 8ll),(int) (b * (long long) kw.rnn3),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),0,((char *)B_buf  + 8ll * ((long long) kw.rnn3 * b)),(int) (b * (long long) kp),1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),1,cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   237 |    lab_143:
+   214 |      level = level * 2;
+            } while (level <= pow2_np_work);    /* ~135 */
+          lab_137:
+   239 |  lab_133:
+   240 |    free(Bk_sv)
+   242 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 21u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   244 |    CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 22u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   245 |  lab_84:
+   246 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_153;
+   463 |    if (!((int) b == (int) lda_B)) goto lab_218;
+   464 |    __builtin_memcpy(B,B_buf,(unsigned long long) ((int) k * (int) b) * 8ull);
+   465 |    goto lab_219;
+          lab_218:
+   467 |    if (!(0 < (int) k)) goto lab_220;
+            $$CIV1 = 0ll;
+            do {   /* id=17 guarded */ /* ~221 */ 
+              /* region = 197 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + 8ll * ($$CIV1 * (long long) ((int) lda_B))),((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) b))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) k)));    /* ~221 */
+          lab_220:
+   470 |  lab_219:
+   247 |  lab_153:
+   249 |    free(T)
+   250 |    free(B_buf)
+   251 |    free(buffer)
+   252 |    free(Y2)
+   253 |    goto lab_156;
+   173 |  lab_99:
+            __assert_fail("kw>=2","apply_butterfly_tsqr_QT.cxx",173u,&__func__)
+            return;
+          lab_156:
+            return;
+   253 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            71             4    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+        68           700             3    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+       114           467            15    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            12    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            10    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            18    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            16    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            14    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467             9    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           166             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           166            13    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            19    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            20    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            21    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            22    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            11    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           214             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       114           467            17    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV1) * 8ll),((char *)A  + ((long long) lda_A * $$CIV1) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       114           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    31 |  void apply_butterfly_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(char * Y, long long lda_Y, char * tau, char * B, long long lda_B, long long m, long long b, long long k, long long myRank, long long numPes, long long root, aggr20 cdt, char * tree_data)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__79 = 1;
+    63 |    if (!(b * numPes > m)) goto lab_7;
+    64 |    np_work = m / b;
+    65 |    goto lab_9;
+          lab_7:
+    66 |    np_work = numPes;
+          lab_9:
+    70 |    pow2_np_work = 1;
+    71 |    if (!((int) np_work > 1)) goto lab_12;
+    69 |    inp = (int) np_work;
+    71 |    do {   /* id=4 guarded */ /* ~10 */ 
+              /* region = 187 */
+    72 |      pow2_np_work = pow2_np_work * 2;
+    73 |      inp = inp / 2;
+    71 |    } while (inp > 1);    /* ~10 */
+          lab_12:
+    75 |    if ((long long) pow2_np_work <= np_work) goto lab_15;
+            __assert_fail("pow2_np_work <= np_work","apply_butterfly_tsqr_QT.cxx",75u,&__func__)
+            goto lab_156;
+          lab_15:
+    79 |    buffer = malloc((unsigned long long) (8ll * (max(b,k) * (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes))));
+    81 |    if (!(np_work == 1ll)) goto lab_19;
+    82 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) == 0)) goto lab_21;
+    83 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    84 |    cdormqr(char, char, int, int, int, double const*, int, double const*, double*, int, double*, int, int*)(76u,84u,(int) m,(int) k,(int) b,Y,(int) lda_Y,tau,B,(int) lda_B,buffer,(int) (max(b,k) * (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes)),&info)
+    85 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    86 |  lab_21:
+    87 |    free(buffer)
+    88 |    goto lab_156;
+    89 |  lab_19:
+    91 |    Y2 = malloc((unsigned long long) (16ll * (b * b)));
+    92 |    B_buf = malloc((unsigned long long) (16ll * (k * b)));
+    93 |    T = malloc((unsigned long long) (8ll * (b * b)));
+   700 |    if (!(0ll != 16ll * (b * b))) goto lab_31;
+   702 |    __memset(((char *)Y2 + (8ll)*((long long) 0)),(long long) 0,((16ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_31:
+    96 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_32;
+    97 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    99 |    cdlarft(char, char, int, int, double const*, int, double const*, double*, int)(70u,67u,(int) (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes),(int) b,Y,(int) lda_Y,tau,T,(int) b)
+   100 |    cdlarfb(char, char, char, char, int, int, int, double const*, int, double const*, int, double*, int, double*, int)(76u,84u,70u,67u,(int) (myRank < root ? (b * root + m) / numPes - b : (b * root + m) / numPes),(int) k,(int) b,Y,(int) lda_Y,T,(int) b,B,(int) lda_B,buffer,(int) k)
+   101 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_local");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   463 |    if (!((int) b == (int) lda_B)) goto lab_208;
+            if (!((int) b == (int) (b * 2ll))) goto lab_208;
+   464 |    __builtin_memcpy(B_buf,B,(unsigned long long) ((int) k * (int) b) * 8ull);
+   465 |    goto lab_209;
+          lab_208:
+   467 |    if (!(0 < (int) k)) goto lab_210;
+            $$CIV1 = 0ll;
+            do {   /* id=15 guarded */ /* ~211 */ 
+              /* region = 188 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) (b * 2ll)))),((char *)B  + 8ll * ($$CIV1 * (long long) ((int) lda_B))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) k)));    /* ~211 */
+          lab_210:
+   470 |  lab_209:
+   104 |  lab_32:
+   107 |    if (!(np_work > (long long) pow2_np_work)) goto lab_40;
+   108 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_TSQR_QT_clipped_wing");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   109 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_47;
+            if ((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work) goto lab_46;
+          lab_47:
+            if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work - (long long) pow2_np_work)) goto lab_45;
+          lab_46:
+   116 |    $$PARM.ncol2B = (int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))));
+            $$csx1 = (long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * 2) * (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b;
+            $$csx0 = 8ll * $$csx1;
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_193;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + $$csx0),(unsigned long long) ($$PARM.ncol2B * (int) b) * 8ull);
+   465 |    goto lab_194;
+          lab_193:
+   467 |    if (!(0 < $$PARM.ncol2B)) goto lab_195;
+            $$CIV1 = 0ll;
+            do {   /* id=12 guarded */ /* ~196 */ 
+              /* region = 189 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + ($$csx1 + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))))));    /* ~196 */
+          lab_195:
+   470 |  lab_194:
+   117 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_49;
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_183;
+   464 |    __builtin_memcpy(((char *)B_buf  + b * 8ll),((char *)B_buf  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * 2) * b)),(unsigned long long) ((int) (k / 2ll + k % 2ll) * (int) b) * 8ull);
+   465 |    goto lab_184;
+          lab_183:
+   467 |    if (!(0 < (int) (k / 2ll + k % 2ll))) goto lab_185;
+            $$CIV1 = 0ll;
+            do {   /* id=10 guarded */ /* ~186 */ 
+              /* region = 190 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)B_buf  + ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + k % 2ll))));    /* ~186 */
+          lab_185:
+   470 |  lab_184:
+   119 |  lab_49:
+   121 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            $$csx2 = (int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes);
+            PMPI_Sendrecv(buffer,(int) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b),1275070475,$$csx2,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work,((char *)buffer  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b)),(int) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b),1275070475,$$csx2,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_223;
+   464 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),((char *)buffer  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b)),(unsigned long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * (int) b) * 8ull);
+   465 |    goto lab_224;
+          lab_223:
+   467 |    if (!(0 < (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))) goto lab_225;
+            $$CIV1 = 0ll;
+            do {   /* id=18 guarded */ /* ~226 */ 
+              /* region = 191 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b + (long long) ((int) b) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))));    /* ~226 */
+          lab_225:
+   470 |  lab_224:
+   126 |    if (!(b < 16ll)) goto lab_55;
+            goto lab_56;
+          lab_55:
+            __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+            goto lab_58;
+          lab_56:
+            __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   127 |    goto lab_59;
+          lab_58:
+            unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+            tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+            CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_64;
+          lab_59:
+   128 |    unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),(int) b,(int) (b * 2ll))
+   129 |    tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   130 |    CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   131 |    __69 = b;
+            goto lab_65;
+          lab_64:
+            __69 = 16ll;
+            goto lab_67;
+          lab_65:
+            __70 = b;
+            goto lab_68;
+          lab_67:
+            __70 = 16ll;
+          lab_68:
+            cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,(int) b,(int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)),(int) b,(int) b,(int) __69,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __70,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   133 |    CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_213;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),(unsigned long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * (int) b) * 8ull);
+   465 |    goto lab_214;
+          lab_213:
+   467 |    if (!(0 < (int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))) goto lab_215;
+            $$CIV1 = 0ll;
+            do {   /* id=16 guarded */ /* ~216 */ 
+              /* region = 192 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))));    /* ~216 */
+          lab_215:
+   470 |  lab_214:
+   136 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(buffer,(int) ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b),1275070475,$$csx2,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work,((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b)),(int) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))))) * b),1275070475,$$csx2,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   139 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_75;
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_203;
+   464 |    __builtin_memcpy(buffer,((char *)B_buf  + b * 8ll),(unsigned long long) ((int) (k / 2ll + k % 2ll) * (int) b) * 8ull);
+   465 |    goto lab_204;
+          lab_203:
+   467 |    if (!(0 < (int) (k / 2ll + k % 2ll))) goto lab_205;
+            $$CIV1 = 0ll;
+            do {   /* id=14 guarded */ /* ~206 */ 
+              /* region = 193 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) ((int) b))),((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k / 2ll + k % 2ll))));    /* ~206 */
+          lab_205:
+   470 |  lab_204:
+   141 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll)))) * b)),buffer,8ull * ((unsigned long long) ((int) (k / 2ll + k % 2ll)) * (unsigned long long) b));
+   464 |    __builtin_memcpy(B_buf,((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + k % 2ll)) * b)),(unsigned long long) ((int) (k - (long long) ((int) (k / 2ll + k % 2ll))) * (int) b) * 8ull);
+   143 |    goto lab_77;
+          lab_75:
+   144 |    $$PARM.ncol19 = (int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))));
+   463 |    if (!((int) b == (int) (b * 2ll))) goto lab_178;
+   464 |    __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * 2) * b)),((char *)buffer  + 8ll * ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b)),(unsigned long long) ($$PARM.ncol19 * (int) b) * 8ull);
+   465 |    goto lab_179;
+          lab_178:
+   467 |    if (!(0 < $$PARM.ncol19)) goto lab_180;
+            $$CIV1 = 0ll;
+            do {   /* id=9 guarded */ /* ~181 */ 
+              /* region = 194 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B_buf  + ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)) * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll))) * b + (long long) ((int) b) * $$CIV1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (k - (long long) ((int) (k / 2ll + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * (k % 2ll)))))));    /* ~181 */
+          lab_180:
+   470 |  lab_179:
+   144 |  lab_77:
+   145 |  lab_45:
+   147 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_TSQR_QT_clipped_wing");
+            __es.__c4@3 = 11u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |  lab_40:
+   152 |    if (!(pow2_np_work > 1)) goto lab_84;
+   155 |    if (!(m / b >= (long long) pow2_np_work)) goto lab_87;
+            $$RET0 = (int) log2((double) pow2_np_work);
+            if (pow2_np_work == 1 << $$RET0) goto lab_88;
+          lab_87:
+            __assert_fail("m/b >= pow2_np_work && 1<<(int)log2(pow2_np_work) == pow2_np_work","apply_butterfly_tsqr_QT.cxx",155u,&__func__)
+            goto lab_156;
+          lab_88:
+            $$RET1 = (long long) ((int) log2((double) pow2_np_work));
+   156 |    Bk_sv = malloc((unsigned long long) (8ll * (($$RET1 + k) * b)));
+   157 |    $$RET2 = (int) log2((double) pow2_np_work);
+   159 |    kws = (SNEW  (unsigned long long) ($$RET2 + 1) * 4ull);
+            $$RET3 = (int) log2((double) pow2_np_work);
+   160 |    kps = (SNEW  (unsigned long long) ($$RET3 + 1) * 4ull);
+   163 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 12u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   164 |    if (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) goto lab_157;
+   157 |    pk_sv = 0;
+   162 |    ikw = 0;
+   161 |    kw = (int) k;
+   166 |    level = pow2_np_work;
+            $$csx3 = (int) b;
+            if (!($$csx3 == (int) (b * 2ll))) goto lab_229;
+            if (!1) goto lab_230;
+            if (!(b < 16ll)) goto lab_282;
+            do {   /* id=2 guarded */ /* ~95 */ 
+              /* region = 195 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   464 |      __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b)),(unsigned long long) ($$csx3 * kp) * 8ull);
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_101;
+   464 |      __builtin_memcpy(((char *)B_buf  + b * 8ll),((char *)B_buf  + 8ll * ((long long) (kp * 2) * b)),(unsigned long long) ($$csx3 * kw) * 8ull);
+   186 |    lab_101:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              $$csx4 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,$$csx4,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,$$csx4,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   464 |      __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b)),((char *)buffer  + 8ll * ((long long) kp * b)),(unsigned long long) ($$csx3 * kw) * 8ull);
+   192 |      __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   194 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),$$csx3,(int) (b * 2ll))
+   195 |      tree_data = ((char *)tree_data  + ((long long) ((($$csx3 + 1) * $$csx3) / 2) + b * b) * 8ll);
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = b;
+              __74 = b;
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,$$csx3,kw,$$csx3,$$csx3,$$csx3,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,$$csx3,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   464 |      __builtin_memcpy(((char *)Bk_sv  + (long long) pk_sv * 8ll),((char *)B_buf  + b * 8ll),(unsigned long long) ($$csx3 * kw) * 8ull);
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~95 */
+            goto lab_230;
+          lab_282:
+            do {   /* id=24 guarded */ /* ~284 */ 
+              /* region = 196 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   464 |      __builtin_memcpy(buffer,((char *)B_buf  + 8ll * ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b)),(unsigned long long) ($$csx3 * kp) * 8ull);
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_285;
+   464 |      __builtin_memcpy(((char *)B_buf  + b * 8ll),((char *)B_buf  + 8ll * ((long long) (kp * 2) * b)),(unsigned long long) ($$csx3 * kw) * 8ull);
+   186 |    lab_285:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              $$csx5 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,$$csx5,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,$$csx5,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   464 |      __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b)),((char *)buffer  + 8ll * ((long long) kp * b)),(unsigned long long) ($$csx3 * kw) * 8ull);
+   192 |      __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+   193 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),$$csx3,(int) (b * 2ll))
+              tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((($$csx3 + 1) * $$csx3) / 2) * 8ll));
+              CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = 16ll;
+              __74 = 16ll;
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,$$csx3,kw,$$csx3,$$csx3,(int) __73,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __74,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   464 |      __builtin_memcpy(((char *)Bk_sv  + (long long) pk_sv * 8ll),((char *)B_buf  + b * 8ll),(unsigned long long) ($$csx3 * kw) * 8ull);
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~284 */
+            goto lab_230;
+          lab_229:
+            if (!1) goto lab_257;
+            if (!(b < 16ll)) goto lab_262;
+            do {   /* id=13 guarded */ /* ~231 */ 
+              /* region = 201 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   467 |      if (!(0 < kp)) goto lab_234;
+              $$CIV1 = 0ll;
+              do {   /* id=19 guarded */ /* ~233 */ 
+                /* region = 197 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) $$csx3)),((char *)B_buf  + ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kp));    /* ~233 */
+            lab_234:
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_240;
+   467 |      if (!(0 < kw)) goto lab_238;
+              $$CIV1 = 0ll;
+              do {   /* id=20 guarded */ /* ~237 */ 
+                /* region = 198 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)B_buf  + ((long long) (kp * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~237 */
+            lab_238:
+   186 |    lab_240:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              $$csx9 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,$$csx9,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,$$csx9,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   467 |      if (!(0 < kw)) goto lab_243;
+              $$CIV1 = 0ll;
+              do {   /* id=21 guarded */ /* ~242 */ 
+                /* region = 199 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) kp * b + (long long) $$csx3 * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~242 */
+            lab_243:
+   192 |      __builtin_memcpy(T,tree_data,(unsigned long long) (8ll * (b * b)));
+   194 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + 8ll * (b * b)),((char *)Y2  + b * 8ll),$$csx3,(int) (b * 2ll))
+   195 |      tree_data = ((char *)tree_data  + ((long long) ((($$csx3 + 1) * $$csx3) / 2) + b * b) * 8ll);
+   196 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = b;
+              __74 = b;
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,$$csx3,kw,$$csx3,$$csx3,$$csx3,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,$$csx3,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   467 |      if (!(0 < kw)) goto lab_255;
+              $$CIV1 = 0ll;
+              do {   /* id=22 guarded */ /* ~254 */ 
+                /* region = 200 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)Bk_sv  + ((long long) pk_sv + (long long) $$csx3 * $$CIV1) * 8ll),((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~254 */
+            lab_255:
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~231 */
+            goto lab_263;
+          lab_262:
+            do {   /* id=8 guarded */ /* ~264 */ 
+              /* region = 208 */
+   173 |      if (!(kw >= 2)) goto lab_99;
+   175 |      kp = kw - (kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2));
+   176 |      kw = kw / 2 + (kw % 2) * (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2);
+   178 |      kws[(long long) ikw] = kw;
+   179 |      kps[(long long) ikw] = kp;
+   180 |      ikw = ikw + 1;
+   467 |      if (!(0 < kp)) goto lab_266;
+              $$CIV1 = 0ll;
+              do {   /* id=7 guarded */ /* ~265 */ 
+                /* region = 202 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) $$csx3)),((char *)B_buf  + ((long long) ((2 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * 2) * kw) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kp));    /* ~265 */
+            lab_266:
+   184 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_269;
+   467 |      if (!(0 < kw)) goto lab_268;
+              $$CIV1 = 0ll;
+              do {   /* id=6 guarded */ /* ~267 */ 
+                /* region = 203 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)B_buf  + ((long long) (kp * 2) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~267 */
+            lab_268:
+   186 |    lab_269:
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 13u;
+              CTF_Timer::start()(&__t)
+              $$csxA = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(buffer,(int) (b * (long long) kp),1275070475,$$csxA,((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2,((char *)buffer  + 8ll * ((long long) kp * b)),(int) (b * (long long) kw),1275070475,$$csxA,1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   467 |      if (!(0 < kw)) goto lab_271;
+              $$CIV1 = 0ll;
+              do {   /* id=5 guarded */ /* ~270 */ 
+                /* region = 204 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)B_buf  + ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),((char *)buffer  + ((long long) kp * b + (long long) $$csx3 * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~270 */
+            lab_271:
+   192 |      __builtin_memcpy(T,tree_data,(unsigned long long) (b * 128ll));
+   193 |      unpack_upper(double const*, double*, int, int)(((char *)tree_data  + b * 128ll),((char *)Y2  + b * 8ll),$$csx3,(int) (b * 2ll))
+              tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((($$csx3 + 1) * $$csx3) / 2) * 8ll));
+              CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 14u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   197 |      __73 = 16ll;
+              __74 = 16ll;
+              cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(76u,84u,$$csx3,kw,$$csx3,$$csx3,(int) __73,((char *)Y2  + b * 8ll),(int) (b * 2ll),T,(int) __74,B_buf,(int) (b * 2ll),((char *)B_buf  + b * 8ll),(int) (b * 2ll),buffer,&info)
+   467 |      if (!(0 < kw)) goto lab_281;
+              $$CIV1 = 0ll;
+              do {   /* id=23 guarded */ /* ~280 */ 
+                /* region = 205 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)Bk_sv  + ((long long) pk_sv + (long long) $$csx3 * $$CIV1) * 8ll),((char *)B_buf  + (b + (long long) ((int) (b * 2ll)) * $$CIV1) * 8ll),(unsigned long long) $$csx3 * 8ull);
+   467 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) kw));    /* ~280 */
+            lab_281:
+   200 |      pk_sv = (int) ((long long) pk_sv + b * (long long) kw);
+   201 |      CTF_Timer::CTF_Timer(char const*)(&t,"cdtpmqrt");
+              __es.__c4@3 = 15u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   166 |      level = level / 2;
+            } while (level > 1);    /* ~264 */
+          lab_263:
+          lab_257:
+          lab_230:
+   203 |    goto lab_93;
+          lab_157:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 17u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 18u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_133;
+          lab_93:
+   205 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   207 |    CTF_Timer::CTF_Timer(char const*)(&t,"apply_tsqr_QT_buttefly");
+            __es.__c4@3 = 17u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   208 |    CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 18u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   210 |    $$PARM.ncol25 = kws[(long long) (ikw - 1)];
+   463 |    if (!($$csx3 == (int) (b * 2ll))) goto lab_188;
+   464 |    __builtin_memcpy(buffer,B_buf,(unsigned long long) (kws[(long long) (ikw - 1)] * $$csx3) * 8ull);
+   465 |    goto lab_189;
+          lab_188:
+   467 |    if (!(0 < kws[(long long) (ikw - 1)])) goto lab_190;
+            $$CIV1 = 0ll;
+            do {   /* id=11 guarded */ /* ~191 */ 
+              /* region = 206 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV1 * (long long) $$csx3)),((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) (b * 2ll)))),(unsigned long long) $$csx3 * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) $$PARM.ncol25));    /* ~191 */
+          lab_190:
+   470 |  lab_189:
+   211 |    __builtin_memcpy(B_buf,buffer,(unsigned long long) (8ll * ((long long) kws[(long long) (ikw - 1)] * b)));
+   214 |    if (!(2 <= pow2_np_work)) goto lab_137;
+            level = 2;
+            do {   /* id=1 guarded */ /* ~135 */ 
+              /* region = 207 */
+   221 |      ikw = ikw + -1;
+   222 |      kw.rnn3 = kws[(long long) ikw];
+   223 |      kp = kps[(long long) ikw];
+   224 |      $$csx6 = (long long) kws[(long long) ikw] * b;
+              pk_sv = (int) ((long long) pk_sv + - $$csx6);
+   227 |      if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) goto lab_138;
+   228 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 19u;
+              CTF_Timer::start()(&__t)
+              $$csx7 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(B_buf,(int) $$csx6,1275070475,$$csx7,1,buffer,(int) (b * (long long) kp),1275070475,$$csx7,0,cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   231 |      __builtin_memcpy(B_buf,buffer,(unsigned long long) (8ll * ((long long) kp * b)));
+   232 |      __builtin_memcpy(((char *)B_buf  + 8ll * ((long long) kp * b)),((char *)Bk_sv  + (long long) pk_sv * 8ll),(unsigned long long) (8ll * $$csx6));
+   233 |      goto lab_143;
+            lab_138:
+   234 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 20u;
+              CTF_Timer::start()(&__t)
+              $$csx8 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(((char *)Bk_sv  + (long long) pk_sv * 8ll),(int) $$csx6,1275070475,$$csx8,0,((char *)B_buf  + 8ll * $$csx6),(int) (b * (long long) kp),1275070475,$$csx8,1,cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   237 |    lab_143:
+   214 |      level = level * 2;
+            } while (level <= pow2_np_work);    /* ~135 */
+          lab_137:
+   239 |  lab_133:
+   240 |    free(Bk_sv)
+   242 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 21u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   244 |    CTF_Timer::CTF_Timer(char const*)(&t,"reverse_QT_buttefly");
+            __es.__c4@3 = 22u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   245 |  lab_84:
+   246 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_153;
+   463 |    if (!((int) b == (int) lda_B)) goto lab_218;
+   464 |    __builtin_memcpy(B,B_buf,(unsigned long long) ((int) k * (int) b) * 8ull);
+   465 |    goto lab_219;
+          lab_218:
+   467 |    if (!(0 < (int) k)) goto lab_220;
+            $$CIV1 = 0ll;
+            do {   /* id=17 guarded */ /* ~221 */ 
+              /* region = 209 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + 8ll * ($$CIV1 * (long long) ((int) lda_B))),((char *)B_buf  + 8ll * ($$CIV1 * (long long) ((int) b))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) k)));    /* ~221 */
+          lab_220:
+   470 |  lab_219:
+   247 |  lab_153:
+   249 |    free(T)
+   250 |    free(B_buf)
+   251 |    free(buffer)
+   252 |    free(Y2)
+   253 |    goto lab_156;
+   173 |  lab_99:
+            __assert_fail("kw>=2","apply_butterfly_tsqr_QT.cxx",173u,&__func__)
+          lab_156:
+            return;
+   253 |  } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV1) * 8ll),((char *)A  + ((long long) lda_A * $$CIV1) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

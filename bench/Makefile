@@ -2,7 +2,7 @@ include ../config.mk
 
 MM_BENCHMARKS := bench_spc topo_pdgemm_bench
 
-LU_BENCHMARKS := lu_25d_np_bench lu_25d_pp_bench lu_25d_tp_bench
+LU_BENCHMARKS := lu_25d_np_bench lu_25d_pp_bench lu_25d_tp_bench bench_scala_lu bench_scala_cholesky
 
 QR_BENCHMARKS := bench_hh_recon bench_qr_2d bench_qr_butterfly_2d bench_qr_tree_2d \
                  bench_scala_qr bench_qr_2d_hh_scala  bench_qr_seq bench_qr_y2d

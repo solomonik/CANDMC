@@ -1,0 +1,1302 @@
+1586-550 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-550 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-550 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-550 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-550 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-550 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    13 |  char * aggregator::aggregator(long, long)(aggregator *this, long long lda_aQm_, long long lda_aT_)
+          {
+    14 |    *((long long *)this) = lda_aQm_;
+    15 |    *((long long *)((char *)this + 8)) = lda_aT_;
+            $$RET0 = malloc((unsigned long long) (8ll * (lda_aQm_ * lda_aT_)));
+    17 |    *((char * *)((char *)this + 24)) = $$RET0;
+   700 |    if (!(0ll != 8ll * (*((long long *)this) * *((long long *)((char *)this + 8))))) goto lab_3;
+   737 |    $$CIV0 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 12 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll));    /* ~1 */
+   702 |    __memset(((char *)$$RET0 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll) * 8ll);
+   701 |  lab_3:
+   739 |    $$RET1 = malloc((unsigned long long) (8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))));
+    19 |    *((char * *)((char *)this + 32)) = $$RET1;
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV1 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)$$RET1 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    21 |    *((long long *)((char *)this + 40)) = 0ll;
+    22 |    *((long long *)((char *)this + 16)) = 0ll;
+    23 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             1    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+    13 |  char * aggregator::aggregator(long, long)(aggregator *this, long long lda_aQm_, long long lda_aT_)
+          {
+    14 |    *((long long *)this) = lda_aQm_;
+    15 |    *((long long *)((char *)this + 8)) = lda_aT_;
+            $$RET2 = malloc((unsigned long long) (8ll * (lda_aQm_ * lda_aT_)));
+    17 |    *((char * *)((char *)this + 24)) = $$RET2;
+   700 |    if (!(0ll != 8ll * (*((long long *)this) * *((long long *)((char *)this + 8))))) goto lab_3;
+   737 |    $$CIV2 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 12 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll));    /* ~1 */
+   702 |    __memset(((char *)$$RET2 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll) * 8ll);
+   701 |  lab_3:
+   739 |    $$RET3 = malloc((unsigned long long) (8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))));
+    19 |    *((char * *)((char *)this + 32)) = $$RET3;
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV3 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)$$RET3 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    21 |    *((long long *)((char *)this + 40)) = 0ll;
+    22 |    *((long long *)((char *)this + 16)) = 0ll;
+    23 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             1    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+    25 |  void aggregator::reset()(aggregator *this)
+          {
+    26 |    *((long long *)((char *)this + 40)) = 0ll;
+    27 |    *((long long *)((char *)this + 16)) = 0ll;
+   700 |    if (!(0ll != 8ll * (*((long long *)this) * *((long long *)((char *)this + 8))))) goto lab_3;
+   737 |    $$CIV4 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll));    /* ~1 */
+   702 |    __memset(((char *)*((char * *)((char *)this + 24)) + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)this))) / 8ll) * 8ll);
+   701 |  lab_3:
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV5 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 14 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)*((char * *)((char *)this + 32)) + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    31 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+        68           700             1    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+    34 |  void aggregator::shift_down(long)(aggregator *this, long long b)
+          {
+    35 |    *((long long *)((char *)this + 16)) = *((long long *)((char *)this + 16)) + b;
+    36 |    return;
+          } /* function */ 
+
+
+    38 |  void aggregator::append(long, long, double const*, long, double const*, pview*)(aggregator *this, long long mb, long long b, char * Qm, long long lda_Qm, char * T, CommData *pv)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = this;
+            __es.__i@18 = 0;
+    44 |    if (!(mb > 0ll)) goto lab_1;
+    45 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) mb,(int) b,(int) mb,(int) *((long long *)this),Qm,((char *)*((char * *)((char *)this + 24))  + (*((long long *)((char *)this + 40)) * *((long long *)this) + *((long long *)((char *)this + 16))) * 8ll))
+    46 |  lab_1:
+    47 |    if (!(*((long long *)((char *)this + 40)) == 0ll)) goto lab_3;
+            void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) b,(int) *((long long *)((char *)this + 8)),T,*((char * *)((char *)this + 32)))
+            goto lab_5;
+          lab_3:
+    50 |    tmp_T = (SNEW  (unsigned long long) (8ll * (*((long long *)((char *)this + 40)) * b)));
+    51 |    tmp_T2 = (SNEW  (unsigned long long) (8ll * (*((long long *)((char *)this + 40)) * b)));
+    56 |    if (!(mb > 0ll)) goto lab_6;
+    57 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) mb, 1.0000000000000000E+000,Qm,(int) lda_Qm,((char *)*((char * *)((char *)this + 24))  + *((long long *)((char *)this + 16)) * 8ll),(int) *((long long *)this), 0.0000000000000000E+000,tmp_T2,(int) b)
+            goto lab_8;
+          lab_6:
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_11;
+   737 |    $$CIV6 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~9 */ 
+              /* region = 17 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~9 */
+   702 |    __memset(((char *)tmp_T2 + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_11:
+   739 |  lab_8:
+    60 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(tmp_T2,tmp_T,(int) (*((long long *)((char *)this + 40)) * b),1275070475,1476395011,((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    61 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) *((long long *)((char *)this + 40)), 1.0000000000000000E+000,tmp_T,(int) b,*((char * *)((char *)this + 32)),(int) *((long long *)((char *)this + 8)), 0.0000000000000000E+000,tmp_T2,(int) b)
+    62 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) b, 1.0000000000000000E+000,T,(int) b,tmp_T2,(int) b, 0.0000000000000000E+000,((char *)*((char * *)((char *)this + 32))  + *((long long *)((char *)this + 40)) * 8ll),(int) *((long long *)((char *)this + 8)))
+    63 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) b,(int) *((long long *)((char *)this + 8)),T,((char *)*((char * *)((char *)this + 32))  + (*((long long *)((char *)this + 40)) * *((long long *)((char *)this + 8)) + *((long long *)((char *)this + 40))) * 8ll))
+    64 |  lab_5:
+    65 |    *((long long *)((char *)this + 40)) = *((long long *)((char *)this + 40)) + b;
+    66 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             1    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+    68 |  void update_Yamamoto_A(double*, long, double*, long, long, long, long, double*, pview*, aggregator*)(char * Qm, long long lda_Qm, char * A, long long lda_A, long long m, long long k, long long b, char * T, char * pv, char * agg)
+    77 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+    83 |    mb.rnn11 = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (m / b) % (long long) ((int *)(pv + 4))[28 / 4] ? (m / b) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : (m / b) / (long long) ((int *)(pv + 4))[28 / 4]);
+    87 |    kb.rnn10 = ((long long) (((((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) - 1) % ((int *)(pv + 4))[8 / 4]) < (k / b) % (long long) ((int *)(pv + 4))[8 / 4] ? (k / b) / (long long) ((int *)(pv + 4))[8 / 4] + 1ll : (k / b) / (long long) ((int *)(pv + 4))[8 / 4]);
+   100 |    if (!(lda_Qm != mb.rnn11 * b)) goto lab_5;
+   101 |    Qm_buf = malloc((unsigned long long) (8ll * (mb.rnn11 * (b * b))));
+   102 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) (mb.rnn11 * b),(int) b,(int) lda_Qm,(int) (mb.rnn11 * b),Qm,Qm_buf)
+   103 |    goto lab_7;
+          lab_5:
+   104 |    Qm_buf = Qm;
+   105 |  lab_7:
+   107 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   108 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Qm_buf,(int) (mb.rnn11 * (b * b)),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   109 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   110 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_T");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   111 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(T,(int) (b * b),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   112 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_T");
+            __es.__c4@3 = 6u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   113 |    upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(Qm_buf,mb.rnn11 * b,A,lda_A,mb.rnn11 * b,kb.rnn10 * b,b,T,pv)
+   115 |    if (!(agg != NULL)) goto lab_26;
+   116 |    aggregator::append(long, long, double const*, long, double const*, pview*)(agg,mb.rnn11 * b,b,Qm_buf,lda_Qm,T,pv)
+          lab_26:
+   118 |    if (!(lda_Qm != mb.rnn11 * b)) goto lab_28;
+   119 |    free(Qm_buf)
+          lab_28:
+   120 |    return;
+          } /* function */ 
+
+
+   123 |  void upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(char * Qm, long long lda_Qm, char * A, long long lda_A, long long mb, long long kb, long long b, char * T, CommData *pv)
+   131 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   134 |    if (!(kb > 0ll)) goto lab_1;
+   135 |    QmTA = malloc((unsigned long long) (8ll * (kb * b)));
+   136 |    QmTA2 = malloc((unsigned long long) (8ll * (kb * b)));
+   137 |  lab_1:
+   139 |    if (!(mb > 0ll)) goto lab_3;
+            if (!(kb > 0ll)) goto lab_3;
+   141 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmT_A");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   142 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) kb,(int) mb, 1.0000000000000000E+000,Qm,(int) lda_Qm,A,(int) lda_A, 0.0000000000000000E+000,QmTA,(int) b)
+   143 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmT_A");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   144 |    goto lab_12;
+          lab_3:
+            if (!(kb > 0ll)) goto lab_13;
+   700 |    if (!(0ll != 8ll * (kb * b))) goto lab_17;
+   737 |    $$CIV7 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~15 */ 
+              /* region = 24 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) ((8ll * (kb * b)) / 8ll));    /* ~15 */
+   702 |    __memset(((char *)QmTA + (8ll)*((long long) 0)),(long long) 0,((8ll * (kb * b)) / 8ll) * 8ll);
+   701 |  lab_17:
+   739 |  lab_13:
+   145 |  lab_12:
+   146 |    if (!(kb > 0ll)) goto lab_18;
+   147 |    CTF_Timer::CTF_Timer(char const*)(&t,"Allreduce_QmTA");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   148 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,QmTA,(int) (kb * b),1275070475,1476395011,((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"Allreduce_QmTA");
+            __es.__c4@3 = 5u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |  lab_18:
+   151 |    if (!(mb > 0ll)) goto lab_29;
+            if (!(kb > 0ll)) goto lab_29;
+   153 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmSinv_QmTA");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   157 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) kb,(int) b,-1.0000000000000000E+000,T,(int) b,QmTA,(int) b, 0.0000000000000000E+000,QmTA2,(int) b)
+   158 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmSinv_QmTA");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   160 |    CTF_Timer::CTF_Timer(char const*)(&t,"Y_TQmTA");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   161 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) mb,(int) kb,(int) b,-1.0000000000000000E+000,Qm,(int) lda_Qm,QmTA2,(int) b, 1.0000000000000000E+000,A,(int) lda_A)
+   162 |    CTF_Timer::CTF_Timer(char const*)(&t,"Y_TQmTA");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   163 |  lab_29:
+   165 |    if (!(kb > 0ll)) goto lab_44;
+   166 |    free(QmTA)
+   167 |    free(QmTA2)
+   168 |  lab_44:
+   169 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           700             1    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+   172 |  void QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(char * A, long long lda_A, long long m, long long k, long long b, char * pv, char * agg, char compute_Y)
+   179 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   181 |    CTF_Timer::CTF_Timer(char const*)(&t,"QR_2D");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   182 |    T = malloc((unsigned long long) (8ll * (b * b)));
+   184 |    CTF_Timer::CTF_Timer(char const*)(&t,"Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   187 |    mb.rnn15 = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (m / b) % (long long) ((int *)(pv + 4))[28 / 4] ? (m / b) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : (m / b) / (long long) ((int *)(pv + 4))[28 / 4]);
+   197 |    Qm = malloc((unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   199 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_9;
+   200 |    Yamamoto(double*, long, double*, long, long, long, double*, long, long, long, long, CommData)(A,lda_A,Qm,mb.rnn15 * b,m,min(k,b),T,(long long) ((int *)(pv + 8))[28 / 4],(long long) ((int *)(pv + 4))[28 / 4],(long long) *((int *)pv),42ll,*((aggr20 *)(pv + 28)))
+   201 |  lab_9:
+   203 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   205 |    CTF_Timer::CTF_Timer(char const*)(&t,"Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   206 |    move_ptr = 0ll;
+   208 |    if (!(k - b > 0ll)) goto lab_20;
+            if (!(m - b > 0ll)) goto lab_20;
+   209 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_23;
+   210 |    move_ptr = lda_A * b;
+          lab_23:
+   212 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   214 |    update_Yamamoto_A(double*, long, double*, long, long, long, long, double*, pview*, aggregator*)(Qm,mb.rnn15 * b,((char *)A  + move_ptr * 8ll),lda_A,m,k - b,b,T,pv,agg)
+   216 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   218 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   219 |  lab_20:
+   220 |    if (!(compute_Y != 0u)) goto lab_34;
+   221 |    LU = malloc((unsigned long long) (8ll * (b * b)));
+   222 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_36;
+   223 |    if (!(((int *)(pv + 8))[28 / 4] == *((int *)pv))) goto lab_38;
+   224 |    ipiv = malloc((unsigned long long) (b * 4ll));
+   226 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) (mb.rnn15 * b),(int) b,Qm,LU)
+   227 |    cdgetrf(int, int, double*, int, int*, int*)((int) b,(int) b,LU,(int) b,ipiv,&info)
+   228 |  lab_38:
+   229 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(LU,(int) (b * b),1275070475,*((int *)pv),((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   230 |    Qm2 = (SNEW  (unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   231 |    __builtin_memcpy(Qm2,Qm,(unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   232 |    if (!(mb.rnn15 * b > 0ll)) goto lab_43;
+   233 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (mb.rnn15 * b),(int) b, 1.0000000000000000E+000,LU,(int) b,Qm2,(int) (mb.rnn15 * b))
+   234 |    if (!(((int *)(pv + 8))[28 / 4] == *((int *)pv))) goto lab_45;
+   235 |    copy_lower(double const*, double*, int, int, int, int, int)(Qm2,A,(int) b,(int) (mb.rnn15 * b),(int) (mb.rnn15 * b),(int) lda_A,0)
+   236 |    goto lab_47;
+          lab_45:
+   237 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) (mb.rnn15 * b),(int) b,(int) (mb.rnn15 * b),(int) lda_A,Qm2,A)
+   238 |  lab_47:
+   239 |  lab_43:
+   240 |  lab_36:
+   241 |    free(LU)
+   242 |  lab_34:
+   244 |    if (!(k - b > 0ll)) goto lab_48;
+            if (!(m - b > 0ll)) goto lab_48;
+   245 |    free(Qm)
+   246 |    free(T)
+   248 |    move_ptr.rnn16 = (((int *)(pv + 8))[28 / 4] == *((int *)pv) ? move_ptr + b : move_ptr);
+   255 |    if (!(agg != NULL)) goto lab_53;
+            if (!(((int *)(pv + 8))[28 / 4] == *((int *)pv))) goto lab_53;
+            aggregator::shift_down(long)(agg,b)
+          lab_53:
+   256 |    *((int *)pv) = (*((int *)pv) + 1) % ((int *)(pv + 4))[28 / 4];
+   257 |    *((int *)(pv + 4)) = (*((int *)(pv + 4)) + 1) % ((int *)(pv + 4))[8 / 4];
+   259 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + move_ptr.rnn16 * 8ll),lda_A,m - b,k - b,b,pv,agg,compute_Y)
+   261 |    goto lab_56;
+          lab_48:
+   262 |    if (!(agg != NULL)) goto lab_57;
+            if (!(m - b >= 0ll)) goto lab_57;
+   265 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Qm,(int) (mb.rnn15 * (b * b)),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   266 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(T,(int) (b * b),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   267 |    aggregator::append(long, long, double const*, long, double const*, pview*)(agg,mb.rnn15 * b,b,Qm,mb.rnn15 * b,T,pv)
+   268 |  lab_57:
+   269 |    free(Qm)
+   270 |    free(T)
+   271 |  lab_56:
+   272 |    CTF_Timer::CTF_Timer(char const*)(&t,"QR_2D");
+            __es.__c4@3 = 11u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   273 |    return;
+          } /* function */ 
+
+
+   275 |  void QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(char * A, long long lda_A, long long m, long long k, long long b, long long b_sub, pview *pv0, aggregator *agg, char compute_Y)
+   283 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__35 = 1;
+   287 |    pvo = *pv0;
+   291 |    if (!(k - b > 0ll)) goto lab_2;
+            if (!(m - b > 0ll)) goto lab_2;
+   315 |    bmb.rnn19 = ((long long) (((CommData).rank@8.rns115..mga.pvo + ((CommData).np@4.rns113..mga.pvo - (int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo))) % (CommData).np@4.rns113..mga.pvo) < ((long long) ((int) (m - b)) / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo ? ((long long) ((int) (m - b)) / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo + 1ll : ((long long) ((int) (m - b)) / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo);
+   319 |    bkb.rnn18 = ((long long) (((CommData).rank@8.rns118..mga.pvo + ((CommData).np@4.rns116..mga.pvo - (int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo))) % (CommData).np@4.rns116..mga.pvo) < ((long long) ((int) (k - b)) / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo ? ((long long) ((int) (k - b)) / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo + 1ll : ((long long) ((int) (k - b)) / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo);
+   329 |    if (bmb.rnn19 * b_sub == (long long) ((CommData).rank@8.rns115..mga.pvo < (int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo) ? (int) ((long long) ((int) (((long long) ((int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo)) * b_sub + (m - b)) / (long long) (CommData).np@4.rns113..mga.pvo)) - b_sub) : (int) (((long long) ((int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo)) * b_sub + (m - b)) / (long long) (CommData).np@4.rns113..mga.pvo))) goto lab_19;
+            __assert_fail("bmb==bmb2","qr_y2d.cxx",329u,&__func__)
+            return;
+          lab_19:
+   330 |    if (bkb.rnn18 * b_sub == (long long) ((CommData).rank@8.rns118..mga.pvo < (int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo) ? (int) ((long long) ((int) (((long long) ((int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo)) * b_sub + (k - b)) / (long long) (CommData).np@4.rns116..mga.pvo)) - b_sub) : (int) (((long long) ((int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo)) * b_sub + (k - b)) / (long long) (CommData).np@4.rns116..mga.pvo))) goto lab_22;
+            __assert_fail("bkb==bkb2","qr_y2d.cxx",330u,&__func__)
+            return;
+          lab_22:
+   299 |    mb.rnn1B = ((long long) (((CommData).rank@8.rns115..mga.pvo + ((CommData).np@4.rns113..mga.pvo - (pview).rrow@0.rns114..mga.pvo)) % (CommData).np@4.rns113..mga.pvo) < (m / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo ? (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo + 1ll : (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo);
+   303 |    kb.rnn1A = ((long long) (((CommData).rank@8.rns118..mga.pvo + ((CommData).np@4.rns116..mga.pvo - (pview).rcol@4.rns117..mga.pvo)) % (CommData).np@4.rns116..mga.pvo) < (k / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo ? (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo + 1ll : (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo);
+   332 |    if (!(agg == NULL)) goto lab_23;
+   333 |    __157 = operator new(unsigned long)(48ull);
+            if (!(__157 != NULL)) goto lab_26;
+            __es.__c4@3 = 1u;
+            aggregator::aggregator(long, long)(__157,mb.rnn1B * b_sub,b);
+            __es.__c4@3 = 0u;
+          lab_26:
+            iagg = __157;
+   334 |    goto lab_28;
+          lab_23:
+   336 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,min(k,b),b_sub,&pvo,agg,compute_Y)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(*((char * *)((char *)agg + 24)),*((long long *)agg),((char *)A  + (8ll * (kb.rnn1A * b_sub) - 8ll * (bkb.rnn18 * b_sub)) * lda_A),lda_A,mb.rnn1B * b_sub,bkb.rnn18 * b_sub,b,*((char * *)((char *)agg + 32)),&pvo)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            (pview).rrow@0.rns114..mga.pvo = ((pview).rrow@0.rns114..mga.pvo + 1) % (CommData).np@4.rns113..mga.pvo;
+            (pview).rcol@4.rns117..mga.pvo = ((pview).rcol@4.rns117..mga.pvo + 1) % (CommData).np@4.rns116..mga.pvo;
+            aggregator::reset()(agg)
+            QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + (8ll * (mb.rnn1B * b_sub) + ((8ll * (kb.rnn1A * b_sub) - 8ll * (bkb.rnn18 * b_sub)) * lda_A - 8ll * (bmb.rnn19 * b_sub)))),lda_A,m - b,k - b,b,b_sub,&pvo,agg,compute_Y)
+            goto lab_50;
+          lab_28:
+   339 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   340 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,min(k,b),b_sub,&pvo,iagg,compute_Y)
+   342 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   344 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   365 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   367 |    upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(*((char * *)((char *)iagg + 24)),*((long long *)iagg),((char *)A  + (8ll * (kb.rnn1A * b_sub) - 8ll * (bkb.rnn18 * b_sub)) * lda_A),lda_A,mb.rnn1B * b_sub,bkb.rnn18 * b_sub,b,*((char * *)((char *)iagg + 32)),&pvo)
+   369 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   371 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   378 |    (pview).rrow@0.rns114..mga.pvo = ((pview).rrow@0.rns114..mga.pvo + 1) % (CommData).np@4.rns113..mga.pvo;
+   379 |    (pview).rcol@4.rns117..mga.pvo = ((pview).rcol@4.rns117..mga.pvo + 1) % (CommData).np@4.rns116..mga.pvo;
+   381 |    aggregator::reset()(iagg)
+   382 |    QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + (8ll * (mb.rnn1B * b_sub) + ((8ll * (kb.rnn1A * b_sub) - 8ll * (bkb.rnn18 * b_sub)) * lda_A - 8ll * (bmb.rnn19 * b_sub)))),lda_A,m - b,k - b,b,b_sub,&pvo,iagg,compute_Y)
+   384 |    if (!(iagg != NULL)) goto lab_53;
+            operator delete(void*)(iagg)
+          lab_53:
+          lab_50:
+   385 |    goto lab_55;
+          lab_2:
+   386 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   387 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,k,b_sub,&pvo,agg,compute_Y)
+   389 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   391 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 10u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   392 |  lab_55:
+   393 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV8) * 8ll),((char *)A  + ((long long) lda_A * $$CIV8) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       114           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    13 |  char * aggregator::aggregator(long, long)(aggregator *this, long long lda_aQm_, long long lda_aT_)
+          {
+    14 |    *((long long *)this) = lda_aQm_;
+    15 |    *((long long *)((char *)this + 8)) = lda_aT_;
+            $$RET0 = malloc((unsigned long long) (8ll * (lda_aQm_ * lda_aT_)));
+    17 |    *((char * *)((char *)this + 24)) = $$RET0;
+   737 |    $$csx0 = 8ll * (*((long long *)this) * *((long long *)((char *)this + 8)));
+   700 |    if (!(0ll != $$csx0)) goto lab_3;
+   737 |    $$CIV0 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 12 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ($$csx0 / 8ll));    /* ~1 */
+   702 |    __memset(((char *)$$RET0 + (8ll)*((long long) 0)),(long long) 0,($$csx0 / 8ll) * 8ll);
+   701 |  lab_3:
+   739 |    $$RET1 = malloc((unsigned long long) (8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))));
+    19 |    *((char * *)((char *)this + 32)) = $$RET1;
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV1 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)$$RET1 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    21 |    *((long long *)((char *)this + 40)) = 0ll;
+    22 |    *((long long *)((char *)this + 16)) = 0ll;
+    23 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+    13 |  char * aggregator::aggregator(long, long)(aggregator *this, long long lda_aQm_, long long lda_aT_)
+          {
+    14 |    *((long long *)this) = lda_aQm_;
+    15 |    *((long long *)((char *)this + 8)) = lda_aT_;
+            $$RET2 = malloc((unsigned long long) (8ll * (lda_aQm_ * lda_aT_)));
+    17 |    *((char * *)((char *)this + 24)) = $$RET2;
+   737 |    $$csx1 = 8ll * (*((long long *)this) * *((long long *)((char *)this + 8)));
+   700 |    if (!(0ll != $$csx1)) goto lab_3;
+   737 |    $$CIV2 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 12 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ($$csx1 / 8ll));    /* ~1 */
+   702 |    __memset(((char *)$$RET2 + (8ll)*((long long) 0)),(long long) 0,($$csx1 / 8ll) * 8ll);
+   701 |  lab_3:
+   739 |    $$RET3 = malloc((unsigned long long) (8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))));
+    19 |    *((char * *)((char *)this + 32)) = $$RET3;
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV3 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)$$RET3 + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    21 |    *((long long *)((char *)this + 40)) = 0ll;
+    22 |    *((long long *)((char *)this + 16)) = 0ll;
+    23 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+    25 |  void aggregator::reset()(aggregator *this)
+          {
+    26 |    *((long long *)((char *)this + 40)) = 0ll;
+    27 |    *((long long *)((char *)this + 16)) = 0ll;
+   737 |    $$csx2 = 8ll * (*((long long *)this) * *((long long *)((char *)this + 8)));
+   700 |    if (!(0ll != $$csx2)) goto lab_3;
+   737 |    $$CIV4 = 0ll;
+   700 |    do {   /* id=2 guarded */ /* ~1 */ 
+              /* region = 13 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ($$csx2 / 8ll));    /* ~1 */
+   702 |    __memset(((char *)*((char * *)((char *)this + 24)) + (8ll)*((long long) 0)),(long long) 0,($$csx2 / 8ll) * 8ll);
+   701 |  lab_3:
+   700 |    if (!(0ll != 8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8))))) goto lab_6;
+   737 |    $$CIV5 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 14 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll));    /* ~4 */
+   702 |    __memset(((char *)*((char * *)((char *)this + 32)) + (8ll)*((long long) 0)),(long long) 0,((8ll * (*((long long *)((char *)this + 8)) * *((long long *)((char *)this + 8)))) / 8ll) * 8ll);
+   701 |  lab_6:
+    31 |    return;
+          } /* function */ 
+
+
+    34 |  void aggregator::shift_down(long)(aggregator *this, long long b)
+          {
+    35 |    *((long long *)((char *)this + 16)) = *((long long *)((char *)this + 16)) + b;
+    36 |    return;
+          } /* function */ 
+
+
+    38 |  void aggregator::append(long, long, double const*, long, double const*, pview*)(aggregator *this, long long mb, long long b, char * Qm, long long lda_Qm, char * T, CommData *pv)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = this;
+            __es.__i@18 = 0;
+    44 |    if (!(mb > 0ll)) goto lab_1;
+    45 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) mb,(int) b,(int) mb,(int) *((long long *)this),Qm,((char *)*((char * *)((char *)this + 24))  + (*((long long *)((char *)this + 40)) * *((long long *)this) + *((long long *)((char *)this + 16))) * 8ll))
+    46 |  lab_1:
+    47 |    if (!(*((long long *)((char *)this + 40)) == 0ll)) goto lab_3;
+            void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) b,(int) *((long long *)((char *)this + 8)),T,*((char * *)((char *)this + 32)))
+            goto lab_5;
+          lab_3:
+    50 |    tmp_T = (SNEW  (unsigned long long) (8ll * (*((long long *)((char *)this + 40)) * b)));
+    51 |    tmp_T2 = (SNEW  (unsigned long long) (8ll * (*((long long *)((char *)this + 40)) * b)));
+    56 |    if (!(mb > 0ll)) goto lab_6;
+    57 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) mb, 1.0000000000000000E+000,Qm,(int) lda_Qm,((char *)*((char * *)((char *)this + 24))  + *((long long *)((char *)this + 16)) * 8ll),(int) *((long long *)this), 0.0000000000000000E+000,tmp_T2,(int) b)
+            goto lab_8;
+          lab_6:
+   700 |    if (!(0ll != 8ll * (b * b))) goto lab_11;
+   737 |    $$CIV6 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~9 */ 
+              /* region = 17 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < (unsigned long long) ((8ll * (b * b)) / 8ll));    /* ~9 */
+   702 |    __memset(((char *)tmp_T2 + (8ll)*((long long) 0)),(long long) 0,((8ll * (b * b)) / 8ll) * 8ll);
+   701 |  lab_11:
+   739 |  lab_8:
+    60 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(tmp_T2,tmp_T,(int) (*((long long *)((char *)this + 40)) * b),1275070475,1476395011,((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    61 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) *((long long *)((char *)this + 40)), 1.0000000000000000E+000,tmp_T,(int) b,*((char * *)((char *)this + 32)),(int) *((long long *)((char *)this + 8)), 0.0000000000000000E+000,tmp_T2,(int) b)
+    62 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) *((long long *)((char *)this + 40)),(int) b, 1.0000000000000000E+000,T,(int) b,tmp_T2,(int) b, 0.0000000000000000E+000,((char *)*((char * *)((char *)this + 32))  + *((long long *)((char *)this + 40)) * 8ll),(int) *((long long *)((char *)this + 8)))
+    63 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) b,(int) *((long long *)((char *)this + 8)),T,((char *)*((char * *)((char *)this + 32))  + (*((long long *)((char *)this + 40)) * *((long long *)((char *)this + 8)) + *((long long *)((char *)this + 40))) * 8ll))
+    64 |  lab_5:
+    65 |    *((long long *)((char *)this + 40)) = *((long long *)((char *)this + 40)) + b;
+    66 |    return;
+          } /* function */ 
+
+
+    68 |  void update_Yamamoto_A(double*, long, double*, long, long, long, long, double*, pview*, aggregator*)(char * Qm, long long lda_Qm, char * A, long long lda_A, long long m, long long k, long long b, char * T, char * pv, char * agg)
+    77 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+    83 |    mb.rnn11 = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (m / b) % (long long) ((int *)(pv + 4))[28 / 4] ? (m / b) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : (m / b) / (long long) ((int *)(pv + 4))[28 / 4]);
+    87 |    kb.rnn10 = ((long long) (((((int *)(pv + 8))[8 / 4] + (((int *)(pv + 4))[8 / 4] - *((int *)(pv + 4)))) - 1) % ((int *)(pv + 4))[8 / 4]) < (k / b) % (long long) ((int *)(pv + 4))[8 / 4] ? (k / b) / (long long) ((int *)(pv + 4))[8 / 4] + 1ll : (k / b) / (long long) ((int *)(pv + 4))[8 / 4]);
+   100 |    if (!(lda_Qm != mb.rnn11 * b)) goto lab_5;
+   101 |    Qm_buf = malloc((unsigned long long) (8ll * (mb.rnn11 * (b * b))));
+   102 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) (mb.rnn11 * b),(int) b,(int) lda_Qm,(int) (mb.rnn11 * b),Qm,Qm_buf)
+   103 |    goto lab_7;
+          lab_5:
+   104 |    Qm_buf = Qm;
+   105 |  lab_7:
+   107 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   108 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Qm_buf,(int) (mb.rnn11 * (b * b)),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   109 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   110 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_T");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   111 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(T,(int) (b * b),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   112 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_T");
+            __es.__c4@3 = 6u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   113 |    upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(Qm_buf,mb.rnn11 * b,A,lda_A,mb.rnn11 * b,kb.rnn10 * b,b,T,pv)
+   115 |    if (!(agg != NULL)) goto lab_26;
+   116 |    aggregator::append(long, long, double const*, long, double const*, pview*)(agg,mb.rnn11 * b,b,Qm_buf,lda_Qm,T,pv)
+          lab_26:
+   118 |    if (!(lda_Qm != mb.rnn11 * b)) goto lab_28;
+   119 |    free(Qm_buf)
+          lab_28:
+   120 |    return;
+          } /* function */ 
+
+
+   123 |  void upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(char * Qm, long long lda_Qm, char * A, long long lda_A, long long mb, long long kb, long long b, char * T, CommData *pv)
+   131 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   134 |    if (!(kb > 0ll)) goto lab_1;
+   135 |    QmTA = malloc((unsigned long long) (8ll * (kb * b)));
+   136 |    QmTA2 = malloc((unsigned long long) (8ll * (kb * b)));
+   137 |  lab_1:
+   139 |    if (!(mb > 0ll)) goto lab_3;
+            if (!(kb > 0ll)) goto lab_3;
+   141 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmT_A");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   142 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(84u,78u,(int) b,(int) kb,(int) mb, 1.0000000000000000E+000,Qm,(int) lda_Qm,A,(int) lda_A, 0.0000000000000000E+000,QmTA,(int) b)
+   143 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmT_A");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   144 |    goto lab_12;
+          lab_3:
+            if (!(kb > 0ll)) goto lab_13;
+   700 |    if (!(0ll != 8ll * (kb * b))) goto lab_17;
+   737 |    $$CIV7 = 0ll;
+   700 |    do {   /* id=1 guarded */ /* ~15 */ 
+              /* region = 24 */
+              /* bump-normalized */
+              /* independent */
+   701 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) ((8ll * (kb * b)) / 8ll));    /* ~15 */
+   702 |    __memset(((char *)QmTA + (8ll)*((long long) 0)),(long long) 0,((8ll * (kb * b)) / 8ll) * 8ll);
+   701 |  lab_17:
+   739 |  lab_13:
+   145 |  lab_12:
+   146 |    if (!(kb > 0ll)) goto lab_18;
+   147 |    CTF_Timer::CTF_Timer(char const*)(&t,"Allreduce_QmTA");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   148 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce((char *) -1,QmTA,(int) (kb * b),1275070475,1476395011,((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"Allreduce_QmTA");
+            __es.__c4@3 = 5u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |  lab_18:
+   151 |    if (!(mb > 0ll)) goto lab_29;
+            if (!(kb > 0ll)) goto lab_29;
+   153 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmSinv_QmTA");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   157 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) b,(int) kb,(int) b,-1.0000000000000000E+000,T,(int) b,QmTA,(int) b, 0.0000000000000000E+000,QmTA2,(int) b)
+   158 |    CTF_Timer::CTF_Timer(char const*)(&t,"QmSinv_QmTA");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   160 |    CTF_Timer::CTF_Timer(char const*)(&t,"Y_TQmTA");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   161 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) mb,(int) kb,(int) b,-1.0000000000000000E+000,Qm,(int) lda_Qm,QmTA2,(int) b, 1.0000000000000000E+000,A,(int) lda_A)
+   162 |    CTF_Timer::CTF_Timer(char const*)(&t,"Y_TQmTA");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   163 |  lab_29:
+   165 |    if (!(kb > 0ll)) goto lab_44;
+   166 |    free(QmTA)
+   167 |    free(QmTA2)
+   168 |  lab_44:
+   169 |    return;
+          } /* function */ 
+
+
+   172 |  void QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(char * A, long long lda_A, long long m, long long k, long long b, char * pv, char * agg, char compute_Y)
+   179 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   181 |    CTF_Timer::CTF_Timer(char const*)(&t,"QR_2D");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   182 |    T = malloc((unsigned long long) (8ll * (b * b)));
+   184 |    CTF_Timer::CTF_Timer(char const*)(&t,"Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   187 |    mb.rnn15 = ((long long) ((((int *)(pv + 8))[28 / 4] + (((int *)(pv + 4))[28 / 4] - *((int *)pv))) % ((int *)(pv + 4))[28 / 4]) < (m / b) % (long long) ((int *)(pv + 4))[28 / 4] ? (m / b) / (long long) ((int *)(pv + 4))[28 / 4] + 1ll : (m / b) / (long long) ((int *)(pv + 4))[28 / 4]);
+   197 |    Qm = malloc((unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   199 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_9;
+   200 |    Yamamoto(double*, long, double*, long, long, long, double*, long, long, long, long, CommData)(A,lda_A,Qm,mb.rnn15 * b,m,min(k,b),T,(long long) ((int *)(pv + 8))[28 / 4],(long long) ((int *)(pv + 4))[28 / 4],(long long) *((int *)pv),42ll,*((aggr20 *)(pv + 28)))
+   201 |  lab_9:
+   203 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   205 |    CTF_Timer::CTF_Timer(char const*)(&t,"Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   206 |    move_ptr = 0ll;
+   208 |    if (!(k - b > 0ll)) goto lab_20;
+            if (!(m - b > 0ll)) goto lab_20;
+   209 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_23;
+   210 |    move_ptr = lda_A * b;
+          lab_23:
+   212 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   214 |    update_Yamamoto_A(double*, long, double*, long, long, long, long, double*, pview*, aggregator*)(Qm,mb.rnn15 * b,((char *)A  + move_ptr * 8ll),lda_A,m,k - b,b,T,pv,agg)
+   216 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(((int *)pv)[68 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   218 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   219 |  lab_20:
+   220 |    if (!(compute_Y != 0u)) goto lab_34;
+   221 |    LU = malloc((unsigned long long) (8ll * (b * b)));
+   222 |    if (!(((int *)(pv + 8))[8 / 4] == *((int *)(pv + 4)))) goto lab_36;
+   223 |    if (!(((int *)(pv + 8))[28 / 4] == *((int *)pv))) goto lab_38;
+   224 |    ipiv = malloc((unsigned long long) (b * 4ll));
+   226 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) b,(int) b,(int) (mb.rnn15 * b),(int) b,Qm,LU)
+   227 |    cdgetrf(int, int, double*, int, int*, int*)((int) b,(int) b,LU,(int) b,ipiv,&info)
+   228 |  lab_38:
+   229 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(LU,(int) (b * b),1275070475,*((int *)pv),((int *)pv)[28 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   230 |    Qm2 = (SNEW  (unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   231 |    __builtin_memcpy(Qm2,Qm,(unsigned long long) (8ll * (mb.rnn15 * (b * b))));
+   232 |    if (!(mb.rnn15 * b > 0ll)) goto lab_43;
+   233 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (mb.rnn15 * b),(int) b, 1.0000000000000000E+000,LU,(int) b,Qm2,(int) (mb.rnn15 * b))
+   234 |    if (!(((int *)(pv + 8))[28 / 4] == *((int *)pv))) goto lab_45;
+   235 |    copy_lower(double const*, double*, int, int, int, int, int)(Qm2,A,(int) b,(int) (mb.rnn15 * b),(int) (mb.rnn15 * b),(int) lda_A,0)
+   236 |    goto lab_47;
+          lab_45:
+   237 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) (mb.rnn15 * b),(int) b,(int) (mb.rnn15 * b),(int) lda_A,Qm2,A)
+   238 |  lab_47:
+   239 |  lab_43:
+   240 |  lab_36:
+   241 |    free(LU)
+   242 |  lab_34:
+   244 |    if (!(k - b > 0ll)) goto lab_48;
+            if (!(m - b > 0ll)) goto lab_48;
+   245 |    free(Qm)
+   246 |    free(T)
+   248 |    $$csx3 = ((int *)(pv + 8))[28 / 4];
+            $$csx4 = *((int *)pv);
+            move_ptr.rnn16 = ($$csx3 == $$csx4 ? move_ptr + b : move_ptr);
+   255 |    if (!(agg != NULL)) goto lab_53;
+            if (!($$csx3 == $$csx4)) goto lab_53;
+            aggregator::shift_down(long)(agg,b)
+          lab_53:
+   256 |    *((int *)pv) = (*((int *)pv) + 1) % ((int *)(pv + 4))[28 / 4];
+   257 |    *((int *)(pv + 4)) = (*((int *)(pv + 4)) + 1) % ((int *)(pv + 4))[8 / 4];
+   259 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + move_ptr.rnn16 * 8ll),lda_A,m - b,k - b,b,pv,agg,compute_Y)
+   261 |    goto lab_56;
+          lab_48:
+   262 |    if (!(agg != NULL)) goto lab_57;
+            if (!(m - b >= 0ll)) goto lab_57;
+   265 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Qm,(int) (mb.rnn15 * (b * b)),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   266 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(T,(int) (b * b),1275070475,*((int *)(pv + 4)),((int *)pv)[8 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   267 |    aggregator::append(long, long, double const*, long, double const*, pview*)(agg,mb.rnn15 * b,b,Qm,mb.rnn15 * b,T,pv)
+   268 |  lab_57:
+   269 |    free(Qm)
+   270 |    free(T)
+   271 |  lab_56:
+   272 |    CTF_Timer::CTF_Timer(char const*)(&t,"QR_2D");
+            __es.__c4@3 = 11u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   273 |    return;
+          } /* function */ 
+
+
+   275 |  void QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(char * A, long long lda_A, long long m, long long k, long long b, long long b_sub, pview *pv0, aggregator *agg, char compute_Y)
+   283 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__35 = 1;
+   287 |    pvo = *pv0;
+   291 |    if (!(k - b > 0ll)) goto lab_2;
+            if (!(m - b > 0ll)) goto lab_2;
+   299 |    $$csx5 = ((long long) (((CommData).rank@8.rns115..mga.pvo + ((CommData).np@4.rns113..mga.pvo - (pview).rrow@0.rns114..mga.pvo)) % (CommData).np@4.rns113..mga.pvo) < (m / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo ? (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo + 1ll : (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo) * b_sub;
+   303 |    $$csx6 = ((long long) (((CommData).rank@8.rns118..mga.pvo + ((CommData).np@4.rns116..mga.pvo - (pview).rcol@4.rns117..mga.pvo)) % (CommData).np@4.rns116..mga.pvo) < (k / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo ? (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo + 1ll : (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo) * b_sub;
+   315 |    bmb.rnn19 = ((long long) (((CommData).rank@8.rns115..mga.pvo + ((CommData).np@4.rns113..mga.pvo - (int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo))) % (CommData).np@4.rns113..mga.pvo) < ((long long) ((int) (m - b)) / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo ? ((long long) ((int) (m - b)) / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo + 1ll : ((long long) ((int) (m - b)) / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo);
+   319 |    bkb.rnn18 = ((long long) (((CommData).rank@8.rns118..mga.pvo + ((CommData).np@4.rns116..mga.pvo - (int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo))) % (CommData).np@4.rns116..mga.pvo) < ((long long) ((int) (k - b)) / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo ? ((long long) ((int) (k - b)) / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo + 1ll : ((long long) ((int) (k - b)) / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo);
+   329 |    if (bmb.rnn19 * b_sub == (long long) ((CommData).rank@8.rns115..mga.pvo < (int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo) ? (int) ((long long) ((int) (((long long) ((int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo)) * b_sub + (m - b)) / (long long) (CommData).np@4.rns113..mga.pvo)) - b_sub) : (int) (((long long) ((int) (((long long) (pview).rrow@0.rns114..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo)) * b_sub + (m - b)) / (long long) (CommData).np@4.rns113..mga.pvo))) goto lab_19;
+            __assert_fail("bmb==bmb2","qr_y2d.cxx",329u,&__func__)
+            return;
+          lab_19:
+   330 |    if (bkb.rnn18 * b_sub == (long long) ((CommData).rank@8.rns118..mga.pvo < (int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo) ? (int) ((long long) ((int) (((long long) ((int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo)) * b_sub + (k - b)) / (long long) (CommData).np@4.rns116..mga.pvo)) - b_sub) : (int) (((long long) ((int) (((long long) (pview).rcol@4.rns117..mga.pvo + b / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo)) * b_sub + (k - b)) / (long long) (CommData).np@4.rns116..mga.pvo))) goto lab_22;
+            __assert_fail("bkb==bkb2","qr_y2d.cxx",330u,&__func__)
+            return;
+          lab_22:
+   299 |    mb.rnn1B = ((long long) (((CommData).rank@8.rns115..mga.pvo + ((CommData).np@4.rns113..mga.pvo - (pview).rrow@0.rns114..mga.pvo)) % (CommData).np@4.rns113..mga.pvo) < (m / b_sub) % (long long) (CommData).np@4.rns113..mga.pvo ? (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo + 1ll : (m / b_sub) / (long long) (CommData).np@4.rns113..mga.pvo);
+   303 |    kb.rnn1A = ((long long) (((CommData).rank@8.rns118..mga.pvo + ((CommData).np@4.rns116..mga.pvo - (pview).rcol@4.rns117..mga.pvo)) % (CommData).np@4.rns116..mga.pvo) < (k / b_sub) % (long long) (CommData).np@4.rns116..mga.pvo ? (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo + 1ll : (k / b_sub) / (long long) (CommData).np@4.rns116..mga.pvo);
+   332 |    if (!(agg == NULL)) goto lab_23;
+   333 |    __157 = operator new(unsigned long)(48ull);
+            if (!(__157 != NULL)) goto lab_26;
+            __es.__c4@3 = 1u;
+            aggregator::aggregator(long, long)(__157,$$csx5,b);
+            __es.__c4@3 = 0u;
+          lab_26:
+            iagg = __157;
+   334 |    goto lab_28;
+          lab_23:
+   336 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,min(k,b),b_sub,&pvo,agg,compute_Y)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(*((char * *)((char *)agg + 24)),*((long long *)agg),((char *)A  + (8ll * $$csx6 - 8ll * (bkb.rnn18 * b_sub)) * lda_A),lda_A,$$csx5,bkb.rnn18 * b_sub,b,*((char * *)((char *)agg + 32)),&pvo)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            (pview).rrow@0.rns114..mga.pvo = ((pview).rrow@0.rns114..mga.pvo + 1) % (CommData).np@4.rns113..mga.pvo;
+            (pview).rcol@4.rns117..mga.pvo = ((pview).rcol@4.rns117..mga.pvo + 1) % (CommData).np@4.rns116..mga.pvo;
+            aggregator::reset()(agg)
+            QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + (8ll * $$csx5 + ((8ll * $$csx6 - 8ll * (bkb.rnn18 * b_sub)) * lda_A - 8ll * (bmb.rnn19 * b_sub)))),lda_A,m - b,k - b,b,b_sub,&pvo,agg,compute_Y)
+            goto lab_50;
+          lab_28:
+   339 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   340 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,min(k,b),b_sub,&pvo,iagg,compute_Y)
+   342 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   344 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   365 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   367 |    upd_Yamamoto_A(double const*, long, double*, long, long, long, long, double const*, pview*)(*((char * *)((char *)iagg + 24)),*((long long *)iagg),((char *)A  + (8ll * $$csx6 - 8ll * (bkb.rnn18 * b_sub)) * lda_A),lda_A,$$csx5,bkb.rnn18 * b_sub,b,*((char * *)((char *)iagg + 32)),&pvo)
+   369 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   371 |    CTF_Timer::CTF_Timer(char const*)(&t,"trailing_matrix_QR_update_upper");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   378 |    (pview).rrow@0.rns114..mga.pvo = ((pview).rrow@0.rns114..mga.pvo + 1) % (CommData).np@4.rns113..mga.pvo;
+   379 |    (pview).rcol@4.rns117..mga.pvo = ((pview).rcol@4.rns117..mga.pvo + 1) % (CommData).np@4.rns116..mga.pvo;
+   381 |    aggregator::reset()(iagg)
+   382 |    QR_Yamamoto_2D_2D(double*, long, long, long, long, long, pview*, aggregator*, bool)(((char *)A  + (8ll * $$csx5 + ((8ll * $$csx6 - 8ll * (bkb.rnn18 * b_sub)) * lda_A - 8ll * (bmb.rnn19 * b_sub)))),lda_A,m - b,k - b,b,b_sub,&pvo,iagg,compute_Y)
+   384 |    if (!(iagg != NULL)) goto lab_53;
+            operator delete(void*)(iagg)
+          lab_53:
+          lab_50:
+   385 |    goto lab_55;
+          lab_2:
+   386 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   387 |    QR_Yamamoto_2D(double*, long, long, long, long, pview*, aggregator*, bool)(A,lda_A,m,k,b_sub,&pvo,agg,compute_Y)
+   389 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier((CommData).cm@0.rns119..mga.pvo);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   391 |    CTF_Timer::CTF_Timer(char const*)(&t,"2D_Panel_QR");
+            __es.__c4@3 = 10u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   392 |  lab_55:
+   393 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV8) * 8ll),((char *)A  + ((long long) lda_A * $$CIV8) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

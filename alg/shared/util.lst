@@ -1,0 +1,2502 @@
+1586-539 (I) Loop (loop index 1) at util.cxx <line 34> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 35> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 34> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 44> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 45> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 44> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-538 (I) Loop (loop index 1) at util.cxx <line 78> was not SIMD vectorized because it contains unsupported loop structure.
+1586-552 (I) Loop (loop index 1) at util.cxx <line 78> was not SIMD vectorized because it contains control flow.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-538 (I) Loop (loop index 1) at util.cxx <line 119> was not SIMD vectorized because it contains unsupported loop structure.
+1586-552 (I) Loop (loop index 1) at util.cxx <line 119> was not SIMD vectorized because it contains control flow.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-534 (I) Loop (loop index 1) at util.cxx <line 165> was not SIMD vectorized because the loop is not the innermost loop.
+1586-538 (I) Loop (loop index 1) at util.cxx <line 165> was not SIMD vectorized because it contains unsupported loop structure.
+1586-538 (I) Loop (loop index 2) at util.cxx <line 166> was not SIMD vectorized because it contains unsupported loop structure.
+1586-552 (I) Loop (loop index 2) at util.cxx <line 166> was not SIMD vectorized because it contains control flow.
+1586-534 (I) Loop (loop index 3) at util.cxx <line 150> was not SIMD vectorized because the loop is not the innermost loop.
+1586-538 (I) Loop (loop index 3) at util.cxx <line 150> was not SIMD vectorized because it contains unsupported loop structure.
+1586-538 (I) Loop (loop index 4) at util.cxx <line 151> was not SIMD vectorized because it contains unsupported loop structure.
+1586-552 (I) Loop (loop index 4) at util.cxx <line 151> was not SIMD vectorized because it contains control flow.
+1586-538 (I) Loop (loop index 5) at util.cxx <line 150> was not SIMD vectorized because it contains unsupported loop structure.
+1586-538 (I) Loop (loop index 7) at util.cxx <line 165> was not SIMD vectorized because it contains unsupported loop structure.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"4">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-537 (I) Loop (loop index 1) at util.cxx <line 190> was not SIMD vectorized because it contains operation in 10 == (int) buff->(_Vector_base<char,std::allocator<char> >)._M_start@0.rns18.->(char).rns17.[$$CIV8] ? newlines + 1 : newlines which is not suitable for SIMD vectorization.
+1586-549 (I) Loop (loop index 1) at util.cxx <line 190> was not SIMD vectorized because a data dependence  prevents SIMD vectorization.
+1586-551 (I) Loop (loop index 1) at util.cxx <line 190> was not SIMD vectorized because it contains unsupported vector data types.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 236> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 237> was not SIMD vectorized because it contains function calls.
+1586-537 (I) Loop (loop index 3) at util.cxx <line 190> was not SIMD vectorized because it contains operation in 10 == (int) buff._M_start@0->(char).rns17.$$39[$$CIV8] ? newlines + 1 : newlines which is not suitable for SIMD vectorization.
+1586-549 (I) Loop (loop index 3) at util.cxx <line 190> was not SIMD vectorized because a data dependence  prevents SIMD vectorization.
+1586-551 (I) Loop (loop index 3) at util.cxx <line 190> was not SIMD vectorized because it contains unsupported vector data types.
+1586-539 (I) Loop (loop index 4) at util.cxx <line 202> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/basic_ios.h <line 112> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"4">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 271> was not SIMD vectorized because it contains function calls.
+1586-540 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it contains memory references ((double *)((char *)R_out  + (1ll + ($$CIV9 + ($$CIVA + $$CIVA * (long long) lda_out))) * 8ll))->(double).rns61. =  0.0000000000000000E+000; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because it contains memory references  with non-vectorizable strides.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 271> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 301> was not SIMD vectorized because it contains function calls.
+1586-540 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it contains memory references ((double *)((char *)R_out  + ($$CIVC * (long long) lda_out + $$CIVB) * 8ll))->(double).rns64. =  0.0000000000000000E+000; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because it contains memory references  with non-vectorizable strides.
+1586-554 (I) Loop (loop index 2) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 301> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 330> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 353> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 378> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 401> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-534 (I) Loop (loop index 1) at util.cxx <line 419> was not SIMD vectorized because the loop is not the innermost loop.
+1586-550 (I) Loop (loop index 2) at util.cxx <line 420> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at util.cxx <line 421> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 459> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 452> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 445> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"3">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 478> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 479> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at util.cxx <line 479> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at util.cxx <line 514> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 700> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 3) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 702> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 4) at util.cxx <line 34> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at util.cxx <line 35> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 8) at util.cxx <line 34> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 10) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 11) at util.cxx <line 514> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 13) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 15) at util.cxx <line 514> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 16) at util.cxx <line 511> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 18) at util.cxx <line 514> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"9">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    16 |  void flops_add(long)(long long n)
+          {
+    17 |    total_flop_count = total_flop_count + n;
+    18 |    return;
+          } /* function */ 
+
+
+    20 |  long long get_flops()()
+          {
+    21 |    rstr = total_flop_count;
+            return rstr;
+    22 |  } /* function */ 
+
+
+    32 |  void print_matrix(double const*, int, int)(long long *M, int n, int m)
+          {
+    34 |    if (!(0 < n)) goto lab_3;
+            if (!(0 < m)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+    35 |      if (!1) goto lab_6;
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 21 */
+                /* bump-normalized */
+    36 |        printf("%+.4lf ",M[$$CIV1 + (long long) n * $$CIV0]);
+    35 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) m));    /* ~4 */
+            lab_6:
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_23:
+            goto lab_25;
+          lab_24:
+            if (!1) goto lab_29;
+            $$CIV1 = 0ll;
+            do {   /* id=3 guarded */ /* ~26 */ 
+              /* region = 23 */
+              /* bump-normalized */
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) n));    /* ~26 */
+          lab_29:
+          lab_25:
+          lab_3:
+    40 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            34             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            35             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            34             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    42 |  void print_matrix(double const*, int, int, int)(long long *M, int n, int m, int lda)
+          {
+    44 |    if (!(0 < n)) goto lab_3;
+            if (!(0 < m)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+    45 |      if (!1) goto lab_6;
+              $$CIV2 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 21 */
+                /* bump-normalized */
+    46 |        printf("%+.4lf ",M[$$CIV3 + (long long) lda * $$CIV2]);
+    45 |        $$CIV2 = $$CIV2 + 1ll;
+              } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) m));    /* ~4 */
+            lab_6:
+    48 |      printf("/n");
+    44 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_23:
+            goto lab_25;
+          lab_24:
+            if (!1) goto lab_29;
+            $$CIV3 = 0ll;
+            do {   /* id=3 guarded */ /* ~26 */ 
+              /* region = 23 */
+              /* bump-normalized */
+    48 |      printf("/n");
+    44 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) n));    /* ~26 */
+          lab_29:
+          lab_25:
+          lab_3:
+    50 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            44             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            45             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            44             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    53 |  double util_dabs(double)(double x)
+          {
+    54 |    rstr = (x >=  0.0000000000000000E+000 ? x : - x);
+            return rstr;
+    56 |  } /* function */ 
+
+
+    65 |  long long sy_packed_size(int, int*, int*)(int ndim, int *len, int *sym)
+          {
+    69 |    if (!(ndim == 0)) goto lab_1;
+            rstr = 1ll;
+            return rstr;
+          lab_1:
+    71 |    k = 1;
+    72 |    tmp = 1ll;
+    73 |    size = 1ll;
+    74 |    if (!(ndim > 0)) goto lab_3;
+    75 |    mp = len[0ll];
+            goto lab_5;
+          lab_3:
+    77 |    mp = 1;
+          lab_5:
+    78 |    if (!(ndim > 0)) goto lab_8;
+            $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~6 */ 
+              /* region = 17 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+    79 |      tmp = ((long long) mp * tmp) / (long long) k;
+    80 |      k = k + 1;
+    81 |      mp = mp + 1;
+    83 |      if (!(sym[$$CIV4] == 0)) goto lab_9;
+    84 |      size = size * tmp;
+    85 |      k = 1;
+    86 |      tmp = 1ll;
+    87 |      if (!((int) $$CIV4 < ndim - 1)) goto lab_11;
+              mp = len[$$CIV4 + 1ll];
+            lab_11:
+    88 |    lab_9:
+    78 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ndim));    /* ~6 */
+          lab_8:
+    92 |    rstr = size * tmp;
+            return rstr;
+    93 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            78             1    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0            78             1    Loop was not SIMD vectorized because it contains 
+                                          control flow.
+
+   105 |  long long packed_size(int, int*, int*)(int ndim, int *len, int *sym)
+          {
+   110 |    if (!(ndim == 0)) goto lab_1;
+            rstr = 1ll;
+            return rstr;
+          lab_1:
+   112 |    k = 1;
+   113 |    tmp = 1ll;
+   114 |    size = 1ll;
+   115 |    if (!(ndim > 0)) goto lab_3;
+   116 |    mp = len[0ll];
+            goto lab_5;
+          lab_3:
+   118 |    mp = 1;
+          lab_5:
+   119 |    if (!(ndim > 0)) goto lab_8;
+            $$CIV5 = 0ll;
+            do {   /* id=1 guarded */ /* ~6 */ 
+              /* region = 17 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   120 |      tmp = ((long long) mp * tmp) / (long long) k;
+   121 |      k = k + 1;
+   123 |      mp = (sym[$$CIV5] != 1 ? mp - 1 : mp + 1);
+   127 |      if (!(sym[$$CIV5] == 0)) goto lab_12;
+   128 |      size = size * tmp;
+   129 |      k = 1;
+   130 |      tmp = 1ll;
+   131 |      if (!((int) $$CIV5 < ndim - 1)) goto lab_14;
+              mp = len[$$CIV5 + 1ll];
+            lab_14:
+   132 |    lab_12:
+   119 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) ndim));    /* ~6 */
+          lab_8:
+   136 |    rstr = size * tmp;
+            return rstr;
+   137 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           119             1    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           119             1    Loop was not SIMD vectorized because it contains 
+                                          control flow.
+
+   145 |  void factorize(int, int*, int**)(int n, int *nfactor, char * *factor)
+          {
+   149 |    nf = 0;
+   150 |    if (!(n > 1)) goto lab_3;
+   148 |    tmp = n;
+   150 |    if (!(2 <= n)) goto lab_43;
+            if (!1) goto lab_42;
+            do {   /* id=3 guarded */ /* ~1 */ 
+              /* region = 47 */
+   151 |      if (!1) goto lab_6;
+              $$CIV6 = 0ll;
+              do {   /* id=4 guarded */ /* ~4 */ 
+                /* region = 46 */
+                /* bump-normalized */
+   152 |        if (0 == tmp % (int) ($$CIV6 + 2ll)) goto lab_26;
+   151 |        $$CIV6 = $$CIV6 + 1ll;
+              } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) n - 1ll));    /* ~4 */
+            lab_6:
+              goto lab_28;
+   152 |    lab_26:
+   153 |      nf = nf + 1;
+   154 |      tmp = tmp / (int) ($$CIV6 + 2ll);
+   151 |    lab_28:
+   150 |    } while (tmp > 1);    /* ~1 */
+          lab_42:
+            goto lab_44;
+          lab_43:
+            if (!1) goto lab_50;
+            do {   /* id=5 guarded */ /* ~45 */ 
+              /* region = 48 */
+            } while (n > 1);    /* ~45 */
+          lab_50:
+          lab_44:
+          lab_3:
+   159 |    if (!(nf == 0)) goto lab_9;
+   160 |    *nfactor = 0;
+   161 |    goto lab_11;
+          lab_9:
+   162 |    ff = malloc((unsigned long long) nf * 4ull);
+   164 |    nf.rnnF = 0;
+   165 |    if (!(n > 1)) goto lab_14;
+   163 |    tmp.rnn10 = n;
+   165 |    if (!(2 <= n)) goto lab_52;
+            if (!1) goto lab_51;
+            do {   /* id=1 guarded */ /* ~12 */ 
+              /* region = 50 */
+   166 |      if (!1) goto lab_17;
+              $$CIV7 = 0ll;
+              do {   /* id=2 guarded */ /* ~15 */ 
+                /* region = 49 */
+                /* bump-normalized */
+   167 |        if (0 == tmp.rnn10 % (int) ($$CIV7 + 2ll)) goto lab_23;
+   166 |        $$CIV7 = $$CIV7 + 1ll;
+              } while ((unsigned long long) $$CIV7 < (unsigned long long) ((long long) n - 1ll));    /* ~15 */
+            lab_17:
+              goto lab_25;
+   167 |    lab_23:
+   168 |      ff[(long long) nf.rnnF] = (int) ($$CIV7 + 2ll);
+   169 |      nf.rnnF = nf.rnnF + 1;
+   170 |      tmp.rnn10 = tmp.rnn10 / (int) ($$CIV7 + 2ll);
+   166 |    lab_25:
+   165 |    } while (tmp.rnn10 > 1);    /* ~12 */
+          lab_51:
+            goto lab_53;
+          lab_52:
+            if (!1) goto lab_59;
+            do {   /* id=7 guarded */ /* ~54 */ 
+              /* region = 51 */
+            } while (n > 1);    /* ~54 */
+          lab_59:
+          lab_53:
+          lab_14:
+   175 |    *factor = ff;
+   176 |    *nfactor = nf.rnnF;
+   177 |  lab_11:
+   178 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           150             3    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+         0           150             3    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           151             4    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           151             4    Loop was not SIMD vectorized because it contains 
+                                          control flow.
+         0           150             5    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           165             1    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+         0           165             1    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           166             2    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           166             2    Loop was not SIMD vectorized because it contains 
+                                          control flow.
+         0           165             7    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+
+   180 |  unsigned int FileRead(std::istream&, std::vector<char, std::allocator<char> >&)(basic_istream<char,std::char_traits<char> > *is, _Vector_base<char,std::allocator<char> > *buff)
+          {
+   181 |    std::istream::read(char*, long)(is,*((char * *)buff),*((char * *)((char *)buff + 8)) - *((char * *)buff));
+   182 |    rstr = (unsigned int) *((long long *)((char *)is + 8));
+            return rstr;
+   183 |  } /* function */ 
+
+
+   185 |  unsigned int CountLines(std::vector<char, std::allocator<char> > const&, int)(_Vector_base<char,std::allocator<char> > *buff, int sz)
+          {
+   186 |    newlines = 0;
+   188 |    if (!(0 < sz)) goto lab_3;
+            $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 8 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   190 |      newlines = (10 == (int) ((char *)(*((char * *)buff)))[$$CIV8] ? newlines + 1 : newlines);
+   188 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) sz));    /* ~1 */
+          lab_3:
+   193 |    rstr = (unsigned int) newlines;
+            return rstr;
+   194 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           190                  Loop was not SIMD vectorized because it contains 
+                                          operation in 10 == (int) 
+                                          buff->(_Vector_base<char,std::allocator<char> 
+                                          >)._M_start@0.rns18.->(char).rns17.[$$CIV8] ? 
+                                          newlines + 1 : newlines which is not  suitable for 
+                                          SIMD vectorization.
+         0           190                  Loop was not SIMD vectorized because a data 
+                                          dependence  prevents SIMD  vectorization.
+         0           190                  Loop was not SIMD vectorized because it contains 
+                                          unsupported vector data types.
+
+   196 |  void read_matrix(char const*, int, int, double*&, int&, int&, double*&, int&)(char * filename, int myRank, int numPes, char * *whole_A, int *m, int *b, char * *A, int *mb)
+          {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__18 = 1;
+    85 |    buff._M_start@0 = NULL;
+            buff._M_finish@8 = NULL;
+            buff._M_end_of_storage@10 = NULL;
+   111 |    if (!(0ll != __builtin_expect@34(0ll,0ll))) goto lab_123;
+    87 |    std::__throw_bad_alloc()()
+            return;
+          lab_123:
+    89 |    __502 = operator new(unsigned long)(1048576ull);
+   140 |    buff._M_start@0 = __502;
+   114 |    buff._M_finish@8 = __502;
+   115 |    buff._M_end_of_storage@10 = ((char *)__502  + 1048576ll);
+   101 |    __es.__c4@3 = 1u;
+   318 |    __235 = 0u;
+   712 |    __builtin_memset(__502,0,1048576ull);
+  1037 |    buff._M_finish@8 = buff._M_end_of_storage@10;
+   230 |    __es.__c4@3 = 2u;
+   199 |    std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(char const*, std::_Ios_Openmode)(&file,filename,8);
+            __es.__c4@3 = 3u;
+   202 |    *b = 0;
+            *m = 0;
+            *mb = 0;
+   181 |    std::istream::read(char*, long)(&file,buff._M_start@0,buff._M_finish@8 - buff._M_start@0);
+   202 |    cc = (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$10);
+            if (!(0 != (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$10))) goto lab_4;
+            do {   /* id=4 guarded */ /* ~2 */ 
+              /* region = 74 */
+   186 |      newlines = 0;
+   188 |      if (!(0 < cc)) goto lab_109;
+              $$CIV8 = 0ll;
+              do {   /* id=3 guarded */ /* ~110 */ 
+                /* region = 73 */
+                /* bump-normalized */
+                /* independent-allow_scalars */
+   190 |        newlines = (10 == (int) buff._M_start@0[$$CIV8] ? newlines + 1 : newlines);
+   188 |        $$CIV8 = $$CIV8 + 1ll;
+              } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) cc));    /* ~110 */
+            lab_109:
+   206 |      *m = newlines + *m;
+   181 |      std::istream::read(char*, long)(&file,buff._M_start@0,buff._M_finish@8 - buff._M_start@0);
+   205 |      cc = (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$40);
+            } while (0 != (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$40));    /* ~2 */
+          lab_4:
+   208 |    if (*m >= numPes) goto lab_7;
+            __assert_fail("m>=numPes","util.cxx",208u,&__func__)
+            return;
+          lab_7:
+   210 |    $$VOL0 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL0[-24ll / 8]),0)
+   211 |    std::istream::seekg(long, std::_Ios_Seekdir)(&file,0ll,0);
+   260 |    line._M_p@0 = ((char *)&std::string::_Rep::_S_empty_rep_storage  + 24ll);
+  2147 |    __es.__c4@3 = 4u;
+   214 |    __427 = ((char *)&file  + (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file[-24ll / 8]);
+    48 |    if (*((char * *)((char *)__427 + 240)) != NULL) goto lab_11;
+    49 |    std::__throw_bad_cast()()
+            return;
+          lab_11:
+   867 |    if (!(*((char * *)((char *)__427 + 240))->(ctype<char>)._M_widen_ok@38.rns51. != 0u)) goto lab_13;
+   868 |    __316 = ((char *)((char *)*((char * *)((char *)__427 + 240)) + 57))[10ll];
+            goto @323;
+          lab_13:
+  2538 |    __314 = *((char * *)((char *)__427 + 240));
+   869 |    std::ctype<char>::_M_widen_init() const(*((char * *)((char *)__427 + 240)))
+   870 |    __316 = ((funcaddr *)(*((char * *)__314)))[48ll / 8]->(char (char)vf).rns47.(__314,10u);
+   866 |  @323:
+   128 |    std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char)(&file,&line,__316);
+   216 |    std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::string const&, std::_Ios_Openmode)(&ss,&line,24);
+            __es.__c4@3 = 5u;
+   217 |    __335 = std::istream& std::istream::_M_extract<double>(double&)(&ss,&cur_val);
+   112 |    if (!(__335 == NULL)) goto lab_23;
+            __429 = NULL;
+            goto lab_24;
+          lab_23:
+   217 |    __429 = ((char *)__335  + ((long long *)(*((char * *)__335)))[-24ll / 8]);
+          lab_24:
+    73 |    __334 = (char) (0 != (*((int *)((char *)__429 + 32)) & 5));
+   192 |    if (!(__334 != 0u)) goto lab_20;
+            __428 = NULL;
+            goto lab_21;
+          lab_20:
+   217 |    if (!(__335 == NULL)) goto lab_26;
+   112 |    __430 = NULL;
+            goto lab_27;
+          lab_26:
+   217 |    __430 = ((char *)__335  + ((long long *)(*((char * *)__335)))[-24ll / 8]);
+          lab_27:
+            __428 = __430;
+          lab_21:
+   112 |    if (!(__428 != NULL)) goto lab_18;
+            do {   /* id=5 */ /* ~16 */ 
+              /* region = 75 */
+   217 |      *b = *b + 1;
+              __335.rnn16 = std::istream& std::istream::_M_extract<double>(double&)(&ss,&cur_val);
+   112 |      if (!(__335.rnn16 == NULL)) goto lab_32;
+              __432 = NULL;
+              goto lab_33;
+            lab_32:
+   217 |      __432 = ((char *)__335.rnn16  + ((long long *)(*((char * *)__335.rnn16)))[-24ll / 8]);
+            lab_33:
+    73 |      __334.rnn15 = (char) (0 != (*((int *)((char *)__432 + 32)) & 5));
+   192 |      if (__334.rnn15 != 0u) goto lab_80;
+   217 |      if (__335.rnn16 == NULL) goto lab_93;
+   112 |    } while (NULL != ((char *)__335.rnn16  + ((long long *)(*((char * *)__335.rnn16)))[-24ll / 8]));    /* ~16 */
+          lab_93:
+          lab_80:
+          lab_18:
+   218 |    __es.__c4@3 = 4u;
+            std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()(&ss);
+   221 |    *mb = *m / numPes;
+   223 |    if (*m > 0) goto lab_39;
+            __assert_fail("m > 0","util.cxx",223u,&__func__)
+            return;
+          lab_39:
+   224 |    if (*b > 0) goto lab_42;
+            __assert_fail("b > 0","util.cxx",224u,&__func__)
+            return;
+          lab_42:
+   225 |    if (0 == *m % numPes) goto lab_45;
+            __assert_fail("m % numPes == 0","util.cxx",225u,&__func__)
+            return;
+          lab_45:
+   226 |    if (*m / numPes >= *b) goto lab_48;
+            __assert_fail("m / numPes >= b","util.cxx",226u,&__func__)
+            return;
+          lab_48:
+   228 |    $$VOL1 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL1[-24ll / 8]),0)
+   229 |    std::istream::seekg(long, std::_Ios_Seekdir)(&file,0ll,0);
+            $$RET1.rnn14 = 0 == posix_memalign(whole_A,16ull,(unsigned long long) (*b * *m) * 8ull);
+   232 |    if ($$RET1.rnn14 != 0) goto lab_51;
+            __assert_fail("0==(posix_memalign((void**)&whole_A, 16, m*b*sizeof(double)))","util.cxx",234u,&__func__)
+            return;
+          lab_51:
+   236 |    if (!(0 < *m)) goto lab_54;
+            row = 0;
+            do {   /* id=1 guarded */ /* ~52 */ 
+              /* region = 77 */
+   237 |      if (!(0 < *b)) goto lab_57;
+              col = 0;
+              do {   /* id=2 guarded */ /* ~55 */ 
+                /* region = 76 */
+   207 |        std::istream& std::istream::_M_extract<double>(double&)(&file,&cur_val);
+   239 |        ((double *)*whole_A)[(long long) (row + *m * col)] = cur_val;
+   237 |        col = col + 1;
+              } while (col < *b);    /* ~55 */
+            lab_57:
+   236 |      row = row + 1;
+            } while (row < *m);    /* ~52 */
+          lab_54:
+   564 |    $$RET2 = std::basic_filebuf<char, std::char_traits<char> >::close()(&file._M_filebuf@10);
+   565 |    if ($$RET2 != NULL) goto lab_58;
+   566 |    $$VOL2 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            $$VOL3 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+   419 |    std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL2[-24ll / 8]),*((int *)((char *)&file + 32 + $$VOL3[-24ll / 8])) | 4)
+   527 |  lab_58:
+   567 |    $$RET3.rnn13 = 0 == posix_memalign(A,16ull,(unsigned long long) (*b * *mb) * 8ull);
+   245 |    if ($$RET3.rnn13 != 0) goto lab_68;
+            __assert_fail("0==(posix_memalign((void**)&A, 16, mb*b*sizeof(double)))","util.cxx",247u,&__func__)
+            return;
+          lab_68:
+   248 |    $$PARM.nrowD = *mb;
+            $$PARM.ncolE = *b;
+            $$PARM.lda_AF = *m;
+            $$PARM.lda_B10 = *mb;
+            $$PARM.A11 = ((char *)*whole_A  + (long long) (*mb * myRank) * 8ll);
+            $$PARM.B12 = *A;
+   463 |    if (!(*m == *mb)) goto lab_116;
+   464 |    __builtin_memcpy(*A,((char *)*whole_A  + (long long) (*mb * myRank) * 8ll),(unsigned long long) (*b * *mb) * 8ull);
+   465 |    goto lab_117;
+          lab_116:
+   467 |    if (!(0 < *b)) goto lab_118;
+            $$CIV1B = 0ll;
+            do {   /* id=6 guarded */ /* ~119 */ 
+              /* region = 78 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)$$PARM.B12  + ((long long) $$PARM.lda_B10 * $$CIV1B) * 8ll),((char *)$$PARM.A11  + ((long long) $$PARM.lda_AF * $$CIV1B) * 8ll),(unsigned long long) $$PARM.nrowD * 8ull);
+   467 |      $$CIV1B = $$CIV1B + 1ll;
+            } while ((unsigned long long) $$CIV1B < (unsigned long long) ((long long) $$PARM.ncolE));    /* ~119 */
+          lab_118:
+   470 |  lab_117:
+   250 |    __es.__c4@3 = 3u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&line);
+            __es.__c4@3 = 2u;
+            std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()(&file);
+            __es.__c4@3 = 0u;
+   145 |    if (!(buff._M_start@0 != NULL)) goto lab_112;
+    95 |    operator delete(void*)(buff._M_start@0)
+   110 |  lab_112:
+   132 |    std::allocator<char>::~allocator()(&buff);
+   250 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           202             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           190                  Loop was not SIMD vectorized because it contains 
+                                          operation in 10 == (int) 
+                                          buff._M_start@0->(char).rns17.$$39[$$CIV8] ? newlines 
+                                          + 1 : newlines which is not  suitable for SIMD 
+                                          vectorization.
+         0           190                  Loop was not SIMD vectorized because a data 
+                                          dependence  prevents SIMD  vectorization.
+         0           190                  Loop was not SIMD vectorized because it contains 
+                                          unsupported vector data types.
+       182           112             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           236             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           236             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           236             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           236             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           236             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           237             2    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           237             2    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           237             2    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           237             2    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+         0           237             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       231           467             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   263 |  void copy_upper(double const*, double*, int, int, int, int)(char * R_in, long long *R_out, int b, int lda_in, int lda_out, int zero_square)
+   268 |  {
+   271 |    if (!(0 < b)) goto lab_3;
+            if (!(zero_square != 0)) goto lab_26;
+            if (!1) goto lab_25;
+            $$CIVA = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+   273 |      __builtin_memcpy(((char *)R_out  + ((long long) lda_out * $$CIVA) * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVA) * 8ll),(unsigned long long) ((int) $$CIVA + 1) * 8ull);
+   700 |      if (!(8ll != (long long) b * 8ll - $$CIVA * 8ll)) goto lab_8;
+   737 |      $$CIV9 = 0ll;
+   700 |      do {   /* id=2 guarded */ /* ~6 */ 
+                /* region = 21 */
+                /* bump-normalized */
+   702 |        R_out[1ll + ($$CIV9 + ($$CIVA + $$CIVA * (long long) lda_out))] =  0.0000000000000000E+000;
+   701 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((((long long) b * 8ll - $$CIVA * 8ll) - 8ll) / 8ll));    /* ~6 */
+            lab_8:
+   271 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_25:
+            goto lab_27;
+          lab_26:
+            if (!1) goto lab_32;
+            $$CIVA = 0ll;
+            do {   /* id=3 guarded */ /* ~28 */ 
+              /* region = 23 */
+              /* bump-normalized */
+   273 |      __builtin_memcpy(((char *)R_out  + ((long long) lda_out * $$CIVA) * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVA) * 8ll),(unsigned long long) ((int) $$CIVA + 1) * 8ull);
+   271 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) b));    /* ~28 */
+          lab_32:
+          lab_27:
+          lab_3:
+   279 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           271             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+        26           702                  Loop was not SIMD vectorized because it contains 
+                                          memory references  with  non-vectorizable strides.
+        26           702                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0           271             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   292 |  void copy_lower(double const*, double*, int, int, int, int, int)(char * R_in, long long *R_out, int b, int r, int lda_in, int lda_out, int zero_square)
+   298 |  {
+   301 |    if (!(0 < b)) goto lab_3;
+            if (!(zero_square != 0)) goto lab_26;
+            if (!1) goto lab_25;
+            $$CIVC = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+   303 |      __builtin_memcpy(((char *)R_out  + (1ll + ((long long) lda_out * $$CIVC + $$CIVC)) * 8ll),((char *)R_in  + (1ll + ((long long) lda_in * $$CIVC + $$CIVC)) * 8ll),(unsigned long long) ((r - (int) $$CIVC) - 1) * 8ull);
+   700 |      if (!(0ll != $$CIVC * 8ll)) goto lab_8;
+   737 |      $$CIVB = 0ll;
+   700 |      do {   /* id=2 guarded */ /* ~6 */ 
+                /* region = 21 */
+                /* bump-normalized */
+   702 |        R_out[$$CIVC * (long long) lda_out + $$CIVB] =  0.0000000000000000E+000;
+   701 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) (($$CIVC * 8ll) / 8ll));    /* ~6 */
+            lab_8:
+   301 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_25:
+            goto lab_27;
+          lab_26:
+            if (!1) goto lab_32;
+            $$CIVC = 0ll;
+            do {   /* id=3 guarded */ /* ~28 */ 
+              /* region = 23 */
+              /* bump-normalized */
+   303 |      __builtin_memcpy(((char *)R_out  + (1ll + ((long long) lda_out * $$CIVC + $$CIVC)) * 8ll),((char *)R_in  + (1ll + ((long long) lda_in * $$CIVC + $$CIVC)) * 8ll),(unsigned long long) ((r - (int) $$CIVC) - 1) * 8ull);
+   301 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) b));    /* ~28 */
+          lab_32:
+          lab_27:
+          lab_3:
+   310 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           301             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+        26           702                  Loop was not SIMD vectorized because it contains 
+                                          memory references  with  non-vectorizable strides.
+        26           702                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0           301             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   322 |  void pack_lower(double const*, double*, int, int, int)(char * R_in, char * R_out, int b, int lda_in, int has_diag)
+   326 |  {
+   330 |    if (!(0 < b)) goto lab_3;
+   329 |    r_ctr = 0;
+   330 |    $$CIVD = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   332 |      __builtin_memcpy(((char *)R_out  + (long long) r_ctr * 8ll),((char *)R_in  + (1ll + (((long long) lda_in * $$CIVD + $$CIVD) - (long long) has_diag)) * 8ll),(unsigned long long) (((b + has_diag) - (int) $$CIVD) - 1) * 8ull);
+   333 |      r_ctr = r_ctr + (((b + has_diag) - (int) $$CIVD) - 1);
+   330 |      $$CIVD = $$CIVD + 1ll;
+            } while ((unsigned long long) $$CIVD < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   335 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           330             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   346 |  void pack_upper(double const*, double*, int, int)(char * R_in, char * R_out, int b, int lda_in)
+   349 |  {
+   353 |    if (!(0 < b)) goto lab_3;
+   352 |    r_ctr = 0;
+   353 |    $$CIVE = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   355 |      __builtin_memcpy(((char *)R_out  + (long long) r_ctr * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVE) * 8ll),(unsigned long long) ((int) $$CIVE + 1) * 8ull);
+   356 |      r_ctr = r_ctr + ((int) $$CIVE + 1);
+   353 |      $$CIVE = $$CIVE + 1ll;
+            } while ((unsigned long long) $$CIVE < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   358 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           353             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   370 |  void unpack_lower(double const*, double*, int, int, int)(char * R_in, char * R_out, int b, int lda_out, int has_diag)
+   374 |  {
+   378 |    if (!(0 < b)) goto lab_3;
+   377 |    r_ctr = 0;
+   378 |    $$CIVF = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   380 |      __builtin_memcpy(((char *)R_out  + (((long long) lda_out * $$CIVF + $$CIVF) + (long long) (1 - has_diag)) * 8ll),((char *)R_in  + (long long) r_ctr * 8ll),(unsigned long long) (((b + has_diag) - (int) $$CIVF) - 1) * 8ull);
+   381 |      r_ctr = r_ctr + (((b + has_diag) - (int) $$CIVF) - 1);
+   378 |      $$CIVF = $$CIVF + 1ll;
+            } while ((unsigned long long) $$CIVF < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   383 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           378             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   394 |  void unpack_upper(double const*, double*, int, int)(char * R_in, char * R_out, int b, int lda_out)
+   397 |  {
+   401 |    if (!(0 < b)) goto lab_3;
+   400 |    r_ctr = 0;
+   401 |    $$CIV10 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   403 |      __builtin_memcpy(((char *)R_out  + ((long long) lda_out * $$CIV10) * 8ll),((char *)R_in  + (long long) r_ctr * 8ll),(unsigned long long) ((int) $$CIV10 + 1) * 8ull);
+   404 |      r_ctr = r_ctr + ((int) $$CIV10 + 1);
+   401 |      $$CIV10 = $$CIV10 + 1ll;
+            } while ((unsigned long long) $$CIV10 < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   406 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           401             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   416 |  void lda_zero(int, int, int, double*)(int nrow, int ncol, int lda, char * A)
+   417 |  {
+   419 |    if (!(0 < ncol)) goto lab_3;
+            if (!(0 < nrow)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV12 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 17 */
+              /* bump-normalized */
+   420 |      if (!1) goto lab_6;
+              $$CIV11 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 16 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV11 = $$CIV11 + 1ll;
+              } while ((unsigned long long) $$CIV11 < (unsigned long long) ((long long) nrow));    /* ~4 */
+   421 |      __memset(((char *)A + (8ll)*((long long) lda * $$CIV12 + (long long) 0)),(long long) 0,(long long) nrow * 8ll);
+   420 |    lab_6:
+   419 |      $$CIV12 = $$CIV12 + 1ll;
+            } while ((unsigned long long) $$CIV12 < (unsigned long long) ((long long) ncol));    /* ~1 */
+          lab_23:
+          lab_24:
+          lab_3:
+   424 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           419             1    Loop was not SIMD vectorized because the loop is not 
+                                          the innermost loop.
+         0           420             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+   437 |  void tau_recon(char, int, int, int, double const*, double*)(char structure, int ncol, int nrow, int lda, char * Y, long long *tau)
+   442 |  {
+   444 |    if (!(82 == (int) structure)) goto lab_1;
+   445 |    if (!(0 < ncol)) goto lab_5;
+            $$CIV13 = 0ll;
+            do {   /* id=3 guarded */ /* ~3 */ 
+              /* region = 32 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET440 = cdlange(char, int, int, double const*, int, double*)(70u,nrow,1,((char *)Y  + ((long long) lda * $$CIV13) * 8ll),lda,NULL);
+   448 |      if (!( 2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET440,$$TVX.$$.$$RET440, 1.0000000000000000E+000) ==  2.0000000000000000E+000)) goto lab_7;
+              $$TVX.$$.__47351 =  0.0000000000000000E+000;
+              goto lab_8;
+            lab_7:
+              $$TVX.$$.__47351 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET440,$$TVX.$$.$$RET440, 1.0000000000000000E+000);
+            lab_8:
+              tau[$$CIV13] = $$TVX.$$.__47351;
+   445 |      $$CIV13 = $$CIV13 + 1ll;
+            } while ((unsigned long long) $$CIV13 < (unsigned long long) ((long long) ncol));    /* ~3 */
+          lab_5:
+   450 |  lab_1:
+   451 |    if (!(76 == (int) structure)) goto lab_9;
+   452 |    if (!(0 < ncol)) goto lab_13;
+            $$CIV14 = 0ll;
+            do {   /* id=2 guarded */ /* ~11 */ 
+              /* region = 33 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET522 = cdlange(char, int, int, double const*, int, double*)(70u,(nrow - (int) $$CIV14) - 1,1,((char *)Y  + (1ll + ((long long) lda * $$CIV14 + $$CIV14)) * 8ll),lda,NULL);
+   455 |      if (!( 2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET522,$$TVX.$$.$$RET522, 1.0000000000000000E+000) ==  2.0000000000000000E+000)) goto lab_15;
+              $$TVX.$$.__47433 =  0.0000000000000000E+000;
+              goto lab_16;
+            lab_15:
+              $$TVX.$$.__47433 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET522,$$TVX.$$.$$RET522, 1.0000000000000000E+000);
+            lab_16:
+              tau[$$CIV14] = $$TVX.$$.__47433;
+   452 |      $$CIV14 = $$CIV14 + 1ll;
+            } while ((unsigned long long) $$CIV14 < (unsigned long long) ((long long) ncol));    /* ~11 */
+          lab_13:
+   457 |  lab_9:
+   458 |    if (!(85 == (int) structure)) goto lab_17;
+   459 |    if (!(0 < ncol)) goto lab_21;
+            $$CIV15 = 0ll;
+            do {   /* id=1 guarded */ /* ~19 */ 
+              /* region = 34 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET604 = cdlange(char, int, int, double const*, int, double*)(70u,(int) $$CIV15 + 1,1,((char *)Y  + ((long long) lda * $$CIV15) * 8ll),lda,NULL);
+   462 |      if (!( 2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET604,$$TVX.$$.$$RET604, 1.0000000000000000E+000) ==  2.0000000000000000E+000)) goto lab_23;
+              $$TVX.$$.__47515 =  0.0000000000000000E+000;
+              goto lab_24;
+            lab_23:
+              $$TVX.$$.__47515 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET604,$$TVX.$$.$$RET604, 1.0000000000000000E+000);
+            lab_24:
+              tau[$$CIV15] = $$TVX.$$.__47515;
+   459 |      $$CIV15 = $$CIV15 + 1ll;
+            } while ((unsigned long long) $$CIV15 < (unsigned long long) ((long long) ncol));    /* ~19 */
+          lab_21:
+   464 |  lab_17:
+   465 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           445             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           452             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           459             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   468 |  void init_dist_sym_matrix(int, int, int, int, int, int, double*, double*)(int n, int ipr, int pr, int ipc, int pc, int b, long long *full_A, long long *loc_A)
+   475 |  {
+   478 |    if (!(0 < n)) goto lab_3;
+   477 |    loc_off = 0;
+   478 |    if (!(0 < n)) goto lab_30;
+            if (!1) goto lab_29;
+            $$CIV17 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 34 */
+              /* bump-normalized */
+   479 |      if (!1) goto lab_6;
+              if (!(ipc == ((int) $$CIV17 / b) % pc)) goto lab_38;
+              if (!1) goto lab_37;
+              $$CIV16 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 32 */
+                /* bump-normalized */
+   480 |        if (!((int) $$CIV17 <= (int) $$CIV16)) goto lab_7;
+                $$TVX.$$.$$RET766 = drand48();
+   481 |        full_A[(long long) n * $$CIV17 + $$CIV16] = $$TVX.$$.$$RET766;
+   482 |        goto lab_9;
+              lab_7:
+   483 |        full_A[(long long) n * $$CIV17 + $$CIV16] = full_A[$$CIV17 + (long long) n * $$CIV16];
+   484 |      lab_9:
+   485 |        if (!(ipr == ((int) $$CIV16 / b) % pr)) goto lab_10;
+   486 |        loc_A[(long long) loc_off] = full_A[(long long) n * $$CIV17 + $$CIV16];
+   487 |        loc_off = loc_off + 1;
+   488 |      lab_10:
+   479 |        $$CIV16 = $$CIV16 + 1ll;
+              } while ((unsigned long long) $$CIV16 < (unsigned long long) ((long long) n));    /* ~4 */
+            lab_37:
+              goto lab_39;
+            lab_38:
+              if (!1) goto lab_44;
+              $$CIV16 = 0ll;
+              do {   /* id=3 guarded */ /* ~40 */ 
+                /* region = 33 */
+                /* bump-normalized */
+   480 |        if (!((int) $$CIV17 <= (int) $$CIV16)) goto lab_41;
+                $$TVX.$$.$$RET777 = drand48();
+   481 |        full_A[(long long) n * $$CIV17 + $$CIV16] = $$TVX.$$.$$RET777;
+   482 |        goto lab_43;
+              lab_41:
+   483 |        full_A[(long long) n * $$CIV17 + $$CIV16] = full_A[$$CIV17 + (long long) n * $$CIV16];
+   488 |      lab_43:
+   479 |        $$CIV16 = $$CIV16 + 1ll;
+              } while ((unsigned long long) $$CIV16 < (unsigned long long) ((long long) n));    /* ~40 */
+            lab_44:
+            lab_39:
+            lab_6:
+   478 |      $$CIV17 = $$CIV17 + 1ll;
+            } while ((unsigned long long) $$CIV17 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_29:
+          lab_30:
+          lab_3:
+   491 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           478             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           479             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           479             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   495 |  void print_dist_mat(int, int, int, int, int, int, int, int, int, int, double*, long)(int nrow, int ncol, int b, int ipr, int pr, int rpr, int ipc, int pc, int rpc, int comm, long long *A, long long lda_A)
+   506 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   508 |    full_A = malloc((unsigned long long) (nrow * ncol) * 8ull);
+   700 |    if (!(0ll != (long long) (nrow * ncol) * 8ll)) goto lab_3;
+   702 |    __memset(((char *)full_A + (8ll)*((long long) 0)),(long long) 0,(((long long) (nrow * ncol) * 8ll) / 8ll) * 8ll);
+   701 |  lab_3:
+   511 |    if (!(0 < nrow)) goto lab_6;
+   510 |    li = 0;
+   511 |    if (!(0 < ncol)) goto lab_45;
+            if (!(b > 0)) goto lab_77;
+            if (!1) goto lab_46;
+            $$DMSRR2 = (int) ((int) 0 + (int) 0ll * 1) % b;
+            $$DMSRQ2 = (int) ((int) 0 + (int) 0ll * 1) / b;
+            if (!(b > 0)) goto lab_109;
+            if (!1) goto lab_108;
+            $$CIV1A = 0ll;
+            do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 111 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ($$DMSRQ2 + (pr + rpr)) % pr)) goto lab_7;
+   514 |      if (!1) goto lab_11;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              $$DMSRR0 = (int) ((int) 0 + (int) 0ll * 1) % b;
+              $$DMSRQ0 = (int) ((int) 0 + (int) 0ll * 1) / b;
+              do {   /* id=2 guarded */ /* ~9 */ 
+                /* region = 110 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ($$DMSRQ0 + (pc + rpc)) % pc)) goto lab_12;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_12:
+   520 |        $$DMSRR0 = $$DMSRR0 + (int) 1;
+                if (!($$DMSRR0 >= (1 / b) * b + b)) goto lab_70;
+                $$DMSRR0 = $$DMSRR0 + - b;
+                $$DMSRQ0 = $$DMSRQ0 + 1;
+              lab_70:
+                $$DMSRR0 = $$DMSRR0 + - ((1 / b) * b);
+                $$DMSRQ0 = $$DMSRQ0 + 1 / b;
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~9 */
+            lab_11:
+   521 |      li = li + 1;
+   522 |    lab_7:
+   523 |      $$DMSRR2 = $$DMSRR2 + (int) 1;
+              if (!($$DMSRR2 >= (1 / b) * b + b)) goto lab_91;
+              $$DMSRR2 = $$DMSRR2 + - b;
+              $$DMSRQ2 = $$DMSRQ2 + 1;
+            lab_91:
+              $$DMSRR2 = $$DMSRR2 + - ((1 / b) * b);
+              $$DMSRQ2 = $$DMSRQ2 + 1 / b;
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~4 */
+          lab_108:
+            goto lab_46;
+          lab_109:
+            if (!1) goto lab_123;
+            $$CIV1A = 0ll;
+            do {   /* id=16 guarded */ /* ~111 */ 
+              /* region = 113 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ($$DMSRQ2 + (pr + rpr)) % pr)) goto lab_121;
+   514 |      if (!1) goto lab_119;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              do {   /* id=18 guarded */ /* ~117 */ 
+                /* region = 112 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ((int) $$CIV19 / b + (pc + rpc)) % pc)) goto lab_118;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_118:
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~117 */
+            lab_119:
+   521 |      li = li + 1;
+   522 |    lab_121:
+   523 |      $$DMSRR2 = $$DMSRR2 + (int) 1;
+              if (!($$DMSRR2 >= (1 / b) * b + b)) goto lab_122;
+              $$DMSRR2 = $$DMSRR2 + - b;
+              $$DMSRQ2 = $$DMSRQ2 + 1;
+            lab_122:
+              $$DMSRR2 = $$DMSRR2 + - ((1 / b) * b);
+              $$DMSRQ2 = $$DMSRQ2 + 1 / b;
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~111 */
+          lab_123:
+            goto lab_46;
+          lab_77:
+            if (!1) goto lab_46;
+            if (!(b > 0)) goto lab_94;
+            if (!1) goto lab_93;
+            $$CIV1A = 0ll;
+            do {   /* id=10 guarded */ /* ~79 */ 
+              /* region = 115 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ((int) $$CIV1A / b + (pr + rpr)) % pr)) goto lab_89;
+   514 |      if (!1) goto lab_83;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              $$DMSRR0 = (int) ((int) 0 + (int) 0ll * 1) % b;
+              $$DMSRQ0 = (int) ((int) 0 + (int) 0ll * 1) / b;
+              do {   /* id=11 guarded */ /* ~80 */ 
+                /* region = 114 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ($$DMSRQ0 + (pc + rpc)) % pc)) goto lab_81;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_81:
+   520 |        $$DMSRR0 = $$DMSRR0 + (int) 1;
+                if (!($$DMSRR0 >= (1 / b) * b + b)) goto lab_82;
+                $$DMSRR0 = $$DMSRR0 + - b;
+                $$DMSRQ0 = $$DMSRQ0 + 1;
+              lab_82:
+                $$DMSRR0 = $$DMSRR0 + - ((1 / b) * b);
+                $$DMSRQ0 = $$DMSRQ0 + 1 / b;
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~80 */
+            lab_83:
+   521 |      li = li + 1;
+   522 |    lab_89:
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~79 */
+          lab_93:
+            goto lab_46;
+          lab_94:
+            if (!1) goto lab_107;
+            $$CIV1A = 0ll;
+            do {   /* id=13 guarded */ /* ~96 */ 
+              /* region = 117 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ((int) $$CIV1A / b + (pr + rpr)) % pr)) goto lab_106;
+   514 |      if (!1) goto lab_104;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              do {   /* id=15 guarded */ /* ~102 */ 
+                /* region = 116 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ((int) $$CIV19 / b + (pc + rpc)) % pc)) goto lab_103;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_103:
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~102 */
+            lab_104:
+   521 |      li = li + 1;
+   522 |    lab_106:
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~96 */
+          lab_107:
+            goto lab_46;
+          lab_45:
+            if (!(b > 0)) goto lab_71;
+            if (!1) goto lab_52;
+            $$CIV1A = 0ll;
+            $$DMSRR1 = (int) ((int) 0 + (int) 0ll * 1) % b;
+            $$DMSRQ1 = (int) ((int) 0 + (int) 0ll * 1) / b;
+            do {   /* id=6 guarded */ /* ~47 */ 
+              /* region = 118 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   513 |      if (!(ipr == ($$DMSRQ1 + (pr + rpr)) % pr)) goto lab_51;
+   522 |    lab_51:
+   523 |      $$DMSRR1 = $$DMSRR1 + (int) 1;
+              if (!($$DMSRR1 >= (1 / b) * b + b)) goto lab_76;
+              $$DMSRR1 = $$DMSRR1 + - b;
+              $$DMSRQ1 = $$DMSRQ1 + 1;
+            lab_76:
+              $$DMSRR1 = $$DMSRR1 + - ((1 / b) * b);
+              $$DMSRQ1 = $$DMSRQ1 + 1 / b;
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~47 */
+          lab_52:
+            goto lab_72;
+          lab_71:
+            if (!1) goto lab_75;
+            $$CIV1A = 0ll;
+            do {   /* id=7 guarded */ /* ~73 */ 
+              /* region = 119 */
+              /* bump-normalized */
+              /* independent */
+   513 |      if (!(ipr == ((int) $$CIV1A / b + (pr + rpr)) % pr)) goto lab_74;
+   522 |    lab_74:
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~73 */
+          lab_75:
+          lab_72:
+          lab_46:
+          lab_6:
+   524 |    if (!(0 != ipr + ipc)) goto lab_14;
+   525 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce(full_A,NULL,nrow * ncol,1275070475,1476395011,0,comm);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   526 |    goto lab_19;
+          lab_14:
+   527 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce((char *) -1,full_A,nrow * ncol,1275070475,1476395011,0,comm);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    34 |    if (!(0 < nrow)) goto lab_35;
+            if (!(0 < ncol)) goto lab_54;
+            if (!1) goto lab_53;
+            $$CIV1 = 0ll;
+            do {   /* id=4 guarded */ /* ~36 */ 
+              /* region = 121 */
+              /* bump-normalized */
+    35 |      if (!1) goto lab_37;
+              $$CIV0 = 0ll;
+              do {   /* id=5 guarded */ /* ~38 */ 
+                /* region = 120 */
+                /* bump-normalized */
+    36 |        printf("%+.4lf ",full_A[$$CIV1 + (long long) nrow * $$CIV0]);
+    35 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) ncol));    /* ~38 */
+            lab_37:
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) nrow));    /* ~36 */
+          lab_53:
+            goto lab_55;
+          lab_54:
+            if (!1) goto lab_59;
+            $$CIV1 = 0ll;
+            do {   /* id=8 guarded */ /* ~56 */ 
+              /* region = 122 */
+              /* bump-normalized */
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) nrow));    /* ~56 */
+          lab_59:
+          lab_55:
+          lab_35:
+   529 |  lab_19:
+   530 |    free(full_A)
+   531 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           511             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           514             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           511            16    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           514            18    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           511            10    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           514            11    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           511            13    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           514            15    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           511             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           511             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            34             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            35             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            34             8    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+        26           700                  Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+   110 |  char * std::_Vector_base<char, std::allocator<char> >::_Vector_base(unsigned long, std::allocator<char> const&)(_Vector_impl *this, unsigned long long __n, char * __a)
+   111 |  {
+    85 |    *((char * *)this) = NULL;
+            *((char * *)((char *)this + 8)) = NULL;
+            *((char * *)((char *)this + 16)) = NULL;
+   140 |    if (!(__n != 0ull)) goto lab_2;
+   111 |    if (!(0ll != __builtin_expect@34((long long) (__n > 18446744073709551615ull),0ll))) goto lab_4;
+    87 |    std::__throw_bad_alloc()()
+            return;
+          lab_4:
+    89 |    __502 = operator new(unsigned long)(__n);
+   107 |    __506 = __502;
+            goto lab_3;
+          lab_2:
+            __506 = NULL;
+          lab_3:
+   140 |    *((char * *)this) = __506;
+   114 |    *((char * *)((char *)this + 8)) = __506;
+   115 |    *((char * *)((char *)this + 16)) = ((char *)__506  + (long long) __n);
+   116 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+          void std::vector<char, std::allocator<char> >::__dftbdt(std::_Vector_base<char, std::allocator<char> >*)(_Vector_impl *__507)
+          {
+   145 |    if (!(*((char * *)__507) != NULL)) goto lab_5;
+    95 |    operator delete(void*)(*((char * *)__507))
+   110 |  lab_5:
+   132 |    $$PARM.this0 = __507;
+            std::allocator<char>::~allocator()($$PARM.this0);
+            $$IRET0 = $$PARM.this0;
+   133 |    $$IRET2 = __507;
+            return;
+          } /* function */ 
+
+
+   312 |  char * std::vector<char, std::allocator<char> >::~vector()(_Vector_impl *this)
+   313 |  {
+   145 |    if (!(*((char * *)this) != NULL)) goto lab_1;
+    95 |    operator delete(void*)(*((char * *)this))
+   110 |  lab_1:
+   132 |    $$PARM.this0 = this;
+            std::allocator<char>::~allocator()($$PARM.this0);
+            $$IRET0 = $$PARM.this0;
+   133 |    $$IRET1 = this;
+   314 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV1B = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV1B) * 8ll),((char *)A  + ((long long) lda_A * $$CIV1B) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV1B = $$CIV1B + 1ll;
+            } while ((unsigned long long) $$CIV1B < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       231           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   218 |  void void std::uninitialized_fill_n<char*, unsigned long, char>(char*, unsigned long, char const&)(char * __first, unsigned long long __n, char *__x)
+   219 |  {
+   712 |    __builtin_memset(__first,(int) *__x,__n);
+   225 |    return;
+          } /* function */ 
+
+
+   131 |  char * std::_Vector_base<char, std::allocator<char> >::~_Vector_base()(_Vector_impl *this)
+   132 |  {
+   145 |    if (!(*((char * *)this) != NULL)) goto lab_1;
+    95 |    operator delete(void*)(*((char * *)this))
+   110 |  lab_1:
+   132 |    $$PARM.this0 = this;
+            std::allocator<char>::~allocator()($$PARM.this0);
+            $$IRET0 = $$PARM.this0;
+   133 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+          char * std::_Vector_base<char, std::allocator<char> >::_Vector_impl::~_Vector_impl()(char * this)
+          {
+            std::allocator<char>::~allocator()(this);
+            rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    16 |  void flops_add(long)(long long n)
+          {
+    17 |    total_flop_count = total_flop_count + n;
+    18 |    return;
+          } /* function */ 
+
+
+    20 |  long long get_flops()()
+          {
+    21 |    rstr = total_flop_count;
+            return rstr;
+    22 |  } /* function */ 
+
+
+    32 |  void print_matrix(double const*, int, int)(long long *M, int n, int m)
+          {
+    34 |    if (!(0 < n)) goto lab_3;
+            if (!(0 < m)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+    35 |      if (!1) goto lab_6;
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 21 */
+                /* bump-normalized */
+    36 |        printf("%+.4lf ",M[$$CIV1 + (long long) n * $$CIV0]);
+    35 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) m));    /* ~4 */
+            lab_6:
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_23:
+            goto lab_25;
+          lab_24:
+            if (!1) goto lab_29;
+            $$CIV1 = 0ll;
+            do {   /* id=3 guarded */ /* ~26 */ 
+              /* region = 23 */
+              /* bump-normalized */
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) n));    /* ~26 */
+          lab_29:
+          lab_25:
+          lab_3:
+    40 |    return;
+          } /* function */ 
+
+
+    42 |  void print_matrix(double const*, int, int, int)(long long *M, int n, int m, int lda)
+          {
+    44 |    if (!(0 < n)) goto lab_3;
+            if (!(0 < m)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+    45 |      if (!1) goto lab_6;
+              $$CIV2 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 21 */
+                /* bump-normalized */
+    46 |        printf("%+.4lf ",M[$$CIV3 + (long long) lda * $$CIV2]);
+    45 |        $$CIV2 = $$CIV2 + 1ll;
+              } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) m));    /* ~4 */
+            lab_6:
+    48 |      printf("/n");
+    44 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_23:
+            goto lab_25;
+          lab_24:
+            if (!1) goto lab_29;
+            $$CIV3 = 0ll;
+            do {   /* id=3 guarded */ /* ~26 */ 
+              /* region = 23 */
+              /* bump-normalized */
+    48 |      printf("/n");
+    44 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) n));    /* ~26 */
+          lab_29:
+          lab_25:
+          lab_3:
+    50 |    return;
+          } /* function */ 
+
+
+    53 |  double util_dabs(double)(double x)
+          {
+    54 |    rstr = (x >=  0.0000000000000000E+000 ? x : - x);
+            return rstr;
+    56 |  } /* function */ 
+
+
+    65 |  long long sy_packed_size(int, int*, int*)(int ndim, int *len, int *sym)
+          {
+    69 |    if (!(ndim == 0)) goto lab_1;
+            rstr = 1ll;
+            return rstr;
+          lab_1:
+    71 |    k = 1;
+    72 |    tmp = 1ll;
+    73 |    size = 1ll;
+    74 |    if (!(ndim > 0)) goto lab_3;
+    75 |    mp = len[0ll];
+            goto lab_5;
+          lab_3:
+    77 |    mp = 1;
+            goto lab_8;
+          lab_5:
+    78 |    $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~6 */ 
+              /* region = 16 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+    79 |      tmp = ((long long) mp * tmp) / (long long) k;
+    80 |      k = k + 1;
+    81 |      mp = mp + 1;
+    83 |      if (!(sym[$$CIV4] == 0)) goto lab_9;
+    84 |      size = size * tmp;
+    85 |      k = 1;
+    86 |      tmp = 1ll;
+    87 |      if (!((int) $$CIV4 < ndim - 1)) goto lab_11;
+              mp = len[$$CIV4 + 1ll];
+            lab_11:
+    88 |    lab_9:
+    78 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ndim));    /* ~6 */
+          lab_8:
+    92 |    rstr = size * tmp;
+            return rstr;
+    93 |  } /* function */ 
+
+
+   105 |  long long packed_size(int, int*, int*)(int ndim, int *len, int *sym)
+          {
+   110 |    if (!(ndim == 0)) goto lab_1;
+            rstr = 1ll;
+            return rstr;
+          lab_1:
+   112 |    k = 1;
+   113 |    tmp = 1ll;
+   114 |    size = 1ll;
+   115 |    if (!(ndim > 0)) goto lab_3;
+   116 |    mp = len[0ll];
+            goto lab_5;
+          lab_3:
+   118 |    mp = 1;
+            goto lab_8;
+          lab_5:
+   119 |    $$CIV5 = 0ll;
+            do {   /* id=1 guarded */ /* ~6 */ 
+              /* region = 16 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   120 |      tmp = ((long long) mp * tmp) / (long long) k;
+   121 |      k = k + 1;
+   123 |      mp = (sym[$$CIV5] != 1 ? mp - 1 : mp + 1);
+   127 |      if (!(sym[$$CIV5] == 0)) goto lab_12;
+   128 |      size = size * tmp;
+   129 |      k = 1;
+   130 |      tmp = 1ll;
+   131 |      if (!((int) $$CIV5 < ndim - 1)) goto lab_14;
+              mp = len[$$CIV5 + 1ll];
+            lab_14:
+   132 |    lab_12:
+   119 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) ndim));    /* ~6 */
+          lab_8:
+   136 |    rstr = size * tmp;
+            return rstr;
+   137 |  } /* function */ 
+
+
+   145 |  void factorize(int, int*, int**)(int n, int *nfactor, char * *factor)
+          {
+   149 |    nf = 0;
+   150 |    if (!(n > 1)) goto lab_3;
+   148 |    tmp = n;
+   150 |    if (!(2 <= n)) goto lab_43;
+            if (!1) goto lab_42;
+            do {   /* id=3 guarded */ /* ~1 */ 
+              /* region = 45 */
+   151 |      if (!1) goto lab_6;
+              $$CIV6 = 0ll;
+              do {   /* id=4 guarded */ /* ~4 */ 
+                /* region = 44 */
+                /* bump-normalized */
+   152 |        if (0 == tmp % (int) ($$CIV6 + 2ll)) goto lab_26;
+   151 |        $$CIV6 = $$CIV6 + 1ll;
+              } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) n - 1ll));    /* ~4 */
+            lab_6:
+              goto lab_28;
+   152 |    lab_26:
+   153 |      nf = nf + 1;
+   154 |      tmp = tmp / (int) ($$CIV6 + 2ll);
+   151 |    lab_28:
+   150 |    } while (tmp > 1);    /* ~1 */
+          lab_42:
+            goto lab_44;
+          lab_43:
+            if (!1) goto lab_50;
+            do {   /* id=5 guarded */ /* ~45 */ 
+              /* region = 46 */
+            } while (1);   /* ~45 */
+          lab_50:
+          lab_44:
+          lab_3:
+   159 |    if (!(nf == 0)) goto lab_9;
+   160 |    *nfactor = 0;
+   161 |    goto lab_11;
+          lab_9:
+   162 |    ff = malloc((unsigned long long) nf * 4ull);
+   164 |    nf.rnnF = 0;
+   165 |    if (!(n > 1)) goto lab_14;
+   163 |    tmp.rnn10 = n;
+   165 |    if (!(2 <= n)) goto lab_52;
+            if (!1) goto lab_51;
+            do {   /* id=1 guarded */ /* ~12 */ 
+              /* region = 48 */
+   166 |      if (!1) goto lab_17;
+              $$CIV7 = 0ll;
+              do {   /* id=2 guarded */ /* ~15 */ 
+                /* region = 47 */
+                /* bump-normalized */
+   167 |        if (0 == tmp.rnn10 % (int) ($$CIV7 + 2ll)) goto lab_23;
+   166 |        $$CIV7 = $$CIV7 + 1ll;
+              } while ((unsigned long long) $$CIV7 < (unsigned long long) ((long long) n - 1ll));    /* ~15 */
+            lab_17:
+              goto lab_25;
+   167 |    lab_23:
+   168 |      ff[(long long) nf.rnnF] = (int) ($$CIV7 + 2ll);
+   169 |      nf.rnnF = nf.rnnF + 1;
+   170 |      tmp.rnn10 = tmp.rnn10 / (int) ($$CIV7 + 2ll);
+   166 |    lab_25:
+   165 |    } while (tmp.rnn10 > 1);    /* ~12 */
+          lab_51:
+            goto lab_53;
+          lab_52:
+            if (!1) goto lab_59;
+            do {   /* id=7 guarded */ /* ~54 */ 
+              /* region = 49 */
+            } while (1);   /* ~54 */
+          lab_59:
+          lab_53:
+          lab_14:
+   175 |    *factor = ff;
+   176 |    *nfactor = nf.rnnF;
+   177 |  lab_11:
+   178 |    return;
+          } /* function */ 
+
+
+   180 |  unsigned int FileRead(std::istream&, std::vector<char, std::allocator<char> >&)(basic_istream<char,std::char_traits<char> > *is, _Vector_base<char,std::allocator<char> > *buff)
+          {
+   181 |    std::istream::read(char*, long)(is,*((char * *)buff),*((char * *)((char *)buff + 8)) - *((char * *)buff));
+   182 |    rstr = (unsigned int) *((long long *)((char *)is + 8));
+            return rstr;
+   183 |  } /* function */ 
+
+
+   185 |  unsigned int CountLines(std::vector<char, std::allocator<char> > const&, int)(_Vector_base<char,std::allocator<char> > *buff, int sz)
+          {
+   186 |    newlines = 0;
+   188 |    if (!(0 < sz)) goto lab_3;
+            $$CIV8 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 8 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   190 |      newlines = (10 == (int) ((char *)(*((char * *)buff)))[$$CIV8] ? newlines + 1 : newlines);
+   188 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) sz));    /* ~1 */
+          lab_3:
+   193 |    rstr = (unsigned int) newlines;
+            return rstr;
+   194 |  } /* function */ 
+
+
+   196 |  void read_matrix(char const*, int, int, double*&, int&, int&, double*&, int&)(char * filename, int myRank, int numPes, char * *whole_A, int *m, int *b, char * *A, int *mb)
+          {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__18 = 1;
+    85 |    buff._M_start@0 = NULL;
+            buff._M_finish@8 = NULL;
+            buff._M_end_of_storage@10 = NULL;
+   111 |    if (!(0ll != __builtin_expect@34(0ll,0ll))) goto lab_123;
+    87 |    std::__throw_bad_alloc()()
+            return;
+          lab_123:
+    89 |    __502 = operator new(unsigned long)(1048576ull);
+   140 |    buff._M_start@0 = __502;
+   114 |    buff._M_finish@8 = __502;
+   115 |    buff._M_end_of_storage@10 = ((char *)__502  + 1048576ll);
+   101 |    __es.__c4@3 = 1u;
+   318 |    __235 = 0u;
+   712 |    __builtin_memset(__502,0,1048576ull);
+  1037 |    buff._M_finish@8 = buff._M_end_of_storage@10;
+   230 |    __es.__c4@3 = 2u;
+   199 |    std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(char const*, std::_Ios_Openmode)(&file,filename,8);
+            __es.__c4@3 = 3u;
+   202 |    *b = 0;
+            *m = 0;
+            *mb = 0;
+   181 |    $$csx0 = buff._M_start@0;
+            std::istream::read(char*, long)(&file,$$csx0,buff._M_finish@8 - $$csx0);
+   202 |    cc = (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$10);
+            if (!(0 != (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$10))) goto lab_4;
+            do {   /* id=4 guarded */ /* ~2 */ 
+              /* region = 74 */
+   186 |      newlines = 0;
+   188 |      if (!(0 < cc)) goto lab_109;
+              $$CIV8 = 0ll;
+              do {   /* id=3 guarded */ /* ~110 */ 
+                /* region = 73 */
+                /* bump-normalized */
+                /* independent-allow_scalars */
+   190 |        newlines = (10 == (int) buff._M_start@0[$$CIV8] ? newlines + 1 : newlines);
+   188 |        $$CIV8 = $$CIV8 + 1ll;
+              } while ((unsigned long long) $$CIV8 < (unsigned long long) ((long long) cc));    /* ~110 */
+            lab_109:
+   206 |      *m = newlines + *m;
+   181 |      std::istream::read(char*, long)(&file,buff._M_start@0,buff._M_finish@8 - buff._M_start@0);
+   205 |      cc = (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$40);
+            } while (0 != (int) ((unsigned int) &file->(basic_istream<char,std::char_traits<char> >)._M_gcount@8.rns15.$$40));    /* ~2 */
+          lab_4:
+   208 |    if (*m >= numPes) goto lab_7;
+            __assert_fail("m>=numPes","util.cxx",208u,&__func__)
+            goto lab_141;
+          lab_7:
+   210 |    $$VOL0 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL0[-24ll / 8]),0)
+   211 |    std::istream::seekg(long, std::_Ios_Seekdir)(&file,0ll,0);
+   260 |    line._M_p@0 = ((char *)&std::string::_Rep::_S_empty_rep_storage  + 24ll);
+  2147 |    __es.__c4@3 = 4u;
+   214 |    __427 = ((char *)&file  + (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file[-24ll / 8]);
+    48 |    if (*((char * *)((char *)__427 + 240)) != NULL) goto lab_11;
+    49 |    std::__throw_bad_cast()()
+            goto lab_141;
+          lab_11:
+   867 |    if (!(*((char * *)((char *)__427 + 240))->(ctype<char>)._M_widen_ok@38.rns51. != 0u)) goto lab_13;
+   868 |    __316 = ((char *)((char *)*((char * *)((char *)__427 + 240)) + 57))[10ll];
+            goto @323;
+          lab_13:
+  2538 |    __314 = *((char * *)((char *)__427 + 240));
+   869 |    std::ctype<char>::_M_widen_init() const(*((char * *)((char *)__427 + 240)))
+   870 |    __316 = ((funcaddr *)(*((char * *)__314)))[48ll / 8]->(char (char)vf).rns47.(__314,10u);
+   866 |  @323:
+   128 |    std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char)(&file,&line,__316);
+   216 |    std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream(std::string const&, std::_Ios_Openmode)(&ss,&line,24);
+            __es.__c4@3 = 5u;
+   217 |    __335 = std::istream& std::istream::_M_extract<double>(double&)(&ss,&cur_val);
+   112 |    if (!(__335 == NULL)) goto lab_23;
+            __429 = NULL;
+            goto lab_24;
+          lab_23:
+   217 |    __429 = ((char *)__335  + ((long long *)(*((char * *)__335)))[-24ll / 8]);
+          lab_24:
+    73 |    __334 = (char) (0 != (*((int *)((char *)__429 + 32)) & 5));
+   192 |    if (!(__334 != 0u)) goto lab_20;
+            __428 = NULL;
+            goto lab_21;
+          lab_20:
+   217 |    if (!(__335 == NULL)) goto lab_26;
+   112 |    __430 = NULL;
+            goto lab_27;
+          lab_26:
+   217 |    __430 = ((char *)__335  + ((long long *)(*((char * *)__335)))[-24ll / 8]);
+          lab_27:
+            __428 = __430;
+          lab_21:
+   112 |    if (!(__428 != NULL)) goto lab_18;
+            do {   /* id=5 */ /* ~16 */ 
+              /* region = 75 */
+   217 |      *b = *b + 1;
+              __335.rnn16 = std::istream& std::istream::_M_extract<double>(double&)(&ss,&cur_val);
+   112 |      if (!(__335.rnn16 == NULL)) goto lab_32;
+              __432 = NULL;
+              goto lab_33;
+            lab_32:
+   217 |      __432 = ((char *)__335.rnn16  + ((long long *)(*((char * *)__335.rnn16)))[-24ll / 8]);
+            lab_33:
+    73 |      __334.rnn15 = (char) (0 != (*((int *)((char *)__432 + 32)) & 5));
+   192 |      if (__334.rnn15 != 0u) goto lab_80;
+   217 |      if (__335.rnn16 == NULL) goto lab_93;
+   112 |    } while (NULL != ((char *)__335.rnn16  + ((long long *)(*((char * *)__335.rnn16)))[-24ll / 8]));    /* ~16 */
+          lab_93:
+          lab_80:
+          lab_18:
+   218 |    __es.__c4@3 = 4u;
+            std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()(&ss);
+   221 |    *mb = *m / numPes;
+   223 |    if (*m > 0) goto lab_39;
+            __assert_fail("m > 0","util.cxx",223u,&__func__)
+            goto lab_141;
+          lab_39:
+   224 |    if (*b > 0) goto lab_42;
+            __assert_fail("b > 0","util.cxx",224u,&__func__)
+            goto lab_141;
+          lab_42:
+   225 |    if (0 == *m % numPes) goto lab_45;
+            __assert_fail("m % numPes == 0","util.cxx",225u,&__func__)
+            goto lab_141;
+          lab_45:
+   226 |    if (*m / numPes >= *b) goto lab_48;
+            __assert_fail("m / numPes >= b","util.cxx",226u,&__func__)
+            goto lab_141;
+          lab_48:
+   228 |    $$VOL1 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL1[-24ll / 8]),0)
+   229 |    std::istream::seekg(long, std::_Ios_Seekdir)(&file,0ll,0);
+            $$RET1.rnn14 = 0 == posix_memalign(whole_A,16ull,(unsigned long long) (*b * *m) * 8ull);
+   232 |    if ($$RET1.rnn14 != 0) goto lab_51;
+            __assert_fail("0==(posix_memalign((void**)&whole_A, 16, m*b*sizeof(double)))","util.cxx",234u,&__func__)
+            goto lab_141;
+          lab_51:
+   236 |    if (!(0 < *m)) goto lab_54;
+            row = 0;
+            do {   /* id=1 guarded */ /* ~52 */ 
+              /* region = 77 */
+   237 |      if (!(0 < *b)) goto lab_57;
+              col = 0;
+              do {   /* id=2 guarded */ /* ~55 */ 
+                /* region = 76 */
+   207 |        std::istream& std::istream::_M_extract<double>(double&)(&file,&cur_val);
+   239 |        ((double *)*whole_A)[(long long) (row + *m * col)] = cur_val;
+   237 |        col = col + 1;
+              } while (col < *b);    /* ~55 */
+            lab_57:
+   236 |      row = row + 1;
+            } while (row < *m);    /* ~52 */
+          lab_54:
+   564 |    $$RET2 = std::basic_filebuf<char, std::char_traits<char> >::close()(&file._M_filebuf@10);
+   565 |    if ($$RET2 != NULL) goto lab_58;
+   566 |    $$VOL2 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+            $$VOL3 = (basic_ifstream<char,std::char_traits<char> >)[]@0.rns48..mga.file;
+   419 |    std::basic_ios<char, std::char_traits<char> >::clear(std::_Ios_Iostate)(((char *)&file  + $$VOL2[-24ll / 8]),*((int *)((char *)&file + 32 + $$VOL3[-24ll / 8])) | 4)
+   527 |  lab_58:
+   567 |    $$RET3.rnn13 = 0 == posix_memalign(A,16ull,(unsigned long long) (*b * *mb) * 8ull);
+   245 |    if ($$RET3.rnn13 != 0) goto lab_68;
+            __assert_fail("0==(posix_memalign((void**)&A, 16, mb*b*sizeof(double)))","util.cxx",247u,&__func__)
+            goto lab_141;
+          lab_68:
+   248 |    $$PARM.nrowD = *mb;
+            $$PARM.ncolE = *b;
+            $$PARM.lda_AF = *m;
+            $$PARM.lda_B10 = *mb;
+            $$PARM.A11 = ((char *)*whole_A  + (long long) (*mb * myRank) * 8ll);
+            $$PARM.B12 = *A;
+   463 |    if (!(*m == *mb)) goto lab_116;
+   464 |    __builtin_memcpy(*A,((char *)*whole_A  + (long long) (*mb * myRank) * 8ll),(unsigned long long) (*b * *mb) * 8ull);
+   465 |    goto lab_117;
+          lab_116:
+   467 |    if (!(0 < *b)) goto lab_118;
+            $$CIV1B = 0ll;
+            do {   /* id=6 guarded */ /* ~119 */ 
+              /* region = 78 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)$$PARM.B12  + ((long long) $$PARM.lda_B10 * $$CIV1B) * 8ll),((char *)$$PARM.A11  + ((long long) $$PARM.lda_AF * $$CIV1B) * 8ll),(unsigned long long) $$PARM.nrowD * 8ull);
+   467 |      $$CIV1B = $$CIV1B + 1ll;
+            } while ((unsigned long long) $$CIV1B < (unsigned long long) ((long long) $$PARM.ncolE));    /* ~119 */
+          lab_118:
+   470 |  lab_117:
+   250 |    __es.__c4@3 = 3u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&line);
+            __es.__c4@3 = 2u;
+            std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()(&file);
+            __es.__c4@3 = 0u;
+   145 |    if (!(buff._M_start@0 != NULL)) goto lab_112;
+    95 |    operator delete(void*)(buff._M_start@0)
+   110 |  lab_112:
+   132 |    std::allocator<char>::~allocator()(&buff);
+   250 |  lab_141:
+            return;
+          } /* function */ 
+
+
+   263 |  void copy_upper(double const*, double*, int, int, int, int)(char * R_in, long long *R_out, int b, int lda_in, int lda_out, int zero_square)
+   268 |  {
+   271 |    if (!(0 < b)) goto lab_3;
+            if (!(zero_square != 0)) goto lab_26;
+            if (!1) goto lab_25;
+            $$CIVA = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+   273 |      $$csx1 = (long long) lda_out * $$CIVA;
+              __builtin_memcpy(((char *)R_out  + $$csx1 * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVA) * 8ll),(unsigned long long) ((int) $$CIVA + 1) * 8ull);
+   700 |      if (!(8ll != (long long) b * 8ll - $$CIVA * 8ll)) goto lab_8;
+   737 |      $$CIV9 = 0ll;
+   700 |      do {   /* id=2 guarded */ /* ~6 */ 
+                /* region = 21 */
+                /* bump-normalized */
+   702 |        R_out[1ll + ($$CIV9 + ($$CIVA + $$csx1))] =  0.0000000000000000E+000;
+   701 |        $$CIV9 = $$CIV9 + 1ll;
+              } while ((unsigned long long) $$CIV9 < (unsigned long long) ((((long long) b * 8ll - $$CIVA * 8ll) - 8ll) / 8ll));    /* ~6 */
+            lab_8:
+   271 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_25:
+            goto lab_27;
+          lab_26:
+            if (!1) goto lab_32;
+            $$CIVA = 0ll;
+            do {   /* id=3 guarded */ /* ~28 */ 
+              /* region = 23 */
+              /* bump-normalized */
+   273 |      __builtin_memcpy(((char *)R_out  + ((long long) lda_out * $$CIVA) * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVA) * 8ll),(unsigned long long) ((int) $$CIVA + 1) * 8ull);
+   271 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) ((long long) b));    /* ~28 */
+          lab_32:
+          lab_27:
+          lab_3:
+   279 |    return;
+          } /* function */ 
+
+
+   292 |  void copy_lower(double const*, double*, int, int, int, int, int)(char * R_in, long long *R_out, int b, int r, int lda_in, int lda_out, int zero_square)
+   298 |  {
+   301 |    if (!(0 < b)) goto lab_3;
+            if (!(zero_square != 0)) goto lab_26;
+            if (!1) goto lab_25;
+            $$CIVC = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 22 */
+              /* bump-normalized */
+   303 |      $$csx2 = (long long) lda_out * $$CIVC;
+              __builtin_memcpy(((char *)R_out  + (1ll + ($$csx2 + $$CIVC)) * 8ll),((char *)R_in  + (1ll + ((long long) lda_in * $$CIVC + $$CIVC)) * 8ll),(unsigned long long) ((r - (int) $$CIVC) - 1) * 8ull);
+   700 |      if (!(0ll != $$CIVC * 8ll)) goto lab_8;
+   737 |      $$CIVB = 0ll;
+   700 |      do {   /* id=2 guarded */ /* ~6 */ 
+                /* region = 21 */
+                /* bump-normalized */
+   702 |        R_out[$$csx2 + $$CIVB] =  0.0000000000000000E+000;
+   701 |        $$CIVB = $$CIVB + 1ll;
+              } while ((unsigned long long) $$CIVB < (unsigned long long) (($$CIVC * 8ll) / 8ll));    /* ~6 */
+            lab_8:
+   301 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_25:
+            goto lab_27;
+          lab_26:
+            if (!1) goto lab_32;
+            $$CIVC = 0ll;
+            do {   /* id=3 guarded */ /* ~28 */ 
+              /* region = 23 */
+              /* bump-normalized */
+   303 |      __builtin_memcpy(((char *)R_out  + (1ll + ((long long) lda_out * $$CIVC + $$CIVC)) * 8ll),((char *)R_in  + (1ll + ((long long) lda_in * $$CIVC + $$CIVC)) * 8ll),(unsigned long long) ((r - (int) $$CIVC) - 1) * 8ull);
+   301 |      $$CIVC = $$CIVC + 1ll;
+            } while ((unsigned long long) $$CIVC < (unsigned long long) ((long long) b));    /* ~28 */
+          lab_32:
+          lab_27:
+          lab_3:
+   310 |    return;
+          } /* function */ 
+
+
+   322 |  void pack_lower(double const*, double*, int, int, int)(char * R_in, char * R_out, int b, int lda_in, int has_diag)
+   326 |  {
+   330 |    if (!(0 < b)) goto lab_3;
+   329 |    r_ctr = 0;
+   330 |    $$CIVD = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   332 |      __builtin_memcpy(((char *)R_out  + (long long) r_ctr * 8ll),((char *)R_in  + (1ll + (((long long) lda_in * $$CIVD + $$CIVD) - (long long) has_diag)) * 8ll),(unsigned long long) (((b + has_diag) - (int) $$CIVD) - 1) * 8ull);
+   333 |      r_ctr = r_ctr + (((b + has_diag) - (int) $$CIVD) - 1);
+   330 |      $$CIVD = $$CIVD + 1ll;
+            } while ((unsigned long long) $$CIVD < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   335 |    return;
+          } /* function */ 
+
+
+   346 |  void pack_upper(double const*, double*, int, int)(char * R_in, char * R_out, int b, int lda_in)
+   349 |  {
+   353 |    if (!(0 < b)) goto lab_3;
+   352 |    r_ctr = 0;
+   353 |    $$CIVE = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   355 |      __builtin_memcpy(((char *)R_out  + (long long) r_ctr * 8ll),((char *)R_in  + ((long long) lda_in * $$CIVE) * 8ll),(unsigned long long) ((int) $$CIVE + 1) * 8ull);
+   356 |      r_ctr = r_ctr + ((int) $$CIVE + 1);
+   353 |      $$CIVE = $$CIVE + 1ll;
+            } while ((unsigned long long) $$CIVE < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   358 |    return;
+          } /* function */ 
+
+
+   370 |  void unpack_lower(double const*, double*, int, int, int)(char * R_in, char * R_out, int b, int lda_out, int has_diag)
+   374 |  {
+   378 |    if (!(0 < b)) goto lab_3;
+   377 |    r_ctr = 0;
+   378 |    $$CIVF = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   380 |      __builtin_memcpy(((char *)R_out  + (((long long) lda_out * $$CIVF + $$CIVF) + (long long) (1 - has_diag)) * 8ll),((char *)R_in  + (long long) r_ctr * 8ll),(unsigned long long) (((b + has_diag) - (int) $$CIVF) - 1) * 8ull);
+   381 |      r_ctr = r_ctr + (((b + has_diag) - (int) $$CIVF) - 1);
+   378 |      $$CIVF = $$CIVF + 1ll;
+            } while ((unsigned long long) $$CIVF < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   383 |    return;
+          } /* function */ 
+
+
+   394 |  void unpack_upper(double const*, double*, int, int)(char * R_in, char * R_out, int b, int lda_out)
+   397 |  {
+   401 |    if (!(0 < b)) goto lab_3;
+   400 |    r_ctr = 0;
+   401 |    $$CIV10 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 9 */
+              /* bump-normalized */
+   403 |      __builtin_memcpy(((char *)R_out  + ((long long) lda_out * $$CIV10) * 8ll),((char *)R_in  + (long long) r_ctr * 8ll),(unsigned long long) ((int) $$CIV10 + 1) * 8ull);
+   404 |      r_ctr = r_ctr + ((int) $$CIV10 + 1);
+   401 |      $$CIV10 = $$CIV10 + 1ll;
+            } while ((unsigned long long) $$CIV10 < (unsigned long long) ((long long) b));    /* ~1 */
+          lab_3:
+   406 |    return;
+          } /* function */ 
+
+
+   416 |  void lda_zero(int, int, int, double*)(int nrow, int ncol, int lda, char * A)
+   417 |  {
+   419 |    if (!(0 < ncol)) goto lab_3;
+            if (!(0 < nrow)) goto lab_24;
+            if (!1) goto lab_23;
+            $$CIV12 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 17 */
+              /* bump-normalized */
+   420 |      if (!1) goto lab_6;
+              $$CIV11 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 16 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV11 = $$CIV11 + 1ll;
+              } while ((unsigned long long) $$CIV11 < (unsigned long long) ((long long) nrow));    /* ~4 */
+   421 |      __memset(((char *)A + (8ll)*((long long) lda * $$CIV12 + (long long) 0)),(long long) 0,(long long) nrow * 8ll);
+   420 |    lab_6:
+   419 |      $$CIV12 = $$CIV12 + 1ll;
+            } while ((unsigned long long) $$CIV12 < (unsigned long long) ((long long) ncol));    /* ~1 */
+          lab_23:
+          lab_24:
+          lab_3:
+   424 |    return;
+          } /* function */ 
+
+
+   437 |  void tau_recon(char, int, int, int, double const*, double*)(char structure, int ncol, int nrow, int lda, char * Y, long long *tau)
+   442 |  {
+   444 |    if (!(82 == (int) structure)) goto lab_1;
+   445 |    if (!(0 < ncol)) goto lab_5;
+            $$CIV13 = 0ll;
+            do {   /* id=3 guarded */ /* ~3 */ 
+              /* region = 32 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET440 = cdlange(char, int, int, double const*, int, double*)(70u,nrow,1,((char *)Y  + ((long long) lda * $$CIV13) * 8ll),lda,NULL);
+   446 |      $$csx3 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET440,$$TVX.$$.$$RET440, 1.0000000000000000E+000);
+   448 |      if (!($$csx3 ==  2.0000000000000000E+000)) goto lab_7;
+              $$TVX.$$.__47351 =  0.0000000000000000E+000;
+              goto lab_8;
+            lab_7:
+              $$TVX.$$.__47351 = $$csx3;
+            lab_8:
+              tau[$$CIV13] = $$TVX.$$.__47351;
+   445 |      $$CIV13 = $$CIV13 + 1ll;
+            } while ((unsigned long long) $$CIV13 < (unsigned long long) ((long long) ncol));    /* ~3 */
+          lab_5:
+   450 |  lab_1:
+   451 |    if (!(76 == (int) structure)) goto lab_9;
+   452 |    if (!(0 < ncol)) goto lab_13;
+            $$CIV14 = 0ll;
+            do {   /* id=2 guarded */ /* ~11 */ 
+              /* region = 33 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET522 = cdlange(char, int, int, double const*, int, double*)(70u,(nrow - (int) $$CIV14) - 1,1,((char *)Y  + (1ll + ((long long) lda * $$CIV14 + $$CIV14)) * 8ll),lda,NULL);
+   453 |      $$csx4 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET522,$$TVX.$$.$$RET522, 1.0000000000000000E+000);
+   455 |      if (!($$csx4 ==  2.0000000000000000E+000)) goto lab_15;
+              $$TVX.$$.__47433 =  0.0000000000000000E+000;
+              goto lab_16;
+            lab_15:
+              $$TVX.$$.__47433 = $$csx4;
+            lab_16:
+              tau[$$CIV14] = $$TVX.$$.__47433;
+   452 |      $$CIV14 = $$CIV14 + 1ll;
+            } while ((unsigned long long) $$CIV14 < (unsigned long long) ((long long) ncol));    /* ~11 */
+          lab_13:
+   457 |  lab_9:
+   458 |    if (!(85 == (int) structure)) goto lab_17;
+   459 |    if (!(0 < ncol)) goto lab_21;
+            $$CIV15 = 0ll;
+            do {   /* id=1 guarded */ /* ~19 */ 
+              /* region = 34 */
+              /* bump-normalized */
+              $$TVX.$$.$$RET604 = cdlange(char, int, int, double const*, int, double*)(70u,(int) $$CIV15 + 1,1,((char *)Y  + ((long long) lda * $$CIV15) * 8ll),lda,NULL);
+   460 |      $$csx5 =  2.0000000000000000E+000 / _fmadd@47($$TVX.$$.$$RET604,$$TVX.$$.$$RET604, 1.0000000000000000E+000);
+   462 |      if (!($$csx5 ==  2.0000000000000000E+000)) goto lab_23;
+              $$TVX.$$.__47515 =  0.0000000000000000E+000;
+              goto lab_24;
+            lab_23:
+              $$TVX.$$.__47515 = $$csx5;
+            lab_24:
+              tau[$$CIV15] = $$TVX.$$.__47515;
+   459 |      $$CIV15 = $$CIV15 + 1ll;
+            } while ((unsigned long long) $$CIV15 < (unsigned long long) ((long long) ncol));    /* ~19 */
+          lab_21:
+   464 |  lab_17:
+   465 |    return;
+          } /* function */ 
+
+
+   468 |  void init_dist_sym_matrix(int, int, int, int, int, int, double*, double*)(int n, int ipr, int pr, int ipc, int pc, int b, long long *full_A, long long *loc_A)
+   475 |  {
+   478 |    if (!(0 < n)) goto lab_3;
+   477 |    loc_off = 0;
+   478 |    if (!1) goto lab_29;
+            $$CIV17 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 33 */
+              /* bump-normalized */
+   479 |      if (!1) goto lab_6;
+              if (!(ipc == ((int) $$CIV17 / b) % pc)) goto lab_38;
+              if (!1) goto lab_37;
+              $$CIV16 = 0ll;
+              do {   /* id=2 guarded */ /* ~4 */ 
+                /* region = 31 */
+                /* bump-normalized */
+   480 |        if (!((int) $$CIV17 <= (int) $$CIV16)) goto lab_7;
+                $$TVX.$$.$$RET766 = drand48();
+   481 |        full_A[(long long) n * $$CIV17 + $$CIV16] = $$TVX.$$.$$RET766;
+   482 |        goto lab_9;
+              lab_7:
+   483 |        full_A[(long long) n * $$CIV17 + $$CIV16] = full_A[$$CIV17 + (long long) n * $$CIV16];
+   484 |      lab_9:
+   485 |        if (!(ipr == ((int) $$CIV16 / b) % pr)) goto lab_10;
+   486 |        loc_A[(long long) loc_off] = full_A[(long long) n * $$CIV17 + $$CIV16];
+   487 |        loc_off = loc_off + 1;
+   488 |      lab_10:
+   479 |        $$CIV16 = $$CIV16 + 1ll;
+              } while ((unsigned long long) $$CIV16 < (unsigned long long) ((long long) n));    /* ~4 */
+            lab_37:
+              goto lab_39;
+            lab_38:
+              if (!1) goto lab_44;
+              $$CIV16 = 0ll;
+              do {   /* id=3 guarded */ /* ~40 */ 
+                /* region = 32 */
+                /* bump-normalized */
+   480 |        if (!((int) $$CIV17 <= (int) $$CIV16)) goto lab_41;
+                $$TVX.$$.$$RET777 = drand48();
+   481 |        full_A[(long long) n * $$CIV17 + $$CIV16] = $$TVX.$$.$$RET777;
+   482 |        goto lab_43;
+              lab_41:
+   483 |        full_A[(long long) n * $$CIV17 + $$CIV16] = full_A[$$CIV17 + (long long) n * $$CIV16];
+   488 |      lab_43:
+   479 |        $$CIV16 = $$CIV16 + 1ll;
+              } while ((unsigned long long) $$CIV16 < (unsigned long long) ((long long) n));    /* ~40 */
+            lab_44:
+            lab_39:
+            lab_6:
+   478 |      $$CIV17 = $$CIV17 + 1ll;
+            } while ((unsigned long long) $$CIV17 < (unsigned long long) ((long long) n));    /* ~1 */
+          lab_29:
+          lab_3:
+   491 |    return;
+          } /* function */ 
+
+
+   495 |  void print_dist_mat(int, int, int, int, int, int, int, int, int, int, double*, long)(int nrow, int ncol, int b, int ipr, int pr, int rpr, int ipc, int pc, int rpc, int comm, long long *A, long long lda_A)
+   506 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   508 |    full_A = malloc((unsigned long long) (nrow * ncol) * 8ull);
+   700 |    if (!(0ll != (long long) (nrow * ncol) * 8ll)) goto lab_3;
+   702 |    __memset(((char *)full_A + (8ll)*((long long) 0)),(long long) 0,(((long long) (nrow * ncol) * 8ll) / 8ll) * 8ll);
+   701 |  lab_3:
+   511 |    if (!(0 < nrow)) goto lab_6;
+   510 |    li = 0;
+   511 |    if (!(0 < ncol)) goto lab_45;
+            if (!(b > 0)) goto lab_77;
+            if (!1) goto lab_46;
+            $$DMSRR2 = (int) ((int) 0 + (int) 0ll * 1) % b;
+            $$DMSRQ2 = (int) ((int) 0 + (int) 0ll * 1) / b;
+            if (!1) goto lab_108;
+            $$CIV1A = 0ll;
+            do {   /* id=1 guarded */ /* ~4 */ 
+              /* region = 79 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ($$DMSRQ2 + (pr + rpr)) % pr)) goto lab_7;
+   514 |      if (!1) goto lab_11;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              $$DMSRR0 = (int) ((int) 0 + (int) 0ll * 1) % b;
+              $$DMSRQ0 = (int) ((int) 0 + (int) 0ll * 1) / b;
+              do {   /* id=2 guarded */ /* ~9 */ 
+                /* region = 78 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ($$DMSRQ0 + (pc + rpc)) % pc)) goto lab_12;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_12:
+   520 |        $$DMSRR0 = $$DMSRR0 + (int) 1;
+                if (!($$DMSRR0 >= (1 / b) * b + b)) goto lab_70;
+                $$DMSRR0 = $$DMSRR0 + - b;
+                $$DMSRQ0 = $$DMSRQ0 + 1;
+              lab_70:
+                $$DMSRR0 = $$DMSRR0 + - ((1 / b) * b);
+                $$DMSRQ0 = $$DMSRQ0 + 1 / b;
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~9 */
+            lab_11:
+   521 |      li = li + 1;
+   522 |    lab_7:
+   523 |      $$DMSRR2 = $$DMSRR2 + (int) 1;
+              if (!($$DMSRR2 >= (1 / b) * b + b)) goto lab_91;
+              $$DMSRR2 = $$DMSRR2 + - b;
+              $$DMSRQ2 = $$DMSRQ2 + 1;
+            lab_91:
+              $$DMSRR2 = $$DMSRR2 + - ((1 / b) * b);
+              $$DMSRQ2 = $$DMSRQ2 + 1 / b;
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~4 */
+          lab_108:
+            goto lab_46;
+          lab_77:
+            if (!1) goto lab_46;
+            if (!1) goto lab_107;
+            $$CIV1A = 0ll;
+            do {   /* id=13 guarded */ /* ~96 */ 
+              /* region = 81 */
+              /* bump-normalized */
+   513 |      if (!(ipr == ((int) $$CIV1A / b + (pr + rpr)) % pr)) goto lab_106;
+   514 |      if (!1) goto lab_104;
+   512 |      lj = 0;
+   514 |      $$CIV19 = 0ll;
+              do {   /* id=15 guarded */ /* ~102 */ 
+                /* region = 80 */
+                /* bump-normalized */
+   515 |        if (!(ipc == ((int) $$CIV19 / b + (pc + rpc)) % pc)) goto lab_103;
+   516 |        printf("[%d,%d] printing A[%d,%d] pr=%d rpr=%d ipr=%d/n",ipr,ipc,(int) $$CIV1A,(int) $$CIV19,pr,rpr,ipr);
+   517 |        full_A[$$CIV1A + (long long) nrow * $$CIV19] = A[(long long) li + lda_A * (long long) lj];
+   518 |        lj = lj + 1;
+   519 |      lab_103:
+   514 |        $$CIV19 = $$CIV19 + 1ll;
+              } while ((unsigned long long) $$CIV19 < (unsigned long long) ((long long) ncol));    /* ~102 */
+            lab_104:
+   521 |      li = li + 1;
+   522 |    lab_106:
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~96 */
+          lab_107:
+            goto lab_46;
+          lab_45:
+            if (!(b > 0)) goto lab_71;
+            if (!1) goto lab_52;
+            $$CIV1A = 0ll;
+            $$DMSRR1 = (int) ((int) 0 + (int) 0ll * 1) % b;
+            $$DMSRQ1 = (int) ((int) 0 + (int) 0ll * 1) / b;
+            do {   /* id=6 guarded */ /* ~47 */ 
+              /* region = 82 */
+              /* bump-normalized */
+              /* independent-allow_scalars */
+   513 |      if (!(ipr == ($$DMSRQ1 + (pr + rpr)) % pr)) goto lab_51;
+   522 |    lab_51:
+   523 |      $$DMSRR1 = $$DMSRR1 + (int) 1;
+              if (!($$DMSRR1 >= (1 / b) * b + b)) goto lab_76;
+              $$DMSRR1 = $$DMSRR1 + - b;
+              $$DMSRQ1 = $$DMSRQ1 + 1;
+            lab_76:
+              $$DMSRR1 = $$DMSRR1 + - ((1 / b) * b);
+              $$DMSRQ1 = $$DMSRQ1 + 1 / b;
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~47 */
+          lab_52:
+            goto lab_72;
+          lab_71:
+            if (!1) goto lab_75;
+            $$CIV1A = 0ll;
+            do {   /* id=7 guarded */ /* ~73 */ 
+              /* region = 83 */
+              /* bump-normalized */
+              /* independent */
+   513 |      if (!(ipr == ((int) $$CIV1A / b + (pr + rpr)) % pr)) goto lab_74;
+   522 |    lab_74:
+   511 |      $$CIV1A = $$CIV1A + 1ll;
+            } while ((unsigned long long) $$CIV1A < (unsigned long long) ((long long) nrow));    /* ~73 */
+          lab_75:
+          lab_72:
+          lab_46:
+          lab_6:
+   524 |    if (!(0 != ipr + ipc)) goto lab_14;
+   525 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce(full_A,NULL,nrow * ncol,1275070475,1476395011,0,comm);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   526 |    goto lab_19;
+          lab_14:
+   527 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Reduce");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Reduce((char *) -1,full_A,nrow * ncol,1275070475,1476395011,0,comm);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    34 |    if (!(0 < nrow)) goto lab_35;
+            if (!(0 < ncol)) goto lab_54;
+            if (!1) goto lab_53;
+            $$CIV1 = 0ll;
+            do {   /* id=4 guarded */ /* ~36 */ 
+              /* region = 85 */
+              /* bump-normalized */
+    35 |      if (!1) goto lab_37;
+              $$CIV0 = 0ll;
+              do {   /* id=5 guarded */ /* ~38 */ 
+                /* region = 84 */
+                /* bump-normalized */
+    36 |        printf("%+.4lf ",full_A[$$CIV1 + (long long) nrow * $$CIV0]);
+    35 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) ncol));    /* ~38 */
+            lab_37:
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) nrow));    /* ~36 */
+          lab_53:
+            goto lab_55;
+          lab_54:
+            if (!1) goto lab_59;
+            $$CIV1 = 0ll;
+            do {   /* id=8 guarded */ /* ~56 */ 
+              /* region = 86 */
+              /* bump-normalized */
+    38 |      printf("/n");
+    34 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) nrow));    /* ~56 */
+          lab_59:
+          lab_55:
+          lab_35:
+   529 |  lab_19:
+   530 |    free(full_A)
+   531 |    return;
+          } /* function */ 
+
+
+          void std::vector<char, std::allocator<char> >::__dftbdt(std::_Vector_base<char, std::allocator<char> >*)(_Vector_impl *__507)
+          {
+   145 |    if (!(*((char * *)__507) != NULL)) goto lab_5;
+    95 |    operator delete(void*)(*((char * *)__507))
+   110 |  lab_5:
+   132 |    $$PARM.this0 = __507;
+            std::allocator<char>::~allocator()($$PARM.this0);
+            $$IRET0 = $$PARM.this0;
+   133 |    $$IRET2 = __507;
+            return;
+          } /* function */ 
+
+
+   312 |  char * std::vector<char, std::allocator<char> >::~vector()(_Vector_impl *this)
+   313 |  {
+   145 |    if (!(*((char * *)this) != NULL)) goto lab_1;
+    95 |    operator delete(void*)(*((char * *)this))
+   110 |  lab_1:
+   132 |    $$PARM.this0 = this;
+            std::allocator<char>::~allocator()($$PARM.this0);
+            $$IRET0 = $$PARM.this0;
+   133 |    $$IRET1 = this;
+   314 |    rstr = this;
+            return rstr;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV1B = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV1B) * 8ll),((char *)A  + ((long long) lda_A * $$CIV1B) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV1B = $$CIV1B + 1ll;
+            } while ((unsigned long long) $$CIV1B < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

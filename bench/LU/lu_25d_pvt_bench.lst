@@ -1,0 +1,2476 @@
+1586-539 (I) Loop (loop index 1) at lu_25d_pvt_bench.cxx <line 173> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 2) at lu_25d_pvt_bench.cxx <line 198> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 2) at lu_25d_pvt_bench.cxx <line 199> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 3) at lu_25d_pvt_bench.cxx <line 176> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at lu_25d_pvt_bench.cxx <line 177> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at lu_25d_pvt_bench.cxx <line 178> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at lu_25d_pvt_bench.cxx <line 179> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at lu_25d_pvt_bench.cxx <line 173> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 8) at lu_25d_pvt_bench.cxx <line 176> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 9) at lu_25d_pvt_bench.cxx <line 177> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 10) at lu_25d_pvt_bench.cxx <line 178> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 11) at lu_25d_pvt_bench.cxx <line 179> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 12) at lu_25d_pvt_bench.cxx <line 198> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 12) at lu_25d_pvt_bench.cxx <line 199> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 13) at lu_25d_pvt_bench.cxx <line 173> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 14) at lu_25d_pvt_bench.cxx <line 176> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 15) at lu_25d_pvt_bench.cxx <line 177> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 16) at lu_25d_pvt_bench.cxx <line 178> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 17) at lu_25d_pvt_bench.cxx <line 179> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 18) at lu_25d_pvt_bench.cxx <line 198> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 18) at lu_25d_pvt_bench.cxx <line 199> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 19) at lu_25d_pvt_bench.cxx <line 173> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 24) at lu_25d_pvt_bench.cxx <line 198> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 24) at lu_25d_pvt_bench.cxx <line 199> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-539 (I) Loop (loop index 25) at lu_25d_pvt_bench.cxx <line 173> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 26) at lu_25d_pvt_bench.cxx <line 179> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 30) at lu_25d_pvt_bench.cxx <line 198> was not SIMD vectorized because it is not profitable to vectorize.
+1586-554 (I) Loop (loop index 30) at lu_25d_pvt_bench.cxx <line 199> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"9">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algo.h <line 170> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+   239 |  int main(int argc, char * argv)
+          {
+            $$argv.nat.9 = argv;
+            $$argc.nat.9 = argc;
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   244 |    argc = $$argc.nat.9;
+            argv = $$argv.nat.9;
+            MPI_Init(&argc,&argv);
+            MPI_Comm_size(1140850688,&numPes);
+            MPI_Comm_rank(1140850688,&myRank);
+            cdt_glb.cm@0 = 1140850688;
+            cdt_glb.rank@8 = myRank;
+            cdt_glb.np@4 = numPes;
+            cdt_glb.alive@10 = 1;
+   267 |    $$BD0 = argv;
+            $$BD1 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__124,"-n",&__126);
+            __es.__c4@3 = 1u;
+            $$PARM.begin24 = $$BD0;
+            $$PARM.end25 = $$BD1;
+            $$PARM.option26 = &__124;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin24,$$PARM.end25,$$PARM.option26,__590);
+   233 |    if (!(__597 != $$PARM.end25)) goto lab_87;
+            if (!($$PARM.end25 != ((char *)__597  + 8ll))) goto lab_87;
+   234 |    $$IRETC = __597[8ll / 8];
+            goto lab_88;
+   235 |  lab_87:
+   236 |    $$IRETC = NULL;
+   237 |  lab_88:
+   101 |    $$RET0 = $$IRETC;
+            __180 = (char) ($$RET0 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__124);
+            if (!(__180 != 0u)) goto lab_10;
+   268 |    $$BD4 = argv;
+            $$BD5 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__128,"-n",&__130);
+            __es.__c4@3 = 2u;
+            $$PARM.begin0 = $$BD4;
+            $$PARM.end1 = $$BD5;
+            $$PARM.option2 = &__128;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin0,$$PARM.end1,$$PARM.option2,__590);
+   233 |    if (!(__597 != $$PARM.end1)) goto lab_63;
+            if (!($$PARM.end1 != ((char *)__597  + 8ll))) goto lab_63;
+   234 |    $$IRET0 = __597[8ll / 8];
+            goto lab_64;
+   235 |  lab_63:
+   236 |    $$IRET0 = NULL;
+   237 |  lab_64:
+   101 |    __216 = $$IRET0;
+   286 |    __215 = (int) strtol(__216,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__128);
+   269 |    n.rnn4 = ((long long) __215 <= 0ll ? 512ll : (long long) __215);
+   270 |    goto lab_14;
+          lab_10:
+            n.rnn4 = 512ll;
+          lab_14:
+   272 |    $$BD8 = argv;
+            $$BD9 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__132,"-num_iter",&__134);
+            __es.__c4@3 = 3u;
+            $$PARM.begin12 = $$BD8;
+            $$PARM.end13 = $$BD9;
+            $$PARM.option14 = &__132;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin12,$$PARM.end13,$$PARM.option14,__590);
+   233 |    if (!(__597 != $$PARM.end13)) goto lab_75;
+            if (!($$PARM.end13 != ((char *)__597  + 8ll))) goto lab_75;
+   234 |    $$IRET6 = __597[8ll / 8];
+            goto lab_76;
+   235 |  lab_75:
+   236 |    $$IRET6 = NULL;
+   237 |  lab_76:
+   101 |    $$RET1 = $$IRET6;
+            __181 = (char) ($$RET1 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__132);
+            if (!(__181 != 0u)) goto lab_15;
+   273 |    $$BDC = argv;
+            $$BDD = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__136,"-num_iter",&__138);
+            __es.__c4@3 = 4u;
+            $$PARM.begin3 = $$BDC;
+            $$PARM.end4 = $$BDD;
+            $$PARM.option5 = &__136;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin3,$$PARM.end4,$$PARM.option5,__590);
+   233 |    if (!(__597 != $$PARM.end4)) goto lab_65;
+            if (!($$PARM.end4 != ((char *)__597  + 8ll))) goto lab_65;
+   234 |    $$IRET1 = __597[8ll / 8];
+            goto lab_66;
+   235 |  lab_65:
+   236 |    $$IRET1 = NULL;
+   237 |  lab_66:
+   101 |    __272 = $$IRET1;
+   286 |    __271 = (int) strtol(__272,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__136);
+   274 |    num_iter.rnn3 = (__271 <= 0 ? 1 : __271);
+   275 |    goto lab_19;
+          lab_15:
+            num_iter.rnn3 = 3;
+          lab_19:
+   277 |    $$BD10 = argv;
+            $$BD11 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__140,"-nwarm",&__142);
+            __es.__c4@3 = 5u;
+            $$PARM.begin1E = $$BD10;
+            $$PARM.end1F = $$BD11;
+            $$PARM.option20 = &__140;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin1E,$$PARM.end1F,$$PARM.option20,__590);
+   233 |    if (!(__597 != $$PARM.end1F)) goto lab_83;
+            if (!($$PARM.end1F != ((char *)__597  + 8ll))) goto lab_83;
+   234 |    $$IRETA = __597[8ll / 8];
+            goto lab_84;
+   235 |  lab_83:
+   236 |    $$IRETA = NULL;
+   237 |  lab_84:
+   101 |    $$RET2 = $$IRETA;
+            __182 = (char) ($$RET2 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__140);
+            if (!(__182 != 0u)) goto lab_20;
+   278 |    $$BD14 = argv;
+            $$BD15 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__144,"-nwarm",&__146);
+            __es.__c4@3 = 6u;
+            $$PARM.begin6 = $$BD14;
+            $$PARM.end7 = $$BD15;
+            $$PARM.option8 = &__144;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin6,$$PARM.end7,$$PARM.option8,__590);
+   233 |    if (!(__597 != $$PARM.end7)) goto lab_67;
+            if (!($$PARM.end7 != ((char *)__597  + 8ll))) goto lab_67;
+   234 |    $$IRET2 = __597[8ll / 8];
+            goto lab_68;
+   235 |  lab_67:
+   236 |    $$IRET2 = NULL;
+   237 |  lab_68:
+   101 |    __328 = $$IRET2;
+   286 |    __327 = (int) strtol(__328,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__144);
+   279 |    nwarm.rnn2 = (__327 <= 0 ? 1 : __327);
+   280 |    goto lab_24;
+          lab_20:
+            nwarm.rnn2 = 1;
+          lab_24:
+   282 |    $$BD18 = argv;
+            $$BD19 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__148,"-c_rep",&__150);
+            __es.__c4@3 = 7u;
+            $$PARM.beginF = $$BD18;
+            $$PARM.end10 = $$BD19;
+            $$PARM.option11 = &__148;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.beginF,$$PARM.end10,$$PARM.option11,__590);
+   233 |    if (!(__597 != $$PARM.end10)) goto lab_73;
+            if (!($$PARM.end10 != ((char *)__597  + 8ll))) goto lab_73;
+   234 |    $$IRET5 = __597[8ll / 8];
+            goto lab_74;
+   235 |  lab_73:
+   236 |    $$IRET5 = NULL;
+   237 |  lab_74:
+   101 |    $$RET3 = $$IRET5;
+            __183 = (char) ($$RET3 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__148);
+            if (!(__183 != 0u)) goto lab_25;
+   283 |    $$BD1C = argv;
+            $$BD1D = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__152,"-c_rep",&__154);
+            __es.__c4@3 = 8u;
+            $$PARM.begin9 = $$BD1C;
+            $$PARM.endA = $$BD1D;
+            $$PARM.optionB = &__152;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin9,$$PARM.endA,$$PARM.optionB,__590);
+   233 |    if (!(__597 != $$PARM.endA)) goto lab_69;
+            if (!($$PARM.endA != ((char *)__597  + 8ll))) goto lab_69;
+   234 |    $$IRET3 = __597[8ll / 8];
+            goto lab_70;
+   235 |  lab_69:
+   236 |    $$IRET3 = NULL;
+   237 |  lab_70:
+   101 |    __384 = $$IRET3;
+   286 |    __383 = (int) strtol(__384,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__152);
+   284 |    c_rep.rnn1 = max(__383,1);
+   285 |    goto lab_29;
+          lab_25:
+   286 |    c_rep.rnn1 = 1;
+   287 |    $$SFX0 = __builtin_sqrt((double) numPes);
+            $$RET4 = __builtin_sqrt((double) numPes);
+            if (!($$SFX0 * $$RET4 != (double) numPes)) goto lab_30;
+   288 |    if (!(numPes >= 8)) goto lab_32;
+            c_rep.rnn1 = (0 == numPes % 2 ? 2 : 1);
+          lab_32:
+   289 |  lab_30:
+   290 |  lab_29:
+   291 |    $$BD20 = argv;
+            $$BD21 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__156,"-b_sm",&__158);
+            __es.__c4@3 = 9u;
+            $$PARM.begin1B = $$BD20;
+            $$PARM.end1C = $$BD21;
+            $$PARM.option1D = &__156;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin1B,$$PARM.end1C,$$PARM.option1D,__590);
+   233 |    if (!(__597 != $$PARM.end1C)) goto lab_81;
+            if (!($$PARM.end1C != ((char *)__597  + 8ll))) goto lab_81;
+   234 |    $$IRET9 = __597[8ll / 8];
+            goto lab_82;
+   235 |  lab_81:
+   236 |    $$IRET9 = NULL;
+   237 |  lab_82:
+   101 |    $$RET5 = $$IRET9;
+            __184 = (char) ($$RET5 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__156);
+            if (!(__184 != 0u)) goto lab_35;
+   292 |    $$BD24 = argv;
+            $$BD25 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__160,"-b_sm",&__162);
+            __es.__c4@3 = 10u;
+            $$PARM.beginC = $$BD24;
+            $$PARM.endD = $$BD25;
+            $$PARM.optionE = &__160;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.beginC,$$PARM.endD,$$PARM.optionE,__590);
+   233 |    if (!(__597 != $$PARM.endD)) goto lab_71;
+            if (!($$PARM.endD != ((char *)__597  + 8ll))) goto lab_71;
+   234 |    $$IRET4 = __597[8ll / 8];
+            goto lab_72;
+   235 |  lab_71:
+   236 |    $$IRET4 = NULL;
+   237 |  lab_72:
+   101 |    __440 = $$IRET4;
+   286 |    __439 = (int) strtol(__440,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__160);
+   293 |    b_sm.rnn0 = ((long long) __439 < 1ll ? 4ll : (long long) __439);
+   294 |    goto lab_39;
+          lab_35:
+            b_sm.rnn0 = 4ll;
+          lab_39:
+   295 |    $$BD28 = argv;
+            $$BD29 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__164,"-b_lrg",&__166);
+            __es.__c4@3 = 11u;
+            $$PARM.begin18 = $$BD28;
+            $$PARM.end19 = $$BD29;
+            $$PARM.option1A = &__164;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin18,$$PARM.end19,$$PARM.option1A,__590);
+   233 |    if (!(__597 != $$PARM.end19)) goto lab_79;
+            if (!($$PARM.end19 != ((char *)__597  + 8ll))) goto lab_79;
+   234 |    $$IRET8 = __597[8ll / 8];
+            goto lab_80;
+   235 |  lab_79:
+   236 |    $$IRET8 = NULL;
+   237 |  lab_80:
+   101 |    $$RET6 = $$IRET8;
+            __185 = (char) ($$RET6 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__164);
+            if (!(__185 != 0u)) goto lab_40;
+   296 |    $$BD2C = argv;
+            $$BD2D = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__168,"-b_lrg",&__170);
+            __es.__c4@3 = 12u;
+            $$PARM.begin21 = $$BD2C;
+            $$PARM.end22 = $$BD2D;
+            $$PARM.option23 = &__168;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin21,$$PARM.end22,$$PARM.option23,__590);
+   233 |    if (!(__597 != $$PARM.end22)) goto lab_85;
+            if (!($$PARM.end22 != ((char *)__597  + 8ll))) goto lab_85;
+   234 |    $$IRETB = __597[8ll / 8];
+            goto lab_86;
+   235 |  lab_85:
+   236 |    $$IRETB = NULL;
+   237 |  lab_86:
+   101 |    __496 = $$IRETB;
+   286 |    __495 = (int) strtol(__496,NULL,10);
+   285 |    b_lrg = (long long) __495;
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__168);
+            $$RET7 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+   297 |    if (!((double) ((long long) __495) < (double) b_sm.rnn0 * $$RET7)) goto lab_42;
+            $$RET8 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+   298 |    b_lrg = (long long) ((double) b_sm.rnn0 * $$RET8);
+          lab_42:
+   299 |    goto lab_44;
+          lab_40:
+   300 |    $$RET9 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            b_lrg = (long long) ((double) b_sm.rnn0 * $$RET9);
+          lab_44:
+   301 |    $$BD30 = argv;
+            $$BD31 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__172,"-pvt",&__174);
+            __es.__c4@3 = 13u;
+            $$PARM.begin15 = $$BD30;
+            $$PARM.end16 = $$BD31;
+            $$PARM.option17 = &__172;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin15,$$PARM.end16,$$PARM.option17,__590);
+   233 |    if (!(__597 != $$PARM.end16)) goto lab_77;
+            if (!($$PARM.end16 != ((char *)__597  + 8ll))) goto lab_77;
+   234 |    $$IRET7 = __597[8ll / 8];
+            goto lab_78;
+   235 |  lab_77:
+   236 |    $$IRET7 = NULL;
+   237 |  lab_78:
+   101 |    $$RETA = $$IRET7;
+            __186 = (char) ($$RETA != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__172);
+            if (!(__186 != 0u)) goto lab_45;
+   302 |    $$BD34 = argv;
+            $$BD35 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__176,"-pvt",&__178);
+            __es.__c4@3 = 14u;
+            $$PARM.begin27 = $$BD34;
+            $$PARM.end28 = $$BD35;
+            $$PARM.option29 = &__176;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin27,$$PARM.end28,$$PARM.option29,__590);
+   233 |    if (!(__597 != $$PARM.end28)) goto lab_89;
+            if (!($$PARM.end28 != ((char *)__597  + 8ll))) goto lab_89;
+   234 |    $$IRETD = __597[8ll / 8];
+            goto lab_90;
+   235 |  lab_89:
+   236 |    $$IRETD = NULL;
+   237 |  lab_90:
+   101 |    __552 = $$IRETD;
+   286 |    __551 = (int) strtol(__552,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__176);
+   303 |    if (!(__551 < 1)) goto lab_47;
+          lab_47:
+   304 |    goto lab_49;
+          lab_45:
+          lab_49:
+   315 |    $$SFX1 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            $$RETB = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            if (!($$SFX1 * $$RETB != (double) (numPes / c_rep.rnn1))) goto lab_50;
+   316 |    if (!(myRank == 0)) goto lab_52;
+   317 |    printf("LU test needs square processor grid... exiting./n");
+          lab_52:
+   318 |    rstr = 0;
+            return rstr;
+   319 |  lab_50:
+   323 |    CTF_set_main_args(int, char const* const*)(argc,argv)
+   325 |    CTF_set_context(int)(1140850688)
+   329 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 15u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(1140850688);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   331 |    lu_25d_pvt_bench(long, long, long, int, int, int, int, int, int, CommData)(n.rnn4,b_sm.rnn0,b_lrg,myRank,numPes,c_rep.rnn1,1,num_iter.rnn3,nwarm.rnn2,cdt_glb)
+   346 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(1140850688);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   347 |    MPI_Finalize();
+   348 |    rstr = 0;
+            return rstr;
+   349 |  } /* function */ 
+
+
+    18 |  void lu_25d_pvt_bench(long, long, long, int, int, int, int, int, int, CommData)(long long n, long long b_sm, long long b_lrg, int myRank, int numPes, int c_rep, int pvt, int num_iter, int start_iter, aggr20 cdt)
+    27 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__51 = 1;
+    29 |    cdt_glb = cdt;
+    35 |    if (!(myRank == 0)) goto lab_2;
+    36 |    printf("BENCHMARKING LU FACOTRIZATION OF SQUARE MATRIX/n");
+    37 |    printf("MATRIX DIMENSION IS %ld ",n);
+    38 |    printf("BLOCK DIMENSION IS %ld ",b_sm);
+    39 |    printf("BIG BLOCK DIMENSION IS %ld/n",b_lrg);
+    40 |    printf("REPLICATION FACTOR, C, IS %d/n",c_rep);
+    44 |    printf("USING MPI FOR COMMUNICATION/n");
+    46 |  lab_2:
+    48 |    if (n < b_sm) goto lab_5;
+            if (!(0ll != n % b_sm)) goto lab_4;
+          lab_5:
+    49 |    if (!(myRank == 0)) goto lab_7;
+            printf("array_size mod block_size != 0!/n");
+          lab_7:
+    50 |    MPI_Abort(1140850688,-1);
+    51 |  lab_4:
+    54 |    num_pes_dim = (int) __builtin_sqrt((double) (numPes / c_rep));
+    56 |    if (!(myRank == 0)) goto lab_12;
+    57 |    printf("NUM X BLOCKS IS %d/n",(int) (n / b_sm));
+    59 |    printf("NUM X PROCS IS %d/n",num_pes_dim);
+    61 |  lab_12:
+    63 |    if (num_pes_dim * num_pes_dim != numPes / c_rep) goto lab_15;
+            if (numPes % c_rep > 0) goto lab_15;
+            if (!(c_rep > num_pes_dim)) goto lab_14;
+          lab_15:
+    64 |    if (!(myRank == 0)) goto lab_18;
+    65 |    printf("ERROR: PROCESSOR GRID MISMATCH/n");
+          lab_18:
+    66 |    MPI_Abort(1140850688,-1);
+    67 |  lab_14:
+    68 |    if (0ll != b_lrg % ((long long) num_pes_dim * b_sm)) goto lab_24;
+            if (b_lrg <= 0ll) goto lab_24;
+            if (!(b_lrg > n)) goto lab_23;
+          lab_24:
+    69 |    if (!(myRank == 0)) goto lab_27;
+    70 |    printf("ERROR: BIG BLOCK DIMENSION MUST BE num_pes_dim*blockDim*x for some x./n");
+          lab_27:
+    71 |    MPI_Abort(1140850688,-1);
+    72 |  lab_23:
+    74 |    if (!(0 != (int) (n / b_sm) % num_pes_dim)) goto lab_32;
+    75 |    if (!(myRank == 0)) goto lab_34;
+    76 |    printf("NUMBER OF BLOCKS MUST BE DIVISBLE BY THE 2D PROCESSOR GRID DIMENSION/n");
+          lab_34:
+    77 |    MPI_Abort(1140850688,-1);
+    78 |  lab_32:
+    88 |    cdt_kdir.rank@8 = myRank / (numPes / c_rep);
+            cdt_kdir.np@4 = c_rep;
+            MPI_Comm_split(1140850688,myRank % (numPes / c_rep),myRank / (numPes / c_rep),&cdt_kdir.cm@0);
+    90 |    MPI_Comm_split(1140850688,myRank / (numPes / c_rep),myRank % (numPes / c_rep),&MPI_INTRALAYER_COMM);
+            MPI_Comm_split(MPI_INTRALAYER_COMM,(myRank % (numPes / c_rep)) / num_pes_dim,(myRank % (numPes / c_rep)) % num_pes_dim,&cdt_row.cm@0);
+            MPI_Comm_split(MPI_INTRALAYER_COMM,(myRank % (numPes / c_rep)) % num_pes_dim,(myRank % (numPes / c_rep)) / num_pes_dim,&cdt_col.cm@0);
+            cdt_row.np@4 = num_pes_dim;
+            cdt_row.rank@8 = (myRank % (numPes / c_rep)) % num_pes_dim;
+            cdt_col.np@4 = num_pes_dim;
+            cdt_col.rank@8 = (myRank % (numPes / c_rep)) / num_pes_dim;
+    92 |    cdt_kcol.rank@8 = (myRank / (numPes / c_rep)) * num_pes_dim + (myRank % (numPes / c_rep)) / num_pes_dim;
+            cdt_kcol.np@4 = num_pes_dim * c_rep;
+            cdt_kcol.color@c = (myRank % (numPes / c_rep)) % num_pes_dim;
+            cdt_kcol.alive@10 = 1;
+            MPI_Comm_split(cdt_glb.cm@0,(myRank % (numPes / c_rep)) % num_pes_dim,(myRank / (numPes / c_rep)) * num_pes_dim + (myRank % (numPes / c_rep)) / num_pes_dim,&cdt_kcol.cm@0);
+   104 |    $$RETC.rnn11 = 0 == posix_memalign(&mat_A,16ull,(unsigned long long) (8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm))));
+   106 |    if ($$RETC.rnn11 != 0) goto lab_59;
+            __assert_fail("posix_memalign((void**)&mat_A, 16, my_num_blocks_dim*my_num_blocks_dim* blockDim*blockDim*sizeof(double)) == 0","lu_25d_pvt_bench.cxx",109u,&__func__)
+            return;
+          lab_59:
+   113 |    if (!((int) (n / b_lrg) > 1)) goto lab_60;
+            if (!((int) (n / b_lrg) < (num_pes_dim / c_rep + (num_pes_dim % c_rep > 0)) * 2)) goto lab_60;
+   114 |    if (!(myRank == 0)) goto lab_63;
+            printf("WARNING: USING EXTRA MEMORY (SEE COMMENT IN CODE)/n");
+          lab_63:
+            $$RETD.rnn10 = 0 == posix_memalign(&buffer,16ull,(unsigned long long) (8ll * ((long long) (2 * ((num_pes_dim * ((int) (b_lrg / b_sm) / num_pes_dim)) * ((int) (n / b_lrg) * ((int) (b_lrg / b_sm) / num_pes_dim)))) * (b_sm * b_sm))) / (unsigned long long) c_rep);
+   115 |    if ($$RETD.rnn10 != 0) goto lab_67;
+            __assert_fail("posix_memalign((void**)&buffer, 16, r_blk*r_blk*num_pes_dim*2*num_big_blocks_dim* blockDim*blockDim*sizeof(double)/c_rep) == 0","lu_25d_pvt_bench.cxx",118u,&__func__)
+            return;
+          lab_67:
+   120 |    goto lab_68;
+          lab_60:
+            $$RETE.rnnD = 0 == posix_memalign(&buffer,16ull,(unsigned long long) (8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm))));
+   121 |    if ($$RETE.rnnD != 0) goto lab_71;
+            __assert_fail("posix_memalign((void**)&buffer, 16, my_num_blocks_dim*my_num_blocks_dim* blockDim*blockDim*sizeof(double)) == 0","lu_25d_pvt_bench.cxx",124u,&__func__)
+            return;
+          lab_71:
+   125 |  lab_68:
+            $$RETF.rnnF = 0 == posix_memalign(&mat_P,16ull,(unsigned long long) (4ll * ((long long) ((int) (n / b_sm) / num_pes_dim) * b_sm)));
+   126 |    if ($$RETF.rnnF != 0) goto lab_74;
+            __assert_fail("posix_memalign((void**)&mat_P, 16, my_num_blocks_dim*blockDim*sizeof(int)) == 0","lu_25d_pvt_bench.cxx",128u,&__func__)
+            return;
+          lab_74:
+    94 |    my_num_blocks_dim = (int) (n / b_sm) / num_pes_dim;
+   126 |    $$RET10.rnnE = 0 == posix_memalign(&buf_P,16ull,(unsigned long long) (4ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * 30) * b_sm)));
+   130 |    if ($$RET10.rnnE != 0) goto lab_77;
+            __assert_fail("posix_memalign((void**)&buf_P, 16, 30*my_num_blocks_dim*blockDim*sizeof(int)) == 0","lu_25d_pvt_bench.cxx",132u,&__func__)
+            return;
+          lab_77:
+   134 |    if (!(myRank == 0)) goto lab_78;
+   138 |    if (!(pvt != 0)) goto lab_80;
+            printf("BENCHMARKING LU WITH TOURNAMENT PIVOTING/n");
+            goto lab_82;
+          lab_80:
+   139 |    printf("BENCHMARKING LU WITH NO PIVOTING (DIAGONALLY DOMINANT MATRIX)/n");
+          lab_82:
+   141 |  lab_78:
+   145 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_glb.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    p.pvt@0 = pvt;
+   150 |    p.myRank@8 = myRank;
+   151 |    p.c_rep@c = c_rep;
+   152 |    p.matrixDim@10 = (int) n;
+   153 |    p.blockDim@14 = (int) b_sm;
+   154 |    p.big_blockDim@18 = (int) b_lrg;
+   155 |    p.num_pes_dim@1c = num_pes_dim;
+   156 |    p.layerRank@20 = myRank / (numPes / c_rep);
+   157 |    p.myRow@24 = (myRank % (numPes / c_rep)) / num_pes_dim;
+   158 |    p.myCol@28 = (myRank % (numPes / c_rep)) % num_pes_dim;
+   159 |    p.cdt_row@2c = cdt_row;
+   160 |    p.cdt_col@40 = cdt_col;
+   161 |    p.cdt_kdir@54 = cdt_kdir;
+   162 |    p.cdt_kcol@68 = cdt_kcol;
+   166 |    p.is_tnmt_pvt@4 = 1;
+   169 |    CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   171 |    sum_t =  0.0000000000000000E+000;
+   173 |    if (!(0 < num_iter + start_iter)) goto lab_91;
+            if (!(pvt != 0)) goto lab_169;
+            if (!1) goto lab_170;
+            if (!(0ll < b_sm)) goto lab_222;
+            if (!1) goto lab_221;
+            $$CIV5 = 0ll;
+            do {   /* id=1 guarded */ /* ~89 */ 
+              /* region = 216 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_92;
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_96;
+              $$CIV3 = 0ll;
+              do {   /* id=3 guarded */ /* ~94 */ 
+                /* region = 214 */
+                /* bump-normalized */
+   177 |        if (!1) goto lab_99;
+                $$CIV2 = 0ll;
+                do {   /* id=4 guarded */ /* ~97 */ 
+                  /* region = 213 */
+                  /* bump-normalized */
+   178 |          if (!(0 < (int) (n / b_sm) / num_pes_dim)) goto lab_102;
+                  $$CIV1 = 0ll;
+                  do {   /* id=5 guarded */ /* ~100 */ 
+                    /* region = 212 */
+                    /* bump-normalized */
+   179 |            if (!1) goto lab_105;
+                    $$CIV0 = 0ll;
+                    do {   /* id=6 guarded */ /* ~103 */ 
+                      /* region = 211 */
+                      /* bump-normalized */
+   182 |              $$SFX2 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * ((long long) ((int) (n / b_sm) / num_pes_dim) * b_sm))));
+                      $$TVX.$$.$$RET1100 = drand48();
+                      *$$SFX2 = $$TVX.$$.$$RET1100;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~103 */
+                  lab_105:
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~100 */
+                lab_102:
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~97 */
+              lab_99:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~94 */
+            lab_96:
+   195 |      goto lab_114;
+            lab_92:
+   198 |      if (!(0ll < (long long) (my_num_blocks_dim * my_num_blocks_dim) * (b_sm * b_sm))) goto lab_117;
+              $$CIV4 = 0ll;
+              do {   /* id=2 guarded */ /* ~115 */ 
+                /* region = 215 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));    /* ~115 */
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));
+   198 |    lab_117:
+   200 |    lab_114:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_157;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_120;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_120:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_118;
+            lab_157:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_131;
+            lab_118:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_131:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~89 */
+          lab_221:
+            goto lab_170;
+          lab_222:
+            if (!1) goto lab_241;
+            $$CIV5 = 0ll;
+            do {   /* id=19 guarded */ /* ~224 */ 
+              /* region = 218 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_233;
+   195 |      goto lab_236;
+            lab_233:
+   198 |      if (!(0ll < (long long) (my_num_blocks_dim * my_num_blocks_dim) * (b_sm * b_sm))) goto lab_235;
+              $$CIV4 = 0ll;
+              do {   /* id=24 guarded */ /* ~234 */ 
+                /* region = 217 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));    /* ~234 */
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));
+   198 |    lab_235:
+   200 |    lab_236:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_238;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_237;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_237:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_239;
+            lab_238:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_240;
+            lab_239:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_240:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~224 */
+          lab_241:
+            goto lab_170;
+          lab_169:
+            if (!((myRank % (numPes / c_rep)) % num_pes_dim == (myRank % (numPes / c_rep)) / num_pes_dim)) goto lab_193;
+            if (!1) goto lab_194;
+            if (!(0ll < b_sm)) goto lab_243;
+            if (!1) goto lab_242;
+            $$CIV5 = 0ll;
+            do {   /* id=7 guarded */ /* ~171 */ 
+              /* region = 225 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_184;
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_183;
+              $$CIV3 = 0ll;
+              do {   /* id=8 guarded */ /* ~172 */ 
+                /* region = 223 */
+                /* bump-normalized */
+   177 |        if (!1) goto lab_182;
+                $$CIV2 = 0ll;
+                do {   /* id=9 guarded */ /* ~173 */ 
+                  /* region = 222 */
+                  /* bump-normalized */
+   178 |          if (!(0 < (int) (n / b_sm) / num_pes_dim)) goto lab_181;
+                  $$CIV1 = 0ll;
+                  do {   /* id=10 guarded */ /* ~174 */ 
+                    /* region = 221 */
+                    /* bump-normalized */
+   179 |            if (!1) goto lab_180;
+                    if (!((int) $$CIV1 == (int) $$CIV3)) goto lab_271;
+                    if (!1) goto lab_270;
+                    $$CIV0 = 0ll;
+                    do {   /* id=11 guarded */ /* ~175 */ 
+                      /* region = 219 */
+                      /* bump-normalized */
+   184 |              if (!((int) $$CIV0 == (int) $$CIV2)) goto lab_177;
+   186 |              $$SFX3 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * ((long long) my_num_blocks_dim * b_sm))));
+                      $$TVX.$$.$$RET1211 = drand48();
+                      *$$SFX3 = ( 1.1000000000000000E+000 + $$TVX.$$.$$RET1211) * (double) n;
+                      goto lab_178;
+                    lab_177:
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * ((long long) my_num_blocks_dim * b_sm))));
+                      $$TVX.$$.$$RET1322 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1322;
+                    lab_178:
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~175 */
+                  lab_270:
+                    goto lab_272;
+                  lab_271:
+                    if (!1) goto lab_276;
+                    $$CIV0 = 0ll;
+                    do {   /* id=26 guarded */ /* ~273 */ 
+                      /* region = 220 */
+                      /* bump-normalized */
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * ((long long) ((int) (n / b_sm) / num_pes_dim) * b_sm))));
+                      $$TVX.$$.$$RET1343 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1343;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~273 */
+                  lab_276:
+                  lab_272:
+                  lab_180:
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~174 */
+                lab_181:
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~173 */
+              lab_182:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~172 */
+            lab_183:
+   195 |      goto lab_187;
+            lab_184:
+   198 |      if (!(0ll < (long long) (my_num_blocks_dim * my_num_blocks_dim) * (b_sm * b_sm))) goto lab_186;
+              $$CIV4 = 0ll;
+              do {   /* id=12 guarded */ /* ~185 */ 
+                /* region = 224 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));    /* ~185 */
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));
+   198 |    lab_186:
+   200 |    lab_187:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_189;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_188;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_188:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_190;
+            lab_189:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_191;
+            lab_190:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_191:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~171 */
+          lab_242:
+            goto lab_194;
+          lab_243:
+            if (!1) goto lab_264;
+            $$CIV5 = 0ll;
+            do {   /* id=25 guarded */ /* ~245 */ 
+              /* region = 227 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_256;
+   195 |      goto lab_259;
+            lab_256:
+   198 |      if (!(0ll < (long long) (my_num_blocks_dim * my_num_blocks_dim) * (b_sm * b_sm))) goto lab_258;
+              $$CIV4 = 0ll;
+              do {   /* id=30 guarded */ /* ~257 */ 
+                /* region = 226 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));    /* ~257 */
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));
+   198 |    lab_258:
+   200 |    lab_259:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_261;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_260;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_260:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_262;
+            lab_261:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_263;
+            lab_262:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_263:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~245 */
+          lab_264:
+            goto lab_194;
+          lab_193:
+            if (!1) goto lab_216;
+            $$CIV5 = 0ll;
+            do {   /* id=13 guarded */ /* ~195 */ 
+              /* region = 233 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_208;
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_207;
+              $$CIV3 = 0ll;
+              do {   /* id=14 guarded */ /* ~196 */ 
+                /* region = 231 */
+                /* bump-normalized */
+   177 |        if (!(0ll < b_sm)) goto lab_206;
+                $$CIV2 = 0ll;
+                do {   /* id=15 guarded */ /* ~197 */ 
+                  /* region = 230 */
+                  /* bump-normalized */
+   178 |          if (!(0 < (int) (n / b_sm) / num_pes_dim)) goto lab_205;
+                  $$CIV1 = 0ll;
+                  do {   /* id=16 guarded */ /* ~198 */ 
+                    /* region = 229 */
+                    /* bump-normalized */
+   179 |            if (!(0ll < b_sm)) goto lab_204;
+                    $$CIV0 = 0ll;
+                    do {   /* id=17 guarded */ /* ~199 */ 
+                      /* region = 228 */
+                      /* bump-normalized */
+   184 |              if (!((int) $$CIV1 == (int) $$CIV3)) goto lab_201;
+   186 |            lab_201:
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * ((long long) ((int) (n / b_sm) / num_pes_dim) * b_sm))));
+                      $$TVX.$$.$$RET1334 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1334;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~199 */
+                  lab_204:
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~198 */
+                lab_205:
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~197 */
+              lab_206:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~196 */
+            lab_207:
+   195 |      goto lab_211;
+            lab_208:
+   198 |      if (!(0ll < (long long) (my_num_blocks_dim * my_num_blocks_dim) * (b_sm * b_sm))) goto lab_210;
+              $$CIV4 = 0ll;
+              do {   /* id=18 guarded */ /* ~209 */ 
+                /* region = 232 */
+                /* bump-normalized */
+                /* independent */
+                $$CIV4 = $$CIV4 + 1ll;
+              } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));    /* ~209 */
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim)) * (b_sm * b_sm)));
+   198 |    lab_210:
+   200 |    lab_211:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_213;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_212;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_212:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_214;
+            lab_213:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_215;
+            lab_214:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_215:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~195 */
+          lab_216:
+          lab_194:
+          lab_170:
+          lab_91:
+   216 |    CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   218 |    if (!(myRank == 0)) goto lab_139;
+   219 |    printf("Warmed up for %d iterations, benchmarked %d iterations/n",start_iter,num_iter);
+   220 |    printf("Time elapsed per iteration: %lf/n",sum_t / (double) num_iter);
+   221 |    printf("Gigaflops: %lf/n",(((( 6.6666666666666662E-001 * (double) n) * (double) n) * (double) n) / (sum_t / (double) num_iter)) *  1.0000000000000000E-009);
+   223 |  lab_139:
+   224 |    MPI_Comm_free(&cdt_kdir.cm@0);
+   225 |    MPI_Comm_free(&cdt_row.cm@0);
+   226 |    MPI_Comm_free(&cdt_col.cm@0);
+   227 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0           173             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           176             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           177             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           178             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           179             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           198             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0           173            19    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           198            24    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0           173             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           176             8    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           177             9    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           178            10    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           179            11    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           179            26    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           198            12    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0           173            25    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           198            30    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0           173            13    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           176            14    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           177            15    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           178            16    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           179            17    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           198            18    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+
+   231 |  char * getCmdOption(char**, char**, std::string const&)(char * begin, char * end, char * option)
+          {
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)(begin,end,option,__590);
+   233 |    if (!(__597 != end)) goto lab_1;
+            if (!(end != ((char *)__597  + 8ll))) goto lab_1;
+   234 |    rstr = __597[8ll / 8];
+            return rstr;
+   235 |  lab_1:
+   236 |    rstr = NULL;
+            return rstr;
+   237 |  } /* function */ 
+
+
+   166 |  char * char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)(char * *__first, char * __last, char * __val, aggr1 NONAME_368)
+   168 |  {
+   170 |    if (!((__last - __first) / 8ll >> 2 > 0ll)) goto lab_3;
+            $$CIVFINAL6 = (unsigned long long) ((__last - __first) / 8ll >> 2);
+            $$CIV6 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 28 */
+              /* bump-normalized */
+   174 |      $$RET14 = std::string::compare(char const*) const(__val,__first[($$CIV6 * 32ll) / 8]);
+  2255 |      __601 = (char) ($$RET14 == 0);
+              if (__601 != 0u) goto lab_19;
+   178 |      $$RET15 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 8ll)));
+  2255 |      __605 = (char) ($$RET15 == 0);
+              if (__605 != 0u) goto lab_21;
+   182 |      $$RET16 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 16ll)));
+  2255 |      __609 = (char) ($$RET16 == 0);
+              if (__609 != 0u) goto lab_23;
+   186 |      $$RET17 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 24ll)));
+  2255 |      __613 = (char) ($$RET17 == 0);
+              if (__613 != 0u) goto lab_25;
+   172 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < $$CIVFINAL6);    /* ~1 */
+            __first = ((char *)__first  + ((__last - __first) / 8ll >> 2) * 32ll);
+          lab_3:
+   191 |    switch((__last - __first) / 8ll) {
+   193 |      case 3ll:
+   194 |        $$RET18 = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __617 = (char) ($$RET18 == 0);
+                if (!(__617 != 0u)) goto lab_12;
+   195 |        rstr = __first;
+                return rstr;
+              lab_12:
+   196 |        __first = ((char *)__first  + 8ll);
+   197 |      case 2ll:
+   198 |        $$RET19 = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __621 = (char) ($$RET19 == 0);
+                if (!(__621 != 0u)) goto lab_14;
+   199 |        rstr = __first;
+                return rstr;
+              lab_14:
+   200 |        __first = ((char *)__first  + 8ll);
+   201 |      case 1ll:
+   202 |        $$RET1A = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __625 = (char) ($$RET1A == 0);
+                if (!(__625 != 0u)) goto lab_16;
+   203 |        rstr = __first;
+                return rstr;
+              lab_16:
+   205 |      case 0ll:
+   206 |      lab_18:
+   207 |        rstr = __last;
+                return rstr;
+   208 |    }  /* switch */ 
+            goto lab_18;
+  2255 |  lab_25:
+   187 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 24ll));
+            return rstr;
+  2255 |  lab_23:
+   183 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 16ll));
+            return rstr;
+  2255 |  lab_21:
+   179 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 8ll));
+            return rstr;
+  2255 |  lab_19:
+   175 |    rstr = ((char *)__first  + $$CIV6 * 32ll);
+            return rstr;
+   209 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        86           170             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+   239 |  int main(int argc, char * argv)
+          {
+            $$argv.nat.9 = argv;
+            $$argc.nat.9 = argc;
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   244 |    argc = $$argc.nat.9;
+            argv = $$argv.nat.9;
+            MPI_Init(&argc,&argv);
+            MPI_Comm_size(1140850688,&numPes);
+            MPI_Comm_rank(1140850688,&myRank);
+            cdt_glb.cm@0 = 1140850688;
+            cdt_glb.rank@8 = myRank;
+            cdt_glb.np@4 = numPes;
+            cdt_glb.alive@10 = 1;
+   267 |    $$BD0 = argv;
+            $$BD1 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__124,"-n",&__126);
+            __es.__c4@3 = 1u;
+            $$PARM.begin24 = $$BD0;
+            $$PARM.end25 = $$BD1;
+            $$PARM.option26 = &__124;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin24,$$PARM.end25,$$PARM.option26,__590);
+   233 |    if (!(__597 != $$PARM.end25)) goto lab_87;
+            if (!($$PARM.end25 != ((char *)__597  + 8ll))) goto lab_87;
+   234 |    $$IRETC = __597[8ll / 8];
+            goto lab_88;
+   235 |  lab_87:
+   236 |    $$IRETC = NULL;
+   237 |  lab_88:
+   101 |    $$RET0 = $$IRETC;
+            __180 = (char) ($$RET0 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__124);
+            if (!(__180 != 0u)) goto lab_10;
+   268 |    $$BD4 = argv;
+            $$BD5 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__128,"-n",&__130);
+            __es.__c4@3 = 2u;
+            $$PARM.begin0 = $$BD4;
+            $$PARM.end1 = $$BD5;
+            $$PARM.option2 = &__128;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin0,$$PARM.end1,$$PARM.option2,__590);
+   233 |    if (!(__597 != $$PARM.end1)) goto lab_63;
+            if (!($$PARM.end1 != ((char *)__597  + 8ll))) goto lab_63;
+   234 |    $$IRET0 = __597[8ll / 8];
+            goto lab_64;
+   235 |  lab_63:
+   236 |    $$IRET0 = NULL;
+   237 |  lab_64:
+   101 |    __216 = $$IRET0;
+   286 |    __215 = (int) strtol(__216,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__128);
+   269 |    n.rnn4 = ((long long) __215 <= 0ll ? 512ll : (long long) __215);
+   270 |    goto lab_14;
+          lab_10:
+            n.rnn4 = 512ll;
+          lab_14:
+   272 |    $$BD8 = argv;
+            $$BD9 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__132,"-num_iter",&__134);
+            __es.__c4@3 = 3u;
+            $$PARM.begin12 = $$BD8;
+            $$PARM.end13 = $$BD9;
+            $$PARM.option14 = &__132;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin12,$$PARM.end13,$$PARM.option14,__590);
+   233 |    if (!(__597 != $$PARM.end13)) goto lab_75;
+            if (!($$PARM.end13 != ((char *)__597  + 8ll))) goto lab_75;
+   234 |    $$IRET6 = __597[8ll / 8];
+            goto lab_76;
+   235 |  lab_75:
+   236 |    $$IRET6 = NULL;
+   237 |  lab_76:
+   101 |    $$RET1 = $$IRET6;
+            __181 = (char) ($$RET1 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__132);
+            if (!(__181 != 0u)) goto lab_15;
+   273 |    $$BDC = argv;
+            $$BDD = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__136,"-num_iter",&__138);
+            __es.__c4@3 = 4u;
+            $$PARM.begin3 = $$BDC;
+            $$PARM.end4 = $$BDD;
+            $$PARM.option5 = &__136;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin3,$$PARM.end4,$$PARM.option5,__590);
+   233 |    if (!(__597 != $$PARM.end4)) goto lab_65;
+            if (!($$PARM.end4 != ((char *)__597  + 8ll))) goto lab_65;
+   234 |    $$IRET1 = __597[8ll / 8];
+            goto lab_66;
+   235 |  lab_65:
+   236 |    $$IRET1 = NULL;
+   237 |  lab_66:
+   101 |    __272 = $$IRET1;
+   286 |    __271 = (int) strtol(__272,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__136);
+   274 |    num_iter.rnn3 = (__271 <= 0 ? 1 : __271);
+   275 |    goto lab_19;
+          lab_15:
+            num_iter.rnn3 = 3;
+          lab_19:
+   277 |    $$BD10 = argv;
+            $$BD11 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__140,"-nwarm",&__142);
+            __es.__c4@3 = 5u;
+            $$PARM.begin1E = $$BD10;
+            $$PARM.end1F = $$BD11;
+            $$PARM.option20 = &__140;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin1E,$$PARM.end1F,$$PARM.option20,__590);
+   233 |    if (!(__597 != $$PARM.end1F)) goto lab_83;
+            if (!($$PARM.end1F != ((char *)__597  + 8ll))) goto lab_83;
+   234 |    $$IRETA = __597[8ll / 8];
+            goto lab_84;
+   235 |  lab_83:
+   236 |    $$IRETA = NULL;
+   237 |  lab_84:
+   101 |    $$RET2 = $$IRETA;
+            __182 = (char) ($$RET2 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__140);
+            if (!(__182 != 0u)) goto lab_20;
+   278 |    $$BD14 = argv;
+            $$BD15 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__144,"-nwarm",&__146);
+            __es.__c4@3 = 6u;
+            $$PARM.begin6 = $$BD14;
+            $$PARM.end7 = $$BD15;
+            $$PARM.option8 = &__144;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin6,$$PARM.end7,$$PARM.option8,__590);
+   233 |    if (!(__597 != $$PARM.end7)) goto lab_67;
+            if (!($$PARM.end7 != ((char *)__597  + 8ll))) goto lab_67;
+   234 |    $$IRET2 = __597[8ll / 8];
+            goto lab_68;
+   235 |  lab_67:
+   236 |    $$IRET2 = NULL;
+   237 |  lab_68:
+   101 |    __328 = $$IRET2;
+   286 |    __327 = (int) strtol(__328,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__144);
+   279 |    nwarm.rnn2 = (__327 <= 0 ? 1 : __327);
+   280 |    goto lab_24;
+          lab_20:
+            nwarm.rnn2 = 1;
+          lab_24:
+   282 |    $$BD18 = argv;
+            $$BD19 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__148,"-c_rep",&__150);
+            __es.__c4@3 = 7u;
+            $$PARM.beginF = $$BD18;
+            $$PARM.end10 = $$BD19;
+            $$PARM.option11 = &__148;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.beginF,$$PARM.end10,$$PARM.option11,__590);
+   233 |    if (!(__597 != $$PARM.end10)) goto lab_73;
+            if (!($$PARM.end10 != ((char *)__597  + 8ll))) goto lab_73;
+   234 |    $$IRET5 = __597[8ll / 8];
+            goto lab_74;
+   235 |  lab_73:
+   236 |    $$IRET5 = NULL;
+   237 |  lab_74:
+   101 |    $$RET3 = $$IRET5;
+            __183 = (char) ($$RET3 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__148);
+            if (!(__183 != 0u)) goto lab_25;
+   283 |    $$BD1C = argv;
+            $$BD1D = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__152,"-c_rep",&__154);
+            __es.__c4@3 = 8u;
+            $$PARM.begin9 = $$BD1C;
+            $$PARM.endA = $$BD1D;
+            $$PARM.optionB = &__152;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin9,$$PARM.endA,$$PARM.optionB,__590);
+   233 |    if (!(__597 != $$PARM.endA)) goto lab_69;
+            if (!($$PARM.endA != ((char *)__597  + 8ll))) goto lab_69;
+   234 |    $$IRET3 = __597[8ll / 8];
+            goto lab_70;
+   235 |  lab_69:
+   236 |    $$IRET3 = NULL;
+   237 |  lab_70:
+   101 |    __384 = $$IRET3;
+   286 |    __383 = (int) strtol(__384,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__152);
+   284 |    c_rep.rnn1 = max(__383,1);
+   285 |    goto lab_29;
+          lab_25:
+   286 |    c_rep.rnn1 = 1;
+   287 |    $$SFX0 = __builtin_sqrt((double) numPes);
+            $$RET4 = __builtin_sqrt((double) numPes);
+            if (!($$SFX0 * $$RET4 != (double) numPes)) goto lab_30;
+   288 |    if (!(numPes >= 8)) goto lab_32;
+            c_rep.rnn1 = (0 == numPes % 2 ? 2 : 1);
+          lab_32:
+   289 |  lab_30:
+   290 |  lab_29:
+   291 |    $$BD20 = argv;
+            $$BD21 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__156,"-b_sm",&__158);
+            __es.__c4@3 = 9u;
+            $$PARM.begin1B = $$BD20;
+            $$PARM.end1C = $$BD21;
+            $$PARM.option1D = &__156;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin1B,$$PARM.end1C,$$PARM.option1D,__590);
+   233 |    if (!(__597 != $$PARM.end1C)) goto lab_81;
+            if (!($$PARM.end1C != ((char *)__597  + 8ll))) goto lab_81;
+   234 |    $$IRET9 = __597[8ll / 8];
+            goto lab_82;
+   235 |  lab_81:
+   236 |    $$IRET9 = NULL;
+   237 |  lab_82:
+   101 |    $$RET5 = $$IRET9;
+            __184 = (char) ($$RET5 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__156);
+            if (!(__184 != 0u)) goto lab_35;
+   292 |    $$BD24 = argv;
+            $$BD25 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__160,"-b_sm",&__162);
+            __es.__c4@3 = 10u;
+            $$PARM.beginC = $$BD24;
+            $$PARM.endD = $$BD25;
+            $$PARM.optionE = &__160;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.beginC,$$PARM.endD,$$PARM.optionE,__590);
+   233 |    if (!(__597 != $$PARM.endD)) goto lab_71;
+            if (!($$PARM.endD != ((char *)__597  + 8ll))) goto lab_71;
+   234 |    $$IRET4 = __597[8ll / 8];
+            goto lab_72;
+   235 |  lab_71:
+   236 |    $$IRET4 = NULL;
+   237 |  lab_72:
+   101 |    __440 = $$IRET4;
+   286 |    __439 = (int) strtol(__440,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__160);
+   293 |    b_sm.rnn0 = ((long long) __439 < 1ll ? 4ll : (long long) __439);
+   294 |    goto lab_39;
+          lab_35:
+            b_sm.rnn0 = 4ll;
+          lab_39:
+   295 |    $$BD28 = argv;
+            $$BD29 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__164,"-b_lrg",&__166);
+            __es.__c4@3 = 11u;
+            $$PARM.begin18 = $$BD28;
+            $$PARM.end19 = $$BD29;
+            $$PARM.option1A = &__164;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin18,$$PARM.end19,$$PARM.option1A,__590);
+   233 |    if (!(__597 != $$PARM.end19)) goto lab_79;
+            if (!($$PARM.end19 != ((char *)__597  + 8ll))) goto lab_79;
+   234 |    $$IRET8 = __597[8ll / 8];
+            goto lab_80;
+   235 |  lab_79:
+   236 |    $$IRET8 = NULL;
+   237 |  lab_80:
+   101 |    $$RET6 = $$IRET8;
+            __185 = (char) ($$RET6 != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__164);
+            if (!(__185 != 0u)) goto lab_40;
+   296 |    $$BD2C = argv;
+            $$BD2D = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__168,"-b_lrg",&__170);
+            __es.__c4@3 = 12u;
+            $$PARM.begin21 = $$BD2C;
+            $$PARM.end22 = $$BD2D;
+            $$PARM.option23 = &__168;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin21,$$PARM.end22,$$PARM.option23,__590);
+   233 |    if (!(__597 != $$PARM.end22)) goto lab_85;
+            if (!($$PARM.end22 != ((char *)__597  + 8ll))) goto lab_85;
+   234 |    $$IRETB = __597[8ll / 8];
+            goto lab_86;
+   235 |  lab_85:
+   236 |    $$IRETB = NULL;
+   237 |  lab_86:
+   101 |    __496 = $$IRETB;
+   286 |    __495 = (int) strtol(__496,NULL,10);
+   285 |    b_lrg = (long long) __495;
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__168);
+            $$RET7 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+   297 |    if (!((double) ((long long) __495) < (double) b_sm.rnn0 * $$RET7)) goto lab_42;
+            $$RET8 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+   298 |    b_lrg = (long long) ((double) b_sm.rnn0 * $$RET8);
+          lab_42:
+   299 |    goto lab_44;
+          lab_40:
+   300 |    $$RET9 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            b_lrg = (long long) ((double) b_sm.rnn0 * $$RET9);
+          lab_44:
+   301 |    $$BD30 = argv;
+            $$BD31 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__172,"-pvt",&__174);
+            __es.__c4@3 = 13u;
+            $$PARM.begin15 = $$BD30;
+            $$PARM.end16 = $$BD31;
+            $$PARM.option17 = &__172;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin15,$$PARM.end16,$$PARM.option17,__590);
+   233 |    if (!(__597 != $$PARM.end16)) goto lab_77;
+            if (!($$PARM.end16 != ((char *)__597  + 8ll))) goto lab_77;
+   234 |    $$IRET7 = __597[8ll / 8];
+            goto lab_78;
+   235 |  lab_77:
+   236 |    $$IRET7 = NULL;
+   237 |  lab_78:
+   101 |    $$RETA = $$IRET7;
+            __186 = (char) ($$RETA != NULL);
+            __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__172);
+            if (!(__186 != 0u)) goto lab_45;
+   302 |    $$BD34 = argv;
+            $$BD35 = ((char *)argv  + (long long) argc * 8ll);
+   101 |    std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)(&__176,"-pvt",&__178);
+            __es.__c4@3 = 14u;
+            $$PARM.begin27 = $$BD34;
+            $$PARM.end28 = $$BD35;
+            $$PARM.option29 = &__176;
+   161 |    __memset(&__590,0,1ull);
+  4223 |    __597 = char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)($$PARM.begin27,$$PARM.end28,$$PARM.option29,__590);
+   233 |    if (!(__597 != $$PARM.end28)) goto lab_89;
+            if (!($$PARM.end28 != ((char *)__597  + 8ll))) goto lab_89;
+   234 |    $$IRETD = __597[8ll / 8];
+            goto lab_90;
+   235 |  lab_89:
+   236 |    $$IRETD = NULL;
+   237 |  lab_90:
+   101 |    __552 = $$IRETD;
+   286 |    __551 = (int) strtol(__552,NULL,10);
+   285 |    __es.__c4@3 = 0u;
+            std::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()(&__176);
+   303 |    if (!(__551 < 1)) goto lab_47;
+          lab_47:
+   304 |    goto lab_49;
+          lab_45:
+          lab_49:
+   315 |    $$SFX1 = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            $$RETB = __builtin_sqrt((double) (numPes / c_rep.rnn1));
+            if (!($$SFX1 * $$RETB != (double) (numPes / c_rep.rnn1))) goto lab_50;
+   316 |    if (!(myRank == 0)) goto lab_52;
+   317 |    printf("LU test needs square processor grid... exiting./n");
+          lab_52:
+   318 |    rstr = 0;
+            return rstr;
+   319 |  lab_50:
+   323 |    CTF_set_main_args(int, char const* const*)(argc,argv)
+   325 |    CTF_set_context(int)(1140850688)
+   329 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 15u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(1140850688);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   331 |    lu_25d_pvt_bench(long, long, long, int, int, int, int, int, int, CommData)(n.rnn4,b_sm.rnn0,b_lrg,myRank,numPes,c_rep.rnn1,1,num_iter.rnn3,nwarm.rnn2,cdt_glb)
+   346 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 16u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(1140850688);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   347 |    MPI_Finalize();
+   348 |    rstr = 0;
+            return rstr;
+   349 |  } /* function */ 
+
+
+    18 |  void lu_25d_pvt_bench(long, long, long, int, int, int, int, int, int, CommData)(long long n, long long b_sm, long long b_lrg, int myRank, int numPes, int c_rep, int pvt, int num_iter, int start_iter, aggr20 cdt)
+    27 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__51 = 1;
+    29 |    cdt_glb = cdt;
+    35 |    if (!(myRank == 0)) goto lab_2;
+    36 |    printf("BENCHMARKING LU FACOTRIZATION OF SQUARE MATRIX/n");
+    37 |    printf("MATRIX DIMENSION IS %ld ",n);
+    38 |    printf("BLOCK DIMENSION IS %ld ",b_sm);
+    39 |    printf("BIG BLOCK DIMENSION IS %ld/n",b_lrg);
+    40 |    printf("REPLICATION FACTOR, C, IS %d/n",c_rep);
+    44 |    printf("USING MPI FOR COMMUNICATION/n");
+    46 |  lab_2:
+    48 |    if (n < b_sm) goto lab_5;
+            if (!(0ll != n % b_sm)) goto lab_4;
+          lab_5:
+    49 |    if (!(myRank == 0)) goto lab_7;
+            printf("array_size mod block_size != 0!/n");
+          lab_7:
+    50 |    MPI_Abort(1140850688,-1);
+    51 |  lab_4:
+    54 |    num_pes_dim = (int) __builtin_sqrt((double) (numPes / c_rep));
+    56 |    if (!(myRank == 0)) goto lab_12;
+    57 |    printf("NUM X BLOCKS IS %d/n",(int) (n / b_sm));
+    59 |    printf("NUM X PROCS IS %d/n",num_pes_dim);
+    61 |  lab_12:
+    63 |    if (num_pes_dim * num_pes_dim != numPes / c_rep) goto lab_15;
+            if (numPes % c_rep > 0) goto lab_15;
+            if (!(c_rep > num_pes_dim)) goto lab_14;
+          lab_15:
+    64 |    if (!(myRank == 0)) goto lab_18;
+    65 |    printf("ERROR: PROCESSOR GRID MISMATCH/n");
+          lab_18:
+    66 |    MPI_Abort(1140850688,-1);
+    67 |  lab_14:
+    68 |    if (0ll != b_lrg % ((long long) num_pes_dim * b_sm)) goto lab_24;
+            if (b_lrg <= 0ll) goto lab_24;
+            if (!(b_lrg > n)) goto lab_23;
+          lab_24:
+    69 |    if (!(myRank == 0)) goto lab_27;
+    70 |    printf("ERROR: BIG BLOCK DIMENSION MUST BE num_pes_dim*blockDim*x for some x./n");
+          lab_27:
+    71 |    MPI_Abort(1140850688,-1);
+    72 |  lab_23:
+    74 |    if (!(0 != (int) (n / b_sm) % num_pes_dim)) goto lab_32;
+    75 |    if (!(myRank == 0)) goto lab_34;
+    76 |    printf("NUMBER OF BLOCKS MUST BE DIVISBLE BY THE 2D PROCESSOR GRID DIMENSION/n");
+          lab_34:
+    77 |    MPI_Abort(1140850688,-1);
+    78 |  lab_32:
+    88 |    cdt_kdir.rank@8 = myRank / (numPes / c_rep);
+            cdt_kdir.np@4 = c_rep;
+            MPI_Comm_split(1140850688,myRank % (numPes / c_rep),myRank / (numPes / c_rep),&cdt_kdir.cm@0);
+    90 |    MPI_Comm_split(1140850688,myRank / (numPes / c_rep),myRank % (numPes / c_rep),&MPI_INTRALAYER_COMM);
+            MPI_Comm_split(MPI_INTRALAYER_COMM,(myRank % (numPes / c_rep)) / num_pes_dim,(myRank % (numPes / c_rep)) % num_pes_dim,&cdt_row.cm@0);
+            MPI_Comm_split(MPI_INTRALAYER_COMM,(myRank % (numPes / c_rep)) % num_pes_dim,(myRank % (numPes / c_rep)) / num_pes_dim,&cdt_col.cm@0);
+            cdt_row.np@4 = num_pes_dim;
+            cdt_row.rank@8 = (myRank % (numPes / c_rep)) % num_pes_dim;
+            cdt_col.np@4 = num_pes_dim;
+            cdt_col.rank@8 = (myRank % (numPes / c_rep)) / num_pes_dim;
+    92 |    cdt_kcol.rank@8 = (myRank / (numPes / c_rep)) * num_pes_dim + (myRank % (numPes / c_rep)) / num_pes_dim;
+            cdt_kcol.np@4 = num_pes_dim * c_rep;
+            cdt_kcol.color@c = (myRank % (numPes / c_rep)) % num_pes_dim;
+            cdt_kcol.alive@10 = 1;
+            MPI_Comm_split(cdt_glb.cm@0,(myRank % (numPes / c_rep)) % num_pes_dim,(myRank / (numPes / c_rep)) * num_pes_dim + (myRank % (numPes / c_rep)) / num_pes_dim,&cdt_kcol.cm@0);
+   104 |    $$csx1 = ((int) (n / b_sm) / num_pes_dim) * ((int) (n / b_sm) / num_pes_dim);
+            $$csx0 = (long long) $$csx1 * (b_sm * b_sm);
+            $$RETC.rnn11 = 0 == posix_memalign(&mat_A,16ull,(unsigned long long) (8ll * $$csx0));
+   106 |    if ($$RETC.rnn11 != 0) goto lab_59;
+            __assert_fail("posix_memalign((void**)&mat_A, 16, my_num_blocks_dim*my_num_blocks_dim* blockDim*blockDim*sizeof(double)) == 0","lu_25d_pvt_bench.cxx",109u,&__func__)
+            return;
+          lab_59:
+   113 |    if (!((int) (n / b_lrg) > 1)) goto lab_60;
+            if (!((int) (n / b_lrg) < (num_pes_dim / c_rep + (num_pes_dim % c_rep > 0)) * 2)) goto lab_60;
+   114 |    if (!(myRank == 0)) goto lab_63;
+            printf("WARNING: USING EXTRA MEMORY (SEE COMMENT IN CODE)/n");
+          lab_63:
+            $$RETD.rnn10 = 0 == posix_memalign(&buffer,16ull,(unsigned long long) (8ll * ((long long) (2 * ((num_pes_dim * ((int) (b_lrg / b_sm) / num_pes_dim)) * ((int) (n / b_lrg) * ((int) (b_lrg / b_sm) / num_pes_dim)))) * (b_sm * b_sm))) / (unsigned long long) c_rep);
+   115 |    if ($$RETD.rnn10 != 0) goto lab_67;
+            __assert_fail("posix_memalign((void**)&buffer, 16, r_blk*r_blk*num_pes_dim*2*num_big_blocks_dim* blockDim*blockDim*sizeof(double)/c_rep) == 0","lu_25d_pvt_bench.cxx",118u,&__func__)
+            return;
+          lab_67:
+   120 |    goto lab_68;
+          lab_60:
+            $$RETE.rnnD = 0 == posix_memalign(&buffer,16ull,(unsigned long long) (8ll * $$csx0));
+   121 |    if ($$RETE.rnnD != 0) goto lab_71;
+            __assert_fail("posix_memalign((void**)&buffer, 16, my_num_blocks_dim*my_num_blocks_dim* blockDim*blockDim*sizeof(double)) == 0","lu_25d_pvt_bench.cxx",124u,&__func__)
+            return;
+          lab_71:
+   125 |  lab_68:
+            $$csx2 = (long long) ((int) (n / b_sm) / num_pes_dim) * b_sm;
+            $$RETF.rnnF = 0 == posix_memalign(&mat_P,16ull,(unsigned long long) (4ll * $$csx2));
+   126 |    if ($$RETF.rnnF != 0) goto lab_74;
+            __assert_fail("posix_memalign((void**)&mat_P, 16, my_num_blocks_dim*blockDim*sizeof(int)) == 0","lu_25d_pvt_bench.cxx",128u,&__func__)
+            return;
+          lab_74:
+    94 |    my_num_blocks_dim = (int) (n / b_sm) / num_pes_dim;
+   126 |    $$RET10.rnnE = 0 == posix_memalign(&buf_P,16ull,(unsigned long long) (4ll * ((long long) (((int) (n / b_sm) / num_pes_dim) * 30) * b_sm)));
+   130 |    if ($$RET10.rnnE != 0) goto lab_77;
+            __assert_fail("posix_memalign((void**)&buf_P, 16, 30*my_num_blocks_dim*blockDim*sizeof(int)) == 0","lu_25d_pvt_bench.cxx",132u,&__func__)
+            return;
+          lab_77:
+   134 |    if (!(myRank == 0)) goto lab_78;
+   138 |    if (!(pvt != 0)) goto lab_80;
+            printf("BENCHMARKING LU WITH TOURNAMENT PIVOTING/n");
+            goto lab_82;
+          lab_80:
+   139 |    printf("BENCHMARKING LU WITH NO PIVOTING (DIAGONALLY DOMINANT MATRIX)/n");
+          lab_82:
+   141 |  lab_78:
+   145 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_glb.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    p.pvt@0 = pvt;
+   150 |    p.myRank@8 = myRank;
+   151 |    p.c_rep@c = c_rep;
+   152 |    p.matrixDim@10 = (int) n;
+   153 |    p.blockDim@14 = (int) b_sm;
+   154 |    p.big_blockDim@18 = (int) b_lrg;
+   155 |    p.num_pes_dim@1c = num_pes_dim;
+   156 |    p.layerRank@20 = myRank / (numPes / c_rep);
+   157 |    p.myRow@24 = (myRank % (numPes / c_rep)) / num_pes_dim;
+   158 |    p.myCol@28 = (myRank % (numPes / c_rep)) % num_pes_dim;
+   159 |    p.cdt_row@2c = cdt_row;
+   160 |    p.cdt_col@40 = cdt_col;
+   161 |    p.cdt_kdir@54 = cdt_kdir;
+   162 |    p.cdt_kcol@68 = cdt_kcol;
+   166 |    p.is_tnmt_pvt@4 = 1;
+   169 |    CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   171 |    sum_t =  0.0000000000000000E+000;
+   173 |    if (!(0 < num_iter + start_iter)) goto lab_91;
+            if (!(pvt != 0)) goto lab_169;
+            if (!1) goto lab_170;
+            if (!(0ll < b_sm)) goto lab_222;
+            if (!1) goto lab_170;
+            $$CIV5 = 0ll;
+            if (!(0 == myRank / (numPes / c_rep))) goto lab_380;
+            do {   /* id=1 guarded */ /* ~89 */ 
+              /* region = 249 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_96;
+              $$CIV3 = 0ll;
+              do {   /* id=3 guarded */ /* ~94 */ 
+                /* region = 248 */
+                /* bump-normalized */
+   177 |        if (!1) goto lab_99;
+                $$CIV2 = 0ll;
+                do {   /* id=4 guarded */ /* ~97 */ 
+                  /* region = 247 */
+                  /* bump-normalized */
+   178 |          $$CIV1 = 0ll;
+                  do {   /* id=5 guarded */ /* ~100 */ 
+                    /* region = 246 */
+                    /* bump-normalized */
+   179 |            if (!1) goto lab_105;
+                    $$CIV0 = 0ll;
+                    do {   /* id=6 guarded */ /* ~103 */ 
+                      /* region = 245 */
+                      /* bump-normalized */
+   182 |              $$SFX2 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * $$csx2)));
+                      $$TVX.$$.$$RET1100 = drand48();
+                      *$$SFX2 = $$TVX.$$.$$RET1100;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~103 */
+                  lab_105:
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~100 */
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~97 */
+              lab_99:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~94 */
+            lab_96:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_157;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_120;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_120:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_118;
+            lab_157:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_131;
+            lab_118:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_131:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~89 */
+            goto lab_170;
+          lab_380:
+            do {   /* id=54 guarded */ /* ~382 */ 
+              /* region = 250 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   198 |      if (!(0ll < $$csx0)) goto lab_392;
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   198 |    lab_392:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_395;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_394;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_394:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_396;
+            lab_395:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_397;
+            lab_396:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_397:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~382 */
+            goto lab_170;
+          lab_222:
+            if (!1) goto lab_241;
+            $$CIV5 = 0ll;
+            do {   /* id=19 guarded */ /* ~224 */ 
+              /* region = 251 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_233;
+   195 |      goto lab_236;
+            lab_233:
+   198 |      if (!(0ll < $$csx0)) goto lab_235;
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   198 |    lab_235:
+   200 |    lab_236:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_238;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_237;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_237:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_239;
+            lab_238:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_240;
+            lab_239:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_240:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~224 */
+          lab_241:
+            goto lab_170;
+          lab_169:
+            if (!((myRank % (numPes / c_rep)) % num_pes_dim == (myRank % (numPes / c_rep)) / num_pes_dim)) goto lab_193;
+            if (!1) goto lab_194;
+            if (!(0ll < b_sm)) goto lab_243;
+            if (!1) goto lab_242;
+            $$CIV5 = 0ll;
+            do {   /* id=7 guarded */ /* ~171 */ 
+              /* region = 257 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_184;
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_183;
+              $$CIV3 = 0ll;
+              do {   /* id=8 guarded */ /* ~172 */ 
+                /* region = 256 */
+                /* bump-normalized */
+   177 |        if (!1) goto lab_182;
+                $$CIV2 = 0ll;
+                do {   /* id=9 guarded */ /* ~173 */ 
+                  /* region = 255 */
+                  /* bump-normalized */
+   178 |          $$CIV1 = 0ll;
+                  do {   /* id=10 guarded */ /* ~174 */ 
+                    /* region = 254 */
+                    /* bump-normalized */
+   179 |            if (!1) goto lab_180;
+                    if (!((int) $$CIV1 == (int) $$CIV3)) goto lab_271;
+                    if (!1) goto lab_270;
+                    $$CIV0 = 0ll;
+                    do {   /* id=11 guarded */ /* ~175 */ 
+                      /* region = 252 */
+                      /* bump-normalized */
+   184 |              if (!((int) $$CIV0 == (int) $$CIV2)) goto lab_177;
+   186 |              $$SFX3 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * $$csx2)));
+                      $$TVX.$$.$$RET1211 = drand48();
+                      *$$SFX3 = ( 1.1000000000000000E+000 + $$TVX.$$.$$RET1211) * (double) n;
+                      goto lab_178;
+                    lab_177:
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * $$csx2)));
+                      $$TVX.$$.$$RET1322 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1322;
+                    lab_178:
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~175 */
+                  lab_270:
+                    goto lab_272;
+                  lab_271:
+                    if (!1) goto lab_276;
+                    $$CIV0 = 0ll;
+                    do {   /* id=26 guarded */ /* ~273 */ 
+                      /* region = 253 */
+                      /* bump-normalized */
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * $$csx2)));
+                      $$TVX.$$.$$RET1343 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1343;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~273 */
+                  lab_276:
+                  lab_272:
+                  lab_180:
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~174 */
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~173 */
+              lab_182:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~172 */
+            lab_183:
+   195 |      goto lab_187;
+            lab_184:
+   198 |      if (!(0ll < $$csx0)) goto lab_186;
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   198 |    lab_186:
+   200 |    lab_187:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_189;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_188;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_188:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_190;
+            lab_189:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_191;
+            lab_190:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_191:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~171 */
+          lab_242:
+            goto lab_194;
+          lab_243:
+            if (!1) goto lab_264;
+            $$CIV5 = 0ll;
+            do {   /* id=25 guarded */ /* ~245 */ 
+              /* region = 258 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   175 |      if (!(0 == myRank / (numPes / c_rep))) goto lab_256;
+   195 |      goto lab_259;
+            lab_256:
+   198 |      if (!(0ll < $$csx0)) goto lab_258;
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   198 |    lab_258:
+   200 |    lab_259:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_261;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_260;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_260:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_262;
+            lab_261:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_263;
+            lab_262:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_263:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~245 */
+          lab_264:
+            goto lab_194;
+          lab_193:
+            if (!1) goto lab_216;
+            $$CIV5 = 0ll;
+            if (!(0 == myRank / (numPes / c_rep))) goto lab_308;
+            if (!(0ll < b_sm)) goto lab_290;
+            do {   /* id=13 guarded */ /* ~195 */ 
+              /* region = 263 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   176 |      if (!(0 < my_num_blocks_dim)) goto lab_207;
+              $$CIV3 = 0ll;
+              do {   /* id=14 guarded */ /* ~196 */ 
+                /* region = 262 */
+                /* bump-normalized */
+   177 |        if (!1) goto lab_206;
+                $$CIV2 = 0ll;
+                do {   /* id=15 guarded */ /* ~197 */ 
+                  /* region = 261 */
+                  /* bump-normalized */
+   178 |          $$CIV1 = 0ll;
+                  do {   /* id=16 guarded */ /* ~198 */ 
+                    /* region = 260 */
+                    /* bump-normalized */
+   179 |            $$CIV0 = 0ll;
+                    do {   /* id=17 guarded */ /* ~199 */ 
+                      /* region = 259 */
+                      /* bump-normalized */
+   184 |              if (!((int) $$CIV1 == (int) $$CIV3)) goto lab_201;
+   186 |            lab_201:
+   189 |              $$SFX4 = ((char *)mat_A + (8ll)*($$CIV0 + (b_sm * $$CIV1 + (b_sm * $$CIV3 + $$CIV2) * $$csx2)));
+                      $$TVX.$$.$$RET1334 = drand48();
+                      *$$SFX4 = $$TVX.$$.$$RET1334;
+   179 |              $$CIV0 = $$CIV0 + 1ll;
+                    } while ((unsigned long long) $$CIV0 < (unsigned long long) b_sm);    /* ~199 */
+   178 |            $$CIV1 = $$CIV1 + 1ll;
+                  } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~198 */
+   177 |          $$CIV2 = $$CIV2 + 1ll;
+                } while ((unsigned long long) $$CIV2 < (unsigned long long) b_sm);    /* ~197 */
+              lab_206:
+   176 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) (n / b_sm) / num_pes_dim)));    /* ~196 */
+            lab_207:
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_213;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_212;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_212:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_214;
+            lab_213:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_215;
+            lab_214:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_215:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~195 */
+            goto lab_309;
+          lab_290:
+            do {   /* id=20 guarded */ /* ~292 */ 
+              /* region = 264 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_305;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_304;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_304:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_306;
+            lab_305:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_307;
+            lab_306:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_307:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~292 */
+            goto lab_309;
+          lab_308:
+            if (!(0ll < $$csx0)) goto lab_344;
+            if (!(0ll < b_sm)) goto lab_326;
+            do {   /* id=21 guarded */ /* ~310 */ 
+              /* region = 265 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_323;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_322;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_322:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_324;
+            lab_323:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_325;
+            lab_324:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_325:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~310 */
+            goto lab_345;
+          lab_326:
+            do {   /* id=36 guarded */ /* ~327 */ 
+              /* region = 266 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   199 |      __memset(((char *)mat_A + (8ll)*((long long) 0)),(long long) 0,8ll * $$csx0);
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_340;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_339;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_339:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_341;
+            lab_340:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_342;
+            lab_341:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_342:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~327 */
+            goto lab_345;
+          lab_344:
+            if (!(0ll < b_sm)) goto lab_362;
+            do {   /* id=42 guarded */ /* ~346 */ 
+              /* region = 267 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_359;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_358;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_358:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_360;
+            lab_359:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_361;
+            lab_360:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_361:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~346 */
+            goto lab_379;
+          lab_362:
+            do {   /* id=48 guarded */ /* ~363 */ 
+              /* region = 268 */
+              /* bump-normalized */
+   174 |      srand48((long long) (myRank * 1000 + 1000))
+   201 |      if (!((int) $$CIV5 >= start_iter)) goto lab_376;
+   202 |      if (!(start_iter == (int) $$CIV5)) goto lab_375;
+   203 |      CTF_Timer::CTF_Timer(char const*)(&t,"first_iter");
+              __es.__c4@3 = 3u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   204 |      CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   205 |    lab_375:
+   206 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   207 |      start_t = MPI_Wtime();
+   208 |      goto lab_377;
+            lab_376:
+              lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+              goto lab_378;
+            lab_377:
+   209 |      lu_25d_pvt(lu_25d_pvt_params*, double*, int*, int*, double*, int)(&p,mat_A,mat_P,buf_P,buffer,(int) $$CIV5 > 0)
+   211 |      end_t = MPI_Wtime();
+   212 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&__t)
+              PMPI_Barrier(cdt_glb.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   213 |      sum_t = sum_t + (end_t - start_t);
+   214 |    lab_378:
+   173 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) ((long long) (num_iter + start_iter)));    /* ~363 */
+          lab_379:
+          lab_345:
+          lab_309:
+          lab_216:
+          lab_194:
+          lab_170:
+          lab_91:
+   216 |    CTF_Timer::CTF_Timer(char const*)(&t,"timer");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   218 |    if (!(myRank == 0)) goto lab_139;
+   219 |    printf("Warmed up for %d iterations, benchmarked %d iterations/n",start_iter,num_iter);
+   220 |    printf("Time elapsed per iteration: %lf/n",sum_t / (double) num_iter);
+   221 |    printf("Gigaflops: %lf/n",(((( 6.6666666666666662E-001 * (double) n) * (double) n) * (double) n) / (sum_t / (double) num_iter)) *  1.0000000000000000E-009);
+   223 |  lab_139:
+   224 |    MPI_Comm_free(&cdt_kdir.cm@0);
+   225 |    MPI_Comm_free(&cdt_row.cm@0);
+   226 |    MPI_Comm_free(&cdt_col.cm@0);
+   227 |    return;
+          } /* function */ 
+
+
+   166 |  char * char** std::__find<char**, std::string>(char**, char**, std::string const&, std::random_access_iterator_tag)(char * *__first, char * __last, char * __val, aggr1 NONAME_368)
+   168 |  {
+   170 |    if (!((__last - __first) / 8ll >> 2 > 0ll)) goto lab_3;
+            $$CIVFINAL6 = (unsigned long long) ((__last - __first) / 8ll >> 2);
+            $$CIV6 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 28 */
+              /* bump-normalized */
+   174 |      $$RET14 = std::string::compare(char const*) const(__val,__first[($$CIV6 * 32ll) / 8]);
+  2255 |      __601 = (char) ($$RET14 == 0);
+              if (__601 != 0u) goto lab_19;
+   178 |      $$RET15 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 8ll)));
+  2255 |      __605 = (char) ($$RET15 == 0);
+              if (__605 != 0u) goto lab_21;
+   182 |      $$RET16 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 16ll)));
+  2255 |      __609 = (char) ($$RET16 == 0);
+              if (__609 != 0u) goto lab_23;
+   186 |      $$RET17 = std::string::compare(char const*) const(__val,*((char * *)((char *)__first + $$CIV6 * 32ll + 24ll)));
+  2255 |      __613 = (char) ($$RET17 == 0);
+              if (__613 != 0u) goto lab_25;
+   172 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < $$CIVFINAL6);    /* ~1 */
+            __first = ((char *)__first  + ((__last - __first) / 8ll >> 2) * 32ll);
+          lab_3:
+   191 |    switch((__last - __first) / 8ll) {
+   193 |      case 3ll:
+   194 |        $$RET18 = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __617 = (char) ($$RET18 == 0);
+                if (!(__617 != 0u)) goto lab_12;
+   195 |        rstr = __first;
+                return rstr;
+              lab_12:
+   196 |        __first = ((char *)__first  + 8ll);
+   197 |      case 2ll:
+   198 |        $$RET19 = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __621 = (char) ($$RET19 == 0);
+                if (!(__621 != 0u)) goto lab_14;
+   199 |        rstr = __first;
+                return rstr;
+              lab_14:
+   200 |        __first = ((char *)__first  + 8ll);
+   201 |      case 1ll:
+   202 |        $$RET1A = std::string::compare(char const*) const(__val,*__first);
+  2255 |        __625 = (char) ($$RET1A == 0);
+                if (!(__625 != 0u)) goto lab_16;
+   203 |        rstr = __first;
+                return rstr;
+              lab_16:
+   205 |      case 0ll:
+   206 |      lab_18:
+   207 |        rstr = __last;
+                return rstr;
+   208 |    }  /* switch */ 
+            goto lab_18;
+  2255 |  lab_25:
+   187 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 24ll));
+            return rstr;
+  2255 |  lab_23:
+   183 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 16ll));
+            return rstr;
+  2255 |  lab_21:
+   179 |    rstr = ((char *)__first  + ($$CIV6 * 32ll + 8ll));
+            return rstr;
+  2255 |  lab_19:
+   175 |    rstr = ((char *)__first  + $$CIV6 * 32ll);
+            return rstr;
+   209 |  } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

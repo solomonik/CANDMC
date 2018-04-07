@@ -1,0 +1,560 @@
+1586-539 (I) Loop (loop index 1) at yamamoto.cxx <line 30> was not SIMD vectorized because it contains function calls.
+1586-550 (I) Loop (loop index 2) at yamamoto.cxx <line 39> was not SIMD vectorized because it is not profitable to vectorize.
+1586-537 (I) Loop (loop index 2) at yamamoto.cxx <line 40> was not SIMD vectorized because it contains operation in A->(double).rns0.[1ll + ($$CIV0 + (lda_A * $$CIV1 + $$CIV1))] / $$TVX.$$.$$SCREP000 which is not suitable for SIMD vectorization.
+1586-554 (I) Loop (loop index 2) at yamamoto.cxx <line 40> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at yamamoto.cxx <line 156> was not SIMD vectorized because it contains function calls.
+1586-537 (I) Loop (loop index 2) at yamamoto.cxx <line 153> was not SIMD vectorized because it contains operation in (int) $$CIV2 + 1 which is not suitable for SIMD vectorization.
+1586-551 (I) Loop (loop index 2) at yamamoto.cxx <line 153> was not SIMD vectorized because it contains unsupported vector data types.
+1586-539 (I) Loop (loop index 3) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"3">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    24 |  void signed_YLU(double*, long, long, int*)(long long *A, long long b, long long lda_A, int *signs)
+    27 |  {
+    30 |    if (!(0ll < b)) goto lab_3;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 16 */
+              /* bump-normalized */
+    32 |      signs[$$CIV1] = (A[lda_A * $$CIV1 + $$CIV1] >  0.0000000000000000E+000 ? -1 : 1);
+    36 |      A[lda_A * $$CIV1 + $$CIV1] = A[lda_A * $$CIV1 + $$CIV1] - (double) (A[lda_A * $$CIV1 + $$CIV1] >  0.0000000000000000E+000 ? -1 : 1);
+    39 |      if (!(1ll < b - $$CIV1)) goto lab_32;
+              $$TVX.$$.$$SCREP000 = A[lda_A * $$CIV1 + $$CIV1];
+            lab_32:
+              if (!(1ll < b - $$CIV1)) goto lab_9;
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~7 */ 
+                /* region = 15 */
+                /* bump-normalized */
+                /* independent */
+    40 |        A[1ll + ($$CIV0 + (lda_A * $$CIV1 + $$CIV1))] = A[1ll + ($$CIV0 + (lda_A * $$CIV1 + $$CIV1))] / $$TVX.$$.$$SCREP000;
+    39 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((b - $$CIV1) - 1ll));    /* ~7 */
+            lab_9:
+    42 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) ((b - $$CIV1) - 1ll),(int) ((b - $$CIV1) - 1ll),-1.0000000000000000E+000,((char *)A  + (1ll + (lda_A * $$CIV1 + $$CIV1)) * 8ll),1,((char *)A  + (lda_A * ($$CIV1 * 8ll + 8ll) + $$CIV1 * 8ll)),(int) lda_A,((char *)A  + (8ll + (lda_A * ($$CIV1 * 8ll + 8ll) + $$CIV1 * 8ll))),(int) lda_A)
+    30 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) b);    /* ~1 */
+          lab_3:
+    46 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            30             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            39             2    Loop was not SIMD vectorized because it is not 
+                                          profitable to vectorize.
+         0            40                  Loop was not SIMD vectorized because it contains 
+                                          operation in A->(double).rns0.[1ll + ($$CIV0 + (lda_A 
+                                          * $$CIV1 + $$CIV1))] / $$TVX.$$.$$SCREP000 which is 
+                                          not  suitable for SIMD vectorization.
+         0            40                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+
+    57 |  void recursive_YLU(double*, long, long, int*)(char * A, long long b, long long lda_A, char * signs)
+    60 |  {
+    64 |    if (!(b <= 64ll)) goto lab_1;
+    65 |    signed_YLU(double*, long, long, int*)(A,b,lda_A,signs)
+    66 |    goto lab_3;
+    67 |  lab_1:
+    72 |    recursive_YLU(double*, long, long, int*)(A,b / 2ll,lda_A,signs)
+    74 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(76u,76u,78u,85u,(int) (b / 2ll),(int) (b - b / 2ll), 1.0000000000000000E+000,A,(int) lda_A,((char *)A  + 8ll * ((b / 2ll) * lda_A)),(int) lda_A)
+    75 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (b - b / 2ll),(int) (b / 2ll), 1.0000000000000000E+000,A,(int) lda_A,((char *)A  + (b / 2ll) * 8ll),(int) lda_A)
+    77 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) (b - b / 2ll),(int) (b - b / 2ll),(int) (b / 2ll),-1.0000000000000000E+000,((char *)A  + (b / 2ll) * 8ll),(int) lda_A,((char *)A  + 8ll * ((b / 2ll) * lda_A)),(int) lda_A, 1.0000000000000000E+000,((char *)A  + (lda_A * 8ll + 8ll) * (b / 2ll)),(int) lda_A)
+    78 |    recursive_YLU(double*, long, long, int*)(((char *)A  + (lda_A * 8ll + 8ll) * (b / 2ll)),b - b / 2ll,lda_A,((char *)signs  + (b / 2ll) * 4ll))
+    79 |  lab_3:
+            return;
+          } /* function */ 
+
+
+    98 |  void Yamamoto(double*, long, double*, long, long, long, double*, long, long, long, long, CommData)(char * A, long long lda_A, long long *Qm, long long lda_Qm, long long m, long long b, char * W, long long myRank, long long numPes, long long root, long long req_id, aggr20 cdt)
+   109 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   117 |    R = malloc((unsigned long long) (8ll * (b * b)));
+   118 |    tau = malloc((unsigned long long) (b * 8ll));
+            $$RET0 = __builtin_log((double) numPes);
+   119 |    tree_data = malloc((unsigned long long) ((double) ((unsigned long long) (16ll * (b * b))) * ($$RET0 +  2.0000000000000000E+000)));
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   126 |    bitree_tsqr(double*, long, double*, double*, long, long, long, long, long, long, CommData, long, double*)(A,lda_A,R,tau,m,b,myRank,numPes,root,req_id,cdt,1ll,tree_data)
+   127 |    if (!(myRank == root)) goto lab_50;
+   128 |    copy_upper(double const*, double*, int, int, int, int)(R,A,(int) b,(int) b,(int) lda_A,0)
+            goto lab_6;
+          lab_50:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            construct_Q1(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*, double*)(A,lda_A,tau,Qm,lda_Qm,m,b,b,myRank,numPes,root,cdt,tree_data,NULL)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_26;
+          lab_6:
+   130 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   131 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   133 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   134 |    CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   139 |    construct_Q1(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*, double*)(A,lda_A,tau,Qm,lda_Qm,m,b,b,myRank,numPes,root,cdt,tree_data,NULL)
+   142 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   143 |    CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   145 |    CTF_Timer::CTF_Timer(char const*)(&t,"LU_of_Q1_minus_I");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   146 |    signs = malloc((unsigned long long) (b * 4ll));
+   147 |    pivs = malloc((unsigned long long) (b * 4ll));
+   148 |    wk = malloc((unsigned long long) (b * 32ll));
+   463 |    if (!((int) b == (int) lda_Qm)) goto lab_60;
+   464 |    __builtin_memcpy(W,Qm,(unsigned long long) ((int) b * (int) b) * 8ull);
+   465 |    goto lab_61;
+          lab_60:
+   467 |    if (!(0 < (int) b)) goto lab_62;
+            $$CIV4 = 0ll;
+            do {   /* id=3 guarded */ /* ~63 */ 
+              /* region = 27 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)W  + 8ll * ($$CIV4 * (long long) ((int) b))),((char *)Qm  + 8ll * ($$CIV4 * (long long) ((int) lda_Qm))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ((int) b)));    /* ~63 */
+          lab_62:
+   470 |  lab_61:
+    64 |    if (!(b <= 64ll)) goto lab_57;
+    65 |    signed_YLU(double*, long, long, int*)(W,b,b,signs)
+    66 |    goto lab_59;
+    67 |  lab_57:
+    72 |    recursive_YLU(double*, long, long, int*)(W,b / 2ll,b,signs)
+    74 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(76u,76u,78u,85u,(int) (b / 2ll),(int) (b - b / 2ll), 1.0000000000000000E+000,W,(int) b,((char *)W  + 8ll * ((b / 2ll) * b)),(int) b)
+    75 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (b - b / 2ll),(int) (b / 2ll), 1.0000000000000000E+000,W,(int) b,((char *)W  + (b / 2ll) * 8ll),(int) b)
+    77 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) (b - b / 2ll),(int) (b - b / 2ll),(int) (b / 2ll),-1.0000000000000000E+000,((char *)W  + (b / 2ll) * 8ll),(int) b,((char *)W  + 8ll * ((b / 2ll) * b)),(int) b, 1.0000000000000000E+000,((char *)W  + (b * 8ll + 8ll) * (b / 2ll)),(int) b)
+    78 |    recursive_YLU(double*, long, long, int*)(((char *)W  + (b * 8ll + 8ll) * (b / 2ll)),b - b / 2ll,b,((char *)signs  + (b / 2ll) * 4ll))
+    79 |  lab_59:
+   152 |    if (!(0ll < b)) goto lab_33;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~31 */ 
+              /* region = 28 */
+              /* bump-normalized */
+              /* independent */
+   153 |      pivs[$$CIV2] = (int) $$CIV2 + 1;
+   152 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~31 */
+          lab_33:
+   155 |    cdgetri(int, double*, int, int*, double*, int, int*)((int) b,W,(int) b,pivs,wk,(int) (b * 4ll),&info)
+   156 |    if (!(0ll < b)) goto lab_36;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~34 */ 
+              /* region = 29 */
+              /* bump-normalized */
+   160 |      Qm[lda_Qm * $$CIV3 + $$CIV3] = Qm[lda_Qm * $$CIV3 + $$CIV3] - (double) signs[$$CIV3];
+              cdscal(int, double, double*, int)((int) b,(double) signs[$$CIV3],((char *)W  + 8ll * ($$CIV3 * b)),1)
+   161 |      cdscal(int, double, double*, int)((int) (b - $$CIV3),(double) signs[$$CIV3],((char *)A  + (lda_A * $$CIV3 + $$CIV3) * 8ll),(int) lda_A)
+   156 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) b);    /* ~34 */
+          lab_36:
+   163 |    free(wk)
+   164 |    free(pivs)
+   165 |    free(signs)
+   166 |    CTF_Timer::CTF_Timer(char const*)(&t,"LU_of_Q1_minus_I");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   167 |  lab_26:
+   169 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(W,(int) (b * b),1275070475,(int) root,cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   171 |    free(R)
+   172 |    free(tau)
+   173 |    free(tree_data)
+   174 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       114           467             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           153                  Loop was not SIMD vectorized because it contains 
+                                          operation in (int) $$CIV2 + 1 which is not  suitable 
+                                          for SIMD vectorization.
+         0           153                  Loop was not SIMD vectorized because it contains 
+                                          unsupported vector data types.
+         0           156             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV4) * 8ll),((char *)A  + ((long long) lda_A * $$CIV4) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       114           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    24 |  void signed_YLU(double*, long, long, int*)(long long *A, long long b, long long lda_A, int *signs)
+    27 |  {
+    30 |    if (!(0ll < b)) goto lab_3;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~1 */ 
+              /* region = 14 */
+              /* bump-normalized */
+    32 |      $$csx0 = A[lda_A * $$CIV1 + $$CIV1];
+              signs[$$CIV1] = ($$csx0 >  0.0000000000000000E+000 ? -1 : 1);
+    36 |      A[lda_A * $$CIV1 + $$CIV1] = $$csx0 - (double) ($$csx0 >  0.0000000000000000E+000 ? -1 : 1);
+    39 |      if (!(1ll < b - $$CIV1)) goto lab_9;
+              $$TVX.$$.$$SCREP000 = A[lda_A * $$CIV1 + $$CIV1];
+              $$CIV0 = 0ll;
+              do {   /* id=2 guarded */ /* ~7 */ 
+                /* region = 13 */
+                /* bump-normalized */
+                /* independent */
+    40 |        A[1ll + ($$CIV0 + (lda_A * $$CIV1 + $$CIV1))] = A[1ll + ($$CIV0 + (lda_A * $$CIV1 + $$CIV1))] / $$TVX.$$.$$SCREP000;
+    39 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((b - $$CIV1) - 1ll));    /* ~7 */
+            lab_9:
+    42 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) ((b - $$CIV1) - 1ll),(int) ((b - $$CIV1) - 1ll),-1.0000000000000000E+000,((char *)A  + (1ll + (lda_A * $$CIV1 + $$CIV1)) * 8ll),1,((char *)A  + (lda_A * ($$CIV1 * 8ll + 8ll) + $$CIV1 * 8ll)),(int) lda_A,((char *)A  + (8ll + (lda_A * ($$CIV1 * 8ll + 8ll) + $$CIV1 * 8ll))),(int) lda_A)
+    30 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((unsigned long long) $$CIV1 < (unsigned long long) b);    /* ~1 */
+          lab_3:
+    46 |    return;
+          } /* function */ 
+
+
+    57 |  void recursive_YLU(double*, long, long, int*)(char * A, long long b, long long lda_A, char * signs)
+    60 |  {
+    64 |    if (!(b <= 64ll)) goto lab_1;
+    65 |    signed_YLU(double*, long, long, int*)(A,b,lda_A,signs)
+    66 |    goto lab_3;
+    67 |  lab_1:
+    72 |    recursive_YLU(double*, long, long, int*)(A,b / 2ll,lda_A,signs)
+    74 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(76u,76u,78u,85u,(int) (b / 2ll),(int) (b - b / 2ll), 1.0000000000000000E+000,A,(int) lda_A,((char *)A  + 8ll * ((b / 2ll) * lda_A)),(int) lda_A)
+    75 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (b - b / 2ll),(int) (b / 2ll), 1.0000000000000000E+000,A,(int) lda_A,((char *)A  + (b / 2ll) * 8ll),(int) lda_A)
+    77 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) (b - b / 2ll),(int) (b - b / 2ll),(int) (b / 2ll),-1.0000000000000000E+000,((char *)A  + (b / 2ll) * 8ll),(int) lda_A,((char *)A  + 8ll * ((b / 2ll) * lda_A)),(int) lda_A, 1.0000000000000000E+000,((char *)A  + (lda_A * 8ll + 8ll) * (b / 2ll)),(int) lda_A)
+    78 |    recursive_YLU(double*, long, long, int*)(((char *)A  + (lda_A * 8ll + 8ll) * (b / 2ll)),b - b / 2ll,lda_A,((char *)signs  + (b / 2ll) * 4ll))
+    79 |  lab_3:
+            return;
+          } /* function */ 
+
+
+    98 |  void Yamamoto(double*, long, double*, long, long, long, double*, long, long, long, long, CommData)(char * A, long long lda_A, long long *Qm, long long lda_Qm, long long m, long long b, char * W, long long myRank, long long numPes, long long root, long long req_id, aggr20 cdt)
+   109 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+   117 |    R = malloc((unsigned long long) (8ll * (b * b)));
+   118 |    tau = malloc((unsigned long long) (b * 8ll));
+            $$RET0 = __builtin_log((double) numPes);
+   119 |    tree_data = malloc((unsigned long long) ((double) ((unsigned long long) (16ll * (b * b))) * ($$RET0 +  2.0000000000000000E+000)));
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   126 |    bitree_tsqr(double*, long, double*, double*, long, long, long, long, long, long, CommData, long, double*)(A,lda_A,R,tau,m,b,myRank,numPes,root,req_id,cdt,1ll,tree_data)
+   127 |    if (!(myRank == root)) goto lab_50;
+   128 |    copy_upper(double const*, double*, int, int, int, int)(R,A,(int) b,(int) b,(int) lda_A,0)
+            goto lab_6;
+          lab_50:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            construct_Q1(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*, double*)(A,lda_A,tau,Qm,lda_Qm,m,b,b,myRank,numPes,root,cdt,tree_data,NULL)
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            goto lab_26;
+          lab_6:
+   130 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   131 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   133 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   134 |    CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   139 |    construct_Q1(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*, double*)(A,lda_A,tau,Qm,lda_Qm,m,b,b,myRank,numPes,root,cdt,tree_data,NULL)
+   142 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   143 |    CTF_Timer::CTF_Timer(char const*)(&t,"Construct_Q1");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   145 |    CTF_Timer::CTF_Timer(char const*)(&t,"LU_of_Q1_minus_I");
+            __es.__c4@3 = 8u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   146 |    signs = malloc((unsigned long long) (b * 4ll));
+   147 |    pivs = malloc((unsigned long long) (b * 4ll));
+   148 |    wk = malloc((unsigned long long) (b * 32ll));
+   463 |    if (!((int) b == (int) lda_Qm)) goto lab_60;
+   464 |    __builtin_memcpy(W,Qm,(unsigned long long) ((int) b * (int) b) * 8ull);
+   465 |    goto lab_61;
+          lab_60:
+   467 |    if (!(0 < (int) b)) goto lab_62;
+            $$CIV4 = 0ll;
+            do {   /* id=3 guarded */ /* ~63 */ 
+              /* region = 27 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)W  + 8ll * ($$CIV4 * (long long) ((int) b))),((char *)Qm  + 8ll * ($$CIV4 * (long long) ((int) lda_Qm))),(unsigned long long) ((int) b) * 8ull);
+   467 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ((int) b)));    /* ~63 */
+          lab_62:
+   470 |  lab_61:
+    64 |    if (!(b <= 64ll)) goto lab_57;
+    65 |    signed_YLU(double*, long, long, int*)(W,b,b,signs)
+    66 |    goto lab_59;
+    67 |  lab_57:
+    72 |    recursive_YLU(double*, long, long, int*)(W,b / 2ll,b,signs)
+    74 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(76u,76u,78u,85u,(int) (b / 2ll),(int) (b - b / 2ll), 1.0000000000000000E+000,W,(int) b,((char *)W  + 8ll * ((b / 2ll) * b)),(int) b)
+    75 |    cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(82u,85u,78u,78u,(int) (b - b / 2ll),(int) (b / 2ll), 1.0000000000000000E+000,W,(int) b,((char *)W  + (b / 2ll) * 8ll),(int) b)
+    77 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,(int) (b - b / 2ll),(int) (b - b / 2ll),(int) (b / 2ll),-1.0000000000000000E+000,((char *)W  + (b / 2ll) * 8ll),(int) b,((char *)W  + 8ll * ((b / 2ll) * b)),(int) b, 1.0000000000000000E+000,((char *)W  + (b * 8ll + 8ll) * (b / 2ll)),(int) b)
+    78 |    recursive_YLU(double*, long, long, int*)(((char *)W  + (b * 8ll + 8ll) * (b / 2ll)),b - b / 2ll,b,((char *)signs  + (b / 2ll) * 4ll))
+    79 |  lab_59:
+   152 |    if (!(0ll < b)) goto lab_79;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~31 */ 
+              /* region = 29 */
+              /* bump-normalized */
+              /* independent */
+   153 |      pivs[$$CIV2] = (int) $$CIV2 + 1;
+   152 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~31 */
+            goto lab_33;
+          lab_79:
+            cdgetri(int, double*, int, int*, double*, int, int*)((int) b,W,(int) b,pivs,wk,(int) (b * 4ll),&info)
+            goto lab_36;
+          lab_33:
+   155 |    cdgetri(int, double*, int, int*, double*, int, int*)((int) b,W,(int) b,pivs,wk,(int) (b * 4ll),&info)
+   156 |    $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~34 */ 
+              /* region = 28 */
+              /* bump-normalized */
+   160 |      Qm[lda_Qm * $$CIV3 + $$CIV3] = Qm[lda_Qm * $$CIV3 + $$CIV3] - (double) signs[$$CIV3];
+              cdscal(int, double, double*, int)((int) b,(double) signs[$$CIV3],((char *)W  + 8ll * ($$CIV3 * b)),1)
+   161 |      cdscal(int, double, double*, int)((int) (b - $$CIV3),(double) signs[$$CIV3],((char *)A  + (lda_A * $$CIV3 + $$CIV3) * 8ll),(int) lda_A)
+   156 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) b);    /* ~34 */
+          lab_36:
+   163 |    free(wk)
+   164 |    free(pivs)
+   165 |    free(signs)
+   166 |    CTF_Timer::CTF_Timer(char const*)(&t,"LU_of_Q1_minus_I");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   167 |  lab_26:
+   169 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 10u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(W,(int) (b * b),1275070475,(int) root,cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   171 |    free(R)
+   172 |    free(tau)
+   173 |    free(tree_data)
+   174 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV4 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV4) * 8ll),((char *)A  + ((long long) lda_A * $$CIV4) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

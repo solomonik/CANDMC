@@ -4,51 +4,18 @@
 #include <strings.h>
 #include <math.h>
 #include <assert.h>
+#include "CANDMC.h"
 
+/*
 #ifndef __C_SRC
 #define __C_SRC
 #endif
-
+*/
 #define NUM_ITER 5
 
 //proper modulus for 'a' in the range of [-b inf]
 #define WRAP(a,b)       ((a + b)%b)
 #define MIN( a, b ) ( ((a) < (b)) ? (a) : (b) )
-
-void Cblacs_pinfo(int*,int*);
-
-void Cblacs_get(int,int,int*);
-
-int Cblacs_gridinit(int*,char*,int,int);
-
-void descinit(int *,  int *,
-                 int *,  int *,
-                 int *,  int *,
-                 int *,  int *,
-                 int *, int *);
-
-static void cdesc_init(int * desc, 
-                       int m,       int n,
-                       int mb,      int nb,
-                       int irsrc,   int icsrc,
-                       int ictxt,   int LLD,
-                                        int * info){
-  descinit(desc,&m,&n,&mb,&nb,&irsrc,&icsrc,
-             &ictxt, &LLD, info);
-}
-
-static void  pdgetrf(int *,     int *,
-                     double *,  int *,
-                     int *,     int *,
-                     int *,     int *);
-
-static void cpdgetrf(int m,     int n,
-                     double *A, int ia,
-                     int ja,    int * desca,
-                     int *IPIV, int * info){
-  pdgetrf(&m,&n,A,&ia,&ja,desca,IPIV,info);
-}
-
 
 int main(int argc, char **argv) {
 /*void pbm() {
@@ -63,8 +30,7 @@ int main(int argc, char **argv) {
   MPI_Request req[4];
   MPI_Status status[4];
 
-    int log_numPes = uint_log2(numPes);
-
+  int log_numPes = log2(numPes);
 
   if (argc < 4 || argc > 5) {
     if (myRank == 0) 
@@ -96,11 +62,11 @@ int main(int argc, char **argv) {
   }
 
   if (matrixDim < blockDim || matrixDim % blockDim != 0) {
-    if (myRank == 0) printf("array_size_X \% block_size_X != 0!\n");
+    if (myRank == 0) printf("array_size_X BAD block_size_X != 0!\n");
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
   if (matrixDim < blockDim || matrixDim % blockDim != 0) {
-    if (myRank == 0) printf("array_size_Y \% block_size_Y != 0!\n");
+    if (myRank == 0) printf("array_size_Y BAD  block_size_Y != 0!\n");
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
@@ -135,7 +101,7 @@ int main(int argc, char **argv) {
   Cblacs_gridinit(&icontxt, "Row", num_blocks_dim, num_blocks_dim);
 
   int desc_a[9];
-  cdesc_init(desc_a, matrixDim, matrixDim,
+  cdescinit(desc_a, matrixDim, matrixDim,
                     sbDim, sbDim,
                     0,  0,
                     icontxt, blockDim, 

@@ -1,0 +1,772 @@
+1586-539 (I) Loop (loop index 1) at /bgsys/drivers/toolchain/V1R2M4_base/gnu-linux/lib/gcc/powerpc64-bgq-linux/4.4.7/../../../../powerpc64-bgq-linux/include/c++/4.4.7/bits/stl_algobase.h <line 194> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    30 |  void sym_full2band_3d(double*, long, long, long, long, long, pview_3d*)(char * A, long long lda_A, long long n, long long b_agg, long long bw, long long b_sub, char * pv)
+    36 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__67 = 1;
+    37 |    if (0ll == (b_agg / (long long) ((int *)(pv + 4))[100 / 4]) % b_sub) goto lab_4;
+            __assert_fail("(b_agg/pv->plyr.crow.np)%b_sub == 0","full_to_band_3d.cxx",37u,&__func__)
+            return;
+          lab_4:
+    38 |    if (0ll == (b_agg / (long long) ((int *)(pv + 4))[120 / 4]) % b_sub) goto lab_7;
+            __assert_fail("(b_agg/pv->plyr.ccol.np)%b_sub == 0","full_to_band_3d.cxx",38u,&__func__)
+            return;
+          lab_7:
+    39 |    if (0ll == b_agg % bw) goto lab_10;
+            __assert_fail("b_agg%bw==0","full_to_band_3d.cxx",39u,&__func__)
+            return;
+          lab_10:
+    40 |    if (0ll == bw % b_sub) goto lab_13;
+            __assert_fail("bw%b_sub==0","full_to_band_3d.cxx",40u,&__func__)
+            return;
+          lab_13:
+    42 |    if (0ll == (bw / b_sub) % (long long) ((int *)(pv + 4))[184 / 4]) goto lab_16;
+            __assert_fail("(bw/b_sub)%pv->clyr.np==0","full_to_band_3d.cxx",42u,&__func__)
+            return;
+          lab_16:
+    44 |    lyrcols = (int) (bw / (long long) ((int *)(pv + 4))[184 / 4]);
+    47 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dU_lyr,n,b_agg,b_sub,(pv + 92),"U");
+    48 |    DMatrix::set_to_zero()(&dU_lyr)
+    50 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dVT_lyr,n,b_agg,b_sub,(pv + 92),"V^T");
+    51 |    DMatrix::set_to_zero()(&dVT_lyr)
+    54 |    dU_lyr.ncol@30 = 0ll;
+    55 |    dVT_lyr.ncol@30 = 0ll;
+    57 |    DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dA,n,n,b_sub,(pv + 92),lda_A,NULL,A,0u);
+    58 |    DMatrix::set_name(char const*)(&dA,"A")
+    62 |    istep = 0;
+   191 |    if (!(b_agg / bw < n / bw)) goto lab_20;
+   192 |    __51 = b_agg / bw;
+            __99 = &__51;
+            __50 = n / bw;
+            goto @101;
+          lab_20:
+   193 |    __50 = n / bw;
+            __99 = &__50;
+            __51 = b_agg / bw;
+   187 |  @101:
+   194 |    if (!(0ll < *__99)) goto lab_19;
+            do {   /* id=1 */ /* ~17 */ 
+              /* region = 41 */
+    64 |      dA_slice = DMatrix::slice(long, long, long, long)(&dA,0ll,dA.nrow@28,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols)->(DMatrix).rns5.;
+    66 |      if (!(istep > 0)) goto lab_23;
+    67 |      dU_slice = DMatrix::slice(long, long, long, long)(&dU_lyr,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols,0ll,dU_lyr.ncol@30)->(DMatrix).rns6.;
+    68 |      dVT_slice = DMatrix::slice(long, long, long, long)(&dVT_lyr,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols,0ll,dVT_lyr.ncol@30)->(DMatrix).rns7.;
+    70 |      $$SFX0 = dU_lyr;
+              __55 = DMatrix::transp()(&dVT_slice)->(DMatrix).rns8.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)($$SFX0,__55,-1.0000000000000000E+000,dA_slice, 1.0000000000000000E+000)
+    71 |      $$SFX1 = dVT_lyr;
+              __56 = DMatrix::transp()(&dU_slice)->(DMatrix).rns9.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)($$SFX1,__56,-1.0000000000000000E+000,dA_slice, 1.0000000000000000E+000)
+    73 |      __57 = DMatrix::slice(long, long, long, long)(&dA_slice,0ll,bw,0ll,(long long) lyrcols)->(DMatrix).rns10.;
+              dA_cblk = DMatrix::get_contig()(&__57)->(DMatrix).rns12.;
+    74 |      DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dA_allcblk,bw,bw,b_sub,(pv + 92),0ll,NULL,NULL,0u);
+    76 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&__t)
+              $$RET0 = DMatrix::operator double*() const(&dA_cblk);
+              $$SFX2 = (int) DMatrix::get_mysize()(&dA_cblk);
+              $$RET1 = DMatrix::operator double*() const(&dA_allcblk);
+              $$RET2 = (int) DMatrix::get_mysize()(&dA_cblk);
+              PMPI_Allgather($$RET0,$$SFX2,1275070475,$$RET1,$$RET2,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    80 |      dA_ccblk = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,0ll,bw)->(DMatrix).rns15.;
+    81 |      DMatrix::set_to_zero()(&dA_ccblk)
+    82 |      DMatrix::daxpy(DMatrix, double)(&dA_ccblk,dA_allcblk, 1.0000000000000000E+000)
+    84 |      DMatrix::destroy()(&dA_cblk)
+    85 |      DMatrix::destroy()(&dA_allcblk)
+    87 |      if (bw + bw * (long long) istep == n) goto lab_75;
+    88 |    lab_23:
+    90 |      DMatrix::move_ptr(long, long)(&dA_slice,bw,0ll)
+    92 |      dA_fold = DMatrix::foldcols(long)(&dA_slice,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns16.;
+    93 |      DMatrix::set_name(char const*)(&dA_fold,"A_panel")
+    94 |      DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dY_rect,dA_slice.nrow@28,bw,b_sub,pv,0ll,NULL,NULL,0u);
+    95 |      DMatrix::set_name(char const*)(&dY_rect,"Y_rect")
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              $$SFX3 = dA_fold.data@a8;
+              $$RET3 = DMatrix::get_mysize()(&dA_fold);
+              $$SFX4 = (int) ($$RET3 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$SFX5 = dY_rect.data@a8;
+              $$RET4 = DMatrix::get_mysize()(&dA_fold);
+              PMPI_Alltoall($$SFX3,$$SFX4,1275070475,$$SFX5,(int) ($$RET4 / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    99 |      DMatrix::print()(&dY_rect)
+   100 |      DQRMatrix::DQRMatrix(DMatrix)(&dY_rectQR,dY_rect);
+              __es.__c4@3 = 3u;
+   102 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dR_fsq,bw / (long long) ((int *)(pv + 4))[184 / 4],bw * (long long) ((int *)(pv + 4))[184 / 4],b_sub,(pv + 92),"R");
+   105 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              $$RET5 = DMatrix::operator double*() const(&dY_rectQR.R@0);
+              $$SFX6 = (int) DMatrix::get_mysize()(&dY_rectQR.R@0);
+              $$RET6 = DMatrix::operator double*() const(&dR_fsq);
+              $$RET7 = (int) DMatrix::get_mysize()(&dY_rectQR.R@0);
+              PMPI_Allgather($$RET5,$$SFX6,1275070475,$$RET6,$$RET7,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   109 |      dR_sq = DMatrix::foldrows(long)(&dR_fsq,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns23.;
+   110 |      DMatrix::destroy()(&dR_fsq)
+   111 |      DMatrix::print()(&dR_sq)
+   113 |      dB = DMatrix::slice(long, long, long, long)(&dA,bw,bw,0ll,bw)->(DMatrix).rns24.;
+   114 |      DMatrix::set_to_zero()(&dB)
+   115 |      DMatrix::daxpy(DMatrix, double)(&dB,dR_sq, 1.0000000000000000E+000)
+   116 |      dB = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,bw,bw)->(DMatrix).rns25.;
+   117 |      DMatrix::set_to_zero()(&dB)
+   118 |      __69 = DMatrix::transp()(&dR_sq)->(DMatrix).rns26.;
+              DMatrix::daxpy(DMatrix, double)(&dB,__69, 1.0000000000000000E+000)
+   119 |      DMatrix::destroy()(&dR_sq)
+   120 |      if (!(dA.nrow@28 > bw * 2ll)) goto lab_36;
+   121 |      dB = DMatrix::slice(long, long, long, long)(&dA,bw * 2ll,dA.nrow@28 - bw * 2ll,0ll,bw)->(DMatrix).rns27.;
+   122 |      DMatrix::set_to_zero()(&dB)
+   123 |      dB = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,bw * 2ll,dA.nrow@28 - bw * 2ll)->(DMatrix).rns28.;
+   124 |      DMatrix::set_to_zero()(&dB)
+   125 |    lab_36:
+   127 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,bw,dVT_lyr.nrow@28 - bw,0ll,dVT_lyr.ncol@30)
+   128 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,bw,dU_lyr.nrow@28 - bw,0ll,dU_lyr.ncol@30)
+   129 |      DMatrix::move_ptr(long, long, long, long)(&dA,bw,dA.nrow@28 - bw,bw,dA.ncol@30 - bw)
+   131 |      DMatrix::destroy()(&dY_rect)
+   132 |      dY_rect = dY_rectQR.Y@c8;
+   133 |      DMatrix::set_name(char const*)(&dY_rect,"Y_rect")
+   135 |      dfY_lyr = DMatrix::clone()(&dA_fold)->(DMatrix).rns29.;
+   136 |      DMatrix::destroy()(&dA_fold)
+   138 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              $$RET8 = DMatrix::operator double*() const(&dY_rect);
+              $$RET9 = DMatrix::get_mysize()(&dY_rect);
+              $$SFX7 = (int) ($$RET9 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$RETA = DMatrix::operator double*() const(&dfY_lyr);
+              $$RETB = DMatrix::get_mysize()(&dY_rect);
+              PMPI_Alltoall($$RET8,$$SFX7,1275070475,$$RETA,(int) ($$RETB / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   142 |      dY_lyr = DMatrix::foldrows(long)(&dfY_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns32.;
+   143 |      DMatrix::destroy()(&dfY_lyr)
+   144 |      DMatrix::set_name(char const*)(&dY_lyr,"Y_lyr")
+   146 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dW_lyr,dY_lyr.nrow@28,dY_lyr.ncol@30,b_sub,(pv + 92),"W_lyr");
+   147 |      if (!(istep > 0)) goto lab_41;
+   149 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dZ_lyr,dVT_lyr.ncol@30,dY_lyr.ncol@30,b_sub,(pv + 92),"Z_lyr");
+   150 |      __78 = DMatrix::transp()(&dVT_lyr)->(DMatrix).rns33.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__78,dY_lyr, 1.0000000000000000E+000,dZ_lyr, 0.0000000000000000E+000)
+   151 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dU_lyr,dZ_lyr,-1.0000000000000000E+000,dW_lyr, 0.0000000000000000E+000)
+   152 |      __79 = DMatrix::transp()(&dU_lyr)->(DMatrix).rns34.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__79,dY_lyr, 1.0000000000000000E+000,dZ_lyr, 0.0000000000000000E+000)
+   153 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dVT_lyr,dZ_lyr,-1.0000000000000000E+000,dW_lyr, 1.0000000000000000E+000)
+   154 |      DMatrix::destroy()(&dZ_lyr)
+   155 |      goto lab_43;
+            lab_41:
+   157 |      DMatrix::set_to_zero()(&dW_lyr)
+   158 |    lab_43:
+   161 |      CTF_Timer::CTF_Timer(char const*)(&tmr1,"manual W=A*Y");
+              __es.__c4@3 = 6u;
+   162 |      CTF_Timer::start()(&tmr1)
+   163 |      dY_lyr_trsp = DMatrix::transpose_data()(&dY_lyr)->(DMatrix).rns35.;
+   164 |      dY_lyr_rep = DMatrix::replicate_vertical()(&dY_lyr_trsp);
+   165 |      $$SFX8 = (unsigned long long) (dY_lyr.ncol@30 * 8ll);
+              $$RETC = (unsigned long long) DMatrix::get_mynrow()(&dY_lyr);
+              dW_lyr_cntrb = malloc($$RETC * $$SFX8);
+   166 |      $$SFX9 = (int) DMatrix::get_mynrow()(&dA);
+              $$SFXA = (int) dY_lyr.ncol@30;
+              $$SFXB = (int) DMatrix::get_myncol()(&dA);
+              $$RETD = DMatrix::operator double*() const(&dA);
+              $$SFXC = (int) dA.lda@40;
+              $$SFXD = (int) DMatrix::get_mynrow()(&dY_lyr);
+              $$RETE = (int) DMatrix::get_mynrow()(&dA);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,$$SFX9,$$SFXA,$$SFXB, 1.0000000000000000E+000,$$RETD,$$SFXC,dY_lyr_rep,$$SFXD, 0.0000000000000000E+000,dW_lyr_cntrb,$$RETE)
+   170 |      DMatrix::reduce_scatter_horizontal(double*)(&dW_lyr,dW_lyr_cntrb)
+   171 |      free(dY_lyr_rep)
+   172 |      free(dW_lyr_cntrb)
+   173 |      DMatrix::destroy()(&dY_lyr_trsp)
+   175 |      CTF_Timer::stop()(&tmr1)
+   177 |      DMatrix::destroy()(&dY_lyr)
+   179 |      dW_fold = DMatrix::foldcols(long)(&dW_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns41.;
+   180 |      DMatrix::destroy()(&dW_lyr)
+              $$RETF = DMatrix::get_mysize()(&dW_fold);
+   182 |      if (!(0ll == $$RETF % (long long) ((int *)(pv + 4))[184 / 4])) goto lab_45;
+   184 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dW_rect,dY_rect.nrow@28,dY_rect.ncol@30,b_sub,pv,"W_rect");
+   185 |      DMatrix::set_to_zero()(&dW_rect)
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              $$RET10 = DMatrix::operator double*() const(&dW_fold);
+              $$RET11 = DMatrix::get_mysize()(&dW_fold);
+              $$SFXE = (int) ($$RET11 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$RET12 = DMatrix::operator double*() const(&dW_rect);
+              $$RET13 = DMatrix::get_mysize()(&dW_fold);
+              PMPI_Alltoall($$RET10,$$SFXE,1275070475,$$RET12,(int) ($$RET13 / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   190 |      DMatrix::destroy()(&dW_fold)
+   191 |      DMatrix::print()(&dW_rect)
+   193 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dZ_rect,dY_rect.ncol@30,dW_rect.ncol@30,b_sub,pv,"Z_rect");
+   196 |      __84 = DMatrix::transp()(&dY_rect)->(DMatrix).rns44.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__84,dW_rect, 1.0000000000000000E+000,dZ_rect, 0.0000000000000000E+000)
+   198 |      DMatrix::print()(&dZ_rect)
+   201 |      invT = DQRMatrix::compute_invT()(&dY_rectQR)->(DMatrix).rns45.;
+   202 |      DMatrix::set_name(char const*)(&invT,"invT")
+   204 |      DMatrix::print()(&invT)
+   206 |      DMatrix::print()(&dY_rect)
+   208 |      cpdtrsm(DMatrix, double, DMatrix)(invT, 1.0000000000000000E+000,dY_rect)
+   209 |      DMatrix::destroy()(&invT)
+   212 |      dU_rect = dY_rect;
+   213 |      DMatrix::set_name(char const*)(&dU_rect,"U_rect")
+   215 |      DMatrix::print()(&dU_rect)
+   217 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dfnU_lyr,dA_slice.nrow@28 / (long long) ((int *)(pv + 4))[184 / 4],bw * (long long) ((int *)(pv + 4))[184 / 4],b_sub,(pv + 92),"U_lyr");
+   219 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 8u;
+              CTF_Timer::start()(&__t)
+              $$RET14 = DMatrix::operator double*() const(&dU_rect);
+              $$SFXF = (int) DMatrix::get_mysize()(&dU_rect);
+              $$RET15 = DMatrix::operator double*() const(&dfnU_lyr);
+              $$RET16 = (int) DMatrix::get_mysize()(&dU_rect);
+              PMPI_Allgather($$RET14,$$SFXF,1275070475,$$RET15,$$RET16,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   223 |      dnU_lyr = DMatrix::foldrows(long)(&dfnU_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns48.;
+   224 |      DMatrix::destroy()(&dfnU_lyr)
+   225 |      if (!(((int *)(pv + 8))[184 / 4] == 0)) goto lab_53;
+   226 |      DMatrix::print()(&dnU_lyr)
+            lab_53:
+   228 |      cur_dU_ncol = dU_lyr.ncol@30;
+   229 |      cur_dU_nrow = dU_lyr.nrow@28;
+   231 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,0ll,dU_lyr.nrow@28,dU_lyr.ncol@30,bw)
+   233 |      DMatrix::daxpy(DMatrix, double)(&dU_lyr,dnU_lyr, 1.0000000000000000E+000)
+   234 |      DMatrix::destroy()(&dnU_lyr)
+   236 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,0ll,cur_dU_nrow,- cur_dU_ncol,bw + cur_dU_ncol)
+   239 |      dVT_rect = dW_rect;
+   240 |      DMatrix::set_name(char const*)(&dVT_rect,"V_rect")
+   243 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dU_rect,dZ_rect,-5.0000000000000000E-001,dVT_rect, 1.0000000000000000E+000)
+   244 |      DMatrix::destroy()(&dZ_rect)
+   246 |      DMatrix::print()(&dVT_rect)
+   248 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dfnVT_lyr,dA_slice.nrow@28 / (long long) ((int *)(pv + 4))[184 / 4],bw * (long long) ((int *)(pv + 4))[184 / 4],b_sub,(pv + 92),"V^T_lyr");
+   250 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 9u;
+              CTF_Timer::start()(&__t)
+              $$RET17 = DMatrix::operator double*() const(&dVT_rect);
+              $$SFX10 = (int) DMatrix::get_mysize()(&dVT_rect);
+              $$RET18 = DMatrix::operator double*() const(&dfnVT_lyr);
+              $$RET19 = (int) DMatrix::get_mysize()(&dVT_rect);
+              PMPI_Allgather($$RET17,$$SFX10,1275070475,$$RET18,$$RET19,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   254 |      DMatrix::destroy()(&dVT_rect)
+   256 |      dnVT_lyr = DMatrix::foldrows(long)(&dfnVT_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns51.;
+   257 |      DMatrix::destroy()(&dfnVT_lyr)
+   259 |      cur_dV_ncol = dVT_lyr.ncol@30;
+   260 |      cur_dV_nrow = dVT_lyr.nrow@28;
+   262 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,0ll,dVT_lyr.nrow@28,dVT_lyr.ncol@30,bw)
+   264 |      DMatrix::daxpy(DMatrix, double)(&dVT_lyr,dnVT_lyr, 1.0000000000000000E+000)
+   265 |      DMatrix::destroy()(&dnVT_lyr)
+   267 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,0ll,cur_dV_nrow,- cur_dV_ncol,bw + cur_dV_ncol)
+   269 |      ((int *)pv)[92 / 4] = (int) ((bw / b_sub + (long long) ((int *)pv)[92 / 4]) % (long long) ((int *)(pv + 4))[120 / 4]);
+   270 |      ((int *)(pv + 4))[92 / 4] = (int) ((bw / b_sub + (long long) ((int *)(pv + 4))[92 / 4]) % (long long) ((int *)(pv + 4))[100 / 4]);
+   271 |      *((int *)pv) = ((int *)pv)[92 / 4];
+   272 |      *((int *)(pv + 4)) = ((int *)(pv + 4))[92 / 4];
+   273 |      __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&tmr1);
+              __es.__c4@3 = 0u;
+              DQRMatrix::~DQRMatrix()(&dY_rectQR);
+    62 |      istep = istep + 1;
+              __50 = n / bw;
+              __51 = b_agg / bw;
+   194 |    } while ((long long) istep < b_agg / bw < n / bw ? &__51 : &__50->(long).rns52.);    /* ~17 */
+          lab_19:
+   274 |    if (!(n > b_agg)) goto lab_61;
+   276 |    trail_lyrcols = (int) ((n - b_agg) / (long long) ((int *)(pv + 4))[184 / 4]);
+   277 |    dA_slice = DMatrix::slice(long, long, long, long)(&dA,0ll,dA.nrow@28,(long long) (((int *)(pv + 8))[184 / 4] * (int) ((n - b_agg) / (long long) ((int *)(pv + 4))[184 / 4])),(long long) ((int) ((n - b_agg) / (long long) ((int *)(pv + 4))[184 / 4])))->(DMatrix).rns53.;
+   278 |    dA_slice = DMatrix::get_contig()(&dA_slice)->(DMatrix).rns54.;
+   279 |    if (!(((int *)(pv + 8))[184 / 4] == 0)) goto lab_63;
+   280 |    DMatrix::print()(&dA_slice)
+   281 |  lab_63:
+   283 |    dU_slice = DMatrix::slice(long, long, long, long)(&dU_lyr,(long long) (((int *)(pv + 8))[184 / 4] * trail_lyrcols),(long long) trail_lyrcols,0ll,dU_lyr.ncol@30)->(DMatrix).rns55.;
+   284 |    dVT_slice = DMatrix::slice(long, long, long, long)(&dVT_lyr,(long long) (((int *)(pv + 8))[184 / 4] * trail_lyrcols),(long long) trail_lyrcols,0ll,dVT_lyr.ncol@30)->(DMatrix).rns56.;
+   289 |    CTF_Timer::CTF_Timer(char const*)(&tmr,"manual A-UV'-VU' update");
+            __es.__c4@3 = 10u;
+   290 |    CTF_Timer::start()(&tmr)
+   291 |    dUT_slice = DMatrix::transpose_data()(&dU_slice)->(DMatrix).rns57.;
+   292 |    dV_slice = DMatrix::transpose_data()(&dVT_slice)->(DMatrix).rns58.;
+   297 |    dUT_slice_rep = DMatrix::replicate_vertical()(&dUT_slice);
+   298 |    dV_slice_rep = DMatrix::replicate_vertical()(&dV_slice);
+   299 |    dU_rep = DMatrix::replicate_horizontal()(&dU_lyr);
+   300 |    dVT_rep = DMatrix::replicate_horizontal()(&dVT_lyr);
+   302 |    $$SFX11 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX12 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$SFX13 = (int) dU_lyr.ncol@30;
+            $$SFX14 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX15 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$RET1A = DMatrix::operator double*() const(&dA_slice);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,$$SFX11,$$SFX12,$$SFX13,-1.0000000000000000E+000,dU_rep,$$SFX14,dV_slice_rep,$$SFX15, 1.0000000000000000E+000,$$RET1A,(int) dA_slice.lda@40)
+   307 |    $$SFX16 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX17 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$SFX18 = (int) dU_lyr.ncol@30;
+            $$SFX19 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX1A = (int) DMatrix::get_myncol()(&dA_slice);
+            $$RET1B = DMatrix::operator double*() const(&dA_slice);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,$$SFX16,$$SFX17,$$SFX18,-1.0000000000000000E+000,dVT_rep,$$SFX19,dUT_slice_rep,$$SFX1A, 1.0000000000000000E+000,$$RET1B,(int) dA_slice.lda@40)
+   311 |    CTF_Timer::stop()(&tmr)
+   313 |    free(dUT_slice_rep)
+   314 |    free(dV_slice_rep)
+   315 |    free(dU_rep)
+   316 |    free(dVT_rep)
+   318 |    DMatrix::destroy()(&dUT_slice)
+   319 |    DMatrix::destroy()(&dV_slice)
+   322 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dA_trail,n - b_agg,n - b_agg,b_sub,(pv + 92),"At_lyr");
+   324 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            $$RET1C = DMatrix::operator double*() const(&dA_slice);
+            $$SFX1B = (int) DMatrix::get_mysize()(&dA_slice);
+            $$RET1D = DMatrix::operator double*() const(&dA_trail);
+            $$RET1E = (int) DMatrix::get_mysize()(&dA_slice);
+            PMPI_Allgather($$RET1C,$$SFX1B,1275070475,$$RET1D,$$RET1E,1275070475,((int *)pv)[184 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 10u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   328 |    DMatrix::print()(&dA_trail)
+   329 |    DMatrix::set_to_zero()(&dA)
+   330 |    DMatrix::daxpy(DMatrix, double)(&dA,dA_trail, 1.0000000000000000E+000)
+   332 |    DMatrix::destroy()(&dA_slice)
+   333 |    DMatrix::destroy()(&dA_trail)
+   334 |    __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&tmr);
+          lab_61:
+   335 |    DMatrix::destroy()(&dU_lyr)
+   336 |    DMatrix::destroy()(&dVT_lyr)
+   339 |    if (!(n > b_agg + bw)) goto lab_68;
+            $$RET1F = DMatrix::operator double*() const(&dA);
+   340 |    sym_full2band_3d(double*, long, long, long, long, long, pview_3d*)($$RET1F,lda_A,n - b_agg,b_agg,bw,b_sub,pv)
+          lab_68:
+   182 |    goto lab_88;
+          lab_45:
+            __assert_fail("dW_fold.get_mysize()%pv->clyr.np == 0","full_to_band_3d.cxx",182u,&__func__)
+            return;
+          lab_88:
+            return;
+    87 |  lab_75:
+            goto lab_19;
+   346 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        68           194             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+        68           194             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+        68           194             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+        68           194             1    Loop cannot be normalized and no loop optimizations 
+                                          applied.
+        68           194             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    30 |  void sym_full2band_3d(double*, long, long, long, long, long, pview_3d*)(char * A, long long lda_A, long long n, long long b_agg, long long bw, long long b_sub, char * pv)
+    36 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__67 = 1;
+    37 |    if (0ll == (b_agg / (long long) ((int *)(pv + 4))[100 / 4]) % b_sub) goto lab_4;
+            __assert_fail("(b_agg/pv->plyr.crow.np)%b_sub == 0","full_to_band_3d.cxx",37u,&__func__)
+            return;
+          lab_4:
+    38 |    if (0ll == (b_agg / (long long) ((int *)(pv + 4))[120 / 4]) % b_sub) goto lab_7;
+            __assert_fail("(b_agg/pv->plyr.ccol.np)%b_sub == 0","full_to_band_3d.cxx",38u,&__func__)
+            return;
+          lab_7:
+    39 |    if (0ll == b_agg % bw) goto lab_10;
+            __assert_fail("b_agg%bw==0","full_to_band_3d.cxx",39u,&__func__)
+            return;
+          lab_10:
+    40 |    if (0ll == bw % b_sub) goto lab_13;
+            __assert_fail("bw%b_sub==0","full_to_band_3d.cxx",40u,&__func__)
+            return;
+          lab_13:
+    42 |    if (0ll == (bw / b_sub) % (long long) ((int *)(pv + 4))[184 / 4]) goto lab_16;
+            __assert_fail("(bw/b_sub)%pv->clyr.np==0","full_to_band_3d.cxx",42u,&__func__)
+            return;
+          lab_16:
+    44 |    lyrcols = (int) (bw / (long long) ((int *)(pv + 4))[184 / 4]);
+    47 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dU_lyr,n,b_agg,b_sub,(pv + 92),"U");
+    48 |    DMatrix::set_to_zero()(&dU_lyr)
+    50 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dVT_lyr,n,b_agg,b_sub,(pv + 92),"V^T");
+    51 |    DMatrix::set_to_zero()(&dVT_lyr)
+    54 |    dU_lyr.ncol@30 = 0ll;
+    55 |    dVT_lyr.ncol@30 = 0ll;
+    57 |    DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dA,n,n,b_sub,(pv + 92),lda_A,NULL,A,0u);
+    58 |    DMatrix::set_name(char const*)(&dA,"A")
+    62 |    istep = 0;
+   191 |    if (!(b_agg / bw < n / bw)) goto lab_20;
+   192 |    __51 = b_agg / bw;
+            __99 = &__51;
+            __50 = n / bw;
+            goto @101;
+          lab_20:
+   193 |    __50 = n / bw;
+            __99 = &__50;
+            __51 = b_agg / bw;
+   187 |  @101:
+   194 |    if (!(0ll < *__99)) goto lab_19;
+            do {   /* id=1 */ /* ~17 */ 
+              /* region = 41 */
+    64 |      dA_slice = DMatrix::slice(long, long, long, long)(&dA,0ll,dA.nrow@28,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols)->(DMatrix).rns5.;
+    66 |      if (!(istep > 0)) goto lab_23;
+    67 |      dU_slice = DMatrix::slice(long, long, long, long)(&dU_lyr,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols,0ll,dU_lyr.ncol@30)->(DMatrix).rns6.;
+    68 |      dVT_slice = DMatrix::slice(long, long, long, long)(&dVT_lyr,(long long) (lyrcols * ((int *)(pv + 8))[184 / 4]),(long long) lyrcols,0ll,dVT_lyr.ncol@30)->(DMatrix).rns7.;
+    70 |      $$SFX0 = dU_lyr;
+              __55 = DMatrix::transp()(&dVT_slice)->(DMatrix).rns8.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)($$SFX0,__55,-1.0000000000000000E+000,dA_slice, 1.0000000000000000E+000)
+    71 |      $$SFX1 = dVT_lyr;
+              __56 = DMatrix::transp()(&dU_slice)->(DMatrix).rns9.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)($$SFX1,__56,-1.0000000000000000E+000,dA_slice, 1.0000000000000000E+000)
+    73 |      __57 = DMatrix::slice(long, long, long, long)(&dA_slice,0ll,bw,0ll,(long long) lyrcols)->(DMatrix).rns10.;
+              dA_cblk = DMatrix::get_contig()(&__57)->(DMatrix).rns12.;
+    74 |      DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dA_allcblk,bw,bw,b_sub,(pv + 92),0ll,NULL,NULL,0u);
+    76 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 1u;
+              CTF_Timer::start()(&__t)
+              $$RET0 = DMatrix::operator double*() const(&dA_cblk);
+              $$SFX2 = (int) DMatrix::get_mysize()(&dA_cblk);
+              $$RET1 = DMatrix::operator double*() const(&dA_allcblk);
+              $$RET2 = (int) DMatrix::get_mysize()(&dA_cblk);
+              PMPI_Allgather($$RET0,$$SFX2,1275070475,$$RET1,$$RET2,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    80 |      dA_ccblk = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,0ll,bw)->(DMatrix).rns15.;
+    81 |      DMatrix::set_to_zero()(&dA_ccblk)
+    82 |      DMatrix::daxpy(DMatrix, double)(&dA_ccblk,dA_allcblk, 1.0000000000000000E+000)
+    84 |      DMatrix::destroy()(&dA_cblk)
+    85 |      DMatrix::destroy()(&dA_allcblk)
+    87 |      if (bw + bw * (long long) istep == n) goto lab_75;
+    88 |    lab_23:
+    90 |      DMatrix::move_ptr(long, long)(&dA_slice,bw,0ll)
+    92 |      dA_fold = DMatrix::foldcols(long)(&dA_slice,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns16.;
+    93 |      DMatrix::set_name(char const*)(&dA_fold,"A_panel")
+    94 |      DMatrix::DMatrix(long, long, long, pview const&, long, double*, double*, bool)(&dY_rect,dA_slice.nrow@28,bw,b_sub,pv,0ll,NULL,NULL,0u);
+    95 |      DMatrix::set_name(char const*)(&dY_rect,"Y_rect")
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              $$SFX3 = dA_fold.data@a8;
+              $$RET3 = DMatrix::get_mysize()(&dA_fold);
+              $$SFX4 = (int) ($$RET3 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$SFX5 = dY_rect.data@a8;
+              $$RET4 = DMatrix::get_mysize()(&dA_fold);
+              PMPI_Alltoall($$SFX3,$$SFX4,1275070475,$$SFX5,(int) ($$RET4 / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    99 |      DMatrix::print()(&dY_rect)
+   100 |      DQRMatrix::DQRMatrix(DMatrix)(&dY_rectQR,dY_rect);
+              __es.__c4@3 = 3u;
+   102 |      $$csx0 = ((int *)(pv + 4))[184 / 4];
+              DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dR_fsq,bw / (long long) $$csx0,bw * (long long) $$csx0,b_sub,(pv + 92),"R");
+   105 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              $$RET5 = DMatrix::operator double*() const(&dY_rectQR.R@0);
+              $$SFX6 = (int) DMatrix::get_mysize()(&dY_rectQR.R@0);
+              $$RET6 = DMatrix::operator double*() const(&dR_fsq);
+              $$RET7 = (int) DMatrix::get_mysize()(&dY_rectQR.R@0);
+              PMPI_Allgather($$RET5,$$SFX6,1275070475,$$RET6,$$RET7,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   109 |      dR_sq = DMatrix::foldrows(long)(&dR_fsq,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns23.;
+   110 |      DMatrix::destroy()(&dR_fsq)
+   111 |      DMatrix::print()(&dR_sq)
+   113 |      dB = DMatrix::slice(long, long, long, long)(&dA,bw,bw,0ll,bw)->(DMatrix).rns24.;
+   114 |      DMatrix::set_to_zero()(&dB)
+   115 |      DMatrix::daxpy(DMatrix, double)(&dB,dR_sq, 1.0000000000000000E+000)
+   116 |      dB = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,bw,bw)->(DMatrix).rns25.;
+   117 |      DMatrix::set_to_zero()(&dB)
+   118 |      __69 = DMatrix::transp()(&dR_sq)->(DMatrix).rns26.;
+              DMatrix::daxpy(DMatrix, double)(&dB,__69, 1.0000000000000000E+000)
+   119 |      DMatrix::destroy()(&dR_sq)
+   120 |      if (!(dA.nrow@28 > bw * 2ll)) goto lab_36;
+   121 |      dB = DMatrix::slice(long, long, long, long)(&dA,bw * 2ll,dA.nrow@28 - bw * 2ll,0ll,bw)->(DMatrix).rns27.;
+   122 |      DMatrix::set_to_zero()(&dB)
+   123 |      dB = DMatrix::slice(long, long, long, long)(&dA,0ll,bw,bw * 2ll,dA.nrow@28 - bw * 2ll)->(DMatrix).rns28.;
+   124 |      DMatrix::set_to_zero()(&dB)
+   125 |    lab_36:
+   127 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,bw,dVT_lyr.nrow@28 - bw,0ll,dVT_lyr.ncol@30)
+   128 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,bw,dU_lyr.nrow@28 - bw,0ll,dU_lyr.ncol@30)
+   129 |      DMatrix::move_ptr(long, long, long, long)(&dA,bw,dA.nrow@28 - bw,bw,dA.ncol@30 - bw)
+   131 |      DMatrix::destroy()(&dY_rect)
+   132 |      dY_rect = dY_rectQR.Y@c8;
+   133 |      DMatrix::set_name(char const*)(&dY_rect,"Y_rect")
+   135 |      dfY_lyr = DMatrix::clone()(&dA_fold)->(DMatrix).rns29.;
+   136 |      DMatrix::destroy()(&dA_fold)
+   138 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              $$RET8 = DMatrix::operator double*() const(&dY_rect);
+              $$RET9 = DMatrix::get_mysize()(&dY_rect);
+              $$SFX7 = (int) ($$RET9 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$RETA = DMatrix::operator double*() const(&dfY_lyr);
+              $$RETB = DMatrix::get_mysize()(&dY_rect);
+              PMPI_Alltoall($$RET8,$$SFX7,1275070475,$$RETA,(int) ($$RETB / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   142 |      dY_lyr = DMatrix::foldrows(long)(&dfY_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns32.;
+   143 |      DMatrix::destroy()(&dfY_lyr)
+   144 |      DMatrix::set_name(char const*)(&dY_lyr,"Y_lyr")
+   146 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dW_lyr,dY_lyr.nrow@28,dY_lyr.ncol@30,b_sub,(pv + 92),"W_lyr");
+   147 |      if (!(istep > 0)) goto lab_41;
+   149 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dZ_lyr,dVT_lyr.ncol@30,dY_lyr.ncol@30,b_sub,(pv + 92),"Z_lyr");
+   150 |      __78 = DMatrix::transp()(&dVT_lyr)->(DMatrix).rns33.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__78,dY_lyr, 1.0000000000000000E+000,dZ_lyr, 0.0000000000000000E+000)
+   151 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dU_lyr,dZ_lyr,-1.0000000000000000E+000,dW_lyr, 0.0000000000000000E+000)
+   152 |      __79 = DMatrix::transp()(&dU_lyr)->(DMatrix).rns34.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__79,dY_lyr, 1.0000000000000000E+000,dZ_lyr, 0.0000000000000000E+000)
+   153 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dVT_lyr,dZ_lyr,-1.0000000000000000E+000,dW_lyr, 1.0000000000000000E+000)
+   154 |      DMatrix::destroy()(&dZ_lyr)
+   155 |      goto lab_43;
+            lab_41:
+   157 |      DMatrix::set_to_zero()(&dW_lyr)
+   158 |    lab_43:
+   161 |      CTF_Timer::CTF_Timer(char const*)(&tmr1,"manual W=A*Y");
+              __es.__c4@3 = 6u;
+   162 |      CTF_Timer::start()(&tmr1)
+   163 |      dY_lyr_trsp = DMatrix::transpose_data()(&dY_lyr)->(DMatrix).rns35.;
+   164 |      dY_lyr_rep = DMatrix::replicate_vertical()(&dY_lyr_trsp);
+   165 |      $$SFX8 = (unsigned long long) (dY_lyr.ncol@30 * 8ll);
+              $$RETC = (unsigned long long) DMatrix::get_mynrow()(&dY_lyr);
+              dW_lyr_cntrb = malloc($$RETC * $$SFX8);
+   166 |      $$SFX9 = (int) DMatrix::get_mynrow()(&dA);
+              $$SFXA = (int) dY_lyr.ncol@30;
+              $$SFXB = (int) DMatrix::get_myncol()(&dA);
+              $$RETD = DMatrix::operator double*() const(&dA);
+              $$SFXC = (int) dA.lda@40;
+              $$SFXD = (int) DMatrix::get_mynrow()(&dY_lyr);
+              $$RETE = (int) DMatrix::get_mynrow()(&dA);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,78u,$$SFX9,$$SFXA,$$SFXB, 1.0000000000000000E+000,$$RETD,$$SFXC,dY_lyr_rep,$$SFXD, 0.0000000000000000E+000,dW_lyr_cntrb,$$RETE)
+   170 |      DMatrix::reduce_scatter_horizontal(double*)(&dW_lyr,dW_lyr_cntrb)
+   171 |      free(dY_lyr_rep)
+   172 |      free(dW_lyr_cntrb)
+   173 |      DMatrix::destroy()(&dY_lyr_trsp)
+   175 |      CTF_Timer::stop()(&tmr1)
+   177 |      DMatrix::destroy()(&dY_lyr)
+   179 |      dW_fold = DMatrix::foldcols(long)(&dW_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns41.;
+   180 |      DMatrix::destroy()(&dW_lyr)
+              $$RETF = DMatrix::get_mysize()(&dW_fold);
+   182 |      if (!(0ll == $$RETF % (long long) ((int *)(pv + 4))[184 / 4])) goto lab_45;
+   184 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dW_rect,dY_rect.nrow@28,dY_rect.ncol@30,b_sub,pv,"W_rect");
+   185 |      DMatrix::set_to_zero()(&dW_rect)
+   187 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Alltoall");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              $$RET10 = DMatrix::operator double*() const(&dW_fold);
+              $$RET11 = DMatrix::get_mysize()(&dW_fold);
+              $$SFXE = (int) ($$RET11 / (long long) ((int *)(pv + 4))[184 / 4]);
+              $$RET12 = DMatrix::operator double*() const(&dW_rect);
+              $$RET13 = DMatrix::get_mysize()(&dW_fold);
+              PMPI_Alltoall($$RET10,$$SFXE,1275070475,$$RET12,(int) ($$RET13 / (long long) ((int *)(pv + 4))[184 / 4]),1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   190 |      DMatrix::destroy()(&dW_fold)
+   191 |      DMatrix::print()(&dW_rect)
+   193 |      DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dZ_rect,dY_rect.ncol@30,dW_rect.ncol@30,b_sub,pv,"Z_rect");
+   196 |      __84 = DMatrix::transp()(&dY_rect)->(DMatrix).rns44.;
+              cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(__84,dW_rect, 1.0000000000000000E+000,dZ_rect, 0.0000000000000000E+000)
+   198 |      DMatrix::print()(&dZ_rect)
+   201 |      invT = DQRMatrix::compute_invT()(&dY_rectQR)->(DMatrix).rns45.;
+   202 |      DMatrix::set_name(char const*)(&invT,"invT")
+   204 |      DMatrix::print()(&invT)
+   206 |      DMatrix::print()(&dY_rect)
+   208 |      cpdtrsm(DMatrix, double, DMatrix)(invT, 1.0000000000000000E+000,dY_rect)
+   209 |      DMatrix::destroy()(&invT)
+   212 |      dU_rect = dY_rect;
+   213 |      DMatrix::set_name(char const*)(&dU_rect,"U_rect")
+   215 |      DMatrix::print()(&dU_rect)
+   217 |      $$csx1 = ((int *)(pv + 4))[184 / 4];
+              DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dfnU_lyr,dA_slice.nrow@28 / (long long) $$csx1,bw * (long long) $$csx1,b_sub,(pv + 92),"U_lyr");
+   219 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 8u;
+              CTF_Timer::start()(&__t)
+              $$RET14 = DMatrix::operator double*() const(&dU_rect);
+              $$SFXF = (int) DMatrix::get_mysize()(&dU_rect);
+              $$RET15 = DMatrix::operator double*() const(&dfnU_lyr);
+              $$RET16 = (int) DMatrix::get_mysize()(&dU_rect);
+              PMPI_Allgather($$RET14,$$SFXF,1275070475,$$RET15,$$RET16,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   223 |      dnU_lyr = DMatrix::foldrows(long)(&dfnU_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns48.;
+   224 |      DMatrix::destroy()(&dfnU_lyr)
+   225 |      if (!(((int *)(pv + 8))[184 / 4] == 0)) goto lab_53;
+   226 |      DMatrix::print()(&dnU_lyr)
+            lab_53:
+   228 |      cur_dU_ncol = dU_lyr.ncol@30;
+   229 |      cur_dU_nrow = dU_lyr.nrow@28;
+   231 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,0ll,dU_lyr.nrow@28,dU_lyr.ncol@30,bw)
+   233 |      DMatrix::daxpy(DMatrix, double)(&dU_lyr,dnU_lyr, 1.0000000000000000E+000)
+   234 |      DMatrix::destroy()(&dnU_lyr)
+   236 |      DMatrix::move_ptr(long, long, long, long)(&dU_lyr,0ll,cur_dU_nrow,- cur_dU_ncol,bw + cur_dU_ncol)
+   239 |      dVT_rect = dW_rect;
+   240 |      DMatrix::set_name(char const*)(&dVT_rect,"V_rect")
+   243 |      cpdgemm(DMatrix, DMatrix, double, DMatrix, double)(dU_rect,dZ_rect,-5.0000000000000000E-001,dVT_rect, 1.0000000000000000E+000)
+   244 |      DMatrix::destroy()(&dZ_rect)
+   246 |      DMatrix::print()(&dVT_rect)
+   248 |      $$csx2 = ((int *)(pv + 4))[184 / 4];
+              DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dfnVT_lyr,dA_slice.nrow@28 / (long long) $$csx2,bw * (long long) $$csx2,b_sub,(pv + 92),"V^T_lyr");
+   250 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+              __es.__c4@3 = 9u;
+              CTF_Timer::start()(&__t)
+              $$RET17 = DMatrix::operator double*() const(&dVT_rect);
+              $$SFX10 = (int) DMatrix::get_mysize()(&dVT_rect);
+              $$RET18 = DMatrix::operator double*() const(&dfnVT_lyr);
+              $$RET19 = (int) DMatrix::get_mysize()(&dVT_rect);
+              PMPI_Allgather($$RET17,$$SFX10,1275070475,$$RET18,$$RET19,1275070475,((int *)pv)[184 / 4]);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 6u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   254 |      DMatrix::destroy()(&dVT_rect)
+   256 |      dnVT_lyr = DMatrix::foldrows(long)(&dfnVT_lyr,(long long) ((int *)(pv + 4))[184 / 4])->(DMatrix).rns51.;
+   257 |      DMatrix::destroy()(&dfnVT_lyr)
+   259 |      cur_dV_ncol = dVT_lyr.ncol@30;
+   260 |      cur_dV_nrow = dVT_lyr.nrow@28;
+   262 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,0ll,dVT_lyr.nrow@28,dVT_lyr.ncol@30,bw)
+   264 |      DMatrix::daxpy(DMatrix, double)(&dVT_lyr,dnVT_lyr, 1.0000000000000000E+000)
+   265 |      DMatrix::destroy()(&dnVT_lyr)
+   267 |      DMatrix::move_ptr(long, long, long, long)(&dVT_lyr,0ll,cur_dV_nrow,- cur_dV_ncol,bw + cur_dV_ncol)
+   269 |      ((int *)pv)[92 / 4] = (int) ((bw / b_sub + (long long) ((int *)pv)[92 / 4]) % (long long) ((int *)(pv + 4))[120 / 4]);
+   270 |      ((int *)(pv + 4))[92 / 4] = (int) ((bw / b_sub + (long long) ((int *)(pv + 4))[92 / 4]) % (long long) ((int *)(pv + 4))[100 / 4]);
+   271 |      *((int *)pv) = ((int *)pv)[92 / 4];
+   272 |      *((int *)(pv + 4)) = ((int *)(pv + 4))[92 / 4];
+   273 |      __es.__c4@3 = 3u;
+              CTF_Timer::~CTF_Timer()(&tmr1);
+              __es.__c4@3 = 0u;
+              DQRMatrix::~DQRMatrix()(&dY_rectQR);
+    62 |      istep = istep + 1;
+              __50 = n / bw;
+              __51 = b_agg / bw;
+   194 |    } while ((long long) istep < b_agg / bw < n / bw ? &__51 : &__50->(long).rns52.);    /* ~17 */
+          lab_19:
+   274 |    if (!(n > b_agg)) goto lab_61;
+   276 |    $$csx3 = ((int *)(pv + 4))[184 / 4];
+            trail_lyrcols = (int) ((n - b_agg) / (long long) $$csx3);
+   277 |    $$csx4 = (long long) ((int) ((n - b_agg) / (long long) $$csx3));
+            dA_slice = DMatrix::slice(long, long, long, long)(&dA,0ll,dA.nrow@28,(long long) (((int *)(pv + 8))[184 / 4] * (int) ((n - b_agg) / (long long) $$csx3)),$$csx4)->(DMatrix).rns53.;
+   278 |    dA_slice = DMatrix::get_contig()(&dA_slice)->(DMatrix).rns54.;
+   279 |    if (!(((int *)(pv + 8))[184 / 4] == 0)) goto lab_63;
+   280 |    DMatrix::print()(&dA_slice)
+   281 |  lab_63:
+   283 |    dU_slice = DMatrix::slice(long, long, long, long)(&dU_lyr,(long long) (((int *)(pv + 8))[184 / 4] * trail_lyrcols),$$csx4,0ll,dU_lyr.ncol@30)->(DMatrix).rns55.;
+   284 |    dVT_slice = DMatrix::slice(long, long, long, long)(&dVT_lyr,(long long) (((int *)(pv + 8))[184 / 4] * trail_lyrcols),$$csx4,0ll,dVT_lyr.ncol@30)->(DMatrix).rns56.;
+   289 |    CTF_Timer::CTF_Timer(char const*)(&tmr,"manual A-UV'-VU' update");
+            __es.__c4@3 = 10u;
+   290 |    CTF_Timer::start()(&tmr)
+   291 |    dUT_slice = DMatrix::transpose_data()(&dU_slice)->(DMatrix).rns57.;
+   292 |    dV_slice = DMatrix::transpose_data()(&dVT_slice)->(DMatrix).rns58.;
+   297 |    dUT_slice_rep = DMatrix::replicate_vertical()(&dUT_slice);
+   298 |    dV_slice_rep = DMatrix::replicate_vertical()(&dV_slice);
+   299 |    dU_rep = DMatrix::replicate_horizontal()(&dU_lyr);
+   300 |    dVT_rep = DMatrix::replicate_horizontal()(&dVT_lyr);
+   302 |    $$SFX11 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX12 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$SFX13 = (int) dU_lyr.ncol@30;
+            $$SFX14 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX15 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$RET1A = DMatrix::operator double*() const(&dA_slice);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,$$SFX11,$$SFX12,$$SFX13,-1.0000000000000000E+000,dU_rep,$$SFX14,dV_slice_rep,$$SFX15, 1.0000000000000000E+000,$$RET1A,(int) dA_slice.lda@40)
+   307 |    $$SFX16 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX17 = (int) DMatrix::get_myncol()(&dA_slice);
+            $$SFX18 = (int) dU_lyr.ncol@30;
+            $$SFX19 = (int) DMatrix::get_mynrow()(&dA_slice);
+            $$SFX1A = (int) DMatrix::get_myncol()(&dA_slice);
+            $$RET1B = DMatrix::operator double*() const(&dA_slice);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(78u,84u,$$SFX16,$$SFX17,$$SFX18,-1.0000000000000000E+000,dVT_rep,$$SFX19,dUT_slice_rep,$$SFX1A, 1.0000000000000000E+000,$$RET1B,(int) dA_slice.lda@40)
+   311 |    CTF_Timer::stop()(&tmr)
+   313 |    free(dUT_slice_rep)
+   314 |    free(dV_slice_rep)
+   315 |    free(dU_rep)
+   316 |    free(dVT_rep)
+   318 |    DMatrix::destroy()(&dUT_slice)
+   319 |    DMatrix::destroy()(&dV_slice)
+   322 |    DMatrix::DMatrix(long, long, long, pview const&, char const*)(&dA_trail,n - b_agg,n - b_agg,b_sub,(pv + 92),"At_lyr");
+   324 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allgather");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            $$RET1C = DMatrix::operator double*() const(&dA_slice);
+            $$SFX1B = (int) DMatrix::get_mysize()(&dA_slice);
+            $$RET1D = DMatrix::operator double*() const(&dA_trail);
+            $$RET1E = (int) DMatrix::get_mysize()(&dA_slice);
+            PMPI_Allgather($$RET1C,$$SFX1B,1275070475,$$RET1D,$$RET1E,1275070475,((int *)pv)[184 / 4]);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 10u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   328 |    DMatrix::print()(&dA_trail)
+   329 |    DMatrix::set_to_zero()(&dA)
+   330 |    DMatrix::daxpy(DMatrix, double)(&dA,dA_trail, 1.0000000000000000E+000)
+   332 |    DMatrix::destroy()(&dA_slice)
+   333 |    DMatrix::destroy()(&dA_trail)
+   334 |    __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&tmr);
+          lab_61:
+   335 |    DMatrix::destroy()(&dU_lyr)
+   336 |    DMatrix::destroy()(&dVT_lyr)
+   339 |    if (!(n > b_agg + bw)) goto lab_68;
+            $$RET1F = DMatrix::operator double*() const(&dA);
+   340 |    sym_full2band_3d(double*, long, long, long, long, long, pview_3d*)($$RET1F,lda_A,n - b_agg,b_agg,bw,b_sub,pv)
+          lab_68:
+   182 |    goto lab_88;
+          lab_45:
+            __assert_fail("dW_fold.get_mysize()%pv->clyr.np == 0","full_to_band_3d.cxx",182u,&__func__)
+            return;
+          lab_88:
+            return;
+    87 |  lab_75:
+            goto lab_19;
+   346 |  } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

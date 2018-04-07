@@ -1,0 +1,1181 @@
+1586-539 (I) Loop (loop index 1) at partial_pvt.cxx <line 84> was not SIMD vectorized because it contains function calls.
+1586-535 (I) Loop (loop index 2) at partial_pvt.cxx <line 132> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 2) at partial_pvt.cxx <line 132> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV1]] = A->(double).rns10.[(long long) (lda * (int) $$CIV2 + pivoted_rows->(int).rns6.[$$CIV1])]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 2) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 2) at partial_pvt.cxx <line 133> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 2) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])).
+1586-540 (I) Loop (loop index 3) at partial_pvt.cxx <line 87> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV0]] =  0.0000000000000000E+000; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 3) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 3) at partial_pvt.cxx <line 88> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 3) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])).
+1586-539 (I) Loop (loop index 5) at partial_pvt.cxx <line 84> was not SIMD vectorized because it contains function calls.
+1586-540 (I) Loop (loop index 6) at partial_pvt.cxx <line 87> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV0]] =  0.0000000000000000E+000; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 6) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 6) at partial_pvt.cxx <line 88> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 6) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])).
+1586-539 (I) Loop (loop index 7) at ../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-535 (I) Loop (loop index 8) at partial_pvt.cxx <line 132> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 8) at partial_pvt.cxx <line 132> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV1]] = A->(double).rns10.[(long long) (lda * (int) $$CIV2 + pivoted_rows->(int).rns6.[$$CIV1])]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 8) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 8) at partial_pvt.cxx <line 133> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 8) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])).
+1586-539 (I) Loop (loop index 9) at partial_pvt.cxx <line 84> was not SIMD vectorized because it contains function calls.
+1586-540 (I) Loop (loop index 10) at partial_pvt.cxx <line 87> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV0]] =  0.0000000000000000E+000; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 10) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 10) at partial_pvt.cxx <line 88> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 10) at partial_pvt.cxx <line 88> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV0])).
+1586-539 (I) Loop (loop index 11) at ../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-535 (I) Loop (loop index 12) at partial_pvt.cxx <line 132> was not SIMD vectorized because the aliasing-induced dependence prevents SIMD vectorization.
+1586-540 (I) Loop (loop index 12) at partial_pvt.cxx <line 132> was not SIMD vectorized because it contains memory references col->(double).rns7.[(long long) pivoted_rows->(int).rns6.[$$CIV1]] = A->(double).rns10.[(long long) (lda * (int) $$CIV2 + pivoted_rows->(int).rns6.[$$CIV1])]; with non-vectorizable strides.
+1586-540 (I) Loop (loop index 12) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains memory references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])) with non-vectorizable strides.
+1586-554 (I) Loop (loop index 12) at partial_pvt.cxx <line 133> was not SIMD vectorized because the floating point operation is not vectorizable under -qstrict.
+1586-556 (I) Loop (loop index 12) at partial_pvt.cxx <line 133> was not SIMD vectorized because it contains non-stride-one store references ((char *)col + (8ll)*((long long) pivoted_rows->(int).rns6.[$$CIV1])).
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"8">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    27 |  int cidamax(int, double const*, int)(int N, char * A, int inc_A)
+          {
+            $$inc_A.nat.9 = inc_A;
+            $$N.nat.9 = N;
+            N = $$N.nat.9;
+            inc_A = $$inc_A.nat.9;
+            $$RET0 = idamax_(&N,A,&inc_A);
+    28 |    rstr = $$RET0;
+            return rstr;
+    29 |  } /* function */ 
+
+
+    62 |  void partial_pvt(double*, int, int*, long, long, int, int, int, CommData)(long long *A, int lda, int *P, long long nb, long long b, int myRank, int numPes, int root, aggr20 cdt)
+    70 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__31 = 1;
+    73 |    buffer = malloc((unsigned long long) (b * 8ll));
+    74 |    col = malloc((unsigned long long) (nb * 8ll));
+    75 |    pivoted_rows = malloc((unsigned long long) (b * 4ll));
+    76 |    P_start = malloc((unsigned long long) (nb * 4ll));
+    79 |    CTF_Timer::CTF_Timer(char const*)(&t,"partial_pvt_inner");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    81 |    __builtin_memcpy(P_start,P,(unsigned long long) (nb * 4ll));
+    84 |    if (!(0ll < b)) goto lab_7;
+    83 |    npiv = 0;
+    84 |    if (myRank != root) goto lab_66;
+            if (!1) goto lab_67;
+            if (!(lda == 1)) goto lab_87;
+            if (!1) goto lab_86;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 93 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_13;
+              $$CIV0 = 0ll;
+              do {   /* id=3 guarded */ /* ~11 */ 
+                /* region = 91 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~11 */
+            lab_13:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_14;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_16;
+            lab_14:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_16:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_29;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   464 |      __builtin_memcpy(buffer,((char *)A  + (long long) ($$RET0 - 1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   109 |      if (!(myRank != root)) goto lab_31;
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+              goto lab_33;
+            lab_31:
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   114 |    lab_33:
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   117 |    lab_29:
+   118 |      if (!(all_imax != root)) goto lab_34;
+   119 |      MPI_Sendrecv_replace(((char *)P  + $$CIV2 * 4ll),1,1275069445,all_imax,(int) $$CIV2 * 2 + 1,all_imax,(int) $$CIV2 * 2,cdt.cm@0,&stat);
+   121 |    lab_34:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_48;
+              $$CIV1 = 0ll;
+              do {   /* id=2 guarded */ /* ~46 */ 
+                /* region = 92 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~46 */
+            lab_48:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~5 */
+          lab_86:
+            goto lab_67;
+          lab_87:
+            if (!1) goto lab_104;
+            $$CIV2 = 0ll;
+            do {   /* id=9 guarded */ /* ~89 */ 
+              /* region = 97 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_91;
+              $$CIV0 = 0ll;
+              do {   /* id=10 guarded */ /* ~90 */ 
+                /* region = 94 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~90 */
+            lab_91:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_92;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_93;
+            lab_92:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_93:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_100;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   467 |      if (!(0 < (int) b)) goto lab_96;
+              $$CIV3 = 0ll;
+              do {   /* id=11 guarded */ /* ~95 */ 
+                /* region = 95 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + $$CIV3 * 8ll),((char *)A  + ((long long) ($$RET0 - 1) + (long long) lda * $$CIV3) * 8ll),8ull);
+   467 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) b)));    /* ~95 */
+            lab_96:
+   109 |      if (!(myRank != root)) goto lab_98;
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+              goto lab_99;
+            lab_98:
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   114 |    lab_99:
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   117 |    lab_100:
+   118 |      if (!(all_imax != root)) goto lab_101;
+   119 |      MPI_Sendrecv_replace(((char *)P  + $$CIV2 * 4ll),1,1275069445,all_imax,(int) $$CIV2 * 2 + 1,all_imax,(int) $$CIV2 * 2,cdt.cm@0,&stat);
+   121 |    lab_101:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_103;
+              $$CIV1 = 0ll;
+              do {   /* id=12 guarded */ /* ~102 */ 
+                /* region = 96 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~102 */
+            lab_103:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~89 */
+          lab_104:
+            goto lab_67;
+          lab_66:
+            if (!1) goto lab_83;
+            $$CIV2 = 0ll;
+            do {   /* id=5 guarded */ /* ~68 */ 
+              /* region = 101 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_70;
+              $$CIV0 = 0ll;
+              do {   /* id=6 guarded */ /* ~69 */ 
+                /* region = 98 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~69 */
+            lab_70:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_71;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_72;
+            lab_71:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_72:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_80;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   463 |      if (!(lda == 1)) goto lab_73;
+   464 |      __builtin_memcpy(buffer,((char *)A  + (long long) ($$RET0 - 1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   465 |      goto lab_76;
+            lab_73:
+   467 |      if (!(0 < (int) b)) goto lab_75;
+              $$CIV3 = 0ll;
+              do {   /* id=7 guarded */ /* ~74 */ 
+                /* region = 99 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + $$CIV3 * 8ll),((char *)A  + ((long long) ($$RET0 - 1) + (long long) lda * $$CIV3) * 8ll),8ull);
+   467 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) b)));    /* ~74 */
+            lab_75:
+   470 |    lab_76:
+   109 |      if (!(myRank != root)) goto lab_77;
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+              goto lab_78;
+            lab_77:
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   114 |    lab_78:
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   121 |    lab_80:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_82;
+              $$CIV1 = 0ll;
+              do {   /* id=8 guarded */ /* ~81 */ 
+                /* region = 100 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~81 */
+            lab_82:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~68 */
+          lab_83:
+          lab_67:
+          lab_7:
+   138 |    CTF_Timer::CTF_Timer(char const*)(&t,"partial_pvt_inner");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   140 |    free(buffer)
+   141 |    free(col)
+   142 |    free(pivoted_rows)
+   143 |    free(P_start)
+   145 |    goto lab_58;
+    97 |  lab_21:
+            __assert_fail("all_dmax!=0.0","partial_pvt.cxx",97u,&__func__)
+            return;
+          lab_58:
+            return;
+   145 |  } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            84             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])) with  
+                                          non-vectorizable strides.
+         0            88                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])).
+         0           132             2    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])) with  
+                                          non-vectorizable strides.
+         0           133                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])).
+         0            84             9    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])) with  
+                                          non-vectorizable strides.
+         0            88                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])).
+        71           467            11    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           132            12    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])) with  
+                                          non-vectorizable strides.
+         0           133                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])).
+         0            84             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])) with  
+                                          non-vectorizable strides.
+         0            88                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0            88                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV0])).
+        71           467             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           132             8    Loop was not SIMD vectorized because the 
+                                          aliasing-induced dependence  prevents SIMD 
+                                          vectorization.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          memory references ((char *)col + (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])) with  
+                                          non-vectorizable strides.
+         0           133                  Loop was not SIMD vectorized because the floating 
+                                          point operation is not  vectorizable under -qstrict.
+         0           133                  Loop was not SIMD vectorized because it contains 
+                                          non-stride-one store  references ((char *)col + 
+                                          (8ll)*((long long) 
+                                          pivoted_rows->(int).rns6.[$$CIV1])).
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV3) * 8ll),((char *)A  + ((long long) lda_A * $$CIV3) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+        71           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    27 |  int cidamax(int, double const*, int)(int N, char * A, int inc_A)
+          {
+            $$inc_A.nat.9 = inc_A;
+            $$N.nat.9 = N;
+            N = $$N.nat.9;
+            inc_A = $$inc_A.nat.9;
+            $$RET0 = idamax_(&N,A,&inc_A);
+    28 |    rstr = $$RET0;
+            return rstr;
+    29 |  } /* function */ 
+
+
+    62 |  void partial_pvt(double*, int, int*, long, long, int, int, int, CommData)(long long *A, int lda, int *P, long long nb, long long b, int myRank, int numPes, int root, aggr20 cdt)
+    70 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__31 = 1;
+    73 |    buffer = malloc((unsigned long long) (b * 8ll));
+    74 |    col = malloc((unsigned long long) (nb * 8ll));
+    75 |    pivoted_rows = malloc((unsigned long long) (b * 4ll));
+    76 |    P_start = malloc((unsigned long long) (nb * 4ll));
+    79 |    CTF_Timer::CTF_Timer(char const*)(&t,"partial_pvt_inner");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    81 |    __builtin_memcpy(P_start,P,(unsigned long long) (nb * 4ll));
+    84 |    if (!(0ll < b)) goto lab_7;
+    83 |    npiv = 0;
+    84 |    if (myRank != root) goto lab_66;
+            if (!1) goto lab_67;
+            if (!(lda == 1)) goto lab_87;
+            if (!1) goto lab_86;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 137 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + $$CIV2 * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_13;
+              $$CIV0 = 0ll;
+              do {   /* id=3 guarded */ /* ~11 */ 
+                /* region = 135 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~11 */
+            lab_13:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_14;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_16;
+            lab_14:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_16:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_29;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   464 |      __builtin_memcpy(buffer,((char *)A  + (long long) ($$RET0 - 1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   117 |    lab_29:
+   118 |      if (!(all_imax != root)) goto lab_34;
+   119 |      MPI_Sendrecv_replace(((char *)P  + $$CIV2 * 4ll),1,1275069445,all_imax,(int) $$CIV2 * 2 + 1,all_imax,(int) $$CIV2 * 2,cdt.cm@0,&stat);
+   121 |    lab_34:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ($$CIV2 * 8ll + 8ll)),1)
+   132 |      if (!(0 < npiv)) goto lab_48;
+              $$CIV1 = 0ll;
+              do {   /* id=2 guarded */ /* ~46 */ 
+                /* region = 136 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) ((int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~46 */
+            lab_48:
+   135 |      __builtin_memcpy(((char *)A  + $$CIV2 * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~5 */
+          lab_86:
+            goto lab_67;
+          lab_87:
+            if (!1) goto lab_67;
+            $$CIV2 = 0ll;
+            if (!(0 < (int) b)) goto lab_139;
+            do {   /* id=9 guarded */ /* ~89 */ 
+              /* region = 141 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_91;
+              $$CIV0 = 0ll;
+              do {   /* id=10 guarded */ /* ~90 */ 
+                /* region = 138 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~90 */
+            lab_91:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_92;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_93;
+            lab_92:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_93:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_100;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   467 |      if (!1) goto lab_96;
+              $$CIV3 = 0ll;
+              do {   /* id=11 guarded */ /* ~95 */ 
+                /* region = 139 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + $$CIV3 * 8ll),((char *)A  + ((long long) ($$RET0 - 1) + (long long) lda * $$CIV3) * 8ll),8ull);
+   467 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) b)));    /* ~95 */
+            lab_96:
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   117 |    lab_100:
+   118 |      if (!(all_imax != root)) goto lab_101;
+   119 |      MPI_Sendrecv_replace(((char *)P  + $$CIV2 * 4ll),1,1275069445,all_imax,(int) $$CIV2 * 2 + 1,all_imax,(int) $$CIV2 * 2,cdt.cm@0,&stat);
+   121 |    lab_101:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_103;
+              $$CIV1 = 0ll;
+              do {   /* id=12 guarded */ /* ~102 */ 
+                /* region = 140 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~102 */
+            lab_103:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~89 */
+            goto lab_67;
+          lab_139:
+            do {   /* id=20 guarded */ /* ~141 */ 
+              /* region = 144 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_143;
+              $$CIV0 = 0ll;
+              do {   /* id=21 guarded */ /* ~142 */ 
+                /* region = 142 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~142 */
+            lab_143:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_144;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_145;
+            lab_144:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_145:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_148;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   113 |      P[$$CIV2] = P_start[(long long) ($$RET0 - 1)];
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   117 |    lab_148:
+   118 |      if (!(all_imax != root)) goto lab_149;
+   119 |      MPI_Sendrecv_replace(((char *)P  + $$CIV2 * 4ll),1,1275069445,all_imax,(int) $$CIV2 * 2 + 1,all_imax,(int) $$CIV2 * 2,cdt.cm@0,&stat);
+   121 |    lab_149:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_151;
+              $$CIV1 = 0ll;
+              do {   /* id=23 guarded */ /* ~150 */ 
+                /* region = 143 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~150 */
+            lab_151:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~141 */
+            goto lab_67;
+          lab_66:
+            if (!1) goto lab_83;
+            $$CIV2 = 0ll;
+            if (!(lda == 1)) goto lab_111;
+            do {   /* id=5 guarded */ /* ~68 */ 
+              /* region = 147 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + $$CIV2 * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_70;
+              $$CIV0 = 0ll;
+              do {   /* id=6 guarded */ /* ~69 */ 
+                /* region = 145 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~69 */
+            lab_70:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_71;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_72;
+            lab_71:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_72:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_80;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   464 |      __builtin_memcpy(buffer,((char *)A  + (long long) ($$RET0 - 1) * 8ll),(unsigned long long) ((int) b) * 8ull);
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   121 |    lab_80:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) 1 * ($$CIV2 + 1ll)) * 8ll),1)
+   132 |      if (!(0 < npiv)) goto lab_82;
+              $$CIV1 = 0ll;
+              do {   /* id=8 guarded */ /* ~81 */ 
+                /* region = 146 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) ((int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~81 */
+            lab_82:
+   135 |      __builtin_memcpy(((char *)A  + $$CIV2 * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~68 */
+            goto lab_112;
+          lab_111:
+            if (!(0 < (int) b)) goto lab_125;
+            do {   /* id=4 guarded */ /* ~113 */ 
+              /* region = 151 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_115;
+              $$CIV0 = 0ll;
+              do {   /* id=13 guarded */ /* ~114 */ 
+                /* region = 148 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~114 */
+            lab_115:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_116;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_117;
+            lab_116:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_117:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_122;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   467 |      if (!1) goto lab_120;
+              $$CIV3 = 0ll;
+              do {   /* id=14 guarded */ /* ~119 */ 
+                /* region = 149 */
+                /* bump-normalized */
+   468 |        __builtin_memcpy(((char *)buffer  + $$CIV3 * 8ll),((char *)A  + ((long long) ($$RET0 - 1) + (long long) lda * $$CIV3) * 8ll),8ull);
+   467 |        $$CIV3 = $$CIV3 + 1ll;
+              } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ((int) b)));    /* ~119 */
+            lab_120:
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   121 |    lab_122:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_124;
+              $$CIV1 = 0ll;
+              do {   /* id=15 guarded */ /* ~123 */ 
+                /* region = 150 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~123 */
+            lab_124:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~113 */
+            goto lab_126;
+          lab_125:
+            do {   /* id=16 guarded */ /* ~127 */ 
+              /* region = 154 */
+              /* bump-normalized */
+    85 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    86 |      __builtin_memcpy(col,((char *)A  + ((long long) lda * $$CIV2) * 8ll),(unsigned long long) (nb * 8ll));
+    87 |      if (!(0 < npiv)) goto lab_129;
+              $$CIV0 = 0ll;
+              do {   /* id=17 guarded */ /* ~128 */ 
+                /* region = 152 */
+                /* bump-normalized */
+    88 |        col[(long long) pivoted_rows[$$CIV0]] =  0.0000000000000000E+000;
+    87 |        $$CIV0 = $$CIV0 + 1ll;
+              } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) npiv));    /* ~128 */
+            lab_129:
+    27 |      $$PARM.N6 = (int) nb;
+              $$PARM.inc_A8 = 1;
+              $$RET0 = idamax_(&$$PARM.N6,col,&$$PARM.inc_A8);
+    91 |      if (!($$RET0 - 1 >= 0)) goto lab_130;
+    92 |      dmax = __builtin_fabs(col[(long long) ($$RET0 - 1)]);
+              goto lab_131;
+            lab_130:
+    94 |      dmax =  0.0000000000000000E+000;
+            lab_131:
+    96 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce(&dmax,&all_dmax,1,1275070475,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+    97 |      if (!(all_dmax !=  0.0000000000000000E+000)) goto lab_21;
+    99 |      all_imax = (dmax == all_dmax ? myRank : -1);
+   102 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Allreduce((char *) -1,&all_imax,1,1275069445,1476395009,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   104 |      if (!(myRank == all_imax)) goto lab_136;
+   105 |      pivoted_rows[(long long) npiv] = $$RET0 - 1;
+   106 |      npiv = npiv + 1;
+   110 |      MPI_Sendrecv_replace(((char *)P  + (long long) ($$RET0 - 1) * 4ll),1,1275069445,root,(int) $$CIV2 * 2,root,(int) $$CIV2 * 2 + 1,cdt.cm@0,&stat);
+   115 |      col[(long long) ($$RET0 - 1)] =  0.0000000000000000E+000;
+   121 |    lab_136:
+   122 |      CTF_Timer::CTF_Timer(char const*)(&t,"select_pivot");
+              __es.__c4@3 = 5u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   123 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 6u;
+              CTF_Timer::start()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+   124 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 7u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buffer,(int) b,1275070475,all_imax,cdt.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   126 |      cdscal(int, double, double*, int)((int) nb, 1.0000000000000000E+000 / buffer[$$CIV2],col,1)
+   128 |      cdger(int, int, double, double const*, int, double const*, int, double*, int)((int) nb,(int) ((b - $$CIV2) - 1ll),-1.0000000000000000E+000,col,1,((char *)buffer  + ($$CIV2 * 8ll + 8ll)),1,((char *)A  + ((long long) lda * ($$CIV2 + 1ll)) * 8ll),lda)
+   132 |      if (!(0 < npiv)) goto lab_138;
+              $$CIV1 = 0ll;
+              do {   /* id=19 guarded */ /* ~137 */ 
+                /* region = 153 */
+                /* bump-normalized */
+   133 |        col[(long long) pivoted_rows[$$CIV1]] = A[(long long) (lda * (int) $$CIV2 + pivoted_rows[$$CIV1])];
+   132 |        $$CIV1 = $$CIV1 + 1ll;
+              } while ((unsigned long long) $$CIV1 < (unsigned long long) ((long long) npiv));    /* ~137 */
+            lab_138:
+   135 |      __builtin_memcpy(((char *)A  + ((long long) lda * $$CIV2) * 8ll),col,(unsigned long long) (nb * 8ll));
+   136 |      CTF_Timer::CTF_Timer(char const*)(&t,"update_thin_panel");
+              __es.__c4@3 = 8u;
+              CTF_Timer::stop()(&t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&t);
+    84 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) b);    /* ~127 */
+          lab_126:
+          lab_112:
+          lab_83:
+          lab_67:
+          lab_7:
+   138 |    CTF_Timer::CTF_Timer(char const*)(&t,"partial_pvt_inner");
+            __es.__c4@3 = 9u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   140 |    free(buffer)
+   141 |    free(col)
+   142 |    free(pivoted_rows)
+   143 |    free(P_start)
+   145 |    goto lab_58;
+    97 |  lab_21:
+            __assert_fail("all_dmax!=0.0","partial_pvt.cxx",97u,&__func__)
+            return;
+          lab_58:
+            return;
+   145 |  } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV3 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV3) * 8ll),((char *)A  + ((long long) lda_A * $$CIV3) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

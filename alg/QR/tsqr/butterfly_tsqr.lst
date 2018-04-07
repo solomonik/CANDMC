@@ -1,0 +1,356 @@
+1586-539 (I) Loop (loop index 1) at butterfly_tsqr.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-538 (I) Loop (loop index 2) at butterfly_tsqr.cxx <line 61> was not SIMD vectorized because it contains unsupported loop structure.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"2">. Total number of the innermost loops SIMD vectorized <"0">.
+    30 |  void butterfly_tsqr(double*, long, double*, long, long, long, long, long, long, CommData, double*)(char * A, long long lda_A, char * tau, long long m, long long b, long long myRank, long long numPes, long long root, long long req_id, aggr20 cdt, char * tree_data)
+    40 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__46 = 1;
+    53 |    if (!(b * numPes > m)) goto lab_6;
+    54 |    np_work = m / b;
+    55 |    goto lab_8;
+          lab_6:
+    56 |    np_work = numPes;
+          lab_8:
+    60 |    pow2_np_work = 1;
+    61 |    if (!((int) np_work > 1)) goto lab_11;
+    59 |    inp = (int) np_work;
+    61 |    do {   /* id=2 guarded */ /* ~9 */ 
+              /* region = 37 */
+    62 |      pow2_np_work = pow2_np_work * 2;
+    63 |      inp = inp / 2;
+    61 |    } while (inp > 1);    /* ~9 */
+          lab_11:
+    65 |    if ((long long) pow2_np_work <= np_work) goto lab_14;
+            __assert_fail("pow2_np_work <= np_work","butterfly_tsqr.cxx",65u,&__func__)
+            return;
+          lab_14:
+    67 |    work = malloc((unsigned long long) (8ll * (((m / b) % numPes > (myRank + (numPes - root)) % numPes ? ((m / b) / numPes) * b + b : ((m / b) / numPes) * b) * b)));
+    69 |    if (!(np_work == 1ll)) goto lab_15;
+    72 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) == 0)) goto lab_77;
+    73 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    74 |    local_tsqr(double*, double*, long, long, long, double*)(A,work,m,b,lda_A,tau)
+    75 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    79 |    goto lab_77;
+    80 |  lab_15:
+    83 |    R_buf = malloc((unsigned long long) (16ll * (b * b)));
+    84 |    R = malloc((unsigned long long) (8ll * (b * b)));
+    86 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_25;
+    87 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    88 |    local_tsqr(double*, double*, long, long, long, double*)(A,work,((m / b) % numPes > (myRank + (numPes - root)) % numPes ? ((m / b) / numPes) * b + b : ((m / b) / numPes) * b),b,lda_A,tau)
+    89 |    pack_upper(double const*, double*, int, int)(A,R,(int) b,(int) lda_A)
+    90 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    91 |  lab_25:
+    92 |    R_recv_buf = malloc((unsigned long long) (8ll * (b * b)));
+    95 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_clipped_wing");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    96 |    if (!(np_work > (long long) pow2_np_work)) goto lab_36;
+    97 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_40;
+            if ((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work) goto lab_39;
+          lab_40:
+            if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work - (long long) pow2_np_work)) goto lab_38;
+          lab_39:
+   102 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Sendrecv(R,(((int) b + 1) * (int) b) / 2,1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),(int) ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) + req_id),R_recv_buf,(((int) b + 1) * (int) b) / 2,1275070475,(int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes),(int) (1ll + (req_id - (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work))),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   106 |    unpack_upper(double const*, double*, int, int)(R,((char *)R_buf  + 8ll * ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * b)),(int) b,(int) (b * 2ll))
+   107 |    unpack_upper(double const*, double*, int, int)(R_recv_buf,((char *)R_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),(int) b,(int) (b * 2ll))
+   109 |    tree_tsqr(double*, double*, long, double*)(R_buf,work,b,tree_data)
+   110 |    if (!(b < 16ll)) goto lab_46;
+            goto lab_47;
+          lab_46:
+   111 |    pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + b * 128ll),(int) b,(int) (b * 2ll))
+   112 |    tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+   113 |    pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+            goto lab_78;
+   110 |  lab_47:
+   111 |    pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + 8ll * (b * b)),(int) b,(int) (b * 2ll))
+   112 |    tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   113 |    pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+   114 |  lab_78:
+          lab_38:
+   115 |  lab_36:
+   117 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   119 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_clipped_wing");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   121 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_butterfly");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   122 |    if (!(pow2_np_work > 1)) goto lab_57;
+            if (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) goto lab_57;
+   124 |    if (!(pow2_np_work > 1)) goto lab_62;
+            level = pow2_np_work;
+            do {   /* id=1 guarded */ /* ~60 */ 
+              /* region = 38 */
+   132 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 10u;
+              CTF_Timer::start()(&__t)
+              PMPI_Sendrecv(R,(((int) b + 1) * (int) b) / 2,1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),(int) (req_id + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)),R_recv_buf,(((int) b + 1) * (int) b) / 2,1275070475,(int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes),(int) (1ll + (req_id - (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2))),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   136 |      unpack_upper(double const*, double*, int, int)(R,((char *)R_buf  + 8ll * ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * b)),(int) b,(int) (b * 2ll))
+   137 |      unpack_upper(double const*, double*, int, int)(R_recv_buf,((char *)R_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b)),(int) b,(int) (b * 2ll))
+   139 |      tree_tsqr(double*, double*, long, double*)(R_buf,work,b,tree_data)
+   141 |      pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + 8ll * (min(b,16ll) * b)),(int) b,(int) (b * 2ll))
+   142 |      tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + min(b,16ll) * b) * 8ll);
+   143 |      pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+   124 |      level = level / 2;
+            } while (level > 1);    /* ~60 */
+          lab_62:
+   145 |  lab_57:
+   147 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_butterfly");
+            __es.__c4@3 = 12u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |    if (!(myRank == root)) goto lab_75;
+   151 |    copy_upper(double const*, double*, int, int, int, int)(R_buf,A,(int) b,(int) (b * 2ll),(int) lda_A,0)
+   152 |  lab_75:
+   154 |    free(R)
+   155 |    free(R_buf)
+   156 |    free(R_recv_buf)
+   157 |  lab_77:
+            return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+         0            61             2    Loop was not SIMD vectorized because it contains 
+                                          unsupported loop structure.
+         0           124             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    30 |  void butterfly_tsqr(double*, long, double*, long, long, long, long, long, long, CommData, double*)(char * A, long long lda_A, char * tau, long long m, long long b, long long myRank, long long numPes, long long root, long long req_id, aggr20 cdt, char * tree_data)
+    40 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__46 = 1;
+    53 |    if (!(b * numPes > m)) goto lab_6;
+    54 |    np_work = m / b;
+    55 |    goto lab_8;
+          lab_6:
+    56 |    np_work = numPes;
+          lab_8:
+    60 |    pow2_np_work = 1;
+    61 |    if (!((int) np_work > 1)) goto lab_11;
+    59 |    inp = (int) np_work;
+    61 |    do {   /* id=2 guarded */ /* ~9 */ 
+              /* region = 35 */
+    62 |      pow2_np_work = pow2_np_work * 2;
+    63 |      inp = inp / 2;
+    61 |    } while (inp > 1);    /* ~9 */
+          lab_11:
+    65 |    if ((long long) pow2_np_work <= np_work) goto lab_14;
+            __assert_fail("pow2_np_work <= np_work","butterfly_tsqr.cxx",65u,&__func__)
+            return;
+          lab_14:
+    67 |    work = malloc((unsigned long long) (8ll * (((m / b) % numPes > (myRank + (numPes - root)) % numPes ? ((m / b) / numPes) * b + b : ((m / b) / numPes) * b) * b)));
+    69 |    if (!(np_work == 1ll)) goto lab_15;
+    72 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) == 0)) goto lab_77;
+    73 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    74 |    local_tsqr(double*, double*, long, long, long, double*)(A,work,m,b,lda_A,tau)
+    75 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 2u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    79 |    goto lab_77;
+    80 |  lab_15:
+    83 |    R_buf = malloc((unsigned long long) (16ll * (b * b)));
+    84 |    R = malloc((unsigned long long) (8ll * (b * b)));
+    86 |    if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work)) goto lab_25;
+    87 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    88 |    local_tsqr(double*, double*, long, long, long, double*)(A,work,((m / b) % numPes > (myRank + (numPes - root)) % numPes ? ((m / b) / numPes) * b + b : ((m / b) / numPes) * b),b,lda_A,tau)
+    89 |    pack_upper(double const*, double*, int, int)(A,R,(int) b,(int) lda_A)
+    90 |    CTF_Timer::CTF_Timer(char const*)(&t,"Local_panel_TSQR");
+            __es.__c4@3 = 4u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    91 |  lab_25:
+    92 |    R_recv_buf = malloc((unsigned long long) (8ll * (b * b)));
+    95 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_clipped_wing");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    96 |    if (!(np_work > (long long) pow2_np_work)) goto lab_36;
+    97 |    if (!(((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) goto lab_40;
+            if ((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work) goto lab_39;
+          lab_40:
+            if (!((long long) ((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) < np_work - (long long) pow2_np_work)) goto lab_38;
+          lab_39:
+   102 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            $$csx0 = (int) (((long long) ((1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * pow2_np_work + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * pow2_np_work)) + root) % numPes);
+            PMPI_Sendrecv(R,(((int) b + 1) * (int) b) / 2,1275070475,$$csx0,(int) ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) + req_id),R_recv_buf,(((int) b + 1) * (int) b) / 2,1275070475,$$csx0,(int) (1ll + (req_id - (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work))),cdt.cm@0,&stat);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   106 |    unpack_upper(double const*, double*, int, int)(R,((char *)R_buf  + 8ll * ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) * b)),(int) b,(int) (b * 2ll))
+   107 |    unpack_upper(double const*, double*, int, int)(R_recv_buf,((char *)R_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work)) * b)),(int) b,(int) (b * 2ll))
+   109 |    tree_tsqr(double*, double*, long, double*)(R_buf,work,b,tree_data)
+   110 |    if (!(b < 16ll)) goto lab_46;
+            goto lab_47;
+          lab_46:
+   111 |    pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + b * 128ll),(int) b,(int) (b * 2ll))
+   112 |    tree_data = ((char *)tree_data  + (b * 128ll + (long long) ((((int) b + 1) * (int) b) / 2) * 8ll));
+   113 |    pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+            goto lab_78;
+   110 |  lab_47:
+   111 |    pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + 8ll * (b * b)),(int) b,(int) (b * 2ll))
+   112 |    tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + b * b) * 8ll);
+   113 |    pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+   114 |  lab_78:
+          lab_38:
+   115 |  lab_36:
+   117 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   119 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_clipped_wing");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   121 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_butterfly");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   122 |    if (!(pow2_np_work > 1)) goto lab_57;
+            if (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) >= pow2_np_work) goto lab_57;
+   124 |    level = pow2_np_work;
+            do {   /* id=1 guarded */ /* ~60 */ 
+              /* region = 36 */
+   132 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Sendrecv");
+              __es.__c4@3 = 10u;
+              CTF_Timer::start()(&__t)
+              $$csx1 = (int) ((root + (long long) ((((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) / level) * level + (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level + level / 2) % level)) % numPes);
+              PMPI_Sendrecv(R,(((int) b + 1) * (int) b) / 2,1275070475,$$csx1,(int) (req_id + (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)),R_recv_buf,(((int) b + 1) * (int) b) / 2,1275070475,$$csx1,(int) (1ll + (req_id - (long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2))),cdt.cm@0,&stat);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   136 |      unpack_upper(double const*, double*, int, int)(R,((char *)R_buf  + 8ll * ((long long) (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2) * b)),(int) b,(int) (b * 2ll))
+   137 |      unpack_upper(double const*, double*, int, int)(R_recv_buf,((char *)R_buf  + 8ll * ((long long) (1 - (((int) (myRank - root) < 0 ? (int) ((long long) ((int) (myRank - root)) + numPes) : (int) (myRank - root)) % level >= level / 2)) * b)),(int) b,(int) (b * 2ll))
+   139 |      tree_tsqr(double*, double*, long, double*)(R_buf,work,b,tree_data)
+   141 |      pack_upper(double const*, double*, int, int)(((char *)R_buf  + b * 8ll),((char *)tree_data  + 8ll * (min(b,16ll) * b)),(int) b,(int) (b * 2ll))
+   142 |      tree_data = ((char *)tree_data  + ((long long) ((((int) b + 1) * (int) b) / 2) + min(b,16ll) * b) * 8ll);
+   143 |      pack_upper(double const*, double*, int, int)(R_buf,R,(int) b,(int) (b * 2ll))
+   124 |      level = level / 2;
+            } while (level > 1);    /* ~60 */
+   145 |  lab_57:
+   147 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 11u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   149 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR_butterfly");
+            __es.__c4@3 = 12u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   150 |    if (!(myRank == root)) goto lab_75;
+   151 |    copy_upper(double const*, double*, int, int, int, int)(R_buf,A,(int) b,(int) (b * 2ll),(int) lda_A,0)
+   152 |  lab_75:
+   154 |    free(R)
+   155 |    free(R_buf)
+   156 |    free(R_recv_buf)
+   157 |  lab_77:
+            return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

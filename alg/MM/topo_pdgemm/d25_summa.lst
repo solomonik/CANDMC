@@ -1,0 +1,1447 @@
+1586-539 (I) Loop (loop index 1) at d25_summa.cxx <line 151> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at d25_summa.cxx <line 151> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at d25_summa.cxx <line 151> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at d25_summa.cxx <line 151> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at d25_summa.cxx <line 151> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"7">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 2) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 3) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 4) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 5) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 6) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 7) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-539 (I) Loop (loop index 8) at d25_summa.cxx <line 124> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"8">. Total number of the innermost loops SIMD vectorized <"0">.
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+   245 |  void d25_summa(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(char * args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+   256 |  {
+   257 |    void d25_summa_tmp<0l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(args,mat_A,mat_B,mat_C,buffer,cdt_row,cdt_col,cdt_kdir)
+   262 |    return;
+          } /* function */ 
+
+
+   264 |  void d25_summa_ovp(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(char * args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+   275 |  {
+   276 |    void d25_summa_tmp<1l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(args,mat_A,mat_B,mat_C,buffer,cdt_row,cdt_col,cdt_kdir)
+   281 |    return;
+          } /* function */ 
+
+
+    35 |  void void d25_summa_tmp<0l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+    46 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__41 = 1;
+    57 |    $$FSM0 = *((long long *)((char *)args + 8));
+    60 |    if (*((long long *)((char *)args + 40)) >= 24ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4))) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,overlap)","d25_summa.cxx",60u,&__func__)
+            return;
+          lab_7:
+    61 |    if (cdt_col.np@4 == cdt_row.np@4) goto lab_13;
+            __assert_fail("np_row == np_col","d25_summa.cxx",61u,&__func__)
+            return;
+          lab_13:
+    62 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) cdt_col.np@4) goto lab_19;
+            __assert_fail("n % np_row == 0","d25_summa.cxx",62u,&__func__)
+            return;
+          lab_19:
+    57 |    b = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+    63 |    if (0 == cdt_col.np@4 % cdt_kdir.np@4) goto lab_25;
+            __assert_fail("np_row % c_rep == 0","d25_summa.cxx",63u,&__func__)
+            return;
+          lab_25:
+    70 |    loc_B = ((char *)buffer  + 8ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)));
+    78 |    if (!(*((long long *)((char *)args + 16)) != *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)) goto lab_26;
+    69 |    loc_A = buffer;
+    79 |    $$PARM.nrow0 = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+            $$PARM.ncol1 = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+            $$PARM.lda_A2 = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_B3 = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+   463 |    if (!((int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) == (int) *((long long *)((char *)args + 16)))) goto lab_86;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)) * 8ull);
+   465 |    goto lab_87;
+          lab_86:
+   467 |    if (!(0 < (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4))) goto lab_88;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~89 */ 
+              /* region = 62 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_B3)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A2)),(unsigned long long) $$PARM.nrow0 * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncol1));    /* ~89 */
+          lab_88:
+   470 |  lab_87:
+    80 |    buf_A = mat_A;
+    81 |    goto lab_28;
+          lab_26:
+    82 |    buf_A = buffer;
+    83 |    loc_A = mat_A;
+    84 |  lab_28:
+    85 |    if (!(*((long long *)((char *)args + 24)) != $$FSM0 / (long long) cdt_row.np@4)) goto lab_29;
+    86 |    $$PARM.lda_A8 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) ($$FSM0 / (long long) cdt_row.np@4) == (int) *((long long *)((char *)args + 24)))) goto lab_91;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),mat_B,(unsigned long long) ((int) ($$FSM0 / (long long) cdt_row.np@4) * (int) ($$FSM0 / (long long) cdt_row.np@4)) * 8ull);
+   465 |    goto lab_92;
+          lab_91:
+   467 |    if (!(0 < (int) ($$FSM0 / (long long) cdt_row.np@4))) goto lab_93;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~94 */ 
+              /* region = 63 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4) + (long long) ((int) ($$FSM0 / (long long) cdt_row.np@4)) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A8)),(unsigned long long) ((int) ($$FSM0 / (long long) cdt_row.np@4)) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) ($$FSM0 / (long long) cdt_row.np@4))));    /* ~94 */
+          lab_93:
+   470 |  lab_92:
+    87 |    buf_B = mat_B;
+    88 |    goto lab_31;
+          lab_29:
+    89 |    buf_B = ((char *)buffer  + 8ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4)));
+    90 |    loc_B = mat_B;
+    91 |  lab_31:
+    93 |    bid = malloc(8ull);
+    94 |    bid[0ll] = 0ll;
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   151 |    if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_106;
+          lab_106:
+            if (!(0ll < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_37;
+            $$CIV0 = 0ll;
+            do {   /* id=1 guarded */ /* ~35 */ 
+              /* region = 64 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T000 = __IntToFloat8((int) ((char) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0 > 0ll)),0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,buf_A,(int) ($$FSM0 / (long long) cdt_row.np@4),buf_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$TVX.$$.$$T000 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((long long) $$CIV0 < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~35 */
+          lab_37:
+            if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_142;
+   156 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   159 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   160 |    buf_B = loc_B;
+   200 |    $$T0 = __IntToFloat8(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,buf_A,(int) ($$FSM0 / (long long) cdt_row.np@4),loc_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$T0 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |  lab_142:
+            if (!(max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_136;
+            $$CIV3 = (long long) 0;
+            do {   /* id=7 guarded */ /* ~131 */ 
+              /* region = 65 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T041 = __IntToFloat8($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,buf_A,(int) ($$FSM0 / (long long) cdt_row.np@4),buf_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$TVX.$$.$$T041 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) (min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll)));    /* ~131 */
+          lab_136:
+            if (!(max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_130;
+            $$CIV4 = (long long) 0;
+            do {   /* id=6 guarded */ /* ~125 */ 
+              /* region = 66 */
+              /* bump-normalized */
+   153 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) ($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   154 |      buf_A = loc_A;
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T032 = __IntToFloat8($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,loc_A,(int) ($$FSM0 / (long long) cdt_row.np@4),buf_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$TVX.$$.$$T032 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) (min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll)));    /* ~125 */
+          lab_130:
+            if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_124;
+   153 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   154 |    buf_A = loc_A;
+   159 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   160 |    buf_B = loc_B;
+   200 |    $$T0 = __IntToFloat8(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,loc_A,(int) ($$FSM0 / (long long) cdt_row.np@4),loc_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$T0 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |  lab_124:
+            if (!(max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_118;
+            $$CIV5 = (long long) 0;
+            do {   /* id=5 guarded */ /* ~113 */ 
+              /* region = 67 */
+              /* bump-normalized */
+   153 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) ($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   154 |      buf_A = loc_A;
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T023 = __IntToFloat8($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,loc_A,(int) ($$FSM0 / (long long) cdt_row.np@4),buf_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$TVX.$$.$$T023 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) (min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))));    /* ~113 */
+          lab_118:
+            if (!(max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) goto lab_112;
+            $$CIV6 = (long long) 0;
+            do {   /* id=4 guarded */ /* ~107 */ 
+              /* region = 68 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ($$CIV6 + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   158 |      if (!($$CIV6 + ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll)) == (long long) cdt_col.rank@8)) goto lab_110;
+   159 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) ($$CIV6 + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   160 |      buf_B = loc_B;
+   161 |      goto lab_111;
+            lab_110:
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV6 + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   163 |    lab_111:
+   200 |      $$TVX.$$.$$T014 = __IntToFloat8($$CIV6 + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4),(int) ($$FSM0 / (long long) cdt_row.np@4), 1.0000000000000000E+000,buf_A,(int) ($$FSM0 / (long long) cdt_row.np@4),buf_B,(int) ($$FSM0 / (long long) cdt_row.np@4),$$TVX.$$.$$T014 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~107 */
+          lab_112:
+   221 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(((char *)buffer  + 16ll * (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4))),mat_C,(int) (($$FSM0 / (long long) cdt_row.np@4) * ($$FSM0 / (long long) cdt_row.np@4)),1275070475,1476395011,cdt_kdir.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   224 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       122           467             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       122           467             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           151             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           151             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           151             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           151             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           151             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    35 |  void void d25_summa_tmp<1l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+    46 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__41 = 1;
+    57 |    $$FSM1 = *((long long *)((char *)args + 8));
+    60 |    if (*((long long *)((char *)args + 40)) >= 40ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4))) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,overlap)","d25_summa.cxx",60u,&__func__)
+            return;
+          lab_7:
+    61 |    if (cdt_col.np@4 == cdt_row.np@4) goto lab_13;
+            __assert_fail("np_row == np_col","d25_summa.cxx",61u,&__func__)
+            return;
+          lab_13:
+    62 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) cdt_col.np@4) goto lab_19;
+            __assert_fail("n % np_row == 0","d25_summa.cxx",62u,&__func__)
+            return;
+          lab_19:
+    57 |    b = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+    63 |    if (0 == cdt_col.np@4 % cdt_kdir.np@4) goto lab_25;
+            __assert_fail("np_row % c_rep == 0","d25_summa.cxx",63u,&__func__)
+            return;
+          lab_25:
+    70 |    loc_B = ((char *)buffer  + 8ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)));
+    74 |    ovp_A = ((char *)buffer  + 24ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)));
+    75 |    ovp_B = ((char *)buffer  + 32ll * ((*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)));
+    78 |    if (!(*((long long *)((char *)args + 16)) != *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)) goto lab_26;
+    69 |    loc_A = buffer;
+    79 |    $$PARM.nrowC = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+            $$PARM.ncolD = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+            $$PARM.lda_AE = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_BF = (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4);
+   463 |    if (!((int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) == (int) *((long long *)((char *)args + 16)))) goto lab_88;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4) * (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4)) * 8ull);
+   465 |    goto lab_89;
+          lab_88:
+   467 |    if (!(0 < (int) (*((long long *)((char *)args + 8)) / (long long) cdt_row.np@4))) goto lab_90;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~91 */ 
+              /* region = 80 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_BF)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_AE)),(unsigned long long) $$PARM.nrowC * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncolD));    /* ~91 */
+          lab_90:
+   470 |  lab_89:
+    80 |    buf_A = mat_A;
+    81 |    goto lab_28;
+          lab_26:
+    82 |    buf_A = buffer;
+    83 |    loc_A = mat_A;
+    84 |  lab_28:
+    85 |    if (!(*((long long *)((char *)args + 24)) != $$FSM1 / (long long) cdt_row.np@4)) goto lab_29;
+    86 |    $$PARM.lda_A14 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) ($$FSM1 / (long long) cdt_row.np@4) == (int) *((long long *)((char *)args + 24)))) goto lab_93;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4))),mat_B,(unsigned long long) ((int) ($$FSM1 / (long long) cdt_row.np@4) * (int) ($$FSM1 / (long long) cdt_row.np@4)) * 8ull);
+   465 |    goto lab_94;
+          lab_93:
+   467 |    if (!(0 < (int) ($$FSM1 / (long long) cdt_row.np@4))) goto lab_95;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~96 */ 
+              /* region = 81 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4) + (long long) ((int) ($$FSM1 / (long long) cdt_row.np@4)) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A14)),(unsigned long long) ((int) ($$FSM1 / (long long) cdt_row.np@4)) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) ($$FSM1 / (long long) cdt_row.np@4))));    /* ~96 */
+          lab_95:
+   470 |  lab_94:
+    87 |    buf_B = mat_B;
+    88 |    goto lab_31;
+          lab_29:
+    89 |    buf_B = ((char *)buffer  + 8ll * (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4)));
+    90 |    loc_B = mat_B;
+    91 |  lab_31:
+    93 |    bid = malloc(8ull);
+    94 |    bid[0ll] = 0ll;
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   124 |    i = (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8);
+            if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_108;
+          lab_108:
+            if (!(0ll < min(min(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_37;
+            $$CIV1 = 0ll;
+            do {   /* id=1 guarded */ /* ~35 */ 
+              /* region = 82 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV1),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV1),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((long long) $$CIV1 < min(min(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~35 */
+          lab_37:
+            if (!(max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_158;
+            $$CIV7 = (long long) 0;
+            do {   /* id=8 guarded */ /* ~152 */ 
+              /* region = 83 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   138 |      $$TVX.$$.$$T195 = __IntToFloat8($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T195 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) (min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll)));    /* ~152 */
+          lab_158:
+            if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_151;
+   129 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   132 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   137 |    if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll)) goto lab_150;
+   138 |    $$T1 = __IntToFloat8(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$T1 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |  lab_150:
+   141 |    swp_X.rnn2 = ovp_A;
+            ovp_A = buf_A;
+            buf_A = swp_X.rnn2;
+   142 |    swp_X = ovp_B;
+            ovp_B = loc_B;
+            buf_B = swp_X;
+   124 |  lab_151:
+            if (!(max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_144;
+            $$CIV8 = (long long) 0;
+            do {   /* id=7 guarded */ /* ~138 */ 
+              /* region = 84 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_143;
+   138 |      $$TVX.$$.$$T186 = __IntToFloat8($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T186 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_143:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) (min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll)));    /* ~138 */
+          lab_144:
+            if (!(max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_137;
+            $$CIV9 = (long long) 0;
+            do {   /* id=6 guarded */ /* ~131 */ 
+              /* region = 85 */
+              /* bump-normalized */
+   126 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) ($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_136;
+   138 |      $$TVX.$$.$$T177 = __IntToFloat8($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T177 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_136:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = loc_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV9 = $$CIV9 + 1ll;
+            } while ((unsigned long long) $$CIV9 < (unsigned long long) (min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll)));    /* ~131 */
+          lab_137:
+            if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_130;
+   126 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   132 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   137 |    if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll)) goto lab_129;
+   138 |    $$T1 = __IntToFloat8(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$T1 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |  lab_129:
+   141 |    swp_X.rnn2 = ovp_A;
+            ovp_A = loc_A;
+            buf_A = swp_X.rnn2;
+   142 |    swp_X = ovp_B;
+            ovp_B = loc_B;
+            buf_B = swp_X;
+   124 |  lab_130:
+            if (!(max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_123;
+            $$CIVA = (long long) 0;
+            do {   /* id=5 guarded */ /* ~117 */ 
+              /* region = 86 */
+              /* bump-normalized */
+   126 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) (b * b),1275070475,(int) ($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_122;
+   138 |      $$TVX.$$.$$T168 = __IntToFloat8($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T168 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_122:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = loc_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) (min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))));    /* ~117 */
+          lab_123:
+            if (!(max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) goto lab_116;
+            $$CIVB = (long long) 0;
+            do {   /* id=4 guarded */ /* ~110 */ 
+              /* region = 87 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) (b * b),1275070475,(int) ($$CIVB + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   131 |      if (!($$CIVB + ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll)) == (long long) cdt_col.rank@8)) goto lab_113;
+   132 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_B,(int) (b * b),1275070475,(int) ($$CIVB + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   133 |      buf_B = loc_B;
+   134 |      goto lab_114;
+            lab_113:
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) (b * b),1275070475,(int) ($$CIVB + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   136 |    lab_114:
+   137 |      if (!($$CIVB + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_115;
+   138 |      $$TVX.$$.$$T159 = __IntToFloat8($$CIVB + (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T159 *  1.0000000000000000E+000,((char *)buffer  + 16ll * (b * b)),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_115:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIVB = $$CIVB + 1ll;
+            } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~110 */
+          lab_116:
+            if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_109;
+            i = (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4));
+          lab_109:
+   147 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) ($$FSM1 / (long long) cdt_row.np@4),(int) ($$FSM1 / (long long) cdt_row.np@4),(int) ($$FSM1 / (long long) cdt_row.np@4), 1.0000000000000000E+000,ovp_A,(int) ($$FSM1 / (long long) cdt_row.np@4),ovp_B,(int) ($$FSM1 / (long long) cdt_row.np@4),(double) ((char) (i > 0ll)) *  1.0000000000000000E+000,((char *)buffer  + 16ll * (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4))),(int) *((long long *)((char *)args + 32)))
+   149 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(((char *)buffer  + 16ll * (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4))),mat_C,(int) (($$FSM1 / (long long) cdt_row.np@4) * ($$FSM1 / (long long) cdt_row.np@4)),1275070475,1476395011,cdt_kdir.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   224 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       122           467             2    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+       122           467             3    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             8    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             7    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             6    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             5    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+         0           124             4    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV2) * 8ll),((char *)A  + ((long long) lda_A * $$CIV2) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       122           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+    26 |  long long buffer_space_req(long, long)(long long b, long long overlap)
+          {
+    27 |    if (!(overlap != 0ll)) goto lab_1;
+    28 |    rstr = 40ll * (b * b);
+            return rstr;
+          lab_1:
+    30 |    rstr = 24ll * (b * b);
+            return rstr;
+    31 |  } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+   245 |  void d25_summa(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(char * args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+   256 |  {
+   257 |    void d25_summa_tmp<0l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(args,mat_A,mat_B,mat_C,buffer,cdt_row,cdt_col,cdt_kdir)
+   262 |    return;
+          } /* function */ 
+
+
+   264 |  void d25_summa_ovp(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(char * args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+   275 |  {
+   276 |    void d25_summa_tmp<1l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(args,mat_A,mat_B,mat_C,buffer,cdt_row,cdt_col,cdt_kdir)
+   281 |    return;
+          } /* function */ 
+
+
+    35 |  void void d25_summa_tmp<0l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+    46 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__41 = 1;
+    57 |    $$FSM0 = *((long long *)((char *)args + 8));
+    60 |    $$csx1 = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+            $$csx0 = $$csx1 * $$csx1;
+            if (*((long long *)((char *)args + 40)) >= 24ll * $$csx0) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,overlap)","d25_summa.cxx",60u,&__func__)
+            return;
+          lab_7:
+    61 |    if (cdt_col.np@4 == cdt_row.np@4) goto lab_13;
+            __assert_fail("np_row == np_col","d25_summa.cxx",61u,&__func__)
+            return;
+          lab_13:
+    62 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) cdt_col.np@4) goto lab_19;
+            __assert_fail("n % np_row == 0","d25_summa.cxx",62u,&__func__)
+            return;
+          lab_19:
+    57 |    b = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+    63 |    if (0 == cdt_col.np@4 % cdt_kdir.np@4) goto lab_25;
+            __assert_fail("np_row % c_rep == 0","d25_summa.cxx",63u,&__func__)
+            return;
+          lab_25:
+    70 |    loc_B = ((char *)buffer  + 8ll * $$csx0);
+    78 |    if (!(*((long long *)((char *)args + 16)) != $$csx1)) goto lab_26;
+    69 |    loc_A = buffer;
+    79 |    $$PARM.nrow0 = (int) $$csx1;
+            $$PARM.ncol1 = (int) $$csx1;
+            $$PARM.lda_A2 = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_B3 = (int) $$csx1;
+   463 |    if (!((int) $$csx1 == (int) *((long long *)((char *)args + 16)))) goto lab_86;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) $$csx1 * (int) $$csx1) * 8ull);
+   465 |    goto lab_87;
+          lab_86:
+   467 |    if (!(0 < (int) $$csx1)) goto lab_88;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~89 */ 
+              /* region = 62 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_B3)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A2)),(unsigned long long) $$PARM.nrow0 * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncol1));    /* ~89 */
+          lab_88:
+   470 |  lab_87:
+    80 |    buf_A = mat_A;
+    81 |    goto lab_28;
+          lab_26:
+    82 |    buf_A = buffer;
+    83 |    loc_A = mat_A;
+    84 |  lab_28:
+    85 |    if (!(*((long long *)((char *)args + 24)) != $$csx1)) goto lab_29;
+    86 |    $$PARM.lda_A8 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) $$csx1 == (int) *((long long *)((char *)args + 24)))) goto lab_91;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * $$csx0),mat_B,(unsigned long long) ((int) $$csx1 * (int) $$csx1) * 8ull);
+   465 |    goto lab_92;
+          lab_91:
+   467 |    if (!(0 < (int) $$csx1)) goto lab_93;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~94 */ 
+              /* region = 63 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + ($$csx0 + (long long) ((int) $$csx1) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A8)),(unsigned long long) ((int) $$csx1) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) $$csx1)));    /* ~94 */
+          lab_93:
+   470 |  lab_92:
+    87 |    buf_B = mat_B;
+    88 |    goto lab_31;
+          lab_29:
+    89 |    buf_B = ((char *)buffer  + 8ll * $$csx0);
+    90 |    loc_B = mat_B;
+    91 |  lab_31:
+    93 |    bid = malloc(8ull);
+    94 |    bid[0ll] = 0ll;
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   151 |    if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_106;
+          lab_106:
+            if (!(0ll < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_37;
+            $$CIV0 = 0ll;
+            do {   /* id=1 guarded */ /* ~35 */ 
+              /* region = 64 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T000 = __IntToFloat8((int) ((char) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV0 > 0ll)),0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,buf_A,(int) $$csx1,buf_B,(int) $$csx1,$$TVX.$$.$$T000 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((long long) $$CIV0 < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~35 */
+          lab_37:
+            if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_142;
+   156 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   159 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) $$csx0,1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   160 |    buf_B = loc_B;
+   200 |    $$T0 = __IntToFloat8(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,buf_A,(int) $$csx1,loc_B,(int) $$csx1,$$T0 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |  lab_142:
+            if (!(max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_136;
+            $$CIV3 = (long long) 0;
+            $$csx2 = min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll);
+            do {   /* id=7 guarded */ /* ~131 */ 
+              /* region = 65 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) ($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) ($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T041 = __IntToFloat8($$CIV3 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,buf_A,(int) $$csx1,buf_B,(int) $$csx1,$$TVX.$$.$$T041 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV3 = $$CIV3 + 1ll;
+            } while ((unsigned long long) $$CIV3 < (unsigned long long) $$csx2);    /* ~131 */
+          lab_136:
+            if (!(max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_130;
+            $$CIV4 = (long long) 0;
+            $$csx3 = min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll);
+            do {   /* id=6 guarded */ /* ~125 */ 
+              /* region = 66 */
+              /* bump-normalized */
+   153 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) $$csx0,1275070475,(int) ($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   154 |      buf_A = loc_A;
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) ($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T032 = __IntToFloat8($$CIV4 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,loc_A,(int) $$csx1,buf_B,(int) $$csx1,$$TVX.$$.$$T032 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV4 = $$CIV4 + 1ll;
+            } while ((unsigned long long) $$CIV4 < (unsigned long long) $$csx3);    /* ~125 */
+          lab_130:
+            if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_124;
+   153 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_A,(int) $$csx0,1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   154 |    buf_A = loc_A;
+   159 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) $$csx0,1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   160 |    buf_B = loc_B;
+   200 |    $$T0 = __IntToFloat8(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,loc_A,(int) $$csx1,loc_B,(int) $$csx1,$$T0 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |  lab_124:
+            if (!(max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_118;
+            $$CIV5 = (long long) 0;
+            $$csx4 = min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)));
+            do {   /* id=5 guarded */ /* ~113 */ 
+              /* region = 67 */
+              /* bump-normalized */
+   153 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) $$csx0,1275070475,(int) ($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   154 |      buf_A = loc_A;
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) ($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   200 |      $$TVX.$$.$$T023 = __IntToFloat8($$CIV5 + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,loc_A,(int) $$csx1,buf_B,(int) $$csx1,$$TVX.$$.$$T023 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV5 = $$CIV5 + 1ll;
+            } while ((unsigned long long) $$CIV5 < (unsigned long long) $$csx4);    /* ~113 */
+          lab_118:
+            if (!(max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) goto lab_112;
+            $$CIV6 = (long long) 0;
+   156 |    $$ICM0 = max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8);
+   151 |    do {   /* id=4 guarded */ /* ~107 */ 
+              /* region = 68 */
+              /* bump-normalized */
+   156 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx0,1275070475,(int) ($$CIV6 + $$ICM0),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   158 |      if (!($$CIV6 + $$ICM0 == (long long) cdt_col.rank@8)) goto lab_110;
+   159 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_B,(int) $$csx0,1275070475,(int) ($$CIV6 + $$ICM0),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   160 |      buf_B = loc_B;
+   161 |      goto lab_111;
+            lab_110:
+   162 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx0,1275070475,(int) ($$CIV6 + $$ICM0),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   163 |    lab_111:
+   200 |      $$TVX.$$.$$T014 = __IntToFloat8($$CIV6 + $$ICM0 > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx1,(int) $$csx1,(int) $$csx1, 1.0000000000000000E+000,buf_A,(int) $$csx1,buf_B,(int) $$csx1,$$TVX.$$.$$T014 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx0),(int) *((long long *)((char *)args + 32)))
+   151 |      $$CIV6 = $$CIV6 + 1ll;
+            } while ((unsigned long long) $$CIV6 < (unsigned long long) ((long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~107 */
+          lab_112:
+   221 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(((char *)buffer  + 16ll * $$csx0),mat_C,(int) $$csx0,1275070475,1476395011,cdt_kdir.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   224 |    return;
+          } /* function */ 
+
+
+    35 |  void void d25_summa_tmp<1l>(ctb_args const*, double*, double*, double*, double*, CommData, CommData, CommData)(ctb_args *args, char * mat_A, char * mat_B, char * mat_C, char * buffer, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_kdir)
+    46 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+            guard___func__41 = 1;
+    57 |    $$FSM1 = *((long long *)((char *)args + 8));
+    60 |    $$csx6 = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+            $$csx5 = $$csx6 * $$csx6;
+            if (*((long long *)((char *)args + 40)) >= 40ll * $$csx5) goto lab_7;
+            __assert_fail("args->buffer_size >= buffer_space_req(b,overlap)","d25_summa.cxx",60u,&__func__)
+            return;
+          lab_7:
+    61 |    if (cdt_col.np@4 == cdt_row.np@4) goto lab_13;
+            __assert_fail("np_row == np_col","d25_summa.cxx",61u,&__func__)
+            return;
+          lab_13:
+    62 |    if (0ll == *((long long *)((char *)args + 8)) % (long long) cdt_col.np@4) goto lab_19;
+            __assert_fail("n % np_row == 0","d25_summa.cxx",62u,&__func__)
+            return;
+          lab_19:
+    57 |    b = *((long long *)((char *)args + 8)) / (long long) cdt_row.np@4;
+    63 |    if (0 == cdt_col.np@4 % cdt_kdir.np@4) goto lab_25;
+            __assert_fail("np_row % c_rep == 0","d25_summa.cxx",63u,&__func__)
+            return;
+          lab_25:
+    70 |    loc_B = ((char *)buffer  + 8ll * $$csx5);
+    74 |    ovp_A = ((char *)buffer  + 24ll * $$csx5);
+    75 |    ovp_B = ((char *)buffer  + 32ll * $$csx5);
+    78 |    if (!(*((long long *)((char *)args + 16)) != $$csx6)) goto lab_26;
+    69 |    loc_A = buffer;
+    79 |    $$PARM.nrowC = (int) $$csx6;
+            $$PARM.ncolD = (int) $$csx6;
+            $$PARM.lda_AE = (int) *((long long *)((char *)args + 16));
+            $$PARM.lda_BF = (int) $$csx6;
+   463 |    if (!((int) $$csx6 == (int) *((long long *)((char *)args + 16)))) goto lab_88;
+   464 |    __builtin_memcpy(buffer,mat_A,(unsigned long long) ((int) $$csx6 * (int) $$csx6) * 8ull);
+   465 |    goto lab_89;
+          lab_88:
+   467 |    if (!(0 < (int) $$csx6)) goto lab_90;
+            $$CIV2 = 0ll;
+            do {   /* id=2 guarded */ /* ~91 */ 
+              /* region = 80 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + 8ll * ($$CIV2 * (long long) $$PARM.lda_BF)),((char *)mat_A  + 8ll * ($$CIV2 * (long long) $$PARM.lda_AE)),(unsigned long long) $$PARM.nrowC * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) $$PARM.ncolD));    /* ~91 */
+          lab_90:
+   470 |  lab_89:
+    80 |    buf_A = mat_A;
+    81 |    goto lab_28;
+          lab_26:
+    82 |    buf_A = buffer;
+    83 |    loc_A = mat_A;
+    84 |  lab_28:
+    85 |    if (!(*((long long *)((char *)args + 24)) != $$csx6)) goto lab_29;
+    86 |    $$PARM.lda_A14 = (int) *((long long *)((char *)args + 24));
+   463 |    if (!((int) $$csx6 == (int) *((long long *)((char *)args + 24)))) goto lab_93;
+   464 |    __builtin_memcpy(((char *)buffer  + 8ll * $$csx5),mat_B,(unsigned long long) ((int) $$csx6 * (int) $$csx6) * 8ull);
+   465 |    goto lab_94;
+          lab_93:
+   467 |    if (!(0 < (int) $$csx6)) goto lab_95;
+            $$CIV2 = 0ll;
+            do {   /* id=3 guarded */ /* ~96 */ 
+              /* region = 81 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)buffer  + ($$csx5 + (long long) ((int) $$csx6) * $$CIV2) * 8ll),((char *)mat_B  + 8ll * ($$CIV2 * (long long) $$PARM.lda_A14)),(unsigned long long) ((int) $$csx6) * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ((int) $$csx6)));    /* ~96 */
+          lab_95:
+   470 |  lab_94:
+    87 |    buf_B = mat_B;
+    88 |    goto lab_31;
+          lab_29:
+    89 |    buf_B = ((char *)buffer  + 8ll * $$csx5);
+    90 |    loc_B = mat_B;
+    91 |  lab_31:
+    93 |    bid = malloc(8ull);
+    94 |    bid[0ll] = 0ll;
+   122 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   124 |    i = (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8);
+            if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_108;
+          lab_108:
+            if (!(0ll < min(min(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_37;
+            $$CIV1 = 0ll;
+            $$csx7 = min(min(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)));
+            do {   /* id=1 guarded */ /* ~35 */ 
+              /* region = 82 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx5,1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV1),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ((long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) + $$CIV1),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV1 = $$CIV1 + 1ll;
+            } while ((long long) $$CIV1 < $$csx7);    /* ~35 */
+          lab_37:
+            if (!(max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_158;
+            $$CIV7 = (long long) 0;
+            $$csx8 = min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll);
+            do {   /* id=8 guarded */ /* ~152 */ 
+              /* region = 83 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx5,1275070475,(int) ($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   138 |      $$TVX.$$.$$T195 = __IntToFloat8($$CIV7 + (max(1ll - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T195 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV7 = $$CIV7 + 1ll;
+            } while ((unsigned long long) $$CIV7 < (unsigned long long) $$csx8);    /* ~152 */
+          lab_158:
+            if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_151;
+   129 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 3u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(buf_A,(int) $$csx5,1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   132 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) $$csx5,1275070475,(int) (max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   137 |    if (!(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll)) goto lab_150;
+   138 |    $$T1 = __IntToFloat8(max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$T1 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |  lab_150:
+   141 |    swp_X.rnn2 = ovp_A;
+            ovp_A = buf_A;
+            buf_A = swp_X.rnn2;
+   142 |    swp_X = ovp_B;
+            ovp_B = loc_B;
+            buf_B = swp_X;
+   124 |  lab_151:
+            if (!(max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_144;
+            $$CIV8 = (long long) 0;
+            $$csx9 = min((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll);
+            do {   /* id=7 guarded */ /* ~138 */ 
+              /* region = 84 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx5,1275070475,(int) ($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_143;
+   138 |      $$TVX.$$.$$T186 = __IntToFloat8($$CIV8 + (max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T186 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_143:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV8 = $$CIV8 + 1ll;
+            } while ((unsigned long long) $$CIV8 < (unsigned long long) $$csx9);    /* ~138 */
+          lab_144:
+            if (!(max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) < min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_137;
+            $$CIV9 = (long long) 0;
+            $$csxA = min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) - max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll);
+            do {   /* id=6 guarded */ /* ~131 */ 
+              /* region = 85 */
+              /* bump-normalized */
+   126 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) $$csx5,1275070475,(int) ($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_136;
+   138 |      $$TVX.$$.$$T177 = __IntToFloat8($$CIV9 + (max((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T177 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_136:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = loc_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIV9 = $$CIV9 + 1ll;
+            } while ((unsigned long long) $$CIV9 < (unsigned long long) $$csxA);    /* ~131 */
+          lab_137:
+            if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))))) goto lab_130;
+   126 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_A,(int) $$csx5,1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   132 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(loc_B,(int) $$csx5,1275070475,(int) (max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),cdt_col.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   137 |    if (!(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll)) goto lab_129;
+   138 |    $$T1 = __IntToFloat8(max(0ll,max((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8) > 0ll,0,255);
+            cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$T1 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |  lab_129:
+   141 |    swp_X.rnn2 = ovp_A;
+            ovp_A = loc_A;
+            buf_A = swp_X.rnn2;
+   142 |    swp_X = ovp_B;
+            ovp_B = loc_B;
+            buf_B = swp_X;
+   124 |  lab_130:
+            if (!(max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) < min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)))) goto lab_123;
+            $$CIVA = (long long) 0;
+            $$csxB = min(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) - max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)));
+            do {   /* id=5 guarded */ /* ~117 */ 
+              /* region = 86 */
+              /* bump-normalized */
+   126 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 2u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_A,(int) $$csx5,1275070475,(int) ($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   137 |      if (!($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll)) goto lab_122;
+   138 |      $$TVX.$$.$$T168 = __IntToFloat8($$CIVA + (max(0ll,max(1ll + ((long long) cdt_col.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),(long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)) > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T168 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_122:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = loc_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIVA = $$CIVA + 1ll;
+            } while ((unsigned long long) $$CIVA < (unsigned long long) $$csxB);    /* ~117 */
+          lab_123:
+            if (!(max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) < (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))) goto lab_116;
+            $$CIVB = (long long) 0;
+   129 |    $$ICM1 = max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8);
+   124 |    do {   /* id=4 guarded */ /* ~110 */ 
+              /* region = 87 */
+              /* bump-normalized */
+   129 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 3u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_A,(int) $$csx5,1275070475,(int) ($$CIVB + $$ICM1),cdt_row.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   131 |      if (!($$CIVB + $$ICM1 == (long long) cdt_col.rank@8)) goto lab_113;
+   132 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 4u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(loc_B,(int) $$csx5,1275070475,(int) ($$CIVB + $$ICM1),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   133 |      buf_B = loc_B;
+   134 |      goto lab_114;
+            lab_113:
+   135 |      CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+              __es.__c4@3 = 5u;
+              CTF_Timer::start()(&__t)
+              PMPI_Bcast(buf_B,(int) $$csx5,1275070475,(int) ($$CIVB + $$ICM1),cdt_col.cm@0);
+              CTF_Timer::stop()(&__t)
+              __es.__c4@3 = 0u;
+              CTF_Timer::~CTF_Timer()(&__t);
+   136 |    lab_114:
+   137 |      if (!($$CIVB + $$ICM1 > 0ll)) goto lab_115;
+   138 |      $$TVX.$$.$$T159 = __IntToFloat8($$CIVB + $$ICM1 > 0ll,0,255);
+              cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) b,(int) b,(int) b, 1.0000000000000000E+000,ovp_A,(int) b,ovp_B,(int) b,$$TVX.$$.$$T159 *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   140 |    lab_115:
+   141 |      swp_X.rnn2 = ovp_A;
+              ovp_A = buf_A;
+              buf_A = swp_X.rnn2;
+   142 |      swp_X = ovp_B;
+              ovp_B = buf_B;
+              buf_B = swp_X;
+   124 |      $$CIVB = $$CIVB + 1ll;
+            } while ((unsigned long long) $$CIVB < (unsigned long long) ((long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4)) - (max(1ll + ((long long) cdt_row.rank@8 - (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8)),0ll) + (long long) ((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8))));    /* ~110 */
+          lab_116:
+            if (!((cdt_row.np@4 / cdt_kdir.np@4) * cdt_kdir.rank@8 < (cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4))) goto lab_109;
+            i = (long long) ((cdt_kdir.rank@8 + 1) * (cdt_row.np@4 / cdt_kdir.np@4));
+          lab_109:
+   147 |    cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(*((char *)args),*((char *)((char *)args + 1)),(int) $$csx6,(int) $$csx6,(int) $$csx6, 1.0000000000000000E+000,ovp_A,(int) $$csx6,ovp_B,(int) $$csx6,(double) ((char) (i > 0ll)) *  1.0000000000000000E+000,((char *)buffer  + 16ll * $$csx5),(int) *((long long *)((char *)args + 32)))
+   149 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Allreduce");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Allreduce(((char *)buffer  + 16ll * $$csx5),mat_C,(int) $$csx5,1275070475,1476395011,cdt_kdir.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+   223 |    CTF_Timer::CTF_Timer(char const*)(&t,"d25_summa_gemm");
+            __es.__c4@3 = 7u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   224 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV2 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV2) * 8ll),((char *)A  + ((long long) lda_A * $$CIV2) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV2 = $$CIV2 + 1ll;
+            } while ((unsigned long long) $$CIV2 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

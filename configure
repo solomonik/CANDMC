@@ -272,6 +272,21 @@ elif (hostname | grep 'vesta\|mira\|cetus\|seq'); then
 	WARN=''
 	OPT=''
 
+elif (hostname | grep 'theta'); then
+	echo 'Hostname recognized as a XC40 machine'
+ 
+	host=xc40
+  SCALAPACKLIBS="-mkl=cluster"
+	BLASLIBS="-mkl=cluster"
+	LDFLAGS=''
+	INCLUDES=''
+	AR='ar'
+	CXX=CC
+	CXXFLAGS="-fast"
+	DEFS=''
+	WARN=''
+	OPT=''
+
 else
 	#
 	# Check for other common architectures (just Linux for now)

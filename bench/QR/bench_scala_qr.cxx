@@ -63,10 +63,6 @@ dtype * loc_A, * full_A, * work;
     full_A  = (dtype*)malloc(m*n*sizeof(dtype));
     TAU2  = (dtype*)malloc(n*sizeof(dtype));
   }
-  loc_TAU2  = (dtype*)malloc(n*sizeof(dtype)/pc);
-  lwork       = MAX(5*m*n/numPes,300*(n+m));
-  work        = (dtype*)malloc(lwork*sizeof(dtype));
-  iwork       = (int64_t*)malloc(300*(m+n)*sizeof(int64_t));
 
   srand48(666);
 
@@ -128,6 +124,118 @@ dtype * loc_A, * full_A, * work;
     time = MPI_Wtime()-time;
     
     dtype avg_formq_time = time/niter;
+    
+    if(myRank == 0){
+      printf("Completed " PRId64 " iterations of QR\n", iter);
+      //printf("Scalapack form Q (porgqr) from a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
+      //       m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
+      printf("Scalapack form Q (porgqr) from a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration\n",
+              m, n, time/niter);
+      printf("Total SCALAPCK time to compute and form Q is %lf\n",
+              avg_qr_time+avg_formq_time);
+    }
+  }
+}
+
+template <>
+inline void bench_scala_qr<double>(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr){
+double * loc_A, * full_A, * work;
+  int myRank, numPes;
+  int64_t pc, ipr, ipc, i, j, loc_off, nz;
+  double * TAU2, * loc_TAU2;
+  int64_t * iwork, * iclustr, * ifail;
+  int icontxt, iam, inprocs;
+  int64_t iter, lwork;
+  int info;
+  char cC = 'C';
+  int desc_A[9], desc_EC[9];
+  double time;
+
+
+  MPI_Comm_size(MPI_COMM_WORLD, &numPes);
+  MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
+  pc = numPes / pr;
+  ipc = myRank / pr;
+  ipr = myRank % pr;
+ 
+  loc_A    = (double*)malloc(m*n*sizeof(double)/numPes);
+  if (verify){
+    full_A  = (double*)malloc(m*n*sizeof(double));
+    TAU2  = (double*)malloc(n*sizeof(double));
+  }
+
+  srand48(666);
+
+  Cblacs_pinfo(&iam,&inprocs);
+  Cblacs_get(-1, 0, &icontxt);
+  Cblacs_gridinit(&icontxt, &cC, pr, pc);
+  cdescinit(desc_A, m, n,
+		        b, b,
+		        0, 0,
+		        icontxt, m/pr, 
+				    &info);
+  assert(info==0);
+  // first query for the correct size of lwork
+  double sizeQuery;
+  loc_TAU2  = (double*)malloc(n*sizeof(double)/pc);
+  cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,&sizeQuery,-1,&info);
+  
+  lwork       = sizeQuery;
+  work        = (double*)malloc(lwork*sizeof(double));
+  if (myRank == 0)
+  {
+    printf("lwork - %d", lwork);
+  }
+
+
+  if (verify && m*n*n < 1E9){
+     if (myRank == 0) printf("Verifying cpgeqrf correctness\n");
+    init_matrices(m,n,ipr,pr,ipc,pc,b,full_A,loc_A); 
+    cxgeqrf<double>(m,n,full_A,m,TAU2,work,lwork,&info);
+    cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+    loc_off = 0;
+    for (i=0; i<n; i++){
+      for (j=0; j<m; j++){
+        if ((i/b)%pc == ipc && (j/b)%pr == ipr){
+          double diff = full_A[i*m+j]-loc_A[loc_off];
+          if (GET_REAL(diff)/GET_REAL(full_A[i*m+j]) > 1.E-6)
+            printf("incorrect answer " PRId64 " scalapack computed %E, lapack computed %E\n",
+                    i, GET_REAL(loc_A[loc_off]), GET_REAL(full_A[i*m+j]));
+          loc_off++;
+        }
+      }
+    }
+    if (myRank == 0) printf("Verification of ScaLAPACK QR completed\n");
+  }
+  
+  time = MPI_Wtime();
+  for (iter=0; iter<niter; iter++){
+    for (i=0; i<m*n/numPes; i++){
+      loc_A[i] = drand48();
+    }
+    cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+  }
+  time = MPI_Wtime()-time;
+  
+  double avg_qr_time = time/niter;
+
+  if(myRank == 0){
+    printf("Completed " PRId64 " iterations of QR\n", iter);
+    printf("Scalapack QR (pgeqrf) on a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
+            m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
+  }
+ 
+  if (tdorgqr){ 
+    time = MPI_Wtime();
+    for (iter=0; iter<niter; iter++){
+      for (i=0; i<m*n/numPes; i++){
+        loc_A[i] = drand48();
+      }    
+      cpxorgqr<double>(m,n,MIN(m,n),loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+    }
+    time = MPI_Wtime()-time;
+    
+    double avg_formq_time = time/niter;
     
     if(myRank == 0){
       printf("Completed " PRId64 " iterations of QR\n", iter);

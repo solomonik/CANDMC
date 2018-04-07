@@ -6,7 +6,7 @@ TESTS := lu_25d_np_test  lu_25d_pp_test  lu_25d_tp_test  test_bitree_tsqr \
          test_full2band test_full2band_scala test_full2band_3d
 
 BENCHMARKS := bench_hh_recon  bench_qr_2d  bench_qr_butterfly_2d  bench_qr_tree_2d \
-              bench_scala_qr bench_qr_2d_hh_scala  bench_spc  bench_scala_sym_eig  lu_25d_np_bench  \
+              bench_scala_qr bench_scala_lu bench_scala_cholesky bench_qr_2d_hh_scala  bench_spc  bench_scala_sym_eig  lu_25d_np_bench  \
               lu_25d_pp_bench  lu_25d_tp_bench  topo_pdgemm_bench bench_qr_seq \
               bench_full2band bench_elpa_sym_eig bench_full2band_3d bench_qr_y2d
 

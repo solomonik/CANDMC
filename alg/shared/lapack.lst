@@ -1,0 +1,2176 @@
+   389 |  void cdlacpy(char, int, int, double const*, int, double*, int)(char uplo, int m, int n, char * A, int lda_A, char * B, int lda_B)
+          {
+            $$lda_B.nat.9 = lda_B;
+            $$lda_A.nat.9 = lda_A;
+            $$n.nat.9 = n;
+            $$m.nat.9 = m;
+            $$uplo.nat.9 = uplo;
+   390 |    uplo = $$uplo.nat.9;
+            m = $$m.nat.9;
+            n = $$n.nat.9;
+            lda_A = $$lda_A.nat.9;
+            lda_B = $$lda_B.nat.9;
+            dlacpy_(&uplo,&m,&n,A,&lda_A,B,&lda_B)
+   391 |    return;
+          } /* function */ 
+
+
+   395 |  void cdsyrk(char, char, int, int, double, double const*, int, double, double*, int)(char UPLO, char TRANS, int M, int K, double ALPHA, char * A, int LDA, double BETA, char * C, int LDC)
+   404 |  {
+            $$M.nat.9 = M;
+            $$TRANS.nat.9 = TRANS;
+            $$UPLO.nat.9 = UPLO;
+            $$LDC.nat.9 = LDC;
+            $$BETA.nat.9 = BETA;
+            $$LDA.nat.9 = LDA;
+            $$ALPHA.nat.9 = ALPHA;
+            $$K.nat.9 = K;
+   405 |    K = $$K.nat.9;
+            ALPHA = $$ALPHA.nat.9;
+            LDA = $$LDA.nat.9;
+            BETA = $$BETA.nat.9;
+            LDC = $$LDC.nat.9;
+            UPLO = $$UPLO.nat.9;
+            TRANS = $$TRANS.nat.9;
+            M = $$M.nat.9;
+            dsyrk_(&UPLO,&TRANS,&M,&K,&ALPHA,A,&LDA,&BETA,C,&LDC)
+   406 |    return;
+          } /* function */ 
+
+
+   409 |  void cdgetrf(int, int, double*, int, int*, int*)(int M, int N, char * A, int lda, char * IPIV, char * info)
+   411 |  {
+            $$lda.nat.9 = lda;
+            $$N.nat.9 = N;
+            $$M.nat.13 = M;
+   412 |    M = $$M.nat.13;
+            N = $$N.nat.9;
+            lda = $$lda.nat.9;
+            dgetrf_(&M,&N,A,&lda,IPIV,info)
+   413 |    return;
+          } /* function */ 
+
+
+   416 |  void cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(char SIDE, char UPLO, char TRANSA, char DIAG, int M, int N, double alpha, char * A, int lda, char * B, int ldb)
+   421 |  {
+            $$ldb.nat.9 = ldb;
+            $$lda.nat.13 = lda;
+            $$alpha.nat.9 = alpha;
+            $$N.nat.13 = N;
+            $$M.nat.1D = M;
+            $$DIAG.nat.9 = DIAG;
+            $$TRANSA.nat.9 = TRANSA;
+            $$UPLO.nat.13 = UPLO;
+            $$SIDE.nat.9 = SIDE;
+   422 |    SIDE = $$SIDE.nat.9;
+            UPLO = $$UPLO.nat.13;
+            TRANSA = $$TRANSA.nat.9;
+            DIAG = $$DIAG.nat.9;
+            M = $$M.nat.1D;
+            N = $$N.nat.13;
+            alpha = $$alpha.nat.9;
+            lda = $$lda.nat.13;
+            ldb = $$ldb.nat.9;
+            dtrsm_(&SIDE,&UPLO,&TRANSA,&DIAG,&M,&N,&alpha,A,&lda,B,&ldb)
+   423 |    return;
+          } /* function */ 
+
+
+   425 |  void cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(char transa, char transb, int m, int n, int k, double a, char * A, int lda, char * B, int ldb, double b, char * C, int ldc)
+   431 |  {
+            $$ldc.nat.9 = ldc;
+            $$b.nat.9 = b;
+            $$ldb.nat.13 = ldb;
+            $$lda.nat.1D = lda;
+            $$a.nat.9 = a;
+            $$k.nat.9 = k;
+            $$n.nat.13 = n;
+            $$m.nat.13 = m;
+            $$transb.nat.9 = transb;
+            $$transa.nat.9 = transa;
+   432 |    transa = $$transa.nat.9;
+            transb = $$transb.nat.9;
+            m = $$m.nat.13;
+            n = $$n.nat.13;
+            k = $$k.nat.9;
+            a = $$a.nat.9;
+            lda = $$lda.nat.1D;
+            ldb = $$ldb.nat.13;
+            b = $$b.nat.9;
+            ldc = $$ldc.nat.9;
+            dgemm_(&transa,&transb,&m,&n,&k,&a,A,&lda,B,&ldb,&b,C,&ldc)
+   434 |    return;
+          } /* function */ 
+
+
+   436 |  void czgemm(char, char, int, int, int, std::complex<double>, std::complex<double> const*, int, std::complex<double> const*, int, std::complex<double>, std::complex<double>*, int)(char transa, char transb, int m, int n, int k, aggr16 a, char * A, int lda, char * B, int ldb, aggr16 b, char * C, int ldc)
+   442 |  {
+            $$ldc.nat.13 = ldc;
+            $$ldb.nat.1D = ldb;
+            $$lda.nat.27 = lda;
+            $$k.nat.13 = k;
+            $$n.nat.1D = n;
+            $$m.nat.1D = m;
+            $$transb.nat.13 = transb;
+            $$transa.nat.13 = transa;
+   447 |    transa = $$transa.nat.13;
+            transb = $$transb.nat.13;
+            m = $$m.nat.1D;
+            n = $$n.nat.1D;
+            k = $$k.nat.13;
+            lda = $$lda.nat.27;
+            ldb = $$ldb.nat.1D;
+            ldc = $$ldc.nat.13;
+            zgemm_(&transa,&transb,&m,&n,&k,&a,A,&lda,B,&ldb,&b,C,&ldc)
+   450 |    return;
+          } /* function */ 
+
+
+   452 |  void czaxpy(int, std::complex<double>, std::complex<double> const*, int, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX, char * dY, int incY)
+   457 |  {
+            $$n.nat.27 = n;
+            $$incY.nat.9 = incY;
+            $$incX.nat.9 = incX;
+   458 |    incX = $$incX.nat.9;
+            incY = $$incY.nat.9;
+            n = $$n.nat.27;
+            zaxpy_(&n,&dA,dX,&incX,dY,&incY)
+   459 |    return;
+          } /* function */ 
+
+
+   462 |  void cdaxpy(int, double, double const*, int, double*, int)(int n, double dA, char * dX, int incX, char * dY, int incY)
+   464 |  {
+            $$incY.nat.13 = incY;
+            $$incX.nat.13 = incX;
+            $$dA.nat.9 = dA;
+            $$n.nat.31 = n;
+   465 |    n = $$n.nat.31;
+            dA = $$dA.nat.9;
+            incX = $$incX.nat.13;
+            incY = $$incY.nat.13;
+            daxpy_(&n,&dA,dX,&incX,dY,&incY)
+   466 |    return;
+          } /* function */ 
+
+
+   468 |  void czcopy(int, std::complex<double> const*, int, std::complex<double>*, int)(int n, char * dX, int incX, char * dY, int incY)
+   472 |  {
+            $$incY.nat.1D = incY;
+            $$incX.nat.1D = incX;
+            $$n.nat.3B = n;
+   473 |    n = $$n.nat.3B;
+            incX = $$incX.nat.1D;
+            incY = $$incY.nat.1D;
+            zcopy_(&n,dX,&incX,dY,&incY)
+   474 |    return;
+          } /* function */ 
+
+
+   477 |  void cdcopy(int, double const*, int, double*, int)(int n, char * dX, int incX, char * dY, int incY)
+   479 |  {
+            $$incY.nat.27 = incY;
+            $$incX.nat.27 = incX;
+            $$n.nat.45 = n;
+   480 |    n = $$n.nat.45;
+            incX = $$incX.nat.27;
+            incY = $$incY.nat.27;
+            dcopy_(&n,dX,&incX,dY,&incY)
+   481 |    return;
+          } /* function */ 
+
+
+   483 |  void cdscal(int, double, double*, int)(int n, double dA, char * dX, int incX)
+   484 |  {
+            $$incX.nat.31 = incX;
+            $$dA.nat.13 = dA;
+            $$n.nat.4F = n;
+   485 |    n = $$n.nat.4F;
+            dA = $$dA.nat.13;
+            incX = $$incX.nat.31;
+            dscal_(&n,&dA,dX,&incX)
+   486 |    return;
+          } /* function */ 
+
+
+   488 |  void czscal(int, std::complex<double>, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX)
+   489 |  {
+            $$incX.nat.3B = incX;
+            $$n.nat.59 = n;
+   490 |    n = $$n.nat.59;
+            incX = $$incX.nat.3B;
+            zscal_(&n,&dA,dX,&incX)
+   491 |    return;
+          } /* function */ 
+
+
+   494 |  double cddot(int, double const*, int, double const*, int)(int n, char * dX, int incX, char * dY, int incY)
+   496 |  {
+            $$incY.nat.31 = incY;
+            $$incX.nat.45 = incX;
+            $$n.nat.63 = n;
+            n = $$n.nat.63;
+            incX = $$incX.nat.45;
+            incY = $$incY.nat.31;
+            $$RET0 = ddot_(&n,dX,&incX,dY,&incY);
+   497 |    rstr = $$RET0;
+            return rstr;
+   498 |  } /* function */ 
+
+
+   502 |  void cdgeqrf(int, int, double*, int, double*, double*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   509 |  {
+            $$LWORK.nat.9 = LWORK;
+            $$LDA.nat.13 = LDA;
+            $$N.nat.1D = N;
+            $$M.nat.27 = M;
+   510 |    M = $$M.nat.27;
+            N = $$N.nat.1D;
+            LDA = $$LDA.nat.13;
+            LWORK = $$LWORK.nat.9;
+            dgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   511 |    return;
+          } /* function */ 
+
+
+   514 |  void void cxgeqrf<double>(int, int, double*, int, double*, double*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   521 |  {
+            $$LWORK.nat.13 = LWORK;
+            $$LDA.nat.1D = LDA;
+            $$N.nat.27 = N;
+            $$M.nat.31 = M;
+   522 |    M = $$M.nat.31;
+            N = $$N.nat.27;
+            LDA = $$LDA.nat.1D;
+            LWORK = $$LWORK.nat.13;
+            dgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   523 |    return;
+          } /* function */ 
+
+
+   526 |  void void cxgeqrf<std::complex<double> >(int, int, std::complex<double>*, int, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   533 |  {
+            $$LWORK.nat.1D = LWORK;
+            $$LDA.nat.27 = LDA;
+            $$N.nat.31 = N;
+            $$M.nat.3B = M;
+   534 |    M = $$M.nat.3B;
+            N = $$N.nat.31;
+            LDA = $$LDA.nat.27;
+            LWORK = $$LWORK.nat.1D;
+            zgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   535 |    return;
+          } /* function */ 
+
+
+   540 |  void cdormqr(char, char, int, int, int, double const*, int, double const*, double*, int, double*, int, int*)(char SIDE, char TRANS, int M, int N, int K, char * A, int LDA, char * TAU2, char * C, int LDC, char * WORK, int LWORK, char * INFO)
+   552 |  {
+            $$LWORK.nat.27 = LWORK;
+            $$LDC.nat.13 = LDC;
+            $$LDA.nat.31 = LDA;
+            $$K.nat.13 = K;
+            $$N.nat.3B = N;
+            $$M.nat.45 = M;
+            $$TRANS.nat.13 = TRANS;
+            $$SIDE.nat.13 = SIDE;
+   553 |    SIDE = $$SIDE.nat.13;
+            TRANS = $$TRANS.nat.13;
+            M = $$M.nat.45;
+            N = $$N.nat.3B;
+            K = $$K.nat.13;
+            LDA = $$LDA.nat.31;
+            LDC = $$LDC.nat.13;
+            LWORK = $$LWORK.nat.27;
+            dormqr_(&SIDE,&TRANS,&M,&N,&K,A,&LDA,TAU2,C,&LDC,WORK,&LWORK,INFO)
+   555 |    return;
+          } /* function */ 
+
+
+   557 |  void cdorgqr(int, int, int, double*, int, double const*, double*, int, int*)(int M, int N, int K, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   565 |  {
+            $$LWORK.nat.31 = LWORK;
+            $$LDA.nat.3B = LDA;
+            $$K.nat.1D = K;
+            $$N.nat.45 = N;
+            $$M.nat.4F = M;
+   566 |    M = $$M.nat.4F;
+            N = $$N.nat.45;
+            K = $$K.nat.1D;
+            LDA = $$LDA.nat.3B;
+            LWORK = $$LWORK.nat.31;
+            dorgqr_(&M,&N,&K,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   567 |    return;
+          } /* function */ 
+
+
+   570 |  void cdger(int, int, double, double const*, int, double const*, int, double*, int)(int M, int N, double alpha, char * X, int incX, char * Y, int incY, char * A, int lda_A)
+   578 |  {
+            $$lda_A.nat.13 = lda_A;
+            $$incY.nat.3B = incY;
+            $$incX.nat.4F = incX;
+            $$alpha.nat.13 = alpha;
+            $$N.nat.4F = N;
+            $$M.nat.59 = M;
+   579 |    M = $$M.nat.59;
+            N = $$N.nat.4F;
+            alpha = $$alpha.nat.13;
+            incX = $$incX.nat.4F;
+            incY = $$incY.nat.3B;
+            lda_A = $$lda_A.nat.13;
+            dger_(&M,&N,&alpha,X,&incX,Y,&incY,A,&lda_A)
+   580 |    return;
+          } /* function */ 
+
+
+   582 |  double cdlange(char, int, int, double const*, int, double*)(char NORM, int M, int N, char * A, int LDA, char * WORK)
+   587 |  {
+            $$LDA.nat.45 = LDA;
+            $$N.nat.59 = N;
+            $$M.nat.63 = M;
+            $$NORM.nat.9 = NORM;
+            NORM = $$NORM.nat.9;
+            M = $$M.nat.63;
+            N = $$N.nat.59;
+            LDA = $$LDA.nat.45;
+            $$RET1 = dlange_(&NORM,&M,&N,A,&LDA,WORK);
+   588 |    rstr = $$RET1;
+            return rstr;
+   589 |  } /* function */ 
+
+
+   593 |  void void cxgemm<double>(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(char transa, char transb, int m, int n, int k, double a, char * A, int lda, char * B, int ldb, double b, char * C, int ldc)
+   599 |  {
+   600 |    $$PARM.transa2B = transa;
+            $$PARM.transb2C = transb;
+            $$PARM.m2D = m;
+            $$PARM.n2E = n;
+            $$PARM.k2F = k;
+            $$PARM.a30 = a;
+            $$PARM.A31 = A;
+            $$PARM.lda32 = lda;
+            $$PARM.B33 = B;
+            $$PARM.ldb34 = ldb;
+            $$PARM.b35 = b;
+            $$PARM.C36 = C;
+            $$PARM.ldc37 = ldc;
+   431 |    $$ldc.nat.9 = $$PARM.ldc37;
+            $$b.nat.9 = $$PARM.b35;
+            $$ldb.nat.13 = $$PARM.ldb34;
+            $$lda.nat.1D = $$PARM.lda32;
+            $$a.nat.9 = $$PARM.a30;
+            $$k.nat.9 = $$PARM.k2F;
+            $$n.nat.13 = $$PARM.n2E;
+            $$m.nat.13 = $$PARM.m2D;
+            $$transb.nat.9 = $$PARM.transb2C;
+            $$transa.nat.9 = $$PARM.transa2B;
+   432 |    $$PARM.transa2B = $$transa.nat.9;
+            $$PARM.transb2C = $$transb.nat.9;
+            $$PARM.m2D = $$m.nat.13;
+            $$PARM.n2E = $$n.nat.13;
+            $$PARM.k2F = $$k.nat.9;
+            $$PARM.a30 = $$a.nat.9;
+            $$PARM.lda32 = $$lda.nat.1D;
+            $$PARM.ldb34 = $$ldb.nat.13;
+            $$PARM.b35 = $$b.nat.9;
+            $$PARM.ldc37 = $$ldc.nat.9;
+            dgemm_(&$$PARM.transa2B,&$$PARM.transb2C,&$$PARM.m2D,&$$PARM.n2E,&$$PARM.k2F,&$$PARM.a30,$$PARM.A31,&$$PARM.lda32,$$PARM.B33,&$$PARM.ldb34,&$$PARM.b35,$$PARM.C36,&$$PARM.ldc37)
+   601 |    return;
+          } /* function */ 
+
+
+   604 |  void void cxgemm<std::complex<double> >(char, char, int, int, int, std::complex<double>, std::complex<double> const*, int, std::complex<double> const*, int, std::complex<double>, std::complex<double>*, int)(char transa, char transb, int m, int n, int k, aggr16 a, char * A, int lda, char * B, int ldb, aggr16 b, char * C, int ldc)
+   610 |  {
+   611 |    $$PARM.transa1E = transa;
+            $$PARM.transb1F = transb;
+            $$PARM.m20 = m;
+            $$PARM.n21 = n;
+            $$PARM.k22 = k;
+            $$PARM.a23 = a;
+            $$PARM.A24 = A;
+            $$PARM.lda25 = lda;
+            $$PARM.B26 = B;
+            $$PARM.ldb27 = ldb;
+            $$PARM.b28 = b;
+            $$PARM.C29 = C;
+            $$PARM.ldc2A = ldc;
+   442 |    $$ldc.nat.13 = $$PARM.ldc2A;
+            $$ldb.nat.1D = $$PARM.ldb27;
+            $$lda.nat.27 = $$PARM.lda25;
+            $$k.nat.13 = $$PARM.k22;
+            $$n.nat.1D = $$PARM.n21;
+            $$m.nat.1D = $$PARM.m20;
+            $$transb.nat.13 = $$PARM.transb1F;
+            $$transa.nat.13 = $$PARM.transa1E;
+   447 |    $$PARM.transa1E = $$transa.nat.13;
+            $$PARM.transb1F = $$transb.nat.13;
+            $$PARM.m20 = $$m.nat.1D;
+            $$PARM.n21 = $$n.nat.1D;
+            $$PARM.k22 = $$k.nat.13;
+            $$PARM.lda25 = $$lda.nat.27;
+            $$PARM.ldb27 = $$ldb.nat.1D;
+            $$PARM.ldc2A = $$ldc.nat.13;
+            zgemm_(&$$PARM.transa1E,&$$PARM.transb1F,&$$PARM.m20,&$$PARM.n21,&$$PARM.k22,&$$PARM.a23,$$PARM.A24,&$$PARM.lda25,$$PARM.B26,&$$PARM.ldb27,&$$PARM.b28,$$PARM.C29,&$$PARM.ldc2A)
+   612 |    return;
+          } /* function */ 
+
+
+   615 |  void void cxaxpy<double>(int, double, double const*, int, double*, int)(int n, double dA, char * dX, int incX, char * dY, int incY)
+   617 |  {
+   618 |    $$PARM.n18 = n;
+            $$PARM.dA19 = dA;
+            $$PARM.dX1A = dX;
+            $$PARM.incX1B = incX;
+            $$PARM.dY1C = dY;
+            $$PARM.incY1D = incY;
+   464 |    $$incY.nat.13 = $$PARM.incY1D;
+            $$incX.nat.13 = $$PARM.incX1B;
+            $$dA.nat.9 = $$PARM.dA19;
+            $$n.nat.31 = $$PARM.n18;
+   465 |    $$PARM.n18 = $$n.nat.31;
+            $$PARM.dA19 = $$dA.nat.9;
+            $$PARM.incX1B = $$incX.nat.13;
+            $$PARM.incY1D = $$incY.nat.13;
+            daxpy_(&$$PARM.n18,&$$PARM.dA19,$$PARM.dX1A,&$$PARM.incX1B,$$PARM.dY1C,&$$PARM.incY1D)
+   619 |    return;
+          } /* function */ 
+
+
+   622 |  void void cxaxpy<std::complex<double> >(int, std::complex<double>, std::complex<double> const*, int, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX, char * dY, int incY)
+   628 |  {
+   629 |    $$PARM.n12 = n;
+            $$PARM.dA13 = dA;
+            $$PARM.dX14 = dX;
+            $$PARM.incX15 = incX;
+            $$PARM.dY16 = dY;
+            $$PARM.incY17 = incY;
+   457 |    $$n.nat.27 = $$PARM.n12;
+            $$incY.nat.9 = $$PARM.incY17;
+            $$incX.nat.9 = $$PARM.incX15;
+   458 |    $$PARM.incX15 = $$incX.nat.9;
+            $$PARM.incY17 = $$incY.nat.9;
+            $$PARM.n12 = $$n.nat.27;
+            zaxpy_(&$$PARM.n12,&$$PARM.dA13,$$PARM.dX14,&$$PARM.incX15,$$PARM.dY16,&$$PARM.incY17)
+   630 |    return;
+          } /* function */ 
+
+
+   633 |  void void cxscal<double>(int, double, double*, int)(int n, double dA, char * dX, int incX)
+   634 |  {
+   635 |    $$PARM.nE = n;
+            $$PARM.dAF = dA;
+            $$PARM.dX10 = dX;
+            $$PARM.incX11 = incX;
+   484 |    $$incX.nat.31 = $$PARM.incX11;
+            $$dA.nat.13 = $$PARM.dAF;
+            $$n.nat.4F = $$PARM.nE;
+   485 |    $$PARM.nE = $$n.nat.4F;
+            $$PARM.dAF = $$dA.nat.13;
+            $$PARM.incX11 = $$incX.nat.31;
+            dscal_(&$$PARM.nE,&$$PARM.dAF,$$PARM.dX10,&$$PARM.incX11)
+   636 |    return;
+          } /* function */ 
+
+
+   639 |  void void cxscal<std::complex<double> >(int, std::complex<double>, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX)
+   643 |  {
+   644 |    $$PARM.nA = n;
+            $$PARM.dAB = dA;
+            $$PARM.dXC = dX;
+            $$PARM.incXD = incX;
+   489 |    $$incX.nat.3B = $$PARM.incXD;
+            $$n.nat.59 = $$PARM.nA;
+   490 |    $$PARM.nA = $$n.nat.59;
+            $$PARM.incXD = $$incX.nat.3B;
+            zscal_(&$$PARM.nA,&$$PARM.dAB,$$PARM.dXC,&$$PARM.incXD)
+   645 |    return;
+          } /* function */ 
+
+
+   648 |  void void cxcopy<double>(int, double const*, int, double*, int)(int n, char * dX, int incX, char * dY, int incY)
+   650 |  {
+   651 |    $$PARM.n5 = n;
+            $$PARM.dX6 = dX;
+            $$PARM.incX7 = incX;
+            $$PARM.dY8 = dY;
+            $$PARM.incY9 = incY;
+   479 |    $$incY.nat.27 = $$PARM.incY9;
+            $$incX.nat.27 = $$PARM.incX7;
+            $$n.nat.45 = $$PARM.n5;
+   480 |    $$PARM.n5 = $$n.nat.45;
+            $$PARM.incX7 = $$incX.nat.27;
+            $$PARM.incY9 = $$incY.nat.27;
+            dcopy_(&$$PARM.n5,$$PARM.dX6,&$$PARM.incX7,$$PARM.dY8,&$$PARM.incY9)
+   652 |    return;
+          } /* function */ 
+
+
+   655 |  void void cxcopy<std::complex<double> >(int, std::complex<double> const*, int, std::complex<double>*, int)(int n, char * dX, int incX, char * dY, int incY)
+   660 |  {
+   661 |    $$PARM.n0 = n;
+            $$PARM.dX1 = dX;
+            $$PARM.incX2 = incX;
+            $$PARM.dY3 = dY;
+            $$PARM.incY4 = incY;
+   472 |    $$incY.nat.1D = $$PARM.incY4;
+            $$incX.nat.1D = $$PARM.incX2;
+            $$n.nat.3B = $$PARM.n0;
+   473 |    $$PARM.n0 = $$n.nat.3B;
+            $$PARM.incX2 = $$incX.nat.1D;
+            $$PARM.incY4 = $$incY.nat.1D;
+            zcopy_(&$$PARM.n0,$$PARM.dX1,&$$PARM.incX2,$$PARM.dY3,&$$PARM.incY4)
+   662 |    return;
+          } /* function */ 
+
+
+   664 |  void cdgetri(int, double*, int, int*, double*, int, int*)(int N, char * A, int LDA, char * IPIV, char * WORK, int lwork, char * info)
+   670 |  {
+            $$lwork.nat.9 = lwork;
+            $$LDA.nat.4F = LDA;
+            $$N.nat.63 = N;
+   671 |    N = $$N.nat.63;
+            LDA = $$LDA.nat.4F;
+            lwork = $$lwork.nat.9;
+            dgetri_(&N,A,&LDA,IPIV,WORK,&lwork,info)
+   672 |    return;
+          } /* function */ 
+
+
+   677 |  void cdtpqrt(int, int, int, int, double*, int, double*, int, double*, int, double*, int*)(int m, int n, int l, int nb, char * A, int lda_A, char * B, int lda_B, char * T, int lda_T, char * work, char * info)
+   688 |  {
+            $$lda_T.nat.9 = lda_T;
+            $$lda_B.nat.13 = lda_B;
+            $$lda_A.nat.1D = lda_A;
+            $$nb.nat.9 = nb;
+            $$l.nat.9 = l;
+            $$n.nat.6D = n;
+            $$m.nat.27 = m;
+   689 |    m = $$m.nat.27;
+            n = $$n.nat.6D;
+            l = $$l.nat.9;
+            nb = $$nb.nat.9;
+            lda_A = $$lda_A.nat.1D;
+            lda_B = $$lda_B.nat.13;
+            lda_T = $$lda_T.nat.9;
+            dtpqrt_(&m,&n,&l,&nb,A,&lda_A,B,&lda_B,T,&lda_T,work,info)
+   690 |    return;
+          } /* function */ 
+
+
+   692 |  void cdtprfb(char, char, char, char, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int)(char side, char trans, char DIRECT, char STOREV, int m, int n, int k, int l, char * V, int lda_V, char * T, int lda_T, char * A, int lda_A, char * B, int lda_B, char * work, int ldwork)
+   709 |  {
+            $$ldwork.nat.9 = ldwork;
+            $$lda_B.nat.1D = lda_B;
+            $$lda_A.nat.27 = lda_A;
+            $$lda_T.nat.13 = lda_T;
+            $$lda_V.nat.9 = lda_V;
+            $$l.nat.13 = l;
+            $$k.nat.1D = k;
+            $$n.nat.77 = n;
+            $$m.nat.31 = m;
+            $$STOREV.nat.9 = STOREV;
+            $$DIRECT.nat.9 = DIRECT;
+            $$trans.nat.9 = trans;
+            $$side.nat.9 = side;
+   710 |    side = $$side.nat.9;
+            trans = $$trans.nat.9;
+            DIRECT = $$DIRECT.nat.9;
+            STOREV = $$STOREV.nat.9;
+            m = $$m.nat.31;
+            n = $$n.nat.77;
+            k = $$k.nat.1D;
+            l = $$l.nat.13;
+            lda_V = $$lda_V.nat.9;
+            lda_T = $$lda_T.nat.13;
+            lda_A = $$lda_A.nat.27;
+            lda_B = $$lda_B.nat.1D;
+            ldwork = $$ldwork.nat.9;
+            dtprfb_(&side,&trans,&DIRECT,&STOREV,&m,&n,&k,&l,V,&lda_V,T,&lda_T,A,&lda_A,B,&lda_B,work,&ldwork)
+   711 |    return;
+          } /* function */ 
+
+
+   712 |  void cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(char side, char trans, int m, int n, int k, int l, int NB, char * V, int lda_V, char * T, int lda_T, char * A, int lda_A, char * B, int lda_B, char * work, char * info)
+   728 |  {
+            $$lda_B.nat.27 = lda_B;
+            $$lda_A.nat.31 = lda_A;
+            $$lda_T.nat.1D = lda_T;
+            $$lda_V.nat.13 = lda_V;
+            $$NB.nat.9 = NB;
+            $$l.nat.1D = l;
+            $$k.nat.27 = k;
+            $$n.nat.81 = n;
+            $$m.nat.3B = m;
+            $$trans.nat.13 = trans;
+            $$side.nat.13 = side;
+   730 |    side = $$side.nat.13;
+            trans = $$trans.nat.13;
+            m = $$m.nat.3B;
+            n = $$n.nat.81;
+            k = $$k.nat.27;
+            l = $$l.nat.1D;
+            NB = $$NB.nat.9;
+            lda_V = $$lda_V.nat.13;
+            lda_T = $$lda_T.nat.1D;
+            lda_A = $$lda_A.nat.31;
+            lda_B = $$lda_B.nat.27;
+            dtpmqrt_(&side,&trans,&m,&n,&k,&l,&NB,V,&lda_V,T,&lda_T,A,&lda_A,B,&lda_B,work,info)
+   731 |    return;
+          } /* function */ 
+
+
+   735 |  void cdlarft(char, char, int, int, double const*, int, double const*, double*, int)(char f, char c, int m, int b, char * Y, int lda_Y, char * tau, char * T, int lda_T)
+   743 |  {
+            $$lda_T.nat.27 = lda_T;
+            $$lda_Y.nat.9 = lda_Y;
+            $$b.nat.13 = b;
+            $$m.nat.45 = m;
+            $$c.nat.9 = c;
+            $$f.nat.9 = f;
+   744 |    f = $$f.nat.9;
+            c = $$c.nat.9;
+            m = $$m.nat.45;
+            b = $$b.nat.13;
+            lda_Y = $$lda_Y.nat.9;
+            lda_T = $$lda_T.nat.27;
+            dlarft_(&f,&c,&m,&b,Y,&lda_Y,tau,T,&lda_T)
+   745 |    return;
+          } /* function */ 
+
+
+   747 |  void cdlarfb(char, char, char, char, int, int, int, double const*, int, double const*, int, double*, int, double*, int)(char l, char t, char f, char c, int m, int k, int b, char * Y, int lda_Y, char * T, int lda_T, char * B, int lda_B, char * buffer, int buf_sz)
+   761 |  {
+            $$buf_sz.nat.9 = buf_sz;
+            $$lda_B.nat.31 = lda_B;
+            $$lda_T.nat.31 = lda_T;
+            $$lda_Y.nat.13 = lda_Y;
+            $$b.nat.1D = b;
+            $$k.nat.31 = k;
+            $$m.nat.4F = m;
+            $$c.nat.13 = c;
+            $$f.nat.13 = f;
+            $$t.nat.9 = t;
+            $$l.nat.27 = l;
+   762 |    l = $$l.nat.27;
+            t = $$t.nat.9;
+            f = $$f.nat.13;
+            c = $$c.nat.13;
+            m = $$m.nat.4F;
+            k = $$k.nat.31;
+            b = $$b.nat.1D;
+            lda_Y = $$lda_Y.nat.13;
+            lda_T = $$lda_T.nat.31;
+            lda_B = $$lda_B.nat.31;
+            buf_sz = $$buf_sz.nat.9;
+            dlarfb_(&l,&t,&f,&c,&m,&k,&b,Y,&lda_Y,T,&lda_T,B,&lda_B,buffer,&buf_sz)
+   764 |    return;
+          } /* function */ 
+
+
+   766 |  void cdlatrd(char, int, int, double*, int, double*, double*, double*, int)(char UPLO, int N, int NB, char * A, int LDA, char * E, char * TAU2, char * W, int LDW)
+   774 |  {
+            $$LDW.nat.9 = LDW;
+            $$LDA.nat.59 = LDA;
+            $$NB.nat.13 = NB;
+            $$N.nat.6D = N;
+            $$UPLO.nat.1D = UPLO;
+   775 |    UPLO = $$UPLO.nat.1D;
+            N = $$N.nat.6D;
+            NB = $$NB.nat.13;
+            LDA = $$LDA.nat.59;
+            LDW = $$LDW.nat.9;
+            dlatrd_(&UPLO,&N,&NB,A,&LDA,E,TAU2,W,&LDW)
+   776 |    return;
+          } /* function */ 
+
+
+   778 |  void cdsytrd(char, int, double*, int, double*, double*, double*, double*, int, int*)(char UPLO, int N, char * A, int LDA, char * D, char * E, char * TAU2, char * WORK, int LWORK, char * INFO)
+   787 |  {
+            $$LWORK.nat.3B = LWORK;
+            $$LDA.nat.63 = LDA;
+            $$N.nat.77 = N;
+            $$UPLO.nat.27 = UPLO;
+   788 |    UPLO = $$UPLO.nat.27;
+            N = $$N.nat.77;
+            LDA = $$LDA.nat.63;
+            LWORK = $$LWORK.nat.3B;
+            dsytrd_(&UPLO,&N,A,&LDA,D,E,TAU2,WORK,&LWORK,INFO)
+   789 |    return;
+          } /* function */ 
+
+
+   791 |  void cdsyevx(char, char, char, int, double*, int, double, double, int, int, double, int*, double*, double*, int, double*, int, int*, int*, int*)(char JOBZ, char RANGE, char UPLO, int N, char * A, int LDA, double VL, double VU, int IL, int IU, double ABSTOL, char * M, char * W, char * Z, int LDZ, char * WORK, int LWORK, char * IWORK, char * IFAIL, char * INFO)
+   810 |  {
+            $$LWORK.nat.45 = LWORK;
+            $$LDZ.nat.9 = LDZ;
+            $$ABSTOL.nat.9 = ABSTOL;
+            $$IU.nat.9 = IU;
+            $$IL.nat.9 = IL;
+            $$VU.nat.9 = VU;
+            $$VL.nat.9 = VL;
+            $$LDA.nat.6D = LDA;
+            $$N.nat.81 = N;
+            $$UPLO.nat.31 = UPLO;
+            $$RANGE.nat.9 = RANGE;
+            $$JOBZ.nat.9 = JOBZ;
+   811 |    JOBZ = $$JOBZ.nat.9;
+            RANGE = $$RANGE.nat.9;
+            UPLO = $$UPLO.nat.31;
+            N = $$N.nat.81;
+            LDA = $$LDA.nat.6D;
+            VL = $$VL.nat.9;
+            VU = $$VU.nat.9;
+            IL = $$IL.nat.9;
+            IU = $$IU.nat.9;
+            ABSTOL = $$ABSTOL.nat.9;
+            LDZ = $$LDZ.nat.9;
+            LWORK = $$LWORK.nat.45;
+            dsyevx_(&JOBZ,&RANGE,&UPLO,&N,A,&LDA,&VL,&VU,&IL,&IU,&ABSTOL,M,W,Z,&LDZ,WORK,&LWORK,IWORK,IFAIL,INFO)
+   813 |    return;
+          } /* function */ 
+
+
+   816 |  void cdtrtri(char, char, int, double*, int, int*)(char UPLO, char DIAG, int N, char * A, int LDA, char * INFO)
+   821 |  {
+            $$UPLO.nat.3B = UPLO;
+            $$LDA.nat.77 = LDA;
+            $$N.nat.8B = N;
+            $$DIAG.nat.13 = DIAG;
+   822 |    DIAG = $$DIAG.nat.13;
+            N = $$N.nat.8B;
+            LDA = $$LDA.nat.77;
+            UPLO = $$UPLO.nat.3B;
+            dtrtri_(&UPLO,&DIAG,&N,A,&LDA,INFO)
+   823 |    return;
+          } /* function */ 
+
+
+  1034 |  void cdescinit(int*, int, int, int, int, int, int, int, int, int*)(char * desc, int m, int n, int mb, int nb, int irsrc, int icsrc, int ictxt, int LLD, char * info)
+  1039 |  {
+            $$LLD.nat.9 = LLD;
+            $$ictxt.nat.9 = ictxt;
+            $$icsrc.nat.9 = icsrc;
+            $$irsrc.nat.9 = irsrc;
+            $$nb.nat.13 = nb;
+            $$mb.nat.9 = mb;
+            $$n.nat.8B = n;
+            $$m.nat.59 = m;
+  1040 |    m = $$m.nat.59;
+            n = $$n.nat.8B;
+            mb = $$mb.nat.9;
+            nb = $$nb.nat.13;
+            irsrc = $$irsrc.nat.9;
+            icsrc = $$icsrc.nat.9;
+            ictxt = $$ictxt.nat.9;
+            LLD = $$LLD.nat.9;
+            descinit(desc,&m,&n,&mb,&nb,&irsrc,&icsrc,&ictxt,&LLD,info)
+  1042 |    return;
+          } /* function */ 
+
+
+  1044 |  void cpdgemm(char, char, int, int, int, double, double*, int, int, int*, double*, int, int, int*, double, double*, int, int, int*)(char n1, char n2, int sz1, int sz2, int sz3, double ALPHA, char * A, int ia, int ja, char * desca, char * B, int ib, int jb, char * descb, double BETA, char * C, int ic, int jc, char * descc)
+  1053 |  {
+            $$jc.nat.9 = jc;
+            $$ic.nat.9 = ic;
+            $$BETA.nat.13 = BETA;
+            $$jb.nat.9 = jb;
+            $$ib.nat.9 = ib;
+            $$ja.nat.9 = ja;
+            $$ia.nat.9 = ia;
+            $$ALPHA.nat.13 = ALPHA;
+            $$sz3.nat.9 = sz3;
+            $$sz2.nat.9 = sz2;
+            $$sz1.nat.9 = sz1;
+            $$n2.nat.9 = n2;
+            $$n1.nat.9 = n1;
+  1054 |    n1 = $$n1.nat.9;
+            n2 = $$n2.nat.9;
+            sz1 = $$sz1.nat.9;
+            sz2 = $$sz2.nat.9;
+            sz3 = $$sz3.nat.9;
+            ALPHA = $$ALPHA.nat.13;
+            ia = $$ia.nat.9;
+            ja = $$ja.nat.9;
+            ib = $$ib.nat.9;
+            jb = $$jb.nat.9;
+            BETA = $$BETA.nat.13;
+            ic = $$ic.nat.9;
+            jc = $$jc.nat.9;
+            pdgemm(&n1,&n2,&sz1,&sz2,&sz3,&ALPHA,A,&ia,&ja,desca,B,&ib,&jb,descb,&BETA,C,&ic,&jc,descc)
+  1059 |    return;
+          } /* function */ 
+
+
+  1061 |  void cpdsyrk(char, char, int, int, double, double const*, int, int, int*, double, double*, int, int, int*)(char UPLO, char TRANS, int N, int K, double ALPHA, char * A, int IA, int JA, char * DESCA, double BETA, char * C, int IC, int JC, char * DESCC)
+  1074 |  {
+            $$JC.nat.9 = JC;
+            $$IC.nat.9 = IC;
+            $$BETA.nat.1D = BETA;
+            $$JA.nat.9 = JA;
+            $$IA.nat.9 = IA;
+            $$ALPHA.nat.1D = ALPHA;
+            $$K.nat.27 = K;
+            $$N.nat.95 = N;
+            $$TRANS.nat.1D = TRANS;
+            $$UPLO.nat.45 = UPLO;
+  1075 |    UPLO = $$UPLO.nat.45;
+            TRANS = $$TRANS.nat.1D;
+            N = $$N.nat.95;
+            K = $$K.nat.27;
+            ALPHA = $$ALPHA.nat.1D;
+            IA = $$IA.nat.9;
+            JA = $$JA.nat.9;
+            BETA = $$BETA.nat.1D;
+            IC = $$IC.nat.9;
+            JC = $$JC.nat.9;
+            pdsyrk(&UPLO,&TRANS,&N,&K,&ALPHA,A,&IA,&JA,DESCA,&BETA,C,&IC,&JC,DESCC)
+  1077 |    return;
+          } /* function */ 
+
+
+  1079 |  void cpdtrsm(char, char, char, char, int, int, double, double const*, int, int, int*, double*, int, int, int*)(char SIDE, char UPLO, char TRANS, char DIAG, int M, int N, double ALPHA, char * A, int IA, int JA, char * DESCA, char * B, int IB, int JB, char * DESCB)
+  1093 |  {
+            $$ALPHA.nat.27 = ALPHA;
+            $$N.nat.9F = N;
+            $$M.nat.6D = M;
+            $$DIAG.nat.1D = DIAG;
+            $$TRANS.nat.27 = TRANS;
+            $$UPLO.nat.4F = UPLO;
+            $$SIDE.nat.1D = SIDE;
+            $$JB.nat.9 = JB;
+            $$IB.nat.9 = IB;
+            $$JA.nat.13 = JA;
+            $$IA.nat.13 = IA;
+  1094 |    IA = $$IA.nat.13;
+            JA = $$JA.nat.13;
+            IB = $$IB.nat.9;
+            JB = $$JB.nat.9;
+            SIDE = $$SIDE.nat.1D;
+            UPLO = $$UPLO.nat.4F;
+            TRANS = $$TRANS.nat.27;
+            DIAG = $$DIAG.nat.1D;
+            M = $$M.nat.6D;
+            N = $$N.nat.9F;
+            ALPHA = $$ALPHA.nat.27;
+            pdtrsm(&SIDE,&UPLO,&TRANS,&DIAG,&M,&N,&ALPHA,A,&IA,&JA,DESCA,B,&IB,&JB,DESCB)
+  1095 |    return;
+          } /* function */ 
+
+
+  1097 |  void cpdpotrf(char, int, double*, int, int, int*, int*)(char uplo, int n, char * A, int ia, int ja, char * desca, char * info)
+  1100 |  {
+            $$ja.nat.13 = ja;
+            $$ia.nat.13 = ia;
+            $$n.nat.95 = n;
+            $$uplo.nat.13 = uplo;
+  1101 |    uplo = $$uplo.nat.13;
+            n = $$n.nat.95;
+            ia = $$ia.nat.13;
+            ja = $$ja.nat.13;
+            pdpotrf(&uplo,&n,A,&ia,&ja,desca,info)
+  1102 |    return;
+          } /* function */ 
+
+
+  1104 |  void cpdgetrf(int, int, double*, int, int, int*, int*, int*)(int m, int n, char * A, int ia, int ja, char * desca, char * IPIV, char * info)
+  1107 |  {
+            $$ja.nat.1D = ja;
+            $$ia.nat.1D = ia;
+            $$n.nat.9F = n;
+            $$m.nat.63 = m;
+  1108 |    m = $$m.nat.63;
+            n = $$n.nat.9F;
+            ia = $$ia.nat.1D;
+            ja = $$ja.nat.1D;
+            pdgetrf(&m,&n,A,&ia,&ja,desca,IPIV,info)
+  1109 |    return;
+          } /* function */ 
+
+
+  1111 |  void cpdgeqrf(int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1120 |  {
+            $$LWORK.nat.4F = LWORK;
+            $$JA.nat.1D = JA;
+            $$IA.nat.1D = IA;
+            $$N.nat.A9 = N;
+            $$M.nat.77 = M;
+  1121 |    M = $$M.nat.77;
+            N = $$N.nat.A9;
+            IA = $$IA.nat.1D;
+            JA = $$JA.nat.1D;
+            LWORK = $$LWORK.nat.4F;
+            pdgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1122 |    return;
+          } /* function */ 
+
+
+  1125 |  void void cpxgeqrf<double>(int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1134 |  {
+            $$LWORK.nat.59 = LWORK;
+            $$JA.nat.27 = JA;
+            $$IA.nat.27 = IA;
+            $$N.nat.B3 = N;
+            $$M.nat.81 = M;
+  1135 |    M = $$M.nat.81;
+            N = $$N.nat.B3;
+            IA = $$IA.nat.27;
+            JA = $$JA.nat.27;
+            LWORK = $$LWORK.nat.59;
+            pdgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1136 |    return;
+          } /* function */ 
+
+
+  1153 |  void void cpxgeqrf<std::complex<double> >(int, int, std::complex<double>*, int, int, int const*, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1162 |  {
+            $$LWORK.nat.63 = LWORK;
+            $$JA.nat.31 = JA;
+            $$IA.nat.31 = IA;
+            $$N.nat.BD = N;
+            $$M.nat.8B = M;
+  1163 |    M = $$M.nat.8B;
+            N = $$N.nat.BD;
+            IA = $$IA.nat.31;
+            JA = $$JA.nat.31;
+            LWORK = $$LWORK.nat.63;
+            pzgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1164 |    return;
+          } /* function */ 
+
+
+  1177 |  void cpdorgqr(int, int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1187 |  {
+            $$M.nat.95 = M;
+            $$LWORK.nat.6D = LWORK;
+            $$JA.nat.3B = JA;
+            $$IA.nat.3B = IA;
+            $$K.nat.31 = K;
+            $$N.nat.C7 = N;
+  1188 |    N = $$N.nat.C7;
+            K = $$K.nat.31;
+            IA = $$IA.nat.3B;
+            JA = $$JA.nat.3B;
+            LWORK = $$LWORK.nat.6D;
+            M = $$M.nat.95;
+            pdorgqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1189 |    return;
+          } /* function */ 
+
+
+  1192 |  void void cpxorgqr<double>(int, int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1202 |  {
+            $$LWORK.nat.77 = LWORK;
+            $$JA.nat.45 = JA;
+            $$IA.nat.45 = IA;
+            $$K.nat.3B = K;
+            $$N.nat.D1 = N;
+            $$M.nat.9F = M;
+  1203 |    M = $$M.nat.9F;
+            N = $$N.nat.D1;
+            K = $$K.nat.3B;
+            IA = $$IA.nat.45;
+            JA = $$JA.nat.45;
+            LWORK = $$LWORK.nat.77;
+            pdorgqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1204 |    return;
+          } /* function */ 
+
+
+  1207 |  void void cpxorgqr<std::complex<double> >(int, int, int, std::complex<double>*, int, int, int const*, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1217 |  {
+            $$LWORK.nat.81 = LWORK;
+            $$JA.nat.4F = JA;
+            $$IA.nat.4F = IA;
+            $$K.nat.45 = K;
+            $$N.nat.DB = N;
+            $$M.nat.A9 = M;
+  1218 |    M = $$M.nat.A9;
+            N = $$N.nat.DB;
+            K = $$K.nat.45;
+            IA = $$IA.nat.4F;
+            JA = $$JA.nat.4F;
+            LWORK = $$LWORK.nat.81;
+            pzungqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1219 |    return;
+          } /* function */ 
+
+
+  1223 |  void cpdlatrd(char, int, int, double*, int, int, int*, double*, double*, double*, double*, int, int, int*, double*)(char UPLO, int N, int NB, char * A, int IA, int JA, char * DESCA, char * D, char * E, char * TAU2, char * W, int IW, int JW, char * DESCW, char * WORK)
+  1237 |  {
+            $$JW.nat.9 = JW;
+            $$IW.nat.9 = IW;
+            $$JA.nat.59 = JA;
+            $$IA.nat.59 = IA;
+            $$NB.nat.1D = NB;
+            $$N.nat.E5 = N;
+            $$UPLO.nat.59 = UPLO;
+  1238 |    UPLO = $$UPLO.nat.59;
+            N = $$N.nat.E5;
+            NB = $$NB.nat.1D;
+            IA = $$IA.nat.59;
+            JA = $$JA.nat.59;
+            IW = $$IW.nat.9;
+            JW = $$JW.nat.9;
+            pdlatrd_(&UPLO,&N,&NB,A,&IA,&JA,DESCA,D,E,TAU2,W,&IW,&JW,DESCW,WORK)
+  1239 |    return;
+          } /* function */ 
+
+
+  1243 |  void cpdsytrd(char, int, double*, int, int, int*, double*, double*, double*, double*, int, int*)(char UPLO, int N, char * A, int IA, int JA, char * DESCA, char * D, char * E, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1254 |  {
+            $$JA.nat.63 = JA;
+            $$IA.nat.63 = IA;
+            $$N.nat.EF = N;
+            $$UPLO.nat.63 = UPLO;
+            $$LWORK.nat.8B = LWORK;
+  1255 |    LWORK = $$LWORK.nat.8B;
+            UPLO = $$UPLO.nat.63;
+            N = $$N.nat.EF;
+            IA = $$IA.nat.63;
+            JA = $$JA.nat.63;
+            pdsytrd_(&UPLO,&N,A,&IA,&JA,DESCA,D,E,TAU2,WORK,&LWORK,INFO)
+  1256 |    return;
+          } /* function */ 
+
+
+  1258 |  void cpdsyevx(char, char, char, int, double*, int, int, int*, double, double, int, int, double, int*, int*, double*, double, double*, int, int, int*, double*, int, int*, int, int*, int*, double*, int*)(char JOBZ, char RANGE, char UPLO, int N, char * A, int IA, int JA, char * DESCA, double VL, double VU, int IL, int IU, double ABSTOL, char * M, char * NZ, char * W, double ORFAC, char * Z, int IZ, int JZ, char * DESCZ, char * WORK, int LWORK, char * IWORK, int LIWORK, char * IFAIL, char * ICLUSTR, char * GAP, char * INFO)
+  1286 |  {
+            $$LIWORK.nat.9 = LIWORK;
+            $$LWORK.nat.95 = LWORK;
+            $$JZ.nat.9 = JZ;
+            $$IZ.nat.9 = IZ;
+            $$ORFAC.nat.9 = ORFAC;
+            $$ABSTOL.nat.13 = ABSTOL;
+            $$IU.nat.13 = IU;
+            $$IL.nat.13 = IL;
+            $$VU.nat.13 = VU;
+            $$VL.nat.13 = VL;
+            $$JA.nat.6D = JA;
+            $$IA.nat.6D = IA;
+            $$N.nat.F9 = N;
+            $$UPLO.nat.6D = UPLO;
+            $$RANGE.nat.13 = RANGE;
+            $$JOBZ.nat.13 = JOBZ;
+  1287 |    JOBZ = $$JOBZ.nat.13;
+            RANGE = $$RANGE.nat.13;
+            UPLO = $$UPLO.nat.6D;
+            N = $$N.nat.F9;
+            IA = $$IA.nat.6D;
+            JA = $$JA.nat.6D;
+            VL = $$VL.nat.13;
+            VU = $$VU.nat.13;
+            IL = $$IL.nat.13;
+            IU = $$IU.nat.13;
+            ABSTOL = $$ABSTOL.nat.13;
+            ORFAC = $$ORFAC.nat.9;
+            IZ = $$IZ.nat.9;
+            JZ = $$JZ.nat.9;
+            LWORK = $$LWORK.nat.95;
+            LIWORK = $$LIWORK.nat.9;
+            pdsyevx_(&JOBZ,&RANGE,&UPLO,&N,A,&IA,&JA,DESCA,&VL,&VU,&IL,&IU,&ABSTOL,M,NZ,W,&ORFAC,Z,&IZ,&JZ,DESCZ,WORK,&LWORK,IWORK,&LIWORK,IFAIL,ICLUSTR,GAP,INFO)
+  1290 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+   389 |  void cdlacpy(char, int, int, double const*, int, double*, int)(char uplo, int m, int n, char * A, int lda_A, char * B, int lda_B)
+          {
+            $$lda_B.nat.9 = lda_B;
+            $$lda_A.nat.9 = lda_A;
+            $$n.nat.9 = n;
+            $$m.nat.9 = m;
+            $$uplo.nat.9 = uplo;
+   390 |    uplo = $$uplo.nat.9;
+            m = $$m.nat.9;
+            n = $$n.nat.9;
+            lda_A = $$lda_A.nat.9;
+            lda_B = $$lda_B.nat.9;
+            dlacpy_(&uplo,&m,&n,A,&lda_A,B,&lda_B)
+   391 |    return;
+          } /* function */ 
+
+
+   395 |  void cdsyrk(char, char, int, int, double, double const*, int, double, double*, int)(char UPLO, char TRANS, int M, int K, double ALPHA, char * A, int LDA, double BETA, char * C, int LDC)
+   404 |  {
+            $$M.nat.9 = M;
+            $$TRANS.nat.9 = TRANS;
+            $$UPLO.nat.9 = UPLO;
+            $$LDC.nat.9 = LDC;
+            $$BETA.nat.9 = BETA;
+            $$LDA.nat.9 = LDA;
+            $$ALPHA.nat.9 = ALPHA;
+            $$K.nat.9 = K;
+   405 |    K = $$K.nat.9;
+            ALPHA = $$ALPHA.nat.9;
+            LDA = $$LDA.nat.9;
+            BETA = $$BETA.nat.9;
+            LDC = $$LDC.nat.9;
+            UPLO = $$UPLO.nat.9;
+            TRANS = $$TRANS.nat.9;
+            M = $$M.nat.9;
+            dsyrk_(&UPLO,&TRANS,&M,&K,&ALPHA,A,&LDA,&BETA,C,&LDC)
+   406 |    return;
+          } /* function */ 
+
+
+   409 |  void cdgetrf(int, int, double*, int, int*, int*)(int M, int N, char * A, int lda, char * IPIV, char * info)
+   411 |  {
+            $$lda.nat.9 = lda;
+            $$N.nat.9 = N;
+            $$M.nat.13 = M;
+   412 |    M = $$M.nat.13;
+            N = $$N.nat.9;
+            lda = $$lda.nat.9;
+            dgetrf_(&M,&N,A,&lda,IPIV,info)
+   413 |    return;
+          } /* function */ 
+
+
+   416 |  void cdtrsm(char, char, char, char, int, int, double, double const*, int, double*, int)(char SIDE, char UPLO, char TRANSA, char DIAG, int M, int N, double alpha, char * A, int lda, char * B, int ldb)
+   421 |  {
+            $$ldb.nat.9 = ldb;
+            $$lda.nat.13 = lda;
+            $$alpha.nat.9 = alpha;
+            $$N.nat.13 = N;
+            $$M.nat.1D = M;
+            $$DIAG.nat.9 = DIAG;
+            $$TRANSA.nat.9 = TRANSA;
+            $$UPLO.nat.13 = UPLO;
+            $$SIDE.nat.9 = SIDE;
+   422 |    SIDE = $$SIDE.nat.9;
+            UPLO = $$UPLO.nat.13;
+            TRANSA = $$TRANSA.nat.9;
+            DIAG = $$DIAG.nat.9;
+            M = $$M.nat.1D;
+            N = $$N.nat.13;
+            alpha = $$alpha.nat.9;
+            lda = $$lda.nat.13;
+            ldb = $$ldb.nat.9;
+            dtrsm_(&SIDE,&UPLO,&TRANSA,&DIAG,&M,&N,&alpha,A,&lda,B,&ldb)
+   423 |    return;
+          } /* function */ 
+
+
+   425 |  void cdgemm(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(char transa, char transb, int m, int n, int k, double a, char * A, int lda, char * B, int ldb, double b, char * C, int ldc)
+   431 |  {
+            $$ldc.nat.9 = ldc;
+            $$b.nat.9 = b;
+            $$ldb.nat.13 = ldb;
+            $$lda.nat.1D = lda;
+            $$a.nat.9 = a;
+            $$k.nat.9 = k;
+            $$n.nat.13 = n;
+            $$m.nat.13 = m;
+            $$transb.nat.9 = transb;
+            $$transa.nat.9 = transa;
+   432 |    transa = $$transa.nat.9;
+            transb = $$transb.nat.9;
+            m = $$m.nat.13;
+            n = $$n.nat.13;
+            k = $$k.nat.9;
+            a = $$a.nat.9;
+            lda = $$lda.nat.1D;
+            ldb = $$ldb.nat.13;
+            b = $$b.nat.9;
+            ldc = $$ldc.nat.9;
+            dgemm_(&transa,&transb,&m,&n,&k,&a,A,&lda,B,&ldb,&b,C,&ldc)
+   434 |    return;
+          } /* function */ 
+
+
+   436 |  void czgemm(char, char, int, int, int, std::complex<double>, std::complex<double> const*, int, std::complex<double> const*, int, std::complex<double>, std::complex<double>*, int)(char transa, char transb, int m, int n, int k, aggr16 a, char * A, int lda, char * B, int ldb, aggr16 b, char * C, int ldc)
+   442 |  {
+            $$ldc.nat.13 = ldc;
+            $$ldb.nat.1D = ldb;
+            $$lda.nat.27 = lda;
+            $$k.nat.13 = k;
+            $$n.nat.1D = n;
+            $$m.nat.1D = m;
+            $$transb.nat.13 = transb;
+            $$transa.nat.13 = transa;
+   447 |    transa = $$transa.nat.13;
+            transb = $$transb.nat.13;
+            m = $$m.nat.1D;
+            n = $$n.nat.1D;
+            k = $$k.nat.13;
+            lda = $$lda.nat.27;
+            ldb = $$ldb.nat.1D;
+            ldc = $$ldc.nat.13;
+            zgemm_(&transa,&transb,&m,&n,&k,&a,A,&lda,B,&ldb,&b,C,&ldc)
+   450 |    return;
+          } /* function */ 
+
+
+   452 |  void czaxpy(int, std::complex<double>, std::complex<double> const*, int, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX, char * dY, int incY)
+   457 |  {
+            $$n.nat.27 = n;
+            $$incY.nat.9 = incY;
+            $$incX.nat.9 = incX;
+   458 |    incX = $$incX.nat.9;
+            incY = $$incY.nat.9;
+            n = $$n.nat.27;
+            zaxpy_(&n,&dA,dX,&incX,dY,&incY)
+   459 |    return;
+          } /* function */ 
+
+
+   462 |  void cdaxpy(int, double, double const*, int, double*, int)(int n, double dA, char * dX, int incX, char * dY, int incY)
+   464 |  {
+            $$incY.nat.13 = incY;
+            $$incX.nat.13 = incX;
+            $$dA.nat.9 = dA;
+            $$n.nat.31 = n;
+   465 |    n = $$n.nat.31;
+            dA = $$dA.nat.9;
+            incX = $$incX.nat.13;
+            incY = $$incY.nat.13;
+            daxpy_(&n,&dA,dX,&incX,dY,&incY)
+   466 |    return;
+          } /* function */ 
+
+
+   468 |  void czcopy(int, std::complex<double> const*, int, std::complex<double>*, int)(int n, char * dX, int incX, char * dY, int incY)
+   472 |  {
+            $$incY.nat.1D = incY;
+            $$incX.nat.1D = incX;
+            $$n.nat.3B = n;
+   473 |    n = $$n.nat.3B;
+            incX = $$incX.nat.1D;
+            incY = $$incY.nat.1D;
+            zcopy_(&n,dX,&incX,dY,&incY)
+   474 |    return;
+          } /* function */ 
+
+
+   477 |  void cdcopy(int, double const*, int, double*, int)(int n, char * dX, int incX, char * dY, int incY)
+   479 |  {
+            $$incY.nat.27 = incY;
+            $$incX.nat.27 = incX;
+            $$n.nat.45 = n;
+   480 |    n = $$n.nat.45;
+            incX = $$incX.nat.27;
+            incY = $$incY.nat.27;
+            dcopy_(&n,dX,&incX,dY,&incY)
+   481 |    return;
+          } /* function */ 
+
+
+   483 |  void cdscal(int, double, double*, int)(int n, double dA, char * dX, int incX)
+   484 |  {
+            $$incX.nat.31 = incX;
+            $$dA.nat.13 = dA;
+            $$n.nat.4F = n;
+   485 |    n = $$n.nat.4F;
+            dA = $$dA.nat.13;
+            incX = $$incX.nat.31;
+            dscal_(&n,&dA,dX,&incX)
+   486 |    return;
+          } /* function */ 
+
+
+   488 |  void czscal(int, std::complex<double>, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX)
+   489 |  {
+            $$incX.nat.3B = incX;
+            $$n.nat.59 = n;
+   490 |    n = $$n.nat.59;
+            incX = $$incX.nat.3B;
+            zscal_(&n,&dA,dX,&incX)
+   491 |    return;
+          } /* function */ 
+
+
+   494 |  double cddot(int, double const*, int, double const*, int)(int n, char * dX, int incX, char * dY, int incY)
+   496 |  {
+            $$incY.nat.31 = incY;
+            $$incX.nat.45 = incX;
+            $$n.nat.63 = n;
+            n = $$n.nat.63;
+            incX = $$incX.nat.45;
+            incY = $$incY.nat.31;
+            $$RET0 = ddot_(&n,dX,&incX,dY,&incY);
+   497 |    rstr = $$RET0;
+            return rstr;
+   498 |  } /* function */ 
+
+
+   502 |  void cdgeqrf(int, int, double*, int, double*, double*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   509 |  {
+            $$LWORK.nat.9 = LWORK;
+            $$LDA.nat.13 = LDA;
+            $$N.nat.1D = N;
+            $$M.nat.27 = M;
+   510 |    M = $$M.nat.27;
+            N = $$N.nat.1D;
+            LDA = $$LDA.nat.13;
+            LWORK = $$LWORK.nat.9;
+            dgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   511 |    return;
+          } /* function */ 
+
+
+   514 |  void void cxgeqrf<double>(int, int, double*, int, double*, double*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   521 |  {
+            $$LWORK.nat.13 = LWORK;
+            $$LDA.nat.1D = LDA;
+            $$N.nat.27 = N;
+            $$M.nat.31 = M;
+   522 |    M = $$M.nat.31;
+            N = $$N.nat.27;
+            LDA = $$LDA.nat.1D;
+            LWORK = $$LWORK.nat.13;
+            dgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   523 |    return;
+          } /* function */ 
+
+
+   526 |  void void cxgeqrf<std::complex<double> >(int, int, std::complex<double>*, int, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   533 |  {
+            $$LWORK.nat.1D = LWORK;
+            $$LDA.nat.27 = LDA;
+            $$N.nat.31 = N;
+            $$M.nat.3B = M;
+   534 |    M = $$M.nat.3B;
+            N = $$N.nat.31;
+            LDA = $$LDA.nat.27;
+            LWORK = $$LWORK.nat.1D;
+            zgeqrf_(&M,&N,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   535 |    return;
+          } /* function */ 
+
+
+   540 |  void cdormqr(char, char, int, int, int, double const*, int, double const*, double*, int, double*, int, int*)(char SIDE, char TRANS, int M, int N, int K, char * A, int LDA, char * TAU2, char * C, int LDC, char * WORK, int LWORK, char * INFO)
+   552 |  {
+            $$LWORK.nat.27 = LWORK;
+            $$LDC.nat.13 = LDC;
+            $$LDA.nat.31 = LDA;
+            $$K.nat.13 = K;
+            $$N.nat.3B = N;
+            $$M.nat.45 = M;
+            $$TRANS.nat.13 = TRANS;
+            $$SIDE.nat.13 = SIDE;
+   553 |    SIDE = $$SIDE.nat.13;
+            TRANS = $$TRANS.nat.13;
+            M = $$M.nat.45;
+            N = $$N.nat.3B;
+            K = $$K.nat.13;
+            LDA = $$LDA.nat.31;
+            LDC = $$LDC.nat.13;
+            LWORK = $$LWORK.nat.27;
+            dormqr_(&SIDE,&TRANS,&M,&N,&K,A,&LDA,TAU2,C,&LDC,WORK,&LWORK,INFO)
+   555 |    return;
+          } /* function */ 
+
+
+   557 |  void cdorgqr(int, int, int, double*, int, double const*, double*, int, int*)(int M, int N, int K, char * A, int LDA, char * TAU2, char * WORK, int LWORK, char * INFO)
+   565 |  {
+            $$LWORK.nat.31 = LWORK;
+            $$LDA.nat.3B = LDA;
+            $$K.nat.1D = K;
+            $$N.nat.45 = N;
+            $$M.nat.4F = M;
+   566 |    M = $$M.nat.4F;
+            N = $$N.nat.45;
+            K = $$K.nat.1D;
+            LDA = $$LDA.nat.3B;
+            LWORK = $$LWORK.nat.31;
+            dorgqr_(&M,&N,&K,A,&LDA,TAU2,WORK,&LWORK,INFO)
+   567 |    return;
+          } /* function */ 
+
+
+   570 |  void cdger(int, int, double, double const*, int, double const*, int, double*, int)(int M, int N, double alpha, char * X, int incX, char * Y, int incY, char * A, int lda_A)
+   578 |  {
+            $$lda_A.nat.13 = lda_A;
+            $$incY.nat.3B = incY;
+            $$incX.nat.4F = incX;
+            $$alpha.nat.13 = alpha;
+            $$N.nat.4F = N;
+            $$M.nat.59 = M;
+   579 |    M = $$M.nat.59;
+            N = $$N.nat.4F;
+            alpha = $$alpha.nat.13;
+            incX = $$incX.nat.4F;
+            incY = $$incY.nat.3B;
+            lda_A = $$lda_A.nat.13;
+            dger_(&M,&N,&alpha,X,&incX,Y,&incY,A,&lda_A)
+   580 |    return;
+          } /* function */ 
+
+
+   582 |  double cdlange(char, int, int, double const*, int, double*)(char NORM, int M, int N, char * A, int LDA, char * WORK)
+   587 |  {
+            $$LDA.nat.45 = LDA;
+            $$N.nat.59 = N;
+            $$M.nat.63 = M;
+            $$NORM.nat.9 = NORM;
+            NORM = $$NORM.nat.9;
+            M = $$M.nat.63;
+            N = $$N.nat.59;
+            LDA = $$LDA.nat.45;
+            $$RET1 = dlange_(&NORM,&M,&N,A,&LDA,WORK);
+   588 |    rstr = $$RET1;
+            return rstr;
+   589 |  } /* function */ 
+
+
+   593 |  void void cxgemm<double>(char, char, int, int, int, double, double const*, int, double const*, int, double, double*, int)(char transa, char transb, int m, int n, int k, double a, char * A, int lda, char * B, int ldb, double b, char * C, int ldc)
+   599 |  {
+   600 |    $$PARM.transa2B = transa;
+            $$PARM.transb2C = transb;
+            $$PARM.m2D = m;
+            $$PARM.n2E = n;
+            $$PARM.k2F = k;
+            $$PARM.a30 = a;
+            $$PARM.A31 = A;
+            $$PARM.lda32 = lda;
+            $$PARM.B33 = B;
+            $$PARM.ldb34 = ldb;
+            $$PARM.b35 = b;
+            $$PARM.C36 = C;
+            $$PARM.ldc37 = ldc;
+   431 |    $$ldc.nat.9 = $$PARM.ldc37;
+            $$b.nat.9 = $$PARM.b35;
+            $$ldb.nat.13 = $$PARM.ldb34;
+            $$lda.nat.1D = $$PARM.lda32;
+            $$a.nat.9 = $$PARM.a30;
+            $$k.nat.9 = $$PARM.k2F;
+            $$n.nat.13 = $$PARM.n2E;
+            $$m.nat.13 = $$PARM.m2D;
+            $$transb.nat.9 = $$PARM.transb2C;
+            $$transa.nat.9 = $$PARM.transa2B;
+   432 |    $$PARM.transa2B = $$transa.nat.9;
+            $$PARM.transb2C = $$transb.nat.9;
+            $$PARM.m2D = $$m.nat.13;
+            $$PARM.n2E = $$n.nat.13;
+            $$PARM.k2F = $$k.nat.9;
+            $$PARM.a30 = $$a.nat.9;
+            $$PARM.lda32 = $$lda.nat.1D;
+            $$PARM.ldb34 = $$ldb.nat.13;
+            $$PARM.b35 = $$b.nat.9;
+            $$PARM.ldc37 = $$ldc.nat.9;
+            dgemm_(&$$PARM.transa2B,&$$PARM.transb2C,&$$PARM.m2D,&$$PARM.n2E,&$$PARM.k2F,&$$PARM.a30,$$PARM.A31,&$$PARM.lda32,$$PARM.B33,&$$PARM.ldb34,&$$PARM.b35,$$PARM.C36,&$$PARM.ldc37)
+   601 |    return;
+          } /* function */ 
+
+
+   604 |  void void cxgemm<std::complex<double> >(char, char, int, int, int, std::complex<double>, std::complex<double> const*, int, std::complex<double> const*, int, std::complex<double>, std::complex<double>*, int)(char transa, char transb, int m, int n, int k, aggr16 a, char * A, int lda, char * B, int ldb, aggr16 b, char * C, int ldc)
+   610 |  {
+   611 |    $$PARM.transa1E = transa;
+            $$PARM.transb1F = transb;
+            $$PARM.m20 = m;
+            $$PARM.n21 = n;
+            $$PARM.k22 = k;
+            $$PARM.a23 = a;
+            $$PARM.A24 = A;
+            $$PARM.lda25 = lda;
+            $$PARM.B26 = B;
+            $$PARM.ldb27 = ldb;
+            $$PARM.b28 = b;
+            $$PARM.C29 = C;
+            $$PARM.ldc2A = ldc;
+   442 |    $$ldc.nat.13 = $$PARM.ldc2A;
+            $$ldb.nat.1D = $$PARM.ldb27;
+            $$lda.nat.27 = $$PARM.lda25;
+            $$k.nat.13 = $$PARM.k22;
+            $$n.nat.1D = $$PARM.n21;
+            $$m.nat.1D = $$PARM.m20;
+            $$transb.nat.13 = $$PARM.transb1F;
+            $$transa.nat.13 = $$PARM.transa1E;
+   447 |    $$PARM.transa1E = $$transa.nat.13;
+            $$PARM.transb1F = $$transb.nat.13;
+            $$PARM.m20 = $$m.nat.1D;
+            $$PARM.n21 = $$n.nat.1D;
+            $$PARM.k22 = $$k.nat.13;
+            $$PARM.lda25 = $$lda.nat.27;
+            $$PARM.ldb27 = $$ldb.nat.1D;
+            $$PARM.ldc2A = $$ldc.nat.13;
+            zgemm_(&$$PARM.transa1E,&$$PARM.transb1F,&$$PARM.m20,&$$PARM.n21,&$$PARM.k22,&$$PARM.a23,$$PARM.A24,&$$PARM.lda25,$$PARM.B26,&$$PARM.ldb27,&$$PARM.b28,$$PARM.C29,&$$PARM.ldc2A)
+   612 |    return;
+          } /* function */ 
+
+
+   615 |  void void cxaxpy<double>(int, double, double const*, int, double*, int)(int n, double dA, char * dX, int incX, char * dY, int incY)
+   617 |  {
+   618 |    $$PARM.n18 = n;
+            $$PARM.dA19 = dA;
+            $$PARM.dX1A = dX;
+            $$PARM.incX1B = incX;
+            $$PARM.dY1C = dY;
+            $$PARM.incY1D = incY;
+   464 |    $$incY.nat.13 = $$PARM.incY1D;
+            $$incX.nat.13 = $$PARM.incX1B;
+            $$dA.nat.9 = $$PARM.dA19;
+            $$n.nat.31 = $$PARM.n18;
+   465 |    $$PARM.n18 = $$n.nat.31;
+            $$PARM.dA19 = $$dA.nat.9;
+            $$PARM.incX1B = $$incX.nat.13;
+            $$PARM.incY1D = $$incY.nat.13;
+            daxpy_(&$$PARM.n18,&$$PARM.dA19,$$PARM.dX1A,&$$PARM.incX1B,$$PARM.dY1C,&$$PARM.incY1D)
+   619 |    return;
+          } /* function */ 
+
+
+   622 |  void void cxaxpy<std::complex<double> >(int, std::complex<double>, std::complex<double> const*, int, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX, char * dY, int incY)
+   628 |  {
+   629 |    $$PARM.n12 = n;
+            $$PARM.dA13 = dA;
+            $$PARM.dX14 = dX;
+            $$PARM.incX15 = incX;
+            $$PARM.dY16 = dY;
+            $$PARM.incY17 = incY;
+   457 |    $$n.nat.27 = $$PARM.n12;
+            $$incY.nat.9 = $$PARM.incY17;
+            $$incX.nat.9 = $$PARM.incX15;
+   458 |    $$PARM.incX15 = $$incX.nat.9;
+            $$PARM.incY17 = $$incY.nat.9;
+            $$PARM.n12 = $$n.nat.27;
+            zaxpy_(&$$PARM.n12,&$$PARM.dA13,$$PARM.dX14,&$$PARM.incX15,$$PARM.dY16,&$$PARM.incY17)
+   630 |    return;
+          } /* function */ 
+
+
+   633 |  void void cxscal<double>(int, double, double*, int)(int n, double dA, char * dX, int incX)
+   634 |  {
+   635 |    $$PARM.nE = n;
+            $$PARM.dAF = dA;
+            $$PARM.dX10 = dX;
+            $$PARM.incX11 = incX;
+   484 |    $$incX.nat.31 = $$PARM.incX11;
+            $$dA.nat.13 = $$PARM.dAF;
+            $$n.nat.4F = $$PARM.nE;
+   485 |    $$PARM.nE = $$n.nat.4F;
+            $$PARM.dAF = $$dA.nat.13;
+            $$PARM.incX11 = $$incX.nat.31;
+            dscal_(&$$PARM.nE,&$$PARM.dAF,$$PARM.dX10,&$$PARM.incX11)
+   636 |    return;
+          } /* function */ 
+
+
+   639 |  void void cxscal<std::complex<double> >(int, std::complex<double>, std::complex<double>*, int)(int n, aggr16 dA, char * dX, int incX)
+   643 |  {
+   644 |    $$PARM.nA = n;
+            $$PARM.dAB = dA;
+            $$PARM.dXC = dX;
+            $$PARM.incXD = incX;
+   489 |    $$incX.nat.3B = $$PARM.incXD;
+            $$n.nat.59 = $$PARM.nA;
+   490 |    $$PARM.nA = $$n.nat.59;
+            $$PARM.incXD = $$incX.nat.3B;
+            zscal_(&$$PARM.nA,&$$PARM.dAB,$$PARM.dXC,&$$PARM.incXD)
+   645 |    return;
+          } /* function */ 
+
+
+   648 |  void void cxcopy<double>(int, double const*, int, double*, int)(int n, char * dX, int incX, char * dY, int incY)
+   650 |  {
+   651 |    $$PARM.n5 = n;
+            $$PARM.dX6 = dX;
+            $$PARM.incX7 = incX;
+            $$PARM.dY8 = dY;
+            $$PARM.incY9 = incY;
+   479 |    $$incY.nat.27 = $$PARM.incY9;
+            $$incX.nat.27 = $$PARM.incX7;
+            $$n.nat.45 = $$PARM.n5;
+   480 |    $$PARM.n5 = $$n.nat.45;
+            $$PARM.incX7 = $$incX.nat.27;
+            $$PARM.incY9 = $$incY.nat.27;
+            dcopy_(&$$PARM.n5,$$PARM.dX6,&$$PARM.incX7,$$PARM.dY8,&$$PARM.incY9)
+   652 |    return;
+          } /* function */ 
+
+
+   655 |  void void cxcopy<std::complex<double> >(int, std::complex<double> const*, int, std::complex<double>*, int)(int n, char * dX, int incX, char * dY, int incY)
+   660 |  {
+   661 |    $$PARM.n0 = n;
+            $$PARM.dX1 = dX;
+            $$PARM.incX2 = incX;
+            $$PARM.dY3 = dY;
+            $$PARM.incY4 = incY;
+   472 |    $$incY.nat.1D = $$PARM.incY4;
+            $$incX.nat.1D = $$PARM.incX2;
+            $$n.nat.3B = $$PARM.n0;
+   473 |    $$PARM.n0 = $$n.nat.3B;
+            $$PARM.incX2 = $$incX.nat.1D;
+            $$PARM.incY4 = $$incY.nat.1D;
+            zcopy_(&$$PARM.n0,$$PARM.dX1,&$$PARM.incX2,$$PARM.dY3,&$$PARM.incY4)
+   662 |    return;
+          } /* function */ 
+
+
+   664 |  void cdgetri(int, double*, int, int*, double*, int, int*)(int N, char * A, int LDA, char * IPIV, char * WORK, int lwork, char * info)
+   670 |  {
+            $$lwork.nat.9 = lwork;
+            $$LDA.nat.4F = LDA;
+            $$N.nat.63 = N;
+   671 |    N = $$N.nat.63;
+            LDA = $$LDA.nat.4F;
+            lwork = $$lwork.nat.9;
+            dgetri_(&N,A,&LDA,IPIV,WORK,&lwork,info)
+   672 |    return;
+          } /* function */ 
+
+
+   677 |  void cdtpqrt(int, int, int, int, double*, int, double*, int, double*, int, double*, int*)(int m, int n, int l, int nb, char * A, int lda_A, char * B, int lda_B, char * T, int lda_T, char * work, char * info)
+   688 |  {
+            $$lda_T.nat.9 = lda_T;
+            $$lda_B.nat.13 = lda_B;
+            $$lda_A.nat.1D = lda_A;
+            $$nb.nat.9 = nb;
+            $$l.nat.9 = l;
+            $$n.nat.6D = n;
+            $$m.nat.27 = m;
+   689 |    m = $$m.nat.27;
+            n = $$n.nat.6D;
+            l = $$l.nat.9;
+            nb = $$nb.nat.9;
+            lda_A = $$lda_A.nat.1D;
+            lda_B = $$lda_B.nat.13;
+            lda_T = $$lda_T.nat.9;
+            dtpqrt_(&m,&n,&l,&nb,A,&lda_A,B,&lda_B,T,&lda_T,work,info)
+   690 |    return;
+          } /* function */ 
+
+
+   692 |  void cdtprfb(char, char, char, char, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int)(char side, char trans, char DIRECT, char STOREV, int m, int n, int k, int l, char * V, int lda_V, char * T, int lda_T, char * A, int lda_A, char * B, int lda_B, char * work, int ldwork)
+   709 |  {
+            $$ldwork.nat.9 = ldwork;
+            $$lda_B.nat.1D = lda_B;
+            $$lda_A.nat.27 = lda_A;
+            $$lda_T.nat.13 = lda_T;
+            $$lda_V.nat.9 = lda_V;
+            $$l.nat.13 = l;
+            $$k.nat.1D = k;
+            $$n.nat.77 = n;
+            $$m.nat.31 = m;
+            $$STOREV.nat.9 = STOREV;
+            $$DIRECT.nat.9 = DIRECT;
+            $$trans.nat.9 = trans;
+            $$side.nat.9 = side;
+   710 |    side = $$side.nat.9;
+            trans = $$trans.nat.9;
+            DIRECT = $$DIRECT.nat.9;
+            STOREV = $$STOREV.nat.9;
+            m = $$m.nat.31;
+            n = $$n.nat.77;
+            k = $$k.nat.1D;
+            l = $$l.nat.13;
+            lda_V = $$lda_V.nat.9;
+            lda_T = $$lda_T.nat.13;
+            lda_A = $$lda_A.nat.27;
+            lda_B = $$lda_B.nat.1D;
+            ldwork = $$ldwork.nat.9;
+            dtprfb_(&side,&trans,&DIRECT,&STOREV,&m,&n,&k,&l,V,&lda_V,T,&lda_T,A,&lda_A,B,&lda_B,work,&ldwork)
+   711 |    return;
+          } /* function */ 
+
+
+   712 |  void cdtpmqrt(char, char, int, int, int, int, int, double*, int, double*, int, double*, int, double*, int, double*, int*)(char side, char trans, int m, int n, int k, int l, int NB, char * V, int lda_V, char * T, int lda_T, char * A, int lda_A, char * B, int lda_B, char * work, char * info)
+   728 |  {
+            $$lda_B.nat.27 = lda_B;
+            $$lda_A.nat.31 = lda_A;
+            $$lda_T.nat.1D = lda_T;
+            $$lda_V.nat.13 = lda_V;
+            $$NB.nat.9 = NB;
+            $$l.nat.1D = l;
+            $$k.nat.27 = k;
+            $$n.nat.81 = n;
+            $$m.nat.3B = m;
+            $$trans.nat.13 = trans;
+            $$side.nat.13 = side;
+   730 |    side = $$side.nat.13;
+            trans = $$trans.nat.13;
+            m = $$m.nat.3B;
+            n = $$n.nat.81;
+            k = $$k.nat.27;
+            l = $$l.nat.1D;
+            NB = $$NB.nat.9;
+            lda_V = $$lda_V.nat.13;
+            lda_T = $$lda_T.nat.1D;
+            lda_A = $$lda_A.nat.31;
+            lda_B = $$lda_B.nat.27;
+            dtpmqrt_(&side,&trans,&m,&n,&k,&l,&NB,V,&lda_V,T,&lda_T,A,&lda_A,B,&lda_B,work,info)
+   731 |    return;
+          } /* function */ 
+
+
+   735 |  void cdlarft(char, char, int, int, double const*, int, double const*, double*, int)(char f, char c, int m, int b, char * Y, int lda_Y, char * tau, char * T, int lda_T)
+   743 |  {
+            $$lda_T.nat.27 = lda_T;
+            $$lda_Y.nat.9 = lda_Y;
+            $$b.nat.13 = b;
+            $$m.nat.45 = m;
+            $$c.nat.9 = c;
+            $$f.nat.9 = f;
+   744 |    f = $$f.nat.9;
+            c = $$c.nat.9;
+            m = $$m.nat.45;
+            b = $$b.nat.13;
+            lda_Y = $$lda_Y.nat.9;
+            lda_T = $$lda_T.nat.27;
+            dlarft_(&f,&c,&m,&b,Y,&lda_Y,tau,T,&lda_T)
+   745 |    return;
+          } /* function */ 
+
+
+   747 |  void cdlarfb(char, char, char, char, int, int, int, double const*, int, double const*, int, double*, int, double*, int)(char l, char t, char f, char c, int m, int k, int b, char * Y, int lda_Y, char * T, int lda_T, char * B, int lda_B, char * buffer, int buf_sz)
+   761 |  {
+            $$buf_sz.nat.9 = buf_sz;
+            $$lda_B.nat.31 = lda_B;
+            $$lda_T.nat.31 = lda_T;
+            $$lda_Y.nat.13 = lda_Y;
+            $$b.nat.1D = b;
+            $$k.nat.31 = k;
+            $$m.nat.4F = m;
+            $$c.nat.13 = c;
+            $$f.nat.13 = f;
+            $$t.nat.9 = t;
+            $$l.nat.27 = l;
+   762 |    l = $$l.nat.27;
+            t = $$t.nat.9;
+            f = $$f.nat.13;
+            c = $$c.nat.13;
+            m = $$m.nat.4F;
+            k = $$k.nat.31;
+            b = $$b.nat.1D;
+            lda_Y = $$lda_Y.nat.13;
+            lda_T = $$lda_T.nat.31;
+            lda_B = $$lda_B.nat.31;
+            buf_sz = $$buf_sz.nat.9;
+            dlarfb_(&l,&t,&f,&c,&m,&k,&b,Y,&lda_Y,T,&lda_T,B,&lda_B,buffer,&buf_sz)
+   764 |    return;
+          } /* function */ 
+
+
+   766 |  void cdlatrd(char, int, int, double*, int, double*, double*, double*, int)(char UPLO, int N, int NB, char * A, int LDA, char * E, char * TAU2, char * W, int LDW)
+   774 |  {
+            $$LDW.nat.9 = LDW;
+            $$LDA.nat.59 = LDA;
+            $$NB.nat.13 = NB;
+            $$N.nat.6D = N;
+            $$UPLO.nat.1D = UPLO;
+   775 |    UPLO = $$UPLO.nat.1D;
+            N = $$N.nat.6D;
+            NB = $$NB.nat.13;
+            LDA = $$LDA.nat.59;
+            LDW = $$LDW.nat.9;
+            dlatrd_(&UPLO,&N,&NB,A,&LDA,E,TAU2,W,&LDW)
+   776 |    return;
+          } /* function */ 
+
+
+   778 |  void cdsytrd(char, int, double*, int, double*, double*, double*, double*, int, int*)(char UPLO, int N, char * A, int LDA, char * D, char * E, char * TAU2, char * WORK, int LWORK, char * INFO)
+   787 |  {
+            $$LWORK.nat.3B = LWORK;
+            $$LDA.nat.63 = LDA;
+            $$N.nat.77 = N;
+            $$UPLO.nat.27 = UPLO;
+   788 |    UPLO = $$UPLO.nat.27;
+            N = $$N.nat.77;
+            LDA = $$LDA.nat.63;
+            LWORK = $$LWORK.nat.3B;
+            dsytrd_(&UPLO,&N,A,&LDA,D,E,TAU2,WORK,&LWORK,INFO)
+   789 |    return;
+          } /* function */ 
+
+
+   791 |  void cdsyevx(char, char, char, int, double*, int, double, double, int, int, double, int*, double*, double*, int, double*, int, int*, int*, int*)(char JOBZ, char RANGE, char UPLO, int N, char * A, int LDA, double VL, double VU, int IL, int IU, double ABSTOL, char * M, char * W, char * Z, int LDZ, char * WORK, int LWORK, char * IWORK, char * IFAIL, char * INFO)
+   810 |  {
+            $$LWORK.nat.45 = LWORK;
+            $$LDZ.nat.9 = LDZ;
+            $$ABSTOL.nat.9 = ABSTOL;
+            $$IU.nat.9 = IU;
+            $$IL.nat.9 = IL;
+            $$VU.nat.9 = VU;
+            $$VL.nat.9 = VL;
+            $$LDA.nat.6D = LDA;
+            $$N.nat.81 = N;
+            $$UPLO.nat.31 = UPLO;
+            $$RANGE.nat.9 = RANGE;
+            $$JOBZ.nat.9 = JOBZ;
+   811 |    JOBZ = $$JOBZ.nat.9;
+            RANGE = $$RANGE.nat.9;
+            UPLO = $$UPLO.nat.31;
+            N = $$N.nat.81;
+            LDA = $$LDA.nat.6D;
+            VL = $$VL.nat.9;
+            VU = $$VU.nat.9;
+            IL = $$IL.nat.9;
+            IU = $$IU.nat.9;
+            ABSTOL = $$ABSTOL.nat.9;
+            LDZ = $$LDZ.nat.9;
+            LWORK = $$LWORK.nat.45;
+            dsyevx_(&JOBZ,&RANGE,&UPLO,&N,A,&LDA,&VL,&VU,&IL,&IU,&ABSTOL,M,W,Z,&LDZ,WORK,&LWORK,IWORK,IFAIL,INFO)
+   813 |    return;
+          } /* function */ 
+
+
+   816 |  void cdtrtri(char, char, int, double*, int, int*)(char UPLO, char DIAG, int N, char * A, int LDA, char * INFO)
+   821 |  {
+            $$UPLO.nat.3B = UPLO;
+            $$LDA.nat.77 = LDA;
+            $$N.nat.8B = N;
+            $$DIAG.nat.13 = DIAG;
+   822 |    DIAG = $$DIAG.nat.13;
+            N = $$N.nat.8B;
+            LDA = $$LDA.nat.77;
+            UPLO = $$UPLO.nat.3B;
+            dtrtri_(&UPLO,&DIAG,&N,A,&LDA,INFO)
+   823 |    return;
+          } /* function */ 
+
+
+  1034 |  void cdescinit(int*, int, int, int, int, int, int, int, int, int*)(char * desc, int m, int n, int mb, int nb, int irsrc, int icsrc, int ictxt, int LLD, char * info)
+  1039 |  {
+            $$LLD.nat.9 = LLD;
+            $$ictxt.nat.9 = ictxt;
+            $$icsrc.nat.9 = icsrc;
+            $$irsrc.nat.9 = irsrc;
+            $$nb.nat.13 = nb;
+            $$mb.nat.9 = mb;
+            $$n.nat.8B = n;
+            $$m.nat.59 = m;
+  1040 |    m = $$m.nat.59;
+            n = $$n.nat.8B;
+            mb = $$mb.nat.9;
+            nb = $$nb.nat.13;
+            irsrc = $$irsrc.nat.9;
+            icsrc = $$icsrc.nat.9;
+            ictxt = $$ictxt.nat.9;
+            LLD = $$LLD.nat.9;
+            descinit(desc,&m,&n,&mb,&nb,&irsrc,&icsrc,&ictxt,&LLD,info)
+  1042 |    return;
+          } /* function */ 
+
+
+  1044 |  void cpdgemm(char, char, int, int, int, double, double*, int, int, int*, double*, int, int, int*, double, double*, int, int, int*)(char n1, char n2, int sz1, int sz2, int sz3, double ALPHA, char * A, int ia, int ja, char * desca, char * B, int ib, int jb, char * descb, double BETA, char * C, int ic, int jc, char * descc)
+  1053 |  {
+            $$jc.nat.9 = jc;
+            $$ic.nat.9 = ic;
+            $$BETA.nat.13 = BETA;
+            $$jb.nat.9 = jb;
+            $$ib.nat.9 = ib;
+            $$ja.nat.9 = ja;
+            $$ia.nat.9 = ia;
+            $$ALPHA.nat.13 = ALPHA;
+            $$sz3.nat.9 = sz3;
+            $$sz2.nat.9 = sz2;
+            $$sz1.nat.9 = sz1;
+            $$n2.nat.9 = n2;
+            $$n1.nat.9 = n1;
+  1054 |    n1 = $$n1.nat.9;
+            n2 = $$n2.nat.9;
+            sz1 = $$sz1.nat.9;
+            sz2 = $$sz2.nat.9;
+            sz3 = $$sz3.nat.9;
+            ALPHA = $$ALPHA.nat.13;
+            ia = $$ia.nat.9;
+            ja = $$ja.nat.9;
+            ib = $$ib.nat.9;
+            jb = $$jb.nat.9;
+            BETA = $$BETA.nat.13;
+            ic = $$ic.nat.9;
+            jc = $$jc.nat.9;
+            pdgemm(&n1,&n2,&sz1,&sz2,&sz3,&ALPHA,A,&ia,&ja,desca,B,&ib,&jb,descb,&BETA,C,&ic,&jc,descc)
+  1059 |    return;
+          } /* function */ 
+
+
+  1061 |  void cpdsyrk(char, char, int, int, double, double const*, int, int, int*, double, double*, int, int, int*)(char UPLO, char TRANS, int N, int K, double ALPHA, char * A, int IA, int JA, char * DESCA, double BETA, char * C, int IC, int JC, char * DESCC)
+  1074 |  {
+            $$JC.nat.9 = JC;
+            $$IC.nat.9 = IC;
+            $$BETA.nat.1D = BETA;
+            $$JA.nat.9 = JA;
+            $$IA.nat.9 = IA;
+            $$ALPHA.nat.1D = ALPHA;
+            $$K.nat.27 = K;
+            $$N.nat.95 = N;
+            $$TRANS.nat.1D = TRANS;
+            $$UPLO.nat.45 = UPLO;
+  1075 |    UPLO = $$UPLO.nat.45;
+            TRANS = $$TRANS.nat.1D;
+            N = $$N.nat.95;
+            K = $$K.nat.27;
+            ALPHA = $$ALPHA.nat.1D;
+            IA = $$IA.nat.9;
+            JA = $$JA.nat.9;
+            BETA = $$BETA.nat.1D;
+            IC = $$IC.nat.9;
+            JC = $$JC.nat.9;
+            pdsyrk(&UPLO,&TRANS,&N,&K,&ALPHA,A,&IA,&JA,DESCA,&BETA,C,&IC,&JC,DESCC)
+  1077 |    return;
+          } /* function */ 
+
+
+  1079 |  void cpdtrsm(char, char, char, char, int, int, double, double const*, int, int, int*, double*, int, int, int*)(char SIDE, char UPLO, char TRANS, char DIAG, int M, int N, double ALPHA, char * A, int IA, int JA, char * DESCA, char * B, int IB, int JB, char * DESCB)
+  1093 |  {
+            $$ALPHA.nat.27 = ALPHA;
+            $$N.nat.9F = N;
+            $$M.nat.6D = M;
+            $$DIAG.nat.1D = DIAG;
+            $$TRANS.nat.27 = TRANS;
+            $$UPLO.nat.4F = UPLO;
+            $$SIDE.nat.1D = SIDE;
+            $$JB.nat.9 = JB;
+            $$IB.nat.9 = IB;
+            $$JA.nat.13 = JA;
+            $$IA.nat.13 = IA;
+  1094 |    IA = $$IA.nat.13;
+            JA = $$JA.nat.13;
+            IB = $$IB.nat.9;
+            JB = $$JB.nat.9;
+            SIDE = $$SIDE.nat.1D;
+            UPLO = $$UPLO.nat.4F;
+            TRANS = $$TRANS.nat.27;
+            DIAG = $$DIAG.nat.1D;
+            M = $$M.nat.6D;
+            N = $$N.nat.9F;
+            ALPHA = $$ALPHA.nat.27;
+            pdtrsm(&SIDE,&UPLO,&TRANS,&DIAG,&M,&N,&ALPHA,A,&IA,&JA,DESCA,B,&IB,&JB,DESCB)
+  1095 |    return;
+          } /* function */ 
+
+
+  1097 |  void cpdpotrf(char, int, double*, int, int, int*, int*)(char uplo, int n, char * A, int ia, int ja, char * desca, char * info)
+  1100 |  {
+            $$ja.nat.13 = ja;
+            $$ia.nat.13 = ia;
+            $$n.nat.95 = n;
+            $$uplo.nat.13 = uplo;
+  1101 |    uplo = $$uplo.nat.13;
+            n = $$n.nat.95;
+            ia = $$ia.nat.13;
+            ja = $$ja.nat.13;
+            pdpotrf(&uplo,&n,A,&ia,&ja,desca,info)
+  1102 |    return;
+          } /* function */ 
+
+
+  1104 |  void cpdgetrf(int, int, double*, int, int, int*, int*, int*)(int m, int n, char * A, int ia, int ja, char * desca, char * IPIV, char * info)
+  1107 |  {
+            $$ja.nat.1D = ja;
+            $$ia.nat.1D = ia;
+            $$n.nat.9F = n;
+            $$m.nat.63 = m;
+  1108 |    m = $$m.nat.63;
+            n = $$n.nat.9F;
+            ia = $$ia.nat.1D;
+            ja = $$ja.nat.1D;
+            pdgetrf(&m,&n,A,&ia,&ja,desca,IPIV,info)
+  1109 |    return;
+          } /* function */ 
+
+
+  1111 |  void cpdgeqrf(int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1120 |  {
+            $$LWORK.nat.4F = LWORK;
+            $$JA.nat.1D = JA;
+            $$IA.nat.1D = IA;
+            $$N.nat.A9 = N;
+            $$M.nat.77 = M;
+  1121 |    M = $$M.nat.77;
+            N = $$N.nat.A9;
+            IA = $$IA.nat.1D;
+            JA = $$JA.nat.1D;
+            LWORK = $$LWORK.nat.4F;
+            pdgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1122 |    return;
+          } /* function */ 
+
+
+  1125 |  void void cpxgeqrf<double>(int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1134 |  {
+            $$LWORK.nat.59 = LWORK;
+            $$JA.nat.27 = JA;
+            $$IA.nat.27 = IA;
+            $$N.nat.B3 = N;
+            $$M.nat.81 = M;
+  1135 |    M = $$M.nat.81;
+            N = $$N.nat.B3;
+            IA = $$IA.nat.27;
+            JA = $$JA.nat.27;
+            LWORK = $$LWORK.nat.59;
+            pdgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1136 |    return;
+          } /* function */ 
+
+
+  1153 |  void void cpxgeqrf<std::complex<double> >(int, int, std::complex<double>*, int, int, int const*, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1162 |  {
+            $$LWORK.nat.63 = LWORK;
+            $$JA.nat.31 = JA;
+            $$IA.nat.31 = IA;
+            $$N.nat.BD = N;
+            $$M.nat.8B = M;
+  1163 |    M = $$M.nat.8B;
+            N = $$N.nat.BD;
+            IA = $$IA.nat.31;
+            JA = $$JA.nat.31;
+            LWORK = $$LWORK.nat.63;
+            pzgeqrf(&M,&N,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1164 |    return;
+          } /* function */ 
+
+
+  1177 |  void cpdorgqr(int, int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1187 |  {
+            $$M.nat.95 = M;
+            $$LWORK.nat.6D = LWORK;
+            $$JA.nat.3B = JA;
+            $$IA.nat.3B = IA;
+            $$K.nat.31 = K;
+            $$N.nat.C7 = N;
+  1188 |    N = $$N.nat.C7;
+            K = $$K.nat.31;
+            IA = $$IA.nat.3B;
+            JA = $$JA.nat.3B;
+            LWORK = $$LWORK.nat.6D;
+            M = $$M.nat.95;
+            pdorgqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1189 |    return;
+          } /* function */ 
+
+
+  1192 |  void void cpxorgqr<double>(int, int, int, double*, int, int, int const*, double*, double*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1202 |  {
+            $$LWORK.nat.77 = LWORK;
+            $$JA.nat.45 = JA;
+            $$IA.nat.45 = IA;
+            $$K.nat.3B = K;
+            $$N.nat.D1 = N;
+            $$M.nat.9F = M;
+  1203 |    M = $$M.nat.9F;
+            N = $$N.nat.D1;
+            K = $$K.nat.3B;
+            IA = $$IA.nat.45;
+            JA = $$JA.nat.45;
+            LWORK = $$LWORK.nat.77;
+            pdorgqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1204 |    return;
+          } /* function */ 
+
+
+  1207 |  void void cpxorgqr<std::complex<double> >(int, int, int, std::complex<double>*, int, int, int const*, std::complex<double>*, std::complex<double>*, int, int*)(int M, int N, int K, char * A, int IA, int JA, char * DESCA, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1217 |  {
+            $$LWORK.nat.81 = LWORK;
+            $$JA.nat.4F = JA;
+            $$IA.nat.4F = IA;
+            $$K.nat.45 = K;
+            $$N.nat.DB = N;
+            $$M.nat.A9 = M;
+  1218 |    M = $$M.nat.A9;
+            N = $$N.nat.DB;
+            K = $$K.nat.45;
+            IA = $$IA.nat.4F;
+            JA = $$JA.nat.4F;
+            LWORK = $$LWORK.nat.81;
+            pzungqr(&M,&N,&K,A,&IA,&JA,DESCA,TAU2,WORK,&LWORK,INFO)
+  1219 |    return;
+          } /* function */ 
+
+
+  1223 |  void cpdlatrd(char, int, int, double*, int, int, int*, double*, double*, double*, double*, int, int, int*, double*)(char UPLO, int N, int NB, char * A, int IA, int JA, char * DESCA, char * D, char * E, char * TAU2, char * W, int IW, int JW, char * DESCW, char * WORK)
+  1237 |  {
+            $$JW.nat.9 = JW;
+            $$IW.nat.9 = IW;
+            $$JA.nat.59 = JA;
+            $$IA.nat.59 = IA;
+            $$NB.nat.1D = NB;
+            $$N.nat.E5 = N;
+            $$UPLO.nat.59 = UPLO;
+  1238 |    UPLO = $$UPLO.nat.59;
+            N = $$N.nat.E5;
+            NB = $$NB.nat.1D;
+            IA = $$IA.nat.59;
+            JA = $$JA.nat.59;
+            IW = $$IW.nat.9;
+            JW = $$JW.nat.9;
+            pdlatrd_(&UPLO,&N,&NB,A,&IA,&JA,DESCA,D,E,TAU2,W,&IW,&JW,DESCW,WORK)
+  1239 |    return;
+          } /* function */ 
+
+
+  1243 |  void cpdsytrd(char, int, double*, int, int, int*, double*, double*, double*, double*, int, int*)(char UPLO, int N, char * A, int IA, int JA, char * DESCA, char * D, char * E, char * TAU2, char * WORK, int LWORK, char * INFO)
+  1254 |  {
+            $$JA.nat.63 = JA;
+            $$IA.nat.63 = IA;
+            $$N.nat.EF = N;
+            $$UPLO.nat.63 = UPLO;
+            $$LWORK.nat.8B = LWORK;
+  1255 |    LWORK = $$LWORK.nat.8B;
+            UPLO = $$UPLO.nat.63;
+            N = $$N.nat.EF;
+            IA = $$IA.nat.63;
+            JA = $$JA.nat.63;
+            pdsytrd_(&UPLO,&N,A,&IA,&JA,DESCA,D,E,TAU2,WORK,&LWORK,INFO)
+  1256 |    return;
+          } /* function */ 
+
+
+  1258 |  void cpdsyevx(char, char, char, int, double*, int, int, int*, double, double, int, int, double, int*, int*, double*, double, double*, int, int, int*, double*, int, int*, int, int*, int*, double*, int*)(char JOBZ, char RANGE, char UPLO, int N, char * A, int IA, int JA, char * DESCA, double VL, double VU, int IL, int IU, double ABSTOL, char * M, char * NZ, char * W, double ORFAC, char * Z, int IZ, int JZ, char * DESCZ, char * WORK, int LWORK, char * IWORK, int LIWORK, char * IFAIL, char * ICLUSTR, char * GAP, char * INFO)
+  1286 |  {
+            $$LIWORK.nat.9 = LIWORK;
+            $$LWORK.nat.95 = LWORK;
+            $$JZ.nat.9 = JZ;
+            $$IZ.nat.9 = IZ;
+            $$ORFAC.nat.9 = ORFAC;
+            $$ABSTOL.nat.13 = ABSTOL;
+            $$IU.nat.13 = IU;
+            $$IL.nat.13 = IL;
+            $$VU.nat.13 = VU;
+            $$VL.nat.13 = VL;
+            $$JA.nat.6D = JA;
+            $$IA.nat.6D = IA;
+            $$N.nat.F9 = N;
+            $$UPLO.nat.6D = UPLO;
+            $$RANGE.nat.13 = RANGE;
+            $$JOBZ.nat.13 = JOBZ;
+  1287 |    JOBZ = $$JOBZ.nat.13;
+            RANGE = $$RANGE.nat.13;
+            UPLO = $$UPLO.nat.6D;
+            N = $$N.nat.F9;
+            IA = $$IA.nat.6D;
+            JA = $$JA.nat.6D;
+            VL = $$VL.nat.13;
+            VU = $$VU.nat.13;
+            IL = $$IL.nat.13;
+            IU = $$IU.nat.13;
+            ABSTOL = $$ABSTOL.nat.13;
+            ORFAC = $$ORFAC.nat.9;
+            IZ = $$IZ.nat.9;
+            JZ = $$JZ.nat.9;
+            LWORK = $$LWORK.nat.95;
+            LIWORK = $$LIWORK.nat.9;
+            pdsyevx_(&JOBZ,&RANGE,&UPLO,&N,A,&IA,&JA,DESCA,&VL,&VU,&IL,&IU,&ABSTOL,M,NZ,W,&ORFAC,Z,&IZ,&JZ,DESCZ,WORK,&LWORK,IWORK,&LIWORK,IFAIL,ICLUSTR,GAP,INFO)
+  1290 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+

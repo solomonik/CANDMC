@@ -1,0 +1,407 @@
+1586-539 (I) Loop (loop index 1) at ../../shared/util.h <line 467> was not SIMD vectorized because it contains function calls.
+1586-543 (I) <SIMD info> Total number of the innermost loops considered <"1">. Total number of the innermost loops SIMD vectorized <"0">.
+    31 |  void QR_butterfly_2D(double*, long, long, long, long, long, long, long, long, CommData, CommData, CommData, long)(char * A, long long lda_A, long long m, long long k, long long b, long long myRank, long long numPes, long long root_row, long long root_col, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_world, long long _stop_at)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+    50 |    $$RET0 = log2((double) cdt_col.np@4);
+    53 |    if (!(_stop_at >= 0ll)) goto lab_8;
+    54 |    if (!(min(m,k) < _stop_at)) goto lab_11;
+            __49 = min(m,k);
+            goto lab_12;
+          lab_11:
+            __49 = _stop_at;
+          lab_12:
+            stop_at = __49;
+    55 |    goto lab_19;
+          lab_8:
+    56 |    stop_at = min(m,k);
+    57 |  lab_19:
+    59 |    R = malloc((unsigned long long) (8ll * (b * b)));
+    60 |    Y = malloc((unsigned long long) (8ll * (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b)));
+    61 |    tau = malloc((unsigned long long) (b * 8ll));
+    62 |    tree_data = malloc((unsigned long long) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000)) * 8ll));
+    64 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    65 |    if (!(root_col == (long long) cdt_row.rank@8)) goto lab_26;
+    67 |    if (!((b * root_col + k) / (long long) cdt_row.np@4 - b < (long long) cdt_col.np@4)) goto lab_28;
+    69 |    bitree_tsqr(double*, long, double*, double*, long, long, long, long, long, long, CommData, long, double*)(A,lda_A,R,tau,m,min(stop_at,b),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,0ll,cdt_col,1ll,tree_data)
+    71 |    if (!(root_row == (long long) cdt_col.rank@8)) goto lab_33;
+    72 |    copy_upper(double const*, double*, int, int, int, int)(R,A,(int) b,(int) b,(int) lda_A,0)
+          lab_33:
+    73 |    goto lab_35;
+          lab_28:
+    75 |    butterfly_tsqr(double*, long, double*, long, long, long, long, long, long, CommData, double*)(A,lda_A,tau,m,min(stop_at,b),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,13ll,cdt_col,tree_data)
+    77 |  lab_35:
+    84 |  lab_26:
+    86 |    if (m - b > 0ll) goto lab_40;
+            if (!(k - b > 0ll)) goto lab_39;
+          lab_40:
+    87 |    if (!(root_col == (long long) cdt_row.rank@8)) goto lab_87;
+    88 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) ((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),(int) b,(int) lda_A,(int) ((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),A,Y)
+            goto lab_42;
+          lab_87:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_world.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Y,(int) (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tree_data,(int) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000))),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tau,(int) b,1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            move_ptr = 0ll;
+            goto lab_65;
+          lab_42:
+    89 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_world.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    90 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    91 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    92 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Y,(int) (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    93 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tree_data,(int) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000))),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    94 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tau,(int) b,1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    95 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   110 |    move_ptr = lda_A * b;
+   111 |  lab_65:
+   112 |    CTF_Timer::CTF_Timer(char const*)(&t,"schur_tree_Q");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   113 |    if (!(((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4) > 0ll)) goto lab_70;
+   115 |    if (!(((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4) < (long long) cdt_col.np@4)) goto lab_72;
+   116 |    apply_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(Y,((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),tau,((char *)A  + move_ptr * 8ll),lda_A,m,b,((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,cdt_col,tree_data)
+            goto lab_74;
+          lab_72:
+   118 |    apply_butterfly_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(Y,((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),tau,((char *)A  + move_ptr * 8ll),lda_A,m,b,((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,cdt_col,tree_data)
+          lab_74:
+   122 |  lab_70:
+   135 |    CTF_Timer::CTF_Timer(char const*)(&t,"schur_tree_Q");
+            __es.__c4@3 = 10u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   140 |    if (!(b < stop_at)) goto lab_80;
+   141 |    QR_butterfly_2D(double*, long, long, long, long, long, long, long, long, CommData, CommData, CommData, long)(((char *)A  + (root_row == (long long) cdt_col.rank@8 ? move_ptr + b : move_ptr) * 8ll),lda_A,m - b,k - b,b,myRank,numPes,(root_row + 1ll) % (long long) cdt_col.np@4,(root_col + 1ll) % (long long) cdt_row.np@4,cdt_row,cdt_col,cdt_world,stop_at - b)
+          lab_80:
+   147 |  lab_39:
+   148 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV0 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV0) * 8ll),((char *)A  + ((long long) lda_A * $$CIV0) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+
+Source        Source        Loop Id       Action / Information                                      
+File          Line                                                                                  
+----------    ----------    ----------    ----------------------------------------------------------
+       114           467             1    Loop was not SIMD vectorized because it contains 
+                                          function calls.
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
+    31 |  void QR_butterfly_2D(double*, long, long, long, long, long, long, long, long, CommData, CommData, CommData, long)(char * A, long long lda_A, long long m, long long k, long long b, long long myRank, long long numPes, long long root_row, long long root_col, aggr20 cdt_row, aggr20 cdt_col, aggr20 cdt_world, long long _stop_at)
+    43 |  {
+            __es.__l@0 = 0;
+            __es.__t@8 = &__fsm_tab;
+            __es.__this@10 = NULL;
+            __es.__i@18 = 0;
+    50 |    $$RET0 = log2((double) cdt_col.np@4);
+    53 |    if (!(_stop_at >= 0ll)) goto lab_8;
+    54 |    if (!(min(m,k) < _stop_at)) goto lab_11;
+            __49 = min(m,k);
+            goto lab_12;
+          lab_11:
+            __49 = _stop_at;
+          lab_12:
+            stop_at = __49;
+    55 |    goto lab_19;
+          lab_8:
+    56 |    stop_at = min(m,k);
+    57 |  lab_19:
+    59 |    R = malloc((unsigned long long) (8ll * (b * b)));
+    60 |    Y = malloc((unsigned long long) (8ll * (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b)));
+    61 |    tau = malloc((unsigned long long) (b * 8ll));
+    62 |    tree_data = malloc((unsigned long long) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000)) * 8ll));
+    64 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 1u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    65 |    if (!(root_col == (long long) cdt_row.rank@8)) goto lab_26;
+    67 |    if (!((b * root_col + k) / (long long) cdt_row.np@4 - b < (long long) cdt_col.np@4)) goto lab_28;
+    69 |    bitree_tsqr(double*, long, double*, double*, long, long, long, long, long, long, CommData, long, double*)(A,lda_A,R,tau,m,min(stop_at,b),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,0ll,cdt_col,1ll,tree_data)
+    71 |    if (!(root_row == (long long) cdt_col.rank@8)) goto lab_33;
+    72 |    copy_upper(double const*, double*, int, int, int, int)(R,A,(int) b,(int) b,(int) lda_A,0)
+          lab_33:
+    73 |    goto lab_35;
+          lab_28:
+    75 |    butterfly_tsqr(double*, long, double*, long, long, long, long, long, long, CommData, double*)(A,lda_A,tau,m,min(stop_at,b),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,13ll,cdt_col,tree_data)
+    77 |  lab_35:
+    84 |  lab_26:
+    86 |    if (m - b > 0ll) goto lab_40;
+            if (!(k - b > 0ll)) goto lab_39;
+          lab_40:
+    87 |    if (!(root_col == (long long) cdt_row.rank@8)) goto lab_87;
+    88 |    void lda_cpy<double>(int, int, int, int, double const*, double*)((int) ((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),(int) b,(int) lda_A,(int) ((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),A,Y)
+            goto lab_42;
+          lab_87:
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_world.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Y,(int) (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tree_data,(int) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000))),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tau,(int) b,1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+            CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+            move_ptr = 0ll;
+            goto lab_65;
+          lab_42:
+    89 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Barrier");
+            __es.__c4@3 = 2u;
+            CTF_Timer::start()(&__t)
+            PMPI_Barrier(cdt_world.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    90 |    CTF_Timer::CTF_Timer(char const*)(&t,"TSQR");
+            __es.__c4@3 = 3u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    91 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 4u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+    92 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 5u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(Y,(int) (((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4) * b),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    93 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 6u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tree_data,(int) ((long long) ((double) (min(b,16ll) * b + (long long) ((((int) b + 1) * (int) b) / 2)) * ($$RET0 +  2.0000000000000000E+000))),1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    94 |    CTF_Timer::CTF_Timer(char const*)(&__t,"MPI_Bcast");
+            __es.__c4@3 = 7u;
+            CTF_Timer::start()(&__t)
+            PMPI_Bcast(tau,(int) b,1275070475,(int) root_col,cdt_row.cm@0);
+            CTF_Timer::stop()(&__t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&__t);
+    95 |    CTF_Timer::CTF_Timer(char const*)(&t,"Bcast_update");
+            __es.__c4@3 = 8u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   110 |    move_ptr = lda_A * b;
+   111 |  lab_65:
+   112 |    CTF_Timer::CTF_Timer(char const*)(&t,"schur_tree_Q");
+            __es.__c4@3 = 9u;
+            CTF_Timer::start()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   113 |    if (!(((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4) > 0ll)) goto lab_70;
+   115 |    if (!(((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4) < (long long) cdt_col.np@4)) goto lab_72;
+   116 |    apply_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(Y,((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),tau,((char *)A  + move_ptr * 8ll),lda_A,m,b,((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,cdt_col,tree_data)
+            goto lab_74;
+          lab_72:
+   118 |    apply_butterfly_tsqr_QT(double const*, long, double const*, double*, long, long, long, long, long, long, long, CommData, double*)(Y,((long long) cdt_col.rank@8 < root_row ? (b * root_row + m) / (long long) cdt_col.np@4 - b : (b * root_row + m) / (long long) cdt_col.np@4),tau,((char *)A  + move_ptr * 8ll),lda_A,m,b,((long long) cdt_row.rank@8 <= root_col ? (b * root_col + k) / (long long) cdt_row.np@4 - b : (b * root_col + k) / (long long) cdt_row.np@4),(long long) cdt_col.rank@8,(long long) cdt_col.np@4,root_row,cdt_col,tree_data)
+          lab_74:
+   122 |  lab_70:
+   135 |    CTF_Timer::CTF_Timer(char const*)(&t,"schur_tree_Q");
+            __es.__c4@3 = 10u;
+            CTF_Timer::stop()(&t)
+            __es.__c4@3 = 0u;
+            CTF_Timer::~CTF_Timer()(&t);
+   140 |    if (!(b < stop_at)) goto lab_80;
+   141 |    QR_butterfly_2D(double*, long, long, long, long, long, long, long, long, CommData, CommData, CommData, long)(((char *)A  + (root_row == (long long) cdt_col.rank@8 ? move_ptr + b : move_ptr) * 8ll),lda_A,m - b,k - b,b,myRank,numPes,(root_row + 1ll) % (long long) cdt_col.np@4,(root_col + 1ll) % (long long) cdt_row.np@4,cdt_row,cdt_col,cdt_world,stop_at - b)
+          lab_80:
+   147 |  lab_39:
+   148 |    return;
+          } /* function */ 
+
+
+   460 |  void void lda_cpy<double>(int, int, int, int, double const*, double*)(int nrow, int ncol, int lda_A, int lda_B, char * A, char * B)
+   462 |  {
+   463 |    if (!(lda_A == nrow)) goto lab_1;
+            if (!(lda_B == nrow)) goto lab_1;
+   464 |    __builtin_memcpy(B,A,(unsigned long long) (nrow * ncol) * 8ull);
+   465 |    goto lab_4;
+          lab_1:
+   467 |    if (!(0 < ncol)) goto lab_7;
+            $$CIV0 = 0ll;
+            do {   /* id=1 guarded */ /* ~5 */ 
+              /* region = 13 */
+              /* bump-normalized */
+   468 |      __builtin_memcpy(((char *)B  + ((long long) lda_B * $$CIV0) * 8ll),((char *)A  + ((long long) lda_A * $$CIV0) * 8ll),(unsigned long long) nrow * 8ull);
+   467 |      $$CIV0 = $$CIV0 + 1ll;
+            } while ((unsigned long long) $$CIV0 < (unsigned long long) ((long long) ncol));    /* ~5 */
+          lab_7:
+   470 |  lab_4:
+   471 |    return;
+          } /* function */ 
+
+
+          void __sinit65535()()
+          {
+    72 |    std::ios_base::Init::Init()(&__ioinit);
+            __cxa_atexit(&__srterm__0(),NULL,&__dso_handle);
+            return;
+          } /* function */ 
+
+
+          void __srterm__0()()
+          {
+    72 |    std::ios_base::Init::~Init()(&__ioinit);
+            return;
+          } /* function */ 
+
+
