@@ -13,5 +13,5 @@ DEFS       += -DPROFILE -DPMPI
 AR          = ar
 
 CXX         = CC
-CXXFLAGS    = -fast -std=c++11 
+CXXFLAGS    = -fast -xMIC-AVX512 -std=c++11 
 
