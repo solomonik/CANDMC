@@ -228,15 +228,16 @@ double * loc_A, * full_A, * work;
     for (i=0; i<m*n/numPes; i++){
       loc_A[i] = drand48();
     }
-    double iterStartTime=MPI_Wtime();
+    double iterStartTime,iterTimeLocal,iterTimeGlobal;
+    iterStartTime=MPI_Wtime();
     cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
-    double iterTime=MPI_Wtime()-iterStartTime;
-    MPI_Reduce(&iterTime, &iterTime, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    iterTimeLocal=MPI_Wtime()-iterStartTime;
+    MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     if (myRank == 0)
     {
-      fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << iterTime << std::endl;
+      fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << iterTimeGlobal << std::endl;
     }
-    totalTime += iterTime;
+    totalTime += iterTimeGlobal;
   }
   
   double avg_qr_time = totalTime/niter;
@@ -255,15 +256,16 @@ double * loc_A, * full_A, * work;
       for (i=0; i<m*n/numPes; i++){
         loc_A[i] = drand48();
       }
-      double iterStartTime=MPI_Wtime();
+      double iterStartTime,iterTimeLocal,iterTimeGlobal;
+      iterStartTime=MPI_Wtime();
       cpxorgqr<double>(m,n,MIN(m,n),loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
-      double iterTime=MPI_Wtime()-iterStartTime;
-      MPI_Reduce(&iterTime, &iterTime, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+      iterTimeLocal=MPI_Wtime()-iterStartTime;
+      MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
       if (myRank == 0)
       {
-        fptrTotalFormQ << numPes << "\t" << iter << "\t" << iterTime << std::endl;
+        fptrTotalFormQ << numPes << "\t" << iter << "\t" << iterTimeGlobal << std::endl;
       }
-      totalTime += iterTime;
+      totalTime += iterTimeGlobal;
     }
     
     double avg_formq_time = totalTime/niter;
