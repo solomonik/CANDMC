@@ -302,11 +302,11 @@ int main(int argc, char **argv) {
     printf("%s [number of rows] [number of columns] [blocking factor] [number of iterations] [verify]", argv[0]);
     printf(" [num processor rows] [whether to benchmark form Q] [use complex] [file string base]\n");
   }
-  if (argc > 9){
+  if (argc > 10){
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
-    if (argc > 3) b = atoi(argv[3]);
+  if (argc > 3) b = atoi(argv[3]);
   else b = 10;
   if (argc > 4) niter = atoi(argv[4]);
   else niter = 5;
