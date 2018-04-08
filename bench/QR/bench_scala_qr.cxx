@@ -5,6 +5,8 @@
 #include <strings.h>
 #include <math.h>
 #include <assert.h>
+#include <string>
+#include <fstream>
 #include "CANDMC.h"
 
 
@@ -37,8 +39,9 @@ inline void init_matrices(int const m,
   }
 }
 
+// Note: this generic, non-template-specialized class function will not be used, and it does not use the file string that is all-important now. See the specialized class and its function below.
 template <typename dtype>
-inline void bench_scala_qr(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr){
+inline void bench_scala_qr(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr, std::string& fptrString){
 dtype * loc_A, * full_A, * work;
   int myRank, numPes;
   int64_t pc, ipr, ipc, i, j, loc_off, nz;
@@ -137,8 +140,10 @@ dtype * loc_A, * full_A, * work;
   }
 }
 
+
+// Note: I had to make this template specialization for T=double to get lwork to work correctly.
 template <>
-inline void bench_scala_qr<double>(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr){
+inline void bench_scala_qr<double>(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr, std::string& fptrString){
 double * loc_A, * full_A, * work;
   int myRank, numPes;
   int64_t pc, ipr, ipc, i, j, loc_off, nz;
@@ -151,6 +156,15 @@ double * loc_A, * full_A, * work;
   int desc_A[9], desc_EC[9];
   double time;
 
+  std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ_perf.txt";
+  std::string fptrStrAvgNoFormQ = fptrString + "_NoFormQ_perf_avg.txt";
+  std::string fptrStrTotalFormQ = fptrString + "_FormQ_perf.txt";
+  std::string fptrStrAvgFormQ = fptrString + "_FormQ_perf_avg.txt";
+  std::ofstream fptrTotalNoFormQ,fptrAvgNoFormQ,fptrTotalFormQ,fptrAvgFormQ;
+  fptrTotalNoFormQ.open(fptrStrTotalNoFormQ.c_str());
+  fptrAvgNoFormQ.open(fptrStrAvgNoFormQ.c_str());
+  fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
+  fptrAvgFormQ.open(fptrStrAvgFormQ.c_str());
 
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
@@ -208,34 +222,51 @@ double * loc_A, * full_A, * work;
     if (myRank == 0) printf("Verification of ScaLAPACK QR completed\n");
   }
   
-  time = MPI_Wtime();
-  for (iter=0; iter<niter; iter++){
+  double totalTime=0;
+  for (iter=0; iter<niter; iter++)
+  {
     for (i=0; i<m*n/numPes; i++){
       loc_A[i] = drand48();
     }
+    double iterStartTime=MPI_Wtime();
     cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+    double iterTime=MPI_Wtime()-iterStartTime;
+    MPI_Reduce(MPI_IN_PLACE, &iterTime, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    if (myRank == 0)
+    {
+      fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << iterTime << std::endl;
+    }
+    totalTime += iterTime;
   }
-  time = MPI_Wtime()-time;
   
-  double avg_qr_time = time/niter;
+  double avg_qr_time = totalTime/niter;
 
   if(myRank == 0){
     printf("Completed " PRId64 " iterations of QR\n", iter);
     printf("Scalapack QR (pgeqrf) on a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
             m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
+    fptrAvgNoFormQ << numPes << "\t" << avg_qr_time << std::endl;
   }
  
-  if (tdorgqr){ 
-    time = MPI_Wtime();
-    for (iter=0; iter<niter; iter++){
+  if (tdorgqr){
+    totalTime=0;
+    for (iter=0; iter<niter; iter++)
+    {
       for (i=0; i<m*n/numPes; i++){
         loc_A[i] = drand48();
-      }    
+      }
+      double iterStartTime=MPI_Wtime();
       cpxorgqr<double>(m,n,MIN(m,n),loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+      double iterTime=MPI_Wtime()-iterStartTime;
+      MPI_Reduce(MPI_IN_PLACE, &iterTime, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+      if (myRank == 0)
+      {
+        fptrTotalFormQ << numPes << "\t" << iter << "\t" << iterTime << std::endl;
+      }
+      totalTime += iterTime;
     }
-    time = MPI_Wtime()-time;
     
-    double avg_formq_time = time/niter;
+    double avg_formq_time = totalTime/niter;
     
     if(myRank == 0){
       printf("Completed " PRId64 " iterations of QR\n", iter);
@@ -245,24 +276,29 @@ double * loc_A, * full_A, * work;
               m, n, time/niter);
       printf("Total SCALAPCK time to compute and form Q is %lf\n",
               avg_qr_time+avg_formq_time);
+      fptrAvgNoFormQ << numPes << "\t" << avg_qr_time << "\t" << avg_formq_time << "\t" << avg_qr_time+avg_formq_time << std::endl;
     }
   }
 
-
+  fptrTotalNoFormQ.close();
+  fptrAvgNoFormQ.close();
+  fptrTotalFormQ.close();
+  fptrAvgFormQ.close();
 }
 
 
 int main(int argc, char **argv) {
   int myRank, numPes, tdorgqr, bcomplex;
   int64_t n, b, niter, pr, pc, ipr, ipc, i, j, loc_off, m, verify, nz;
-  
+  std::string fptrString;  
+
   MPI_Init(&argc, &argv);
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
 
   if (myRank == 0){
     printf("%s [number of rows] [number of columns] [blocking factor] [number of iterations] [verify]", argv[0]);
-    printf(" [num processor rows] [whether to benchmark form Q] [use complex]\n");
+    printf(" [num processor rows] [whether to benchmark form Q] [use complex] [file string base]\n");
   }
   if (argc > 9){
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -279,7 +315,7 @@ int main(int argc, char **argv) {
   if (argc > 7) tdorgqr = atoi(argv[7]);
   else tdorgqr = 1;
   if (argc > 8) bcomplex = atoi(argv[8]);
-  else bcomplex = 0; 
+  else bcomplex = 0;
   pc = numPes / pr;
   if (numPes % pr != 0) {
     if (myRank == 0){
@@ -288,6 +324,9 @@ int main(int argc, char **argv) {
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
+  if (argc > 9) fptrString=argv[9];
+  else fptrString="noNameScalaQRbenchmark";
+
   ipc = myRank / pr;
   ipr = myRank % pr;
  
@@ -323,9 +362,9 @@ int main(int argc, char **argv) {
     printf("Using %d processors in " PRId64 "-by-" PRId64 " grid.\n", numPes, pr, pc);
   }
   if (bcomplex)
-    bench_scala_qr< std::complex<double> >(m, n, b, niter, verify, pr, tdorgqr);
+    bench_scala_qr< std::complex<double> >(m, n, b, niter, verify, pr, tdorgqr, fptrString);
   else
-    bench_scala_qr<double>(m, n, b, niter, verify, pr, tdorgqr);
+    bench_scala_qr<double>(m, n, b, niter, verify, pr, tdorgqr, fptrString);
   MPI_Finalize();
   return 0;
 } /* end function main */

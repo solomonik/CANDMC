@@ -276,13 +276,13 @@ elif (hostname | grep 'theta'); then
 	echo 'Hostname recognized as a XC40 machine'
  
 	host=xc40
-  SCALAPACKLIBS="-mkl=cluster"
+  	SCALAPACKLIBS="-mkl=cluster"
 	BLASLIBS="-mkl=cluster"
 	LDFLAGS=''
 	INCLUDES=''
 	AR='ar'
 	CXX=CC
-	CXXFLAGS="-fast"
+	CXXFLAGS="-fast -xMIC-AVX512"
 	DEFS=''
 	WARN=''
 	OPT=''
