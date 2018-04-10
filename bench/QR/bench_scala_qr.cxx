@@ -231,7 +231,7 @@ double * loc_A, * full_A, * work;
     MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     if (myRank == 0)
     {
-      fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << "\t" << m << "\t" << n << "\t" << iterTimeGlobal << std::endl;
+      fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << m << "\t" << n << "\t" << iterTimeGlobal << std::endl;
     }
     totalTime += iterTimeGlobal;
   }
