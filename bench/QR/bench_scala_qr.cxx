@@ -157,14 +157,10 @@ double * loc_A, * full_A, * work;
   double time;
 
   std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ_perf.txt";
-  std::string fptrStrAvgNoFormQ = fptrString + "_NoFormQ_perf_avg.txt";
   std::string fptrStrTotalFormQ = fptrString + "_FormQ_perf.txt";
-  std::string fptrStrAvgFormQ = fptrString + "_FormQ_perf_avg.txt";
-  std::ofstream fptrTotalNoFormQ,fptrAvgNoFormQ,fptrTotalFormQ,fptrAvgFormQ;
+  std::ofstream fptrTotalNoFormQ,fptrTotalFormQ;
   fptrTotalNoFormQ.open(fptrStrTotalNoFormQ.c_str());
-  fptrAvgNoFormQ.open(fptrStrAvgNoFormQ.c_str());
   fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
-  fptrAvgFormQ.open(fptrStrAvgFormQ.c_str());
 
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
@@ -246,7 +242,6 @@ double * loc_A, * full_A, * work;
     printf("Completed " PRId64 " iterations of QR\n", iter);
     printf("Scalapack QR (pgeqrf) on a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
             m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
-    fptrAvgNoFormQ << numPes << "\t" << avg_qr_time << std::endl;
   }
  
   if (tdorgqr){
@@ -278,14 +273,11 @@ double * loc_A, * full_A, * work;
               m, n, time/niter);
       printf("Total SCALAPCK time to compute and form Q is %lf\n",
               avg_qr_time+avg_formq_time);
-      fptrAvgNoFormQ << numPes << "\t" << avg_qr_time << "\t" << avg_formq_time << "\t" << avg_qr_time+avg_formq_time << std::endl;
     }
   }
 
   fptrTotalNoFormQ.close();
-  fptrAvgNoFormQ.close();
   fptrTotalFormQ.close();
-  fptrAvgFormQ.close();
 }
 
 
