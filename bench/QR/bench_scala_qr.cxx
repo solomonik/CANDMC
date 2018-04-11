@@ -156,8 +156,8 @@ double * loc_A, * full_A, * work;
   int desc_A[9], desc_EC[9];
   double time;
 
-  std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ_perf.txt";
-  std::string fptrStrTotalFormQ = fptrString + "_FormQ_perf.txt";
+  std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ.txt";
+  std::string fptrStrTotalFormQ = fptrString + "_FormQ.txt";
   std::ofstream fptrTotalNoFormQ,fptrTotalFormQ;
   fptrTotalNoFormQ.open(fptrStrTotalNoFormQ.c_str());
   fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
