@@ -274,7 +274,6 @@ elif (hostname | grep 'vesta\|mira\|cetus\|seq'); then
 
 elif (hostname | grep 'theta'); then
 	echo 'Hostname recognized as a XC40 machine'
- 
 	host=xc40
   	SCALAPACKLIBS="-mkl=cluster"
 	BLASLIBS="-mkl=cluster"
@@ -283,6 +282,21 @@ elif (hostname | grep 'theta'); then
 	AR='ar'
 	CXX=CC
 	CXXFLAGS="-fast -xMIC-AVX512"
+	DEFS=''
+	WARN=''
+	OPT=''
+
+elif (hostname | grep 'stampede2'); then
+	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
+        module load impi
+	host=stampede2
+  	SCALAPACKLIBS="-mkl=cluster"
+	BLASLIBS="-mkl=cluster"
+	LDFLAGS=''
+	INCLUDES=''
+	AR='ar'
+	CXX=mpicxx
+	CXXFLAGS="-O3 -xMIC-AVX512"
 	DEFS=''
 	WARN=''
 	OPT=''
@@ -420,7 +434,7 @@ else
     UNDERSCORE=0
   else
     testlink "$BLASLIBS" dgemm_ 1
-	  echo 'ERROR: Could not link with BLAS.'
+    echo 'ERROR: Could not link with BLAS.'
     exit 1
   fi
 fi
