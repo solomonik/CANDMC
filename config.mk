@@ -1,4 +1,4 @@
-BLAS_LIBS   =  -mkl=cluster  -mkl=cluster
+BLAS_LIBS   =  -mkl=cluster#-lmkl_scalapack_ilp64  -mkl=cluster
 
 LDFLAGS     = 
 INCLUDES    = 
@@ -13,5 +13,5 @@ DEFS       += -DPROFILE -DPMPI
 AR          = ar
 
 CXX         = mpicxx
-CXXFLAGS    = -O3 -xMIC-AVX512 
+CXXFLAGS    = -O3 -xMIC-AVX512 -std=c++11 
 

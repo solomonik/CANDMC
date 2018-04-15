@@ -159,8 +159,11 @@ double * loc_A, * full_A, * work;
   std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ.txt";
   std::string fptrStrTotalFormQ = fptrString + "_FormQ.txt";
   std::ofstream fptrTotalNoFormQ,fptrTotalFormQ;
-  fptrTotalNoFormQ.open(fptrStrTotalNoFormQ.c_str());
-  fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
+  if (myRank == 0)
+  {
+    fptrTotalNoFormQ.open(fptrStrTotalNoFormQ.c_str());
+    fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
+  }
 
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
@@ -276,8 +279,11 @@ double * loc_A, * full_A, * work;
     }
   }
 
-  fptrTotalNoFormQ.close();
-  fptrTotalFormQ.close();
+  if (rank == 0)
+  {
+    fptrTotalNoFormQ.close();
+    fptrTotalFormQ.close();
+  }
 }
 
 
