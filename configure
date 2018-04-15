@@ -291,7 +291,7 @@ elif (hostname | grep 'stampede2'); then
         module load impi
 	host=stampede2
   	SCALAPACKLIBS="-mkl=cluster"
-	BLASLIBS="-mkl=cluster"
+	BLASLIBS="-mkl=parallel"
 	LDFLAGS=''
 	INCLUDES=''
 	AR='ar'
