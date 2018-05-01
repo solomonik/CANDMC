@@ -1,7 +1,6 @@
 #!/bin/bash
 #configure script adapted from Aquarius software (https://github.com/devinamatthews/aquarius)
 
-
 usage()
 {
 	echo -e 'Usage: configure [options]'
@@ -290,13 +289,13 @@ elif (hostname | grep 'stampede2'); then
 	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
         module load impi
 	host=stampede2
-  	SCALAPACKLIBS="-mkl=cluster"
-	BLASLIBS="-mkl=parallel"
+  	SCALAPACKLIBS=""
+	BLASLIBS="$MKLROOT/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_lp64.a $MKLROOT/lib/intel64/libmkl_intel_thread.a $MKLROOT/lib/intel64/libmkl_core.a $MKLROOT/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm"
 	LDFLAGS=''
 	INCLUDES=''
 	AR='ar'
 	CXX=mpicxx
-	CXXFLAGS="-O3 -xMIC-AVX512"
+	CXXFLAGS="-O0 -g -fopenmp"
 	DEFS=''
 	WARN=''
 	OPT=''
