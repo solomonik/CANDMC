@@ -290,14 +290,14 @@ elif (hostname | grep 'stampede2'); then
 	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
         module load impi
 	host=stampede2
-  	SCALAPACKLIBS="-mkl=cluster"
-	BLASLIBS="-mkl=parallel"
+        SCALAPACKLIBS="-L${MKLROOT}/lib/intel64 -lmkl_scalapack_ilp64"
+	BLASLIBS="-lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_intelmpi_ilp64 -liomp5 -lpthread -lm -ldl"
 	LDFLAGS=''
-	INCLUDES=''
+        INCLUDES="-I$MKLROOT/include"
 	AR='ar'
 	CXX=mpicxx
 	CXXFLAGS="-O3 -xMIC-AVX512"
-	DEFS=''
+	DEFS="-DMKL_ILP64"
 	WARN=''
 	OPT=''
 

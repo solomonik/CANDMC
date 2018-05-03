@@ -279,7 +279,7 @@ double * loc_A, * full_A, * work;
     }
   }
 
-  if (rank == 0)
+  if (myRank == 0)
   {
     fptrTotalNoFormQ.close();
     fptrTotalFormQ.close();

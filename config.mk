@@ -1,9 +1,9 @@
-BLAS_LIBS   =  -mkl=cluster#-lmkl_scalapack_ilp64  -mkl=cluster
+BLAS_LIBS   =  -L/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64 -lmkl_scalapack_ilp64  -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_intelmpi_ilp64 -liomp5 -lpthread -lm -ldl
 
 LDFLAGS     = 
-INCLUDES    = 
+INCLUDES    = -I/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/include
 
-DEFS        =  -DCPP11 -DUSE_SCALAPACK -DLAPACKHASTSQR=1 -DFTN_UNDERSCORE=1
+DEFS        = -DMKL_ILP64 -DCPP11 -DUSE_SCALAPACK -DLAPACKHASTSQR=1 -DFTN_UNDERSCORE=1
 
 #uncomment below to enable performance profiling
 DEFS       += -DPROFILE -DPMPI
