@@ -156,6 +156,12 @@ double * loc_A, * full_A, * work;
   int desc_A[9], desc_EC[9];
   double time;
 
+  MPI_Comm_size(MPI_COMM_WORLD, &numPes);
+  MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
+  pc = numPes / pr;
+  ipc = myRank / pr;
+  ipr = myRank % pr;
+
   std::string fptrStrTotalNoFormQ = fptrString + "_NoFormQ.txt";
   std::string fptrStrTotalFormQ = fptrString + "_FormQ.txt";
   std::ofstream fptrTotalNoFormQ,fptrTotalFormQ;
@@ -165,12 +171,6 @@ double * loc_A, * full_A, * work;
     fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
   }
 
-  MPI_Comm_size(MPI_COMM_WORLD, &numPes);
-  MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
-  pc = numPes / pr;
-  ipc = myRank / pr;
-  ipr = myRank % pr;
- 
   loc_A    = (double*)malloc(m*n*sizeof(double)/numPes);
   if (verify){
     full_A  = (double*)malloc(m*n*sizeof(double));
@@ -197,7 +197,7 @@ double * loc_A, * full_A, * work;
   work        = (double*)malloc(lwork*sizeof(double));
   if (myRank == 0)
   {
-    printf("lwork - %d", lwork);
+    printf("lwork - %d\n", lwork);
   }
 
 
@@ -234,6 +234,7 @@ double * loc_A, * full_A, * work;
     MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     if (myRank == 0)
     {
+      printf("No Form Q, numPes - %d, iter - %d, m - %d, n - %d, time - %g\n", numPes, iter, m, n, iterTimeGlobal);
       fptrTotalNoFormQ << numPes << "\t" << iter << "\t" << m << "\t" << n << "\t" << iterTimeGlobal << std::endl;
     }
     totalTime += iterTimeGlobal;
@@ -261,6 +262,7 @@ double * loc_A, * full_A, * work;
       MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
       if (myRank == 0)
       {
+        printf("Form Q, numPes - %d, iter - %d, m - %d, n - %d, time - %g\n", numPes, iter, m, n, iterTimeGlobal);
         fptrTotalFormQ << numPes << "\t" << iter << "\t" << m << "\t" << n << "\t" << iterTimeGlobal << std::endl;
       }
       totalTime += iterTimeGlobal;
