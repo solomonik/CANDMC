@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-#include <math.h>
+#include <cmath>
 #include <assert.h>
 #include <string>
 #include <fstream>
@@ -32,20 +32,22 @@ int main(int argc, char **argv) {
   MPI_Request req[4];
   MPI_Status status[4];
 
-  if (argc < 5 || argc > 6) {
+  if (argc < 4 || argc > 5) {
     if (myRank == 0) 
-      printf("%s [mat_dim] [pe_mat_lda] [blk_dim] [number of iterations] [file string name]\n", argv[0]);
+      printf("%s [mat_dim] [blk_dim] [number of iterations] [file string name]\n", argv[0]);
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
+  int squarePgridDim = int(std::sqrt(numPes));
   int matrixDim = atoi(argv[1]);
-  int blockDim = atoi(argv[2]);		//  matrix dimension of local matrix?
-  int sbDim = atoi(argv[3]);			// block dimension (algorithmic, tunable parameter)?
-  int num_iter = atoi(argv[4]);
+  int blockDim = matrixDim / squarePgridDim;		//  matrix dimension of local matrix
+  int sbDim = atoi(argv[2]);			// block dimension (algorithmic, tunable parameter)?
+  int num_iter = atoi(argv[3]);
 
   if (myRank == 0){ 
     printf("PDPOTRF OF SQUARE MATRIX\n");
     printf("MATRIX DIMENSION IS %d\n", matrixDim);
+    printf("LOCAL MATRIX DIMENSION IS %d\n", blockDim);
     printf("numProcessors - %d\n", numPes);
     printf("BLOCK DIMENSION IS %d\n", sbDim);
     printf("PERFORMING %d ITERATIONS\n", num_iter);
@@ -92,7 +94,7 @@ int main(int argc, char **argv) {
                                  &info);
   assert(info==0);
 
-  std::string fptrStrTotal = argv[5];
+  std::string fptrStrTotal = argv[4];
   fptrStrTotal += ".txt";
   std::ofstream fptrTotal;
   if (myRank == 0)
