@@ -4,6 +4,8 @@
 #include <strings.h>
 #include <math.h>
 #include <assert.h>
+#include <string>
+#include <fstream>
 #include "CANDMC.h"
 
 /*
@@ -30,24 +32,16 @@ int main(int argc, char **argv) {
   MPI_Request req[4];
   MPI_Status status[4];
 
-  int log_numPes = log2(numPes);
-
-  if (argc < 4 || argc > 5) {
+  if (argc < 5 || argc > 6) {
     if (myRank == 0) 
-      printf("%s [log2_mat_dim] [log2_pe_mat_lda] [log2_blk_dim] [number of iterations]\n", argv[0]);
+      printf("%s [mat_dim] [pe_mat_lda] [blk_dim] [number of iterations] [file string name]\n", argv[0]);
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
 
-    int log_matrixDim = atoi(argv[1]);
-    int log_blockDim = atoi(argv[2]);
-    int log_sbDim = atoi(argv[3]);
-    int matrixDim = 1<<log_matrixDim;
-    int blockDim = 1<<log_blockDim;
-    int sbDim = 1<<log_sbDim;
-
-  int num_iter;
-  if (argc > 4) num_iter = atoi(argv[4]);
-  else num_iter = NUM_ITER;
+  int matrixDim = atoi(argv[1]);
+  int blockDim = atoi(argv[2]);		//  matrix dimension of local matrix?
+  int sbDim = atoi(argv[3]);			// block dimension (algorithmic, tunable parameter)?
+  int num_iter = atoi(argv[4]);
 
   if (myRank == 0){ 
     printf("PDPOTRF OF SQUARE MATRIX\n");
@@ -55,34 +49,20 @@ int main(int argc, char **argv) {
     printf("numProcessors - %d\n", numPes);
     printf("BLOCK DIMENSION IS %d\n", sbDim);
     printf("PERFORMING %d ITERATIONS\n", num_iter);
-#ifdef RAND
-    printf("WITH RANDOM DATA\n");
-#else
-    printf("WITH DATA=INDEX\n");
-#endif
   }
 
-  if (matrixDim < blockDim || matrixDim % blockDim != 0) {
+  if ((matrixDim < blockDim) || (matrixDim % blockDim != 0)) {
     if (myRank == 0) printf("array_size_X BAD block_size_X != 0!\n");
     MPI_Abort(MPI_COMM_WORLD, -1);
   }
-  if (matrixDim < blockDim || matrixDim % blockDim != 0) {
-    if (myRank == 0) printf("array_size_Y BAD  block_size_Y != 0!\n");
-    MPI_Abort(MPI_COMM_WORLD, -1);
-  }
 
-    int log_num_blocks_dim = log_matrixDim - log_blockDim;
-    int num_blocks_dim = 1<<log_num_blocks_dim;
+  int num_blocks_dim = matrixDim / blockDim;		// Number of local blocks along each dimension, another way of figuring out my processor grid dimension, right?
 
   if (myRank == 0){
     printf("NUM X BLOCKS IS %d\n", num_blocks_dim);
     printf("NUM Y BLOCKS IS %d\n", num_blocks_dim);
   }
 
-  if (myRank == 0)
-  {
-    printf("check this num - %d %d", num_blocks_dim*num_blocks_dim, num_blocks_dim);
-  }
   if (num_blocks_dim*num_blocks_dim != numPes){
     if (myRank == 0) printf("NUMBER OF BLOCKS MUST BE EQUAL TO NUMBER OF PROCESSORS\n");
     MPI_Abort(MPI_COMM_WORLD, -1);
@@ -112,8 +92,15 @@ int main(int argc, char **argv) {
                                  &info);
   assert(info==0);
 
-                                    
-  double startTime, endTime, totalTime;
+  std::string fptrStrTotal = argv[5];
+  fptrStrTotal += ".txt";
+  std::ofstream fptrTotal;
+  if (myRank == 0)
+  {
+    fptrTotal.open(fptrStrTotal.c_str());
+  }
+
+  double startTime, iterTimeLocal, iterTimeGlobal, totalTime;
   totalTime = 0.0;
   for (iter=0; iter < num_iter; iter++){
     srand48(1234*myRank);
@@ -124,18 +111,25 @@ int main(int argc, char **argv) {
     }
     startTime = MPI_Wtime();
     cpdpotrf('U', matrixDim, mat_A, 1, 1, desc_a, &info);
-    endTime = MPI_Wtime();
-    if (info < 0)
+    iterTimeLocal=MPI_Wtime() - startTime;
+    if (info != 0)
     {
-      printf("Bad below!\n");
+      if (info < 0) {printf("Bad below!\n");}
+      if (info > 0) {printf("Bad above!\n");}
       MPI_Abort(MPI_COMM_WORLD, -1);
     }
-    if (info > 0)
+    MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    if (myRank == 0)
     {
-      printf("Bad above!\n");
-      MPI_Abort(MPI_COMM_WORLD, -1);
+      printf("numPes - %d, iter - %d, matrixDim - %d, time - %g\n", numPes, iter, matrixDim, iterTimeGlobal);
+      fptrTotal << numPes << "\t" << iter << "\t" << matrixDim << "\t" << iterTimeGlobal << std::endl;
     }
-    totalTime += endTime -startTime;
+    totalTime += iterTimeGlobal;
+  }
+
+  if (myRank == 0)
+  {
+    fptrTotal.close();
   }
 
   if(myRank == 0) {
