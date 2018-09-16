@@ -299,6 +299,23 @@ elif (hostname | grep 'stampede2'); then
 	DEFS=''
 	WARN=''
 	OPT=''
+#elif (hostname | grep 'stampede2'); then
+#	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
+#        module load impi
+#        module unload intel
+#        module load gcc
+#	module load mkl
+#	host=stampede2
+#  	SCALAPACKLIBS="/home1/05608/tg849075/scalapackReference/scalapack-1.8.0/libscalapack.a"
+#	BLASLIBS=" -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_sequential.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_blacs_intelmpi_lp64.a -Wl,--end-group -lgfortran -lpthread -lm -ldl"
+#	LDFLAGS=''
+#        INCLUDES="-I$MKLROOT/include"
+#	AR='ar'
+#	CXX=mpicxx
+#	CXXFLAGS="-g -Wall"
+#	DEFS=''
+#	WARN=''
+#	OPT=''
 
 else
 	#
