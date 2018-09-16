@@ -43,6 +43,7 @@ inline void init_matrices(int const m,
 template <typename dtype>
 inline void bench_scala_qr(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr, std::string& fptrString){
 dtype * loc_A, * full_A, * work;
+  abort();
   int myRank, numPes;
   int64_t pc, ipr, ipc, i, j, loc_off, nz;
   dtype * TAU2, * loc_TAU2;
@@ -144,17 +145,18 @@ dtype * loc_A, * full_A, * work;
 // Note: I had to make this template specialization for T=double to get lwork to work correctly.
 template <>
 inline void bench_scala_qr<double>(int64_t m, int64_t n, int64_t b, int64_t niter, int64_t verify, int64_t pr, int tdorgqr, std::string& fptrString){
-double * loc_A, * full_A, * work;
+  double * loc_A, * full_A, * work;
   int myRank, numPes;
   int64_t pc, ipr, ipc, i, j, loc_off, nz;
-  double * TAU2, * loc_TAU2;
-  int64_t * iwork, * iclustr, * ifail;
+  double* TAU2, *loc_TAU2;
+  int64_t* iwork, *iclustr, *ifail;
   int icontxt, iam, inprocs;
   int64_t iter, lwork;
   int info;
   char cC = 'C';
   int desc_A[9], desc_EC[9];
   double time;
+  int64_t localDiv = m/pr;
 
   MPI_Comm_size(MPI_COMM_WORLD, &numPes);
   MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
@@ -171,9 +173,11 @@ double * loc_A, * full_A, * work;
     fptrTotalFormQ.open(fptrStrTotalFormQ.c_str());
   }
 
-  loc_A    = (double*)malloc(m*n*sizeof(double)/numPes);
+  int64_t size1 = m; size1*=n; size1 /= numPes; size1 *= sizeof(double);
+  loc_A    = (double*)malloc(size1);
   if (verify){
-    full_A  = (double*)malloc(m*n*sizeof(double));
+    int64_t size2 = size1; size2 * numPes;
+    full_A  = (double*)malloc(size2);
     TAU2  = (double*)malloc(n*sizeof(double));
   }
 
@@ -185,8 +189,9 @@ double * loc_A, * full_A, * work;
   cdescinit(desc_A, m, n,
 		        b, b,
 		        0, 0,
-		        icontxt, m/pr, 
+		        icontxt, localDiv, 
 				    &info);
+//  printf("Info - %d\n",info);
   assert(info==0);
   // first query for the correct size of lwork
   double sizeQuery;
@@ -200,8 +205,8 @@ double * loc_A, * full_A, * work;
     printf("lwork - %d\n", lwork);
   }
 
-
-  if (verify && m*n*n < 1E9){
+  int64_t size2=m; size2 *= n; size2 *= n;
+  if ((verify) && (size2 < 1E9)){
      if (myRank == 0) printf("Verifying cpgeqrf correctness\n");
     init_matrices(m,n,ipr,pr,ipc,pc,b,full_A,loc_A); 
     cxgeqrf<double>(m,n,full_A,m,TAU2,work,lwork,&info);
@@ -210,10 +215,11 @@ double * loc_A, * full_A, * work;
     for (i=0; i<n; i++){
       for (j=0; j<m; j++){
         if ((i/b)%pc == ipc && (j/b)%pr == ipr){
-          double diff = full_A[i*m+j]-loc_A[loc_off];
-          if (GET_REAL(diff)/GET_REAL(full_A[i*m+j]) > 1.E-6)
+          int64_t size3 = i; size3 *= m;
+          double diff = full_A[size3+j]-loc_A[loc_off];
+          if (GET_REAL(diff)/GET_REAL(full_A[size3+j]) > 1.E-6)
             printf("incorrect answer " PRId64 " scalapack computed %E, lapack computed %E\n",
-                    i, GET_REAL(loc_A[loc_off]), GET_REAL(full_A[i*m+j]));
+                    i, GET_REAL(loc_A[loc_off]), GET_REAL(full_A[size3+j]));
           loc_off++;
         }
       }
@@ -224,12 +230,18 @@ double * loc_A, * full_A, * work;
   double totalTime=0;
   for (iter=0; iter<niter; iter++)
   {
-    for (i=0; i<m*n/numPes; i++){
+    int64_t size3 = m; size3 *= n; size3  /= numPes;
+    if (myRank == 0) {printf("Rank 0 size3 - %d, size1 - %d\n", size3, size1);}
+    for (i=0; i<size3; i++){
       loc_A[i] = drand48();
     }
     double iterStartTime,iterTimeLocal,iterTimeGlobal;
+    MPI_Barrier(MPI_COMM_WORLD);
+    if (myRank == 0) {printf("Every process reached barrier.\n");}
+    if (myRank == 0) printf("Rank %d has args - %d, %d, %d, %d, and descA stuff - %d %d %d %d %d %d %d %d %d", myRank, m, n, lwork, info, desc_A[0], desc_A[1], desc_A[2], desc_A[3], desc_A[4], desc_A[5], desc_A[6], desc_A[7], desc_A[8]);
     iterStartTime=MPI_Wtime();
     cpxgeqrf<double>(m,n,loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
+    if (myRank == 0) printf("Process %d done with QR routine with info param - %d\n", myRank, info);
     iterTimeLocal=MPI_Wtime()-iterStartTime;
     MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
     if (myRank == 0)
@@ -243,22 +255,27 @@ double * loc_A, * full_A, * work;
   double avg_qr_time = totalTime/niter;
 
   if(myRank == 0){
+    int64_t size3 = m; size3 *= n; size3 *= n;
+    int64_t size4 = n; size4 *= n; size4 *= n;
     printf("Completed " PRId64 " iterations of QR\n", iter);
     printf("Scalapack QR (pgeqrf) on a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
-            m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
+            m, n, totalTime/niter, (2.*size3-(2./3.)*size4)/(totalTime/niter)*1.E-9);
   }
  
   if (tdorgqr){
     totalTime=0;
     for (iter=0; iter<niter; iter++)
     {
-      for (i=0; i<m*n/numPes; i++){
+      int64_t size3 = m; size3 *= n; size3 /= numPes;
+      for (i=0; i<size3; i++){
         loc_A[i] = drand48();
       }
       double iterStartTime,iterTimeLocal,iterTimeGlobal;
+      if (myRank == 0) printf("before\n");
       iterStartTime=MPI_Wtime();
       cpxorgqr<double>(m,n,MIN(m,n),loc_A,1,1,desc_A,loc_TAU2,work,lwork,&info);
       iterTimeLocal=MPI_Wtime()-iterStartTime;
+      if (myRank == 0) printf("after\n");
       MPI_Reduce(&iterTimeLocal, &iterTimeGlobal, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
       if (myRank == 0)
       {
@@ -275,7 +292,7 @@ double * loc_A, * full_A, * work;
       //printf("Scalapack form Q (porgqr) from a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration, at %lf GFlops\n",
       //       m, n, time/niter, (2.*m*n*n-(2./3.)*n*n*n)/(time/niter)*1.E-9);
       printf("Scalapack form Q (porgqr) from a " PRId64 "-by-" PRId64 " matrix took %lf seconds/iteration\n",
-              m, n, time/niter);
+              m, n, totalTime/niter);
       printf("Total SCALAPCK time to compute and form Q is %lf\n",
               avg_qr_time+avg_formq_time);
     }
@@ -321,7 +338,7 @@ int main(int argc, char **argv) {
   pc = numPes / pr;
   if (numPes % pr != 0) {
     if (myRank == 0){
-      printf("" PRId64 " mod " PRId64 " != 0 Number of processor grid ", n, pc);
+      //printf("" PRId64 " mod " PRId64 " != 0 Number of processor grid ", n, pc);
       printf("columns must divide into the matrix dimension\n");
     }
     MPI_Abort(MPI_COMM_WORLD, -1);
