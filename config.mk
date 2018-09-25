@@ -1,4 +1,4 @@
-BLAS_LIBS   =    /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_lp64.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_thread.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_core.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm
+BLAS_LIBS   =  -L/home1/05608/tg849075/critter/lib -lcritter  /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_lp64.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_thread.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_core.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm
 
 LDFLAGS     = 
 INCLUDES    = -I/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/include
