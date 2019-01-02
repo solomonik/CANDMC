@@ -286,19 +286,34 @@ elif (hostname | grep 'theta'); then
 	OPT=''
 
 elif (hostname | grep 'stampede2'); then
-	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
-        module load impi
 	host=stampede2
-  	SCALAPACKLIBS=""
-	BLASLIBS="$MKLROOT/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_lp64.a $MKLROOT/lib/intel64/libmkl_intel_thread.a $MKLROOT/lib/intel64/libmkl_core.a $MKLROOT/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm"
-	LDFLAGS=''
-        INCLUDES="-I$MKLROOT/include"
-	AR='ar'
-	CXX=mpicxx
-	CXXFLAGS="-O3 -g -fopenmp -xMIC-AVX512"
-	DEFS=''
-	WARN=''
-	OPT=''
+	if [ ${SPECIAL_SCALA_ARG} == "MKL" ];
+        then
+        	echo "MKL SCALAPACK"
+  		SCALAPACKLIBS=""
+		BLASLIBS="$MKLROOT/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group $MKLROOT/lib/intel64/libmkl_intel_lp64.a $MKLROOT/lib/intel64/libmkl_intel_thread.a $MKLROOT/lib/intel64/libmkl_core.a $MKLROOT/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm"
+		LDFLAGS=''
+	        INCLUDES="-I$MKLROOT/include"
+		AR='ar'
+		CXX=mpicxx
+		CXXFLAGS="-O3 -g -fopenmp -xMIC-AVX512"
+		DEFS=''
+		WARN=''
+		OPT=''
+        elif [ ${SPECIAL_SCALA_ARG} == "REF" ];
+        then
+ 	       echo "REFERENCE SCALAPACK"
+  		SCALAPACKLIBS=""
+		BLASLIBS="-L/home1/05608/tg849075/RefScalapack/build/lib -lscalapack -lm -lifcore"
+		LDFLAGS=''
+	        INCLUDES=""
+		AR='ar'
+		CXX=mpicxx
+		CXXFLAGS="-O3 -g -mkl=parallel -std=c++11 -xMIC-AVX512"
+		DEFS=''
+		WARN=''
+		OPT=''
+        fi
 #elif (hostname | grep 'stampede2'); then
 #	echo 'Hostname recognized as XeonPhi cluster, TACC Stampede2'
 #        module load impi
