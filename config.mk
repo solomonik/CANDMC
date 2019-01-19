@@ -1,7 +1,7 @@
-BLAS_LIBS   =    /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_scalapack_lp64.a -Wl,--start-group /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_lp64.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_intel_thread.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_core.a /opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/lib/intel64/libmkl_blacs_intelmpi_lp64.a  -Wl,--end-group -lpthread -lm
+BLAS_LIBS   =    -L/home1/05608/tg849075/RefScalapack/build/lib -lscalapack -lm -lifcore
 
 LDFLAGS     = 
-INCLUDES    = -I/opt/intel/compilers_and_libraries_2017.4.196/linux/mkl/include
+INCLUDES    = 
 
 DEFS        =  -DCPP11 -DUSE_SCALAPACK -DLAPACKHASTSQR=1 -DFTN_UNDERSCORE=1
 
@@ -13,5 +13,5 @@ DEFS       += -DPROFILE -DPMPI
 AR          = ar
 
 CXX         = mpicxx
-CXXFLAGS    = -O3 -g -fopenmp -xMIC-AVX512 -std=c++11 
+CXXFLAGS    = -O3 -g -mkl=parallel -std=c++11 -xMIC-AVX512 
 
