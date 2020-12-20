@@ -247,7 +247,7 @@ void upd_A( double const *  Ybuf,
   } else {
     if (W_is_T) cT=W;
     else { 
-      comp_bcast_T_from_W(b, W, Ybuf, lda_Y, &T, pv->rcol+pv->rrow*pv->crow.np, (pv->rrow==pv->ccol.rank) & (pv->rcol==pv->crow.rank), pv->cworld.cm);
+      comp_bcast_T_from_W(b, W, Ybuf, lda_Y, &T, pv->rrow+pv->rcol*pv->ccol.np, (pv->rrow==pv->ccol.rank) & (pv->rcol==pv->crow.rank), pv->cworld.cm);
       cT = T;
     }
   }
