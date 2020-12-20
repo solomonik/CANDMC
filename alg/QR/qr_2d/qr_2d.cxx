@@ -247,7 +247,7 @@ void upd_A( double const *  Ybuf,
   } else {
     if (W_is_T) cT=W;
     else { 
-      comp_bcast_T_from_W(b, W, Ybuf, lda_Y, &T, pv->rcol+pv->rrow*pv->crow.np, (pv->rrow==pv->ccol.rank) & (pv->rcol==pv->crow.rank), pv->cworld.cm);
+      comp_bcast_T_from_W(b, W, Ybuf, lda_Y, &T, pv->rrow+pv->rcol*pv->ccol.np, (pv->rrow==pv->ccol.rank) & (pv->rcol==pv->crow.rank), pv->cworld.cm);
       cT = T;
     }
   }
@@ -587,6 +587,7 @@ void QR_2D_pipe(double * A,
 
       pv->rrow = (pv->rrow+1) % pv->ccol.np;
       pv->rcol = (pv->rcol+1) % pv->crow.np;
+      free(new_Y);
       QR_2D_pipe(A, lda_A, 
                  m-b, k-b, b, pv, NULL, 0, NULL, NULL);
     } else {
