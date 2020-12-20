@@ -587,6 +587,7 @@ void QR_2D_pipe(double * A,
 
       pv->rrow = (pv->rrow+1) % pv->ccol.np;
       pv->rcol = (pv->rcol+1) % pv->crow.np;
+      free(new_Y);
       QR_2D_pipe(A, lda_A, 
                  m-b, k-b, b, pv, NULL, 0, NULL, NULL);
     } else {
